@@ -2,6 +2,32 @@
 
 **SparkVidz**: Instant AI-Powered Summaries for Time-Saving Playback!
 
+## Important: How to Set Up and Run the Extension
+This section guides you through setting up and running the SparkVidz Chrome extension. For a comprehensive walkthrough, refer to [this article](https://medium.com/pythoniq/write-chrome-extensions-in-python-6c6b0e2e1573).
+
+### Create Your Extension Files
+1. Create a new folder for your Extension.
+2. Download or clone the [pyscript-local-runtime](https://github.com/PFython/pyscript-local-runtime) repository into your new folder.
+3. Add your Python code between the `<py-script>` tags and/or `<py-repl>` in `popup.html`.
+4. Modify the `<title>` in `popup.html` and adjust the name and/or description in `manifest.json` as needed.
+5. If desired, add custom icons to the `/icons` directory and modify the default icon names in `manifest.json`.
+
+> **Note**: The `pyscript-local-runtime` repository uses PyScript v0.21.3. If you wish to utilize a newer version, you can modify the helper scripts `runtime/setup.sh` (for Linux/Posix) or `runtime/setup.py` (for Windows). With PyScript and Pyodide continually evolving, consider checking out recent tutorials to keep updated with their capabilities and syntax/structure.
+
+### Load Your Extension into Chrome
+1. Enter `chrome://extensions` in the Chrome address bar.
+2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
+3. Click "Load unpacked" and select your extension folder.
+4. You'll now see your extension listed.
+5. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
+6. To execute Python in the browser, simply click on your Extension icon!
+
+This guide fills a knowledge gap on this topic online, sparing developers the extensive trial-and-error process of setting up basic Chrome extensions with Python. Dive straight into experimenting with PyScript and understand the potential within the realm of browser extensions.
+
+Feel inspired? Showcase your extensions in the comments section of the mentioned article. And don't forget to star the repository—it's a much-appreciated gesture.
+
+Happy Coding!
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
