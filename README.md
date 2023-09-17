@@ -1,67 +1,57 @@
-# pyscript-local-runtime
+# SparkVidz
 
-This repository provides a framework for running PyScript and all its runtime dependencies locally e.g. to create a Chrome extension using Python, or an offline web app using PyScript without relying on internet access.
+**SparkVidz**: Instant AI-Powered Summaries for Time-Saving Playback!
 
-PyScript and its dependency Pyodide continue to evolve but this demo is frozen at Pyodide v0.21.3. You're strongly advised to check out the [latest version of PyScript](https://pyscript.net/) and there are numerous PyScript tutorials online for learning more about its capabilities - that's not the focus of this Demo!
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Development Information](#development-information)
+  - [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Credits](#credits)
+- [Contact](#contact)
 
-All the files you need to run PyScript (at v0.21.3) are in the `/runtime` directory and you can also download them on POSIX using wget...
-   ```shell
-   cd runtime
-   source setup.sh
-   ```
+## Overview
 
-or on Windows using the helper script supplied:
-   ```
-   cd runtime
-   python setup.py
-   ```
+SparkVidz transforms long-form videos into structured chapter summaries. Leveraging AI, it intelligently categorizes video content into distinct subtopics, complete with timestamps. This enables users to navigate swiftly to the pivotal moments or topics of interest, ensuring they extract the most value in the least time.
 
-## **EXAMPLE CHROME EXTENSION**
-![](popup.png)
+## Features
+- **AI-Powered Summarization**: [Details or further elaboration on this feature]
+- **Structured Chapter Breakdown**: [Details or further elaboration on this feature]
+- [Other feature]: [Details or further elaboration]
 
-This example Chrome Extension launches a Popup when clicked, renders the time using Python's `datetime` module, and provides a Python REPL session for you to play with directly inside the extension.
+## Installation
+Instructions on how to install the SparkVidz extension or software.
 
-To use this extension directly, first clone it to your local machine then
-[follow this tutorial](https://medium.com/p/6c6b0e2e1573) to load the unpacked extension into Chrome and pin it to your Extensions toolbar.
+1. [Step 1]
+2. [Step 2]
+3. ...
 
-* Icons are in the `/icons` folder.
-* PyScript/Pyodide files to run this offline or as part of an extension are in the `/runtime` folder.
-* Other magic required for Chrome to recognise this as an extension is in `manifest.json`.
-* `popup.css` is a super-simple Cascading Style Sheet which defines the appearance of the Popup - in this case simply the width, height, and background colour.
-* `popup.html` defines the page content of the Popup. It includes some simple boiler-plate HTML as well as some examples of Python code which runs under the tags `<py-script>` and/or `<py-repl>`.
-* `popup.html` must include a `<py-config>` block as follows:
+## Usage
+Guidance on how to use the SparkVidz tool once installed.
 
-   ```html
-   <py-config>
-         [[runtimes]]
-         src = "runtime/pyodide.js"
-         name = "pyodide-0.21.3"
-         lang = "python"
-   </py-config>
-   ```
+1. [Usage Step 1]
+2. [Usage Step 2]
+3. ...
 
-* `popup.html` must also include two lines to load PyScript and its default stylesheet into the extension:
+## Development Information
 
-   ```html
-   <link rel="stylesheet" href="runtime/pyscript.css" />
-   <script defer src="runtime/pyscript.js"></script>
-   ```
+### Dependencies
+- Pyscript for Python in Chrome extension
+- [Other Dependency]
 
-Further information about getting started with Chrome Extensions is available [here](https://developer.chrome.com/docs/extensions/mv3/getstarted/).
+## Contributing
+Details on how others can contribute to the SparkVidz project. Typically, you'd explain steps to fork the repo, make changes, and submit a pull request.
 
-All the best,
-Pete
+## License
+Information about the licensing of the project. If you're using a standard license, like the MIT License, you'd mention it here.
 
-https://github.com/PFython
+## Credits
+Acknowledgments for authors, contributors, and any third-party resources used in the project.
 
-## **CREDITS**
+## Contact
+Information on how to contact the maintainers or contributors of the SparkVidz project.
 
-A big "Thank You" to https://github.com/tedpatrick (Engineering Manager at Anaconda) for pointing me in the right direction.
-
-If this code helps you save time and focus on more important things, please feel free to to show your appreciation by starring the repository on Github.
-
-I'd also be delighted if you wanted to:
-
-<a href="https://www.buymeacoffee.com/pfython" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png" alt="Buy Me A Coffee" width="217px" ></a>
-
-# SparkVidsCodebase
