@@ -1,5 +1,11 @@
 body {
-  width: 40rem;
-  height: 17rem;
+  width: 48rem;
+  height: 20rem;
   background: rgb(51, 92, 150);
+}
+pre {
+  white-space: pre-wrap;   /* Wrap the text inside <pre> */
+  word-wrap: break-word;   /* Break the words */
+  max-height: 200px;       /* Set a maximum height */
+  overflow-y: auto;        /* Add a vertical scrollbar when needed */
 }

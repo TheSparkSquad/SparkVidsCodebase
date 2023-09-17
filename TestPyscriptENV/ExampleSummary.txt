@@ -1,6 +1,12 @@
 
 Summary:
-The video emphasizes the importance of having a structured approach or system for coding practice, especially for those who might feel overwhelmed by the sheer number of coding challenges or projects they could undertake. The speaker introduces a concept called the "coding menu", which is essentially a list of coding tasks or challenges organized by the amount of time and energy they would require. This menu allows an individual to select coding tasks based on their current energy and time availability. The video also highlights the significance of consistent practice in coding to improve skills over time.
+
+The video emphasizes the importance of having a structured approach or system for coding practice, especially for those who might feel overwhelmed by the sheer number of coding challenges or projects they could undertake. 
+The speaker introduces a concept called the "coding menu", 
+which is essentially a list of coding tasks or challenges organized by the amount of time and energy they would require.
+This menu allows an individual to select coding tasks based on their current energy and time availability.
+The video also highlights the significance of consistent practice in coding to improve skills over time.
+
 
 Table of Contents:
 
