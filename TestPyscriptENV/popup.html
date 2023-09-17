@@ -23,12 +23,17 @@
     <p>Please enter a video URL for summarization: </p>
     <!-- URL input field -->
     <input type="text" id="videoURL" placeholder="Enter video URL here">
-    <button id="summarizeButton" onclick="displayURL()">Summarize</button>
+    <button id="summarizeButton">Summarize</button>
     <p id="displayedURL"></p>
     <p>test</p>
     <h4 id="datetime"></h4>
     <br>
     <br>
+
+
+
+
+
     <py-script>
         from js import document as popup  # DOM for this popup page
         from datetime import datetime
@@ -39,7 +44,6 @@
         # Update an element in the popup directly
         insert_content = popup.getElementById('datetime')
         insert_content.innerHTML = f"<i>{datetime.now().isoformat()}</i>"
-
     </py-script>
 
     <py-repl>
