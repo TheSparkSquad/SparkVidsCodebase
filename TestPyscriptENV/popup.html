@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>PyScript Demo 1</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <py-config>
-        [[runtimes]]
-        src = "runtime/pyodide.js"
-        name = "pyodide-0.21.3"
-        lang = "python"
-    </py-config>
-    <link rel="icon" type="icons/png" href="/icon-128.png" />
-    <link rel="stylesheet" href="popup.css" />
-    <link rel="stylesheet" href="runtime/pyscript.css" />
-    <script defer src="runtime/pyscript.js"></script>
+  <title>SparkVidz Demo 1</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <py-config>
+      [[runtimes]]
+      src = "runtime/pyodide.js"
+      name = "pyodide-0.21.3"
+      lang = "python"
+  </py-config>
+  <link rel="icon" type="icons/png" href="/icon-128.png" />
+  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="runtime/pyscript.css" />
+  <script defer src="runtime/pyscript.js"></script>
+  <script src="script.js"></script> <!-- link to external script (to avoid security issues as per: Chromes content security policies) -->
 </head>
 
 <body>
@@ -22,10 +23,12 @@
     <p>Please enter a video URL for summarization: </p>
     <!-- URL input field -->
     <input type="text" id="videoURL" placeholder="Enter video URL here">
-    <button id="summarizeButton">Summarize</button>
-
+    <button id="summarizeButton" onclick="displayURL()">Summarize</button>
+    <p id="displayedURL"></p>
+    <p>test</p>
     <h4 id="datetime"></h4>
-
+    <br>
+    <br>
     <py-script>
         from js import document as popup  # DOM for this popup page
         from datetime import datetime
@@ -37,7 +40,6 @@
         insert_content = popup.getElementById('datetime')
         insert_content.innerHTML = f"<i>{datetime.now().isoformat()}</i>"
 
-        # You can further add functionality to capture the URL input value when the button is clicked.
     </py-script>
 
     <py-repl>
