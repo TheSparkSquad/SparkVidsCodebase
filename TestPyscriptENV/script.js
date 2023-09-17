@@ -12,7 +12,7 @@
 
 
 /**
- * Displays the entered URL and fetches the .srt content associated with it.
+ * Displays the entered URL, fetches the .srt content associated with it, and the summary from a .txt file.
  */
 function displayURL() {
     var url = document.getElementById('videoURL').value;
@@ -20,6 +20,10 @@ function displayURL() {
 
     fetchLocalSRT().then(srtContent => {
         document.getElementById('srtContent').innerText = srtContent;
+    });
+
+    fetchLocalSummary().then(summaryContent => {
+        document.getElementById('summaryContent').innerText = summaryContent;
     });
 }
 
@@ -63,12 +67,28 @@ document.addEventListener("DOMContentLoaded", function() {
  * @returns {Promise<string>} - A promise that resolves with the .srt content.
  */
 function fetchLocalSRT() {
-    return fetch('example.srt')
+    return fetch('ExampleSrt.srt')
         .then(response => response.text())
         .then(data => {
             return data;  // this will be the content of the .srt file
         })
         .catch(error => {
             console.error('Error fetching local SRT:', error);
+        });
+}
+
+/**
+ * Fetches the summary of a video from a local .txt file (for prototype purposes).
+ * 
+ * @returns {Promise<string>} - A promise that resolves with the summary content.
+ */
+function fetchLocalSummary() {
+    return fetch('ExampleSummary.txt')
+        .then(response => response.text())
+        .then(data => {
+            return data;  // this will be the content of the .txt file
+        })
+        .catch(error => {
+            console.error('Error fetching local summary:', error);
         });
 }
