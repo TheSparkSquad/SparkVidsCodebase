@@ -9,3 +9,9 @@ pre {
   max-height: 200px;       /* Set a maximum height */
   overflow-y: auto;        /* Add a vertical scrollbar when needed */
 }
+.bg-lighter-grey {
+    background-color: #dfdfdf; /* Adjust the color as needed */
+    padding: 20px; /* Add padding for spacing around the elements */
+    margin-bottom: 20px; /* Add margin to separate it from other content */
+    margin-top: 20px; /* Add margin to separate it from other content */
+}

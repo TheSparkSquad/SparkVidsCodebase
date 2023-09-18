@@ -92,3 +92,16 @@ function fetchLocalSummary() {
             console.error('Error fetching local summary:', error);
         });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggleButton');
+    const pyscriptContent = document.getElementById('pyscriptContent');
+
+    toggleButton.addEventListener('click', () => {
+        if (pyscriptContent.style.display === 'none') {
+            pyscriptContent.style.display = 'block';
+        } else {
+            pyscriptContent.style.display = 'none';
+        }
+    });
+});
