@@ -46,28 +46,34 @@
             <pre id="summaryContent" class="p-3 border bg-white"></pre>
         </div>
 
-        <h4 id="datetime" class="mb-4"></h4>
+    
+    <br><br><br>
+
+
+    <h4 id="datetime" class="mb-4"></h4>
+
+    <div class="mb-4">
+      <h5>Example of Pyscript Implementation</h5>
+      <py-script>
+          from js import document as popup  # DOM for this popup page
+          from datetime import datetime
+
+          # Use print to update the popup
+          print("This is the current date and time in ISO8601 format, courtesy of Python and PyScript.<br><br>")
+
+          # Update an element in the popup directly
+          insert_content = popup.getElementById('datetime')
+          insert_content.innerHTML = f"<i>{datetime.now().isoformat()}</i>"
+      </py-script>
+
+      <py-repl>
+          text = "This is a REPL session.<br>"
+          text += "You can add several lines of Python<br>"
+          text += "Then just press Shift-ENTER to run!"
+          print(text.upper())
+      </py-repl>
+      </div>
     </div>
-
-    <py-script>
-        from js import document as popup  # DOM for this popup page
-        from datetime import datetime
-
-        # Use print to update the popup
-        print("This is the current date and time in ISO8601 format, courtesy of Python and PyScript.<br><br>")
-
-        # Update an element in the popup directly
-        insert_content = popup.getElementById('datetime')
-        insert_content.innerHTML = f"<i>{datetime.now().isoformat()}</i>"
-    </py-script>
-
-    <py-repl>
-        text = "This is a REPL session.<br>"
-        text += "You can add several lines of Python<br>"
-        text += "Then just press Shift-ENTER to run!"
-        print(text.upper())
-    </py-repl>
-
     <!-- Include Bootstrap JS at the end -->
     <script src="js/bootstrap.min.js"></script>
 </body>
