@@ -17,7 +17,11 @@
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "web_accessible_resources": [
-    "css/bootstrap.min.css",
-    "js/bootstrap.min.js"
+    {
+      "resources":[
+      "css/bootstrap.min.css",
+      "js/bootstrap.min.js"],
+      "matches":["<all_urls>"]
+    }
 ]
 }
