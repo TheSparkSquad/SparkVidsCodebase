@@ -32,6 +32,7 @@ function displayURL() {
  * 
  * @param {string} videoURL - The URL of the video to be summarized.
  */
+
 function fetchSRT(videoURL) {
     var apiUrl = 'https://videotosrt.api/extract';
 
@@ -46,7 +47,6 @@ function fetchSRT(videoURL) {
     .then(data => {
         // Assuming the API returns the raw .srt file content.
         // Display the SRT content or allow the user to download it.
-        document.getElementById('displayedURL').innerText = data;
     })
     .catch(error => {
         console.error('Error fetching SRT:', error);
