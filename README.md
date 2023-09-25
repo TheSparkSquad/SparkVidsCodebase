@@ -65,7 +65,26 @@ Guidance on how to use the SparkVidz tool once installed.
 2. [Usage Step 2]
 3. ...
 
-## Development Information
+## Development Information / Setup Instructions
+
+
+### Load Your Extension into Chrome
+1. Enter `chrome://extensions` in the Chrome address bar.
+2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
+3. Click "Load unpacked" and select your extension folder.
+4. You'll now see your extension listed.
+5. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
+6. To execute Python in the browser, simply click on your Extension icon!
+
+   
+### Load Your Extension into Chrome
+1. Enter `chrome://extensions` in the Chrome address bar.
+2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
+3. Click "Load unpacked" and select your extension folder.
+4. You'll now see your extension listed.
+5. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
+6. To execute Python in the browser, simply click on your Extension icon!
+
 
 ### Dependencies
 - Pyscript for Python in Chrome extension
