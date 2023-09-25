@@ -7,6 +7,8 @@ This section guides you through setting up and running the SparkVidz Chrome exte
 
 
 ### Load Your Extension into Chrome
+1. Download the extension by clicking on the green "<> Code" button and selecting "Download ZIP"
+2. 
 1. Enter `chrome://extensions` in the Chrome address bar.
 2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
 3. Click "Load unpacked" and select your extension folder.
