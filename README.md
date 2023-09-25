@@ -17,10 +17,6 @@ This section guides you through setting up and running the SparkVidz Chrome exte
    
 Happy Coding!
 
-## References
-
-- [Write Chrome Extensions in Python](https://medium.com/pythoniq/write-chrome-extensions-in-python-6c6b0e2e1573) - Medium article by [Author's Name].
-
 ### Create Your Extension Files
 1. Create a new folder for your Extension.
 2. Download or clone the [pyscript-local-runtime](https://github.com/PFython/pyscript-local-runtime) repository into your new folder.
@@ -29,6 +25,10 @@ Happy Coding!
 5. If desired, add custom icons to the `/icons` directory and modify the default icon names in `manifest.json`.
 
 > **Note**: The `pyscript-local-runtime` repository uses PyScript v0.21.3. If you wish to utilize a newer version, you can modify the helper scripts `runtime/setup.sh` (for Linux/Posix) or `runtime/setup.py` (for Windows). With PyScript and Pyodide continually evolving, consider checking out recent tutorials to keep updated with their capabilities and syntax/structure.
+
+## References
+
+- [Write Chrome Extensions in Python](https://medium.com/pythoniq/write-chrome-extensions-in-python-6c6b0e2e1573) - Medium article by [Author's Name].
 
 ## Table of Contents
 - [Overview](#overview)
