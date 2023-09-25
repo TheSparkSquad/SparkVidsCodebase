@@ -8,16 +8,19 @@ This section guides you through setting up and running the SparkVidz Chrome exte
 
 ### Load Your Extension into Chrome
 1. Download the extension by clicking on the green "<> Code" button and selecting "Download ZIP"
-2. 
-1. Enter `chrome://extensions` in the Chrome address bar.
-2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
-3. Click "Load unpacked" and select your extension folder.
-4. You'll now see your extension listed.
-5. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
-6. To execute Python in the browser, simply click on your Extension icon!
+2. Extract the .zip file
+3. Enter `chrome://extensions` in the Chrome address bar.
+4. 2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
+5. Click "Load unpacked", navigate to the folder where you extracted the .zip file, and select the folder "TestPyscriptENV".
+6. You'll now see your extension listed.
+7. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
 
-   
-Happy Coding!
+## How to Use the Extension
+1. Click on the Extensions (“jigsaw”) icon in the top right of the browser
+2. Click on "SparkVidz Demo 1"
+3. In the text box "Enter video URL here", type in or paste the video URL
+4. Click the blue "Summarize" button to get your summary
+5. Read the summarized video!
 
 ### Create Your Extension Files
 1. Create a new folder for your Extension.
