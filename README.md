@@ -10,7 +10,7 @@ This section guides you through setting up and running the SparkVidz Chrome exte
 1. Download the extension by clicking on the green "<> Code" button and selecting "Download ZIP"
 2. Extract the .zip file
 3. Enter `chrome://extensions` in the Chrome address bar.
-4. 2. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
+4. Toggle the "Developer Mode" switch to ON (located at the top right of the page).
 5. Click "Load unpacked", navigate to the folder where you extracted the .zip file, and select the folder "TestPyscriptENV".
 6. You'll now see your extension listed.
 7. Click on the Extensions (“jigsaw”) icon in the top right of the browser and pin your Extension to the Extensions Launcher.
