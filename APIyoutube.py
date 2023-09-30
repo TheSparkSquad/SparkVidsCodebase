@@ -10,6 +10,14 @@ import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
 
+
+## import and read env for api key
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
+YOUTUBE_API_KEY = config['DEFAULT']['YOUTUBE_API_KEY']
+
+
 scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
 
 def main():
