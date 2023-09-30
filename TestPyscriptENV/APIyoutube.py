@@ -16,7 +16,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 YOUTUBE_API_KEY = config['DEFAULT']['YOUTUBE_API_KEY']
-
+print(YOUTUBE_API_KEY)
 
 scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
 
