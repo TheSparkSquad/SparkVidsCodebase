@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from youtube_transcript_api import YouTubeTranscriptApi
-import os
 
 #link to api
 #https://www.geeksforgeeks.org/python-downloading-captions-from-youtube/#
@@ -28,15 +27,15 @@ def format_transcript(transcript):
     """Formats the raw transcript data into a readable string."""
     if isinstance(transcript, str):  # if the input is an error string
         return transcript
-    
+
     formatted = []
     for section in transcript:
         line = f"Time: {section['start']} - {section['start'] + section['duration']}, Text: {section['text']}"
         formatted.append(line)
-    
+
     return "\n".join(formatted)
 
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True)
+
+
