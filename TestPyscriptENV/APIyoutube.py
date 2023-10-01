@@ -1,47 +1,52 @@
-# -*- coding: utf-8 -*-
-
-# Sample Python code for youtube.captions.list
-# See instructions for running these code samples locally:
-# https://developers.google.com/explorer-help/code-samples#python
-
 import os
-
 import google_auth_oauthlib.flow
-import googleapiclient.discovery
-import googleapiclient.errors
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
+# Load client secrets from a local file (downloaded from GCP Console)
+CLIENT_SECRETS_FILE = "oauthcredentials.json"
+SCOPES = ["https://www.googleapis.com/auth/youtube.force-ssl"]
 
-## import and read env for api key
-import configparser
-config = configparser.ConfigParser()
-config.read('config.ini')
-YOUTUBE_API_KEY = config['DEFAULT']['YOUTUBE_API_KEY']
-print(YOUTUBE_API_KEY)
+def authenticate_with_oauth():
+    """Authenticate using OAuth 2.0 and return the service."""
+    flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
+    credentials = flow.run_local_server(port=0)
+    return build('youtube', 'v3', credentials=credentials)
 
-scopes = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-
-def main():
-    # Disable OAuthlib's HTTPS verification when running locally.
-    # *DO NOT* leave this option enabled in production.
-    os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
-
-    api_service_name = "youtube"
-    api_version = "v3"
-    client_secrets_file = "YOUR_CLIENT_SECRET_FILE.json"
-
-    # Get credentials and create an API client
-    flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
-        client_secrets_file, scopes)
-    credentials = flow.run_console()
-    youtube = googleapiclient.discovery.build(
-        api_service_name, api_version, credentials=credentials)
-
-    request = youtube.captions().list(
-        videoId="uC2ygZxtJIQ"
+def get_caption_track_id(service, video_id, language="en"):
+    """Get caption track ID for a given video and language."""
+    request = service.captions().list(
+        part="id,snippet",
+        videoId=video_id
     )
     response = request.execute()
+    
+    for item in response.get("items", []):
+        if item["snippet"]["language"] == language:
+            return item["id"]
+    return None
 
-    print(response)
+def download_caption(service, track_id, output_file="caption.srt"):
+    """Download caption by track ID."""
+    request = service.captions().download(
+        id=track_id,
+        tfmt="srt"
+    )
+    response = request.execute()
+    
+    with open(output_file, "wb") as file:
+        file.write(response)
+
+def main():
+    service = authenticate_with_oauth()
+    
+    video_id = input("Enter the video ID: ")
+    track_id = get_caption_track_id(service, video_id)
+    if track_id:
+        download_caption(service, track_id)
+        print("Caption downloaded successfully!")
+    else:
+        print("Caption not found for the specified video and language.")
 
 if __name__ == "__main__":
     main()

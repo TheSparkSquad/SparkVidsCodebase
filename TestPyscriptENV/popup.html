@@ -69,20 +69,19 @@
 
         <py-script>
             from js import document as popup  # DOM for this popup page
-            from datetime import datetime
+            from js import extractVideoID
+            import youtubeTranscript.py
+            
+            import youtubeTranscript.py
+            #what needs to happen.... 
+            # 1) import external .js file script.js
+            # 2) pass the videoURL to the youtubeTranscipt api using the diaplayURL() script in ext file script.js
+            # 3) this should also handle outputting the response to the html 
+
+            
+
+
         
-            # Get the current date and time
-            current_datetime = datetime.now()
-        
-            # Format the date and time as "mon/day/year" (e.g., "09/18/2023")
-            formatted_datetime = current_datetime.strftime("%m/%d/%Y")
-        
-            # Use print to update the popup
-            print("This is the current date and time in the 'mon/day/year' format, courtesy of Python and PyScript.<br><br>")
-        
-            # Update an element in the popup directly
-            insert_content = popup.getElementById('datetime')
-            insert_content.innerHTML = f"<i>{formatted_datetime}</i>"
         </py-script>
 
           <br>

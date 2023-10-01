@@ -8,22 +8,43 @@
  * 
  */
 
-
-
-
 /**
  * Displays the entered URL, fetches the .srt content associated with it, and the summary from a .txt file.
  */
+function extractVideoID(url) {
+    let videoID = null;
+    const match = url.match(/v=([^&]+)/);  // Regular expression to capture value after 'v=' and before next '&'
+    if (match && match[1]) {
+        videoID = match[1];
+    }
+    return videoID;
+}
+
 function displayURL() {
+
     var url = document.getElementById('videoURL').value;
     document.getElementById('displayedURL').innerText = 'You entered: ' + url;
 
-    fetchLocalSRT().then(srtContent => {
-        document.getElementById('srtContent').innerText = srtContent;
-    });
+    // Extract video ID from the YouTube URL.
+    var videoID = extractVideoID(url);
+    
+    if (!videoID) {
+        console.error("Invalid YouTube URL.");
+        document.getElementById('srtContent').innerText = "Invalid YouTube URL.";
+        return;
+    }
 
-    fetchLocalSummary().then(summaryContent => {
-        document.getElementById('summaryContent').innerText = summaryContent;
+    // Calling the Python function
+    pyodide.runPythonAsync(`
+        import youtubeTranscript
+        transcript = youtubeTranscript.get_video_transcript("${videoID}")
+    `).then(transcript => {
+        document.getElementById('srtContent').innerText = JSON.stringify(transcript, null, 2); // Formats the JSON for display
+        // For the summary, you might want to process the transcript in a different way.
+        document.getElementById('summaryContent').innerText = "Summary will go here...";
+    }).catch(error => {
+        console.error("Error fetching transcript:", error);
+        document.getElementById('srtContent').innerText = "Failed to fetch transcript.";
     });
 }
 
