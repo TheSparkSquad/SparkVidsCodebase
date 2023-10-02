@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="popup.css" />
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-3">
+
+        <h2 class="mb-4">Welcome to SparkVidz A.I. Video Summarizer!</h2>
+        <p>Please enter a video URL for summarization: </p>
+        <div class="bg-lighter-grey p-4">
+
+
+
+
+        <form action="/" method="post" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="video_id" class="form-control" required placeholder="e.g., dQw4w9WgXcQ">
+                <div class="input-group-append">
+                    <button id="submit" class="btn btn-primary">Summarize</button>
+                </div>
+            </div>
+        </form>
+
+
+
+                <p><small>A YouTube video ID is the 11-character string in the video's URL after "v=". For example, in "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "dQw4w9WgXcQ" is the video ID.</small></p>
+            </form>
+            <hr>
+            <pre>{{ transcript }}</pre>
+        </div>
+    </div>
+</body>
+</html>
