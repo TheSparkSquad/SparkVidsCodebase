@@ -130,8 +130,19 @@ class Transcript {
         return `${hh}:${mm}:${ss},${ms}`;
     }
 
-
+    // New method to save only the text content to a .txt file
+    _saveTextToFile(textContent) {
+        fs.writeFile('captions.txt', textContent, (err) => {
+            if (err) {
+                console.error("Error writing to text file:", err);
+            } else {
+                console.log("Text saved to captions.txt");
+            }
+        });
+    }
+    
     _saveSrtToFile(srtContent) {
+        // Save the SRT content as before
         fs.writeFile('captions.srt', srtContent, (err) => {
             if (err) {
                 console.error("Error writing to file:", err);
@@ -139,8 +150,17 @@ class Transcript {
                 console.log("SRT saved to captions.srt");
             }
         });
+
+        // Extract text content from the SRT content
+        const textContent = srtContent
+            .split('\n')
+            .filter(line => !(/^\d+$/.test(line) || line.includes('-->')))
+            .join('\n')
+            .trim();
+
+        // Save the extracted text content to a .txt file
+        this._saveTextToFile(textContent);
     }
-    
 
     toString() {
         return `${this.languageCode} ("${this.language}")${this.isTranslatable ? '[TRANSLATABLE]' : ''}`;
