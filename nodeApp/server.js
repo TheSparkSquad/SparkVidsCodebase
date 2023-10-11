@@ -1,7 +1,6 @@
 const Transcript = require('./Transcript.js');
 const express = require('express');
 
-
 let fetch;
 import('node-fetch').then(module => {
     fetch = module.default;
@@ -9,11 +8,8 @@ import('node-fetch').then(module => {
 const app = express();
 const PORT = 3000;
 
-
 // Serve static files from 'public' directory
 app.use(express.static('public'));
-
-
 
 // Captions API route
 app.get('/captions', async (req, res) => {
@@ -42,7 +38,9 @@ app.get('/captions', async (req, res) => {
             true, 
             [] // For simplicity, not handling translation languages in this example
         );
-        const transcriptData = await transcript.fetch();
+
+        // Fetch the captions using the new method
+        const transcriptData = await transcript.fetchCaptionsFromData(captionsJson);
         
         // Return the fetched transcript data
         return res.json(transcriptData);
@@ -53,9 +51,7 @@ app.get('/captions', async (req, res) => {
     
 });
 
-
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
