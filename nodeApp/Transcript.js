@@ -1,3 +1,4 @@
+const xml2js = require('xml2js');
 
 class Transcript {
     constructor(httpClient, videoId, url, language, languageCode, isGenerated, translationLanguages) {
@@ -77,13 +78,51 @@ class Transcript {
         }
     }
 
-    // Use the given URL to fetch the captions directly
+
     async fetchCaptionsFromUrl(baseUrl) {
         const response = await this._httpClient(baseUrl);
         if (!response.ok) {
             throw new Error(`Failed to fetch transcript data: ${response.statusText}`);
         }
-        return await response.text();  // Assuming the response contains raw captions text
+        const xmlContent = await response.text();
+
+        return this._convertXmlToSrt(xmlContent);  // Convert XML to SRT before returning
+    }
+
+    _convertXmlToSrt(xmlContent) {
+        return new Promise((resolve, reject) => {
+            xml2js.parseString(xmlContent, (err, result) => {
+                if (err) {
+                    return reject(err);
+                }
+    
+                const texts = result.transcript.text;
+                let srtOutput = '';
+                
+                texts.forEach((text, index) => {
+                    srtOutput += (index + 1) + '\n';
+                    
+                    const start = parseFloat(text.$.start);
+                    const end = start + parseFloat(text.$.dur);
+                    
+                    srtOutput += this._formatTime(start) + ' --> ' + this._formatTime(end) + '\n';
+                    srtOutput += text._ + '\n\n';
+                });
+                
+                resolve(srtOutput);
+            });
+        });
+    }
+
+    _formatTime(seconds) {
+        const date = new Date(0);
+        date.setSeconds(seconds);
+        const hh = date.getUTCHours().toString().padStart(2, '0');
+        const mm = date.getUTCMinutes().toString().padStart(2, '0');
+        const ss = date.getUTCSeconds().toString().padStart(2, '0');
+        const ms = (seconds * 1000 % 1000).toString().padStart(3, '0');
+
+        return `${hh}:${mm}:${ss},${ms}`;
     }
 
 
