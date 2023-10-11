@@ -1,1079 +1,549 @@
-in 2005 game company its software open
+this video was brought to you by
 
-sourced the engine for their video game
+brilliant
 
-quake 3 arena
+hi welcome to another episode of Cold
 
-in that source code fans of the game
+Fusion France deleted the iPhone 12 from
 
-discovered an algorithm that was so
+sale due to high radiation levels this
 
-ingenious it quickly became famous
+raises some concerns if a phone is
 
-and the only thing this algorithm does
+released on the market shouldn&#39;t there
 
-is calculate the inverse of a square
+be a myriad of checks and balances to
 
-root
+make sure it&#39;s safe before it hits the
 
-if i had to write a piece of code that
+shelves have you ever wondered if your
 
-would calculate the inverse of a square
+smartphone could be harming your health
 
-root
+smartphones emit radiation right and
 
-this is how i would do it here i&#39;m using
+doesn&#39;t radiation cause cancer these
 
-the c
+types of questions come from common
 
-programming language the same
+confusion behind the types of radiation
 
-programming language used for quake 3.
+and their effects on the human body in
 
-but to be fair i wouldn&#39;t actually write
+this episode we&#39;ll look at how to think
 
-the square root in there myself
+about radiation how much radiation your
 
-people work more closely with the c
+phone emits if it&#39;s dangerous and why
 
-language or we see but design have
+the iPhone 12 got
 
-already figured out how to calculate the
+banned you are watching C Fusion
 
-square root
+TV
 
-and the provided algorithm to us in a
+first up what is radiation well
 
-math.h file
+radiation is just a type of energy that
 
-that we programmers can then just
+travels from one point to another either
 
-include in our program
+as waves or
 
-so what could possibly be so interesting
+particles fun fact bananas produce
 
-about the quake 3 algorithm
+radiation so does air and even your body
 
-how does its software calculate inverse
+in fact anything made of atoms produces
 
-square roots
+a little bit of radiation when some
 
-at first glance it doesn&#39;t seem to make
+unstable atoms within a given material
 
-any sense where does this number
+Decay this is called particle radiation
 
-0x5f3759df come from
+but that&#39;s not what we&#39;re talking about
 
-what does this have to do with taking
+here the kind of radiation we&#39;re talking
 
-square roots and why is there a
+about in this episode is electrom
 
-disgusting curse word in the second
+magnetic
 
-comment
+radiation the sun emits this kind of
 
-in this video i will show you how with
+radiation your smartphone does and even
 
-some cool bit manipulation
+Wi-Fi so how much radiation does your
 
-you can take in for square roots and the
+phone emit we can express the radiation
 
-algorithm that does this
+that lands on your body in watts per
 
-bears the name the fast inverse square
+kilogram this measures how energy is
 
-root
+absorbed by body tissue when exposed to
 
-first of all why would the game engine
+low levels of radiation the
 
-want to calculate 1 divided by square
+internationally recognized safe limit
 
-root of x
+for mobile phones is 4 watts per kilog
 
-if you want to implement physics and
+so it goes that your phone would have
 
-lighting or reflections in your game
+less than that amount but this is
 
-engine
+meaningless without context is this
 
-it helps if the vectors you&#39;re
+amount dangerous even if not it couldn&#39;t
 
-calculating with are normalized to have
+be a good thing to have any radiation
 
-length 1
+close to our ears or near our brains
 
-because otherwise your vectors might be
+well to answer this let&#39;s first take a
 
-too short or too long and when you do
+look at the kind of radiation our phones
 
-physics with them
+are
 
-things can go wrong
+emitting phones emit radiation in the
 
-as all of you know the length of a
+radio frequency region of the
 
-vector is square root of x squared plus
+electromagnetic spectrum the higher the
 
-y squared plus z
+frequency the higher the energy most
 
-squared if you don&#39;t happen to notice i
+phones emit radio waves in the frequency
 
-claim you&#39;ve seen this for two
+range of 1 to 3 GHz radios televisions
 
-dimensions
+radar satellites micro wave ovens
 
-it&#39;s just pythagoras theorem so if we
+computers and wireless networks use
 
-want to normalize the vector&#39;s length to
+frequencies in the same vicinity these
+
+waves have less energy than visible
+
+light this level of radiation is called
+
+nonionizing that just means that these
+
+waves don&#39;t have enough energy to strip
+
+off electrons and cause DNA damage and
+
+cancer but something happens when you
+
+increase the frequency of these waves
+
+beyond the frequency of visible light
+
+Things become
+
+dangerous evv light has energy just
+
+above visual light and it damages our
+
+skin via the sun levels at these
+
+energies and above are called ionizing
+
+radiation x-rays cosmic rays and gamma
+
+rays from radioactive material fall
+
+under this category it damages DNA ruins
+
+genes and increases the risk of cancer
+
+these are the waves to watch out for as
+
+aside it&#39;s always cool to think that
+
+x-rays Bluetooth and visible light are
+
+the same thing just with different
+
+wavelengths but some Keen eyed among you
+
+would look at this diagram and say wait
+
+a minute if microwaves can cook my food
+
+and it has a similar wavelength as my
+
+phone how is it that our brains aren&#39;t
+
+getting cooked well amongst other
+
+factors it&#39;s mainly about the power
+
+level a microwave can blast out
+
+electromagnetic waves with a figurative
+
+force of 1,200 W of power a phone on the
+
+other hand is in the range of M with
+
+that being said all of us use mobile
+
+phones so if there&#39;s any danger at all
+
+we need to get to the bottom of this has
+
+there been any increases in cancer that
+
+coincides with the use of mobile phones
+
+what if there&#39;s some mysterious
+
+radiation phenomena that affects humans
+
+a phenomena that exists in the exact
+
+conditions of using a mobile phone is
+
+there some scientific evidence to
+
+suggest that well surprisingly the
+
+answer isn&#39;t a conclusive no let&#39;s take
+
+a look we&#39;ll get to the surprising
+
+research on smartphone radiation soon
+
+but first a quick word from our sponsor
+
+brilliant if some of the scientific
+
+elements of this episode seem a bit
+
+complicated there&#39;s now a fun and easy
+
+way to learn more about them for
+
+instance when I was doing videos on AI
+
+brilliant&#39;s course on artificial neural
+
+networks was great for that brilliant
+
+has interactive stem courses in anything
+
+from maths to computer science and
+
+general science whether you just want to
+
+brush up on your learning or need a
+
+refresher for your career you can get
+
+started free for 30 days and the first
+
+200 people to sign up get 20% off an
+
+annual plan just visit the URL
+
+brilliant.org
+
+coldfusion thank you okay let&#39;s
+
+[Music]
+
+continue so the bad news first a small
+
+handful of Studies have shown that cell
+
+phones and brain tumors are
+
+statistically correlated for example a
+
+Swedish study reported statistically
+
+significant trends of increasing brain
+
+cancer risk for people who begun using
+
+mobile phones before the age of 20 the
+
+risk was proportional to the number of
+
+years and the amount of cell phones
+
+usage but before you panic most other
+
+studies indicate the opposite they state
+
+that there&#39;s no link between mobile
+
+phone use and rates of cancer another
+
+study from Sweden showed no increase in
+
+brain cancer among long-term cell phone
+
+use between the ages of 20 and 69 an
+
+international study of children
+
+diagnosed with brain cancer between the
+
+ages of 7 and 19 found no relationship
+
+between their Mobile use and an
+
+increased risk of brain cancer but for
+
+more detail we should look into the
+
+largest control study ever done on the
+
+topic researchers from 13 countries
+
+analyze questionnaires from participants
+
+in Europe Israel Canada Australia New
+
+Zealand and Japan the purpose was to
+
+determine the risk of head and neck
+
+tumors from mobile phone use the results
+
+have been analyzed by the National
+
+Cancer Institute in the US and they&#39;ve
+
+laid out their findings as follows most
+
+published analyses of the study show no
+
+overall increases in brain or other
+
+central nervous system cancers related
+
+to higher amounts of mobile phone use
+
+one analysis showed a statistically
+
+significant although small increase in
+
+the risk of brain tumors among study
+
+participants who spent the most total
+
+time on their phones although the
+
+researchers state that due to a variety
+
+of reasons this finding is
+
+inconclusive another analysis of the
+
+data of all 13 countries reported a
+
+statistically significant association
+
+between the distribution of interc
+
+cranial tumors within the brain and the
+
+self-reported location of the phone
+
+however the authors of these studies
+
+also say that these findings are
+
+inconclusive and firm conclusions can&#39;t
+
+be drawn another study of five northern
+
+European countries showed an increase of
+
+non-cancerous brain tumors in those who
+
+have used a cell phone for 10 or more
+
+years so what on Earth is going on here
+
+why are the findings so inconsistent as
+
+it turns out studying the physiological
+
+effects of mobile radiation in humans is
+
+hard there are so many ways that the
+
+data could be muddied and skewed for
+
+example
+
+participants could mistakenly say that
+
+they used their phone more or less than
+
+they actually did during a given time
+
+period it&#39;s just hard to accurately
+
+recall aside from that this
+
+participation bias people who are
+
+diagnosed with brain tumors are more
+
+likely than healthy people to enroll in
+
+a research study some other factors that
+
+can account for inconsistencies can
+
+include the assumptions used to estimate
+
+doses failure to consider temperature
+
+effects and investigators not being
+
+blinded to exposure status so even
+
+though we don&#39;t have a definitive answer
+
+on the risks of mobile phone use the
+
+culmination of these studies point to
+
+minimal effects if any and if it means
+
+anything to you the FDA CDC and FCC all
+
+say that there&#39;s no scientific evidence
+
+that phones cause cancer and that
+
+current regulations are safe quote based
+
+on our ongoing evaluation of the issue
+
+we have not found adverse health effects
+
+in hum we believe the current safety
+
+limits for cell phones are acceptable
+
+for protecting the public health end
+
+quote in any case it&#39;s probably a good
+
+thing that we don&#39;t put our phones up to
+
+our ears as much as we used
+
+[Music]
+
+to so in all of this there&#39;s one
+
+remaining question why did France ban
+
+the iPhone 12 for emitting too much
+
+radiation there must have been some
+
+glitch that caused the phones to blast
+
+out electromagnetic waves at microwave
+
+oven power levels right well not quite
+
+remember how the highest safe radiation
+
+limit for mobile phones was 4 wats per
+
+kg the iPhone 12 managed to score 5.74 W
+
+per kgam as University of wenong
+
+Professor Rodney crof says a radiation
+
+reading of 5.74 wats per kgam is many
+
+times below what would be required to
+
+cause any harm it is important to note
+
+that this will not have any impact on
+
+health to put the exposure level into
+
+context 5.7 watts per kog would only
+
+cause a temperature rise in limbs of
+
+less than 1° C and only in a very
+
+localized region this is far less than
+
+normal temperature variation during the
+
+day end quote now he didn&#39;t State how
+
+long the exposure had to be but I assume
+
+it would have to be a little while to
+
+reach a temperature change of 1° so in
+
+the end the Banning of the iPhone was a
+
+decision made on principle there was a
+
+safe limit set and apple exceeded it and
+
+got banned as a result as it stands
+
+apple is planning to release a software
+
+update to rectify the
+
+issue and with that we&#39;re at the end of
+
+the episode I hope you learned something
+
+new here and I&#39;m curious what are your
+
+thoughts are you satisfied with a
+
+consensus in the scientific Community
+
+let me know in the comment section below
+
+if you want to see anything else on
+
+science technology or business feel free
+
+to subscribe to Cold Fusion it&#39;s free
+
+anyway that&#39;s it from me my name is
+
+toogo and you&#39;ve been watching cold
+
+fusion and I&#39;ll catch you again soon for
+
+the next episode cheers guys have a good
 
 one
 
-we have to scale everything down by the
-
-length of the vector
-
-i mean obviously because if we divide
-
-the length of the vector by
-
-the length of the vector we obviously
-
-get one
-
-so all that&#39;s left to do is to divide x
-
-y and z by the length
-
-or similarly multiply by one divided by
-
-the length
-
-you might already see where this is
-
-going
-
-calculating x squared plus y squared
-
-plus z squared is easy
-
-and more importantly really fast in code
-
-you would implement it as x times
-
-x plus y times y plus z times z and all
-
-it is is just three multiplications
-
-summed up additions and multiplications
-
-are common operations
-
-that have been designed to be very fast
-
-the square root on the other hand
-
-is a terribly slow operation and
-
-division is not much better
-
-this is not good if we have several
-
-thousands of surfaces
-
-where each has a vector that needs to be
-
-normalized
-
-but this also means that here we have an
-
-opportunity for speed improvements
-
-if we can find even just an
-
-approximation of one divided by square
-
-root of x
-
-as long as it&#39;s fast we can save
-
-precious time
-
-the fast inverse square root is such an
-
-approximation
-
-with only an error of at most one
-
-percent while being
-
-three times as fast
-
-looking at the code again we can see
-
-that the beginning is pretty harmless
-
-we are given a number called number as
-
-input
-
-the number we&#39;re supposed to take the
-
-inverse square root of
-
-first with the variable i we declare a
-
-32-bit number
-
-then we declare two 32-bit decimal
-
-numbers
-
-x2 and y and then we store 1.5 into the
-
-variable
-
-with the obvious name three halves
-
-the next two lines simply copy half of
-
-the input into x2
-
-and the whole input into y but it&#39;s
-
-after that where the magic happens
-
-take a moment to look at it again
-
-well the longer you look at it the less
-
-it makes sense
-
-and the comments on the right are not
-
-really helpful either
-
-but they do hint that there are three
-
-steps to this algorithm
-
-puzzling together these three steps will
-
-show us the brilliancy of this algorithm
-
-but before we start with these three
-
-steps let&#39;s first take a look at binary
-
-numbers
-
-we said that in the first line we
-
-declare a 32-bit integer
-
-in a c programming language called a
-
-long that means we&#39;re given 32 bits
-
-and we can represent the number with it
-
-but i think you all know how to do that
-
-this is one two three four and so on
-
-up to around two billion but in the next
-
-line we declare two decimal numbers
-
-in c called a float again we&#39;re given 32
-
-bits
-
-and we have to represent the decimal
-
-number with it
-
-how would you do that if you and i were
-
-designing decimal numbers
-
-this is probably one way we would do it
-
-just put a decimal point in the middle
-
-in front of the decimal point we count
-
-in the usual way
-
-1 2 3 4 and so on and after the decimal
-
-point there are no surprises either
-
-just remind yourself that this is binary
-
-so instead of tenths hundredths
-
-and thousands we have halves fourths
-
-eights sixteens and any combination of
-
-them
-
-like a half and a fourth give you
-
-three-fourths also known as 0.75
-
-but this idea is actually terrible we&#39;ve
-
-decimated the range of numbers we can
-
-represent
-
-before we could represent numbers to
-
-around 2 billion
-
-now only to about 32 000.
-
-luckily people much smarter than us have
-
-found a better way to make use of those
-
-32 bits they took inspiration from
-
-scientific notation
-
-the same way we can systematically
-
-represent numbers like 23
-
-000 as 2.3 times 10 to the 4 and .0034
-
-as 3.4 times 10 to the minus 3
-
-we can also represent them in a binary
-
-system where here for example
-
-1 1 0 0 0 could for example be 1.1 times
-
-2 to the 4.
-
-the standard they came up with takes the
-
-name ieee
-
-
-ieee standard 754 defines the following
-
-we are as usual given 32 bits the first
-
-bit is the sign bit
-
-if it is 0 the number is positive if it
-
-is 1 the number is negative
-
-but the numbers quake 3 provides the
-
-fast inverse square root
-
-are always positive i mean obviously
-
-they&#39;re positive
-
-if we would have to calculate 1 divided
-
-by square root of -5
-
-something definitely has gone wrong so
-
-for the rest of this video
-
-we ignore the sign bit as it is always
-
-0.
-
-then the next 8 bits define the exponent
-
-that means 2 to the 1 2 to the 2 2 to
-
-the 3 2 to the 4 and so on
-
-with 8 bits we can represent numbers
-
-between 0 and 255
-
-but that&#39;s not exactly what we need we
-
-also want negative exponents
-
-this is why everything is actually
-
-shifted down by 127.
-
-so instead of 2 to the 4 we actually
-
-have 2 to the 4 minus 127
-
-if we actually want the exponent to be 4
-
-the bits need to be set to 131
-
-because 131 minus 127
-
-is 4. the last 23 bits
-
-are the mantissa as usual in scientific
-
-notation
-
-we want to denote one digit followed by
-
-the comma
-
-followed by the decimal places but with
-
-23 bits
-
-we can represent numbers from 0 to but
-
-not including
-
-2 to the 23. again that&#39;s not exactly
-
-what we need
-
-for scientific notation we need the
-
-mantissa to go from 1 to 10
-
-or in binary scientific notation to go
-
-from one to two
-
-so we could do something that we&#39;ve
-
-already done before
-
-put a comma after the first bit this
-
-automatically gives us numbers from one
-
-to two
-
-but this naive approach is wasteful you
-
-see the people that designed standard
-
-
-realized that in binary something
-
-happens that happens in no other base
-
-look at the first digit in scientific
-
-notation
-
-the first digit is by definition always
-
-non-zero
-
-but in binary there is only one digit
-
-that is not zero
-
-one and if we know that the first digit
-
-will always be a one
-
-there is no need to store it thus we can
-
-save one bit
-
-by moving the comma one digit to the
-
-left and fixing an extra one in the
-
-number it represents
-
-now our mantissa is between one and two
-
-even though 23 bits gave us numbers
-
-between 0 and 2 to the 23
-
-we scaled them down to get numbers
-
-between 0 and 1
-
-and then we added an extra 1 to get
-
-numbers between 1
-
-and 2. and this already is the main part
-
-of ieee standard 754
-
-but just the so-called normalized
-
-numbers
-
-the informed viewer knows that the
-
-standard also includes denormalized
-
-numbers
-
-not a number infinities and two zeros
-
-but we won&#39;t go into those because in
-
-quake 3 it just happens that these are
-
-never inputs into our algorithm
-
-otherwise something definitely has gone
-
-wrong anyway
-
-at no point should our game engine have
-
-to normalize a vector
-
-with infinite length for this algorithm
-
-and for the rest of this video
-
-it will be useful to think of the
-
-mantissa and exponent as the binary
-
-numbers they are
-
-if we are given two numbers one being
-
-the mantissa and 1 being the exponent
-
-23 bits and 8 bits respectively we can
-
-get a bit representation with
-
-2 to the 23 times e plus m if you think
-
-about it
-
-because multiplying e by 2 to the 23
-
-just
-
-shifts e by 23 digits
-
-so that&#39;s how one could write the bits
-
-but we get the actual
-
-number behind the bits with this formula
-
-this should seem familiar to you here we
-
-have the exponent with 127 subtracted
-
-from it
-
-and here we have the mantissa with the
-
-extra one in front
-
-but now something completely different
-
-for no obvious reason at
-
-all let&#39;s take the logarithm of that
-
-expression
-
-since we&#39;re doing computer science here
-
-we take the logarithm base 2.
-
-we simplify as much as we can take out
-
-the exponent
-
-but then we get stuck but not so the
-
-creators of quake
-
-developer gary tarouli knew a trick to
-
-get rid of the logarithm
-
-you see the trick is an approximation to
-
-log of 1 plus x
-
-for small values of x log of 1 plus x is
-
-approximately equal to
-
-x if you think about it this
-
-approximation is actually correct
-
-for x equals zero and x equals one
-
-but we&#39;ll add an additional term mu this
-
-correction term can be chosen freely
-
-again with mu equal to zero this
-
-approximation is correct at zero
-
-and one but it turns out that setting mu
-
-to this number
-
-gives the smallest error on average for
-
-numbers between zero and one
-
-so going back to our formula we apply
-
-our trick as
-
-m divided by 2 to the 23 is indeed a
-
-value between 0
-
-and 1. we rearrange a little bit more
-
-and we finally see why we did all those
-
-calculations
-
-m plus e times 2 to the 23 appears
-
-that&#39;s our bit representation so let&#39;s
-
-think
-
-about what we just did we applied the
-
-logarithm to our formula
-
-and got the bit representation just
-
-scaled and shifted by some constants
-
-so in some sense the bit representation
-
-of a number is its own logarithm
-
-armed with this knowledge we can finally
-
-start with the three steps of the fast
-
-inverse square root
-
-the first step is actually not
-
-complicated it just looks complicated
-
-because it&#39;s memory address trickery
-
-so we stored our number into y and now
-
-we want to do cool bit manipulation
-
-tricks
-
-floats unfortunately don&#39;t come with the
-
-tools we need to do bit manipulation
-
-the reason you cannot do bit
-
-manipulation on floats is that they were
-
-never designed to do so flows are
-
-inherently tied to the ieee standard 754
-
-longs on the other hand were designed to
-
-do bit manipulation on them
-
-for example here&#39;s one trick
-
-bit shifting along to the left doubles
-
-it
-
-and bit shifting it to the right halves
-
-it
-
-and yes if your number is odd you do end
-
-up rounding
-
-but hey we&#39;re willing to accept such
-
-inaccuracies as long as this means that
-
-our algorithm is fast
-
-c as pretty much all programming
-
-languages do provides a way to convert
-
-from a float to a long
-
-this conversion does what most
-
-programmers needed to do namely convert
-
-from a decimal number to an ordinary
-
-integer as best as it can do
-
-so if we give it a float like 3.33 it
-
-converts it to an integer
-
-in this case 3 but this is not the
-
-conversion we need here
-
-first of all we don&#39;t care about the
-
-resulting integer number
-
-we want to somehow keep our float and
-
-secondly
-
-the bits that lie behind our number get
-
-all messed up
-
-we don&#39;t want this conversion to mess
-
-with our bits the only thing we want to
-
-do
-
-is to put the bits one to one into a
-
-long
-
-the way you achieve this is to convert
-
-the memory address
-
-not the number first
-
-we get the address of y this is the
-
-address of a float
-
-then you convert that address from a
-
-floats address to a long&#39;s address
-
-the address itself doesn&#39;t change but c
-
-now thinks that the number living at
-
-that address is now along
-
-so then you read what&#39;s written at that
-
-address because
-
-c now thinks that this is an address of
-
-a long it will read the number at that
-
-address as if it were long
-
-like this we tricked c by lifting the
-
-conversion away from the number itself
-
-to the address of that number and that&#39;s
-
-how we get the bits of a number into i
-
-i don&#39;t know what else to say that&#39;s
-
-just how c works so let&#39;s just go to the
-
-next step
-
-the intuition behind the second step is
-
-the following
-
-remind yourself bit shifting a number to
-
-the left doubles it
-
-and shifting it to the right halves it
-
-but what would happen if we did
-
-something like this to an exponent
-
-doubling an exponent squares the number
-
-and halving the exponent gives us the
-
-square root
-
-but now also negating the exponent gives
-
-us 1 divided by square root of x
-
-that&#39;s exactly what we need so let&#39;s
-
-remind ourselves what our goal is here
-
-we have our numbers stored into y and
-
-our goal was to calculate 1 divided by
-
-square root of a y
-
-as i&#39;ve already said calculating this
-
-directly is too hard and too expensive
-
-but we&#39;ve extracted the bits from y and
-
-we&#39;ve seen with the ieee standard 754
-
-that the bits of a number are in some
-
-sense its own logarithm
-
-that means in i we have stored log of y
-
-up to some scaling and shifting i claim
-
-that our problem becomes
-
-way easier if we work with logs instead
-
-of trying so hard to calculate 1 divided
-
-by square root of y
-
-we instead calculate log of 1 divided by
-
-square root of y
-
-we rewrite this to log of y to the power
-
-of minus a half
-
-so we can take out the exponent
-
-calculating this
-
-is stupidly easy you might think oh no
-
-we have a division in there
-
-didn&#39;t you say in the beginning that
-
-divisions are slow well yes but remember
-
-that we can do bit shifts now
-
-instead of dividing by 2 we just bit
-
-shift once to the right
-
-this already explains why we do minus i
-
-bit shifted the ones to the right
-
-but why is this number 0x5f37590f here
+here we go go
 
 again
 
-well because our logarithm is actually
+[Music]
 
-scaled and shifted
+I cold fusion it&#39;s new
 
-so let&#39;s calculate and understand where
-
-it comes from
-
-let gamma be our solution then we know
-
-that log of gamma equals to log of y to
-
-the power minus a half
-
-which equals to minus a half times log
-
-of y
-
-now we replace the logarithm with the
-
-bit representation
-
-and then we just solve for the bits of
-
-gamma i&#39;ll spare us the details but this
-
-is the result
-
-the magic number turns out to be the
-
-remnants of the error term mu
-
-the scaling factor and the shifting
-
-now we have the bits of resolution and
-
-we can just reverse the steps from the
-
-evil bit hack
-
-to get back the actual solution from
-
-those bits
-
-well actually not the exact solution
-
-just an approximation
-
-this is why we need the third step
-
-after the previous step we have a pretty
-
-decent approximation
-
-but we did pick up some error terms here
-
-and there but thanks to newton&#39;s method
-
-we can make a really good
-
-approximation out of a decent one
-
-newton&#39;s method is a technique that
-
-finds a root for a given function
-
-meaning it finds an x for which f x
-
-equals zero
-
-it does so by taking an approximation
-
-and returning a better approximation
-
-and usually you repeat this process
-
-until you&#39;re close enough to the actual
-
-solution
-
-but it turns out that here we are
-
-already close enough to the actual
-
-solution
-
-that one iteration suffices to get an
-
-error within one percent
-
-the only things newton&#39;s method needs is
-
-the function and its derivative
-
-and what newton&#39;s method does is that it
-
-takes an x value
-
-and tries to guess by how much it is off
-
-from being a root
-
-it does so by calculating f of x and its
-
-derivative
-
-we can write f of x as y and the
-
-derivative as
-
-d y over dx
-
-we have the ratio between y and the x
-
-offset
-
-and y itself so to get the x offset
-
-we just divide y by the ratio
-
-so then we simply subtract this offset
-
-to get our new
-
-x the informed viewer can now verify
-
-that the last line is one such newton
-
-iteration
-
-applied to the function f of y equals 1
-
-divided by y
-
-squared minus x notice that y being a
-
-root of this function is
-
-equivalent to y being the inverse square
-
-root of x
-
-i really encourage you to verify this
-
-last line of code
-
-since it&#39;s really surprising that even
-
-though both the function
-
-and newton&#39;s method have a division in
-
-them the code does not
-
-which means that our algorithm is and
-
-stays fast
-
-now we finally understand the fast
-
-inverse square root
-
-it only took us the knowledge of the
-
-ieee standard 754
-
-a trick to outsmart the c programming
-
-language magic bit operations
-
-and the calculus behind newton&#39;s method
-
-you
+thinking

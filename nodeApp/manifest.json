@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Captions Fetcher and Summarizer",
+    "version": "1.0",
+    "description": "Fetches and summarizes captions from YouTube videos.",
+    "permissions": [
+      "activeTab"
+    ],
+    "browser_action": {
+      "default_icon": "public/img/icon48.png",
+      "default_popup": "public/index.html"
+    },
+    "icons": {
+      "48": "public/img/icon48.png",
+      "128": "public/img/icon128.png"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  }
+  

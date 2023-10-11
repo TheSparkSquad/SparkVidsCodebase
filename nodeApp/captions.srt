@@ -1,2164 +1,1100 @@
 1
-00:00:00,080 --> 00:00:04,560.0000000000009
-in 2005 game company its software open
+00:00:01,439 --> 00:00:05,200
+this video was brought to you by
 
 2
-00:00:02,879 --> 00:00:06,080
-sourced the engine for their video game
+00:00:03,680 --> 00:00:08,519
+brilliant
 
 3
-00:00:04,560 --> 00:00:07,680
-quake 3 arena
+00:00:05,200 --> 00:00:11,320
+hi welcome to another episode of Cold
 
 4
-00:00:06,080 --> 00:00:09,360
-in that source code fans of the game
+00:00:08,519 --> 00:00:14,480
+Fusion France deleted the iPhone 12 from
 
 5
-00:00:07,680 --> 00:00:12,000
-discovered an algorithm that was so
+00:00:11,320 --> 00:00:16,840
+sale due to high radiation levels this
 
 6
-00:00:09,360 --> 00:00:13,678.9999999999982
-ingenious it quickly became famous
+00:00:14,480 --> 00:00:18,439
+raises some concerns if a phone is
 
 7
-00:00:12,000 --> 00:00:15,519
-and the only thing this algorithm does
+00:00:16,840 --> 00:00:20,279
+released on the market shouldn&#39;t there
 
 8
-00:00:13,679 --> 00:00:17,119
-is calculate the inverse of a square
+00:00:18,439 --> 00:00:22,759.9999999999964
+be a myriad of checks and balances to
 
 9
-00:00:15,519 --> 00:00:18,720
-root
+00:00:20,279 --> 00:00:25,080
+make sure it&#39;s safe before it hits the
 
 10
-00:00:17,119 --> 00:00:20,320
-if i had to write a piece of code that
+00:00:22,760 --> 00:00:27,240.00000000000364
+shelves have you ever wondered if your
 
 11
-00:00:18,720 --> 00:00:20,720
-would calculate the inverse of a square
+00:00:25,080 --> 00:00:29,598.9999999999964
+smartphone could be harming your health
 
 12
-00:00:20,320 --> 00:00:23,359
-root
+00:00:27,240 --> 00:00:32,519.9999999999964
+smartphones emit radiation right and
 
 13
-00:00:20,720 --> 00:00:23,759.9999999999964
-this is how i would do it here i&#39;m using
+00:00:29,599 --> 00:00:34,480.0000000000073
+doesn&#39;t radiation cause cancer these
 
 14
-00:00:23,359 --> 00:00:25,199
-the c
+00:00:32,520.0000000000036 --> 00:00:36,680.0000000000073
+types of questions come from common
 
 15
-00:00:23,760 --> 00:00:27,599
-programming language the same
+00:00:34,480 --> 00:00:39,319.9999999999927
+confusion behind the types of radiation
 
 16
-00:00:25,199 --> 00:00:29,439
-programming language used for quake 3.
+00:00:36,680 --> 00:00:41,120
+and their effects on the human body in
 
 17
-00:00:27,599 --> 00:00:31,759.9999999999964
-but to be fair i wouldn&#39;t actually write
+00:00:39,320 --> 00:00:43,360
+this episode we&#39;ll look at how to think
 
 18
-00:00:29,439 --> 00:00:33,440
-the square root in there myself
+00:00:41,120 --> 00:00:45,760
+about radiation how much radiation your
 
 19
-00:00:31,760 --> 00:00:35,280
-people work more closely with the c
+00:00:43,360 --> 00:00:49,000
+phone emits if it&#39;s dangerous and why
 
 20
-00:00:33,440 --> 00:00:36,960
-language or we see but design have
+00:00:45,760 --> 00:00:49,000
+the iPhone 12 got
 
 21
-00:00:35,280 --> 00:00:37,680
-already figured out how to calculate the
+00:00:50,640 --> 00:00:55,280
+banned you are watching C Fusion
 
 22
-00:00:36,960 --> 00:00:39,600
-square root
+00:00:58,920 --> 00:01:04,119
+TV
 
 23
-00:00:37,680 --> 00:00:40,960
-and the provided algorithm to us in a
+00:01:00,760 --> 00:01:06,158.99999999998545
+first up what is radiation well
 
 24
-00:00:39,600 --> 00:00:42,640
-math.h file
+00:01:04,119 --> 00:01:08,119
+radiation is just a type of energy that
 
 25
-00:00:40,960 --> 00:00:44,800
-that we programmers can then just
+00:01:06,159 --> 00:01:09,439
+travels from one point to another either
 
 26
-00:00:42,640 --> 00:00:46,640
-include in our program
+00:01:08,119 --> 00:01:12,240
+as waves or
 
 27
-00:00:44,800 --> 00:00:48,718.9999999999927
-so what could possibly be so interesting
+00:01:09,439 --> 00:01:15,279.99999999998545
+particles fun fact bananas produce
 
 28
-00:00:46,640 --> 00:00:50,640
-about the quake 3 algorithm
+00:01:12,240 --> 00:01:17,679.9999999999854
+radiation so does air and even your body
 
 29
-00:00:48,719 --> 00:00:53,280
-how does its software calculate inverse
+00:01:15,280 --> 00:01:19,360
+in fact anything made of atoms produces
 
 30
-00:00:50,640 --> 00:00:53,280
-square roots
+00:01:17,680 --> 00:01:21,439
+a little bit of radiation when some
 
 31
-00:00:55,840 --> 00:01:01,480.0000000000073
-at first glance it doesn&#39;t seem to make
+00:01:19,360 --> 00:01:24,360
+unstable atoms within a given material
 
 32
-00:00:57,520 --> 00:01:03,680.0000000000073
-any sense where does this number
+00:01:21,439 --> 00:01:25,839.9999999999854
+Decay this is called particle radiation
 
 33
-00:01:01,480 --> 00:01:05,280
-0x5f3759df come from
+00:01:24,360 --> 00:01:27,880
+but that&#39;s not what we&#39;re talking about
 
 34
-00:01:03,680 --> 00:01:07,360
-what does this have to do with taking
+00:01:25,840 --> 00:01:29,960.0000000000146
+here the kind of radiation we&#39;re talking
 
 35
-00:01:05,280 --> 00:01:08,960.0000000000146
-square roots and why is there a
+00:01:27,880 --> 00:01:30,880
+about in this episode is electrom
 
 36
-00:01:07,360 --> 00:01:10,080
-disgusting curse word in the second
+00:01:29,960 --> 00:01:33,158.99999999998545
+magnetic
 
 37
-00:01:08,960 --> 00:01:12,158.99999999998545
-comment
+00:01:30,880 --> 00:01:35,920
+radiation the sun emits this kind of
 
 38
-00:01:10,080 --> 00:01:13,840
-in this video i will show you how with
+00:01:33,159 --> 00:01:38,479.00000000001455
+radiation your smartphone does and even
 
 39
-00:01:12,159 --> 00:01:16,80.00000000001455
-some cool bit manipulation
+00:01:35,920 --> 00:01:41,240.00000000001455
+Wi-Fi so how much radiation does your
 
 40
-00:01:13,840 --> 00:01:17,439
-you can take in for square roots and the
+00:01:38,479 --> 00:01:43,158.99999999998545
+phone emit we can express the radiation
 
 41
-00:01:16,080 --> 00:01:19,679.9999999999854
-algorithm that does this
+00:01:41,240 --> 00:01:45,360
+that lands on your body in watts per
 
 42
-00:01:17,439 --> 00:01:21,919.9999999999854
-bears the name the fast inverse square
+00:01:43,159 --> 00:01:47,280
+kilogram this measures how energy is
 
 43
-00:01:19,680 --> 00:01:21,920
-root
+00:01:45,360 --> 00:01:49,320
+absorbed by body tissue when exposed to
 
 44
-00:01:23,280 --> 00:01:26,880
-first of all why would the game engine
+00:01:47,280 --> 00:01:51,119
+low levels of radiation the
 
 45
-00:01:25,119 --> 00:01:28,159
-want to calculate 1 divided by square
+00:01:49,320 --> 00:01:54,320
+internationally recognized safe limit
 
 46
-00:01:26,880 --> 00:01:29,839.9999999999854
-root of x
+00:01:51,119 --> 00:01:56,079
+for mobile phones is 4 watts per kilog
 
 47
-00:01:28,159 --> 00:01:31,439
-if you want to implement physics and
+00:01:54,320 --> 00:01:58,000
+so it goes that your phone would have
 
 48
-00:01:29,840 --> 00:01:32,000
-lighting or reflections in your game
+00:01:56,079 --> 00:02:00,360
+less than that amount but this is
 
 49
-00:01:31,439 --> 00:01:33,199.99999999998545
-engine
+00:01:58,000 --> 00:02:03,479
+meaningless without context is this
 
 50
-00:01:32,000 --> 00:01:35,200
-it helps if the vectors you&#39;re
+00:02:00,360 --> 00:02:05,719
+amount dangerous even if not it couldn&#39;t
 
 51
-00:01:33,200 --> 00:01:37,840
-calculating with are normalized to have
+00:02:03,479 --> 00:02:08,560
+be a good thing to have any radiation
 
 52
-00:01:35,200 --> 00:01:37,840
-length 1
+00:02:05,719 --> 00:02:10,440
+close to our ears or near our brains
 
 53
-00:01:37,920 --> 00:01:41,520
-because otherwise your vectors might be
+00:02:08,560 --> 00:02:12,120
+well to answer this let&#39;s first take a
 
 54
-00:01:39,680 --> 00:01:42,399
-too short or too long and when you do
+00:02:10,440 --> 00:02:12,959
+look at the kind of radiation our phones
 
 55
-00:01:41,520 --> 00:01:45,439
-physics with them
+00:02:12,120 --> 00:02:15,560
+are
 
 56
-00:01:42,399 --> 00:01:45,439
-things can go wrong
+00:02:12,959 --> 00:02:17,040
+emitting phones emit radiation in the
 
 57
-00:01:47,280 --> 00:01:50,880
-as all of you know the length of a
+00:02:15,560 --> 00:02:19,160
+radio frequency region of the
 
 58
-00:01:49,119 --> 00:01:51,920
-vector is square root of x squared plus
+00:02:17,040 --> 00:02:21,679.9999999999709
+electromagnetic spectrum the higher the
 
 59
-00:01:50,880 --> 00:01:54,720
-y squared plus z
+00:02:19,160 --> 00:02:23,799.9999999999709
+frequency the higher the energy most
 
 60
-00:01:51,920 --> 00:01:55,920
-squared if you don&#39;t happen to notice i
+00:02:21,680 --> 00:02:27,760.0000000000291
+phones emit radio waves in the frequency
 
 61
-00:01:54,720 --> 00:01:56,880
-claim you&#39;ve seen this for two
+00:02:23,800 --> 00:02:30,840
+range of 1 to 3 GHz radios televisions
 
 62
-00:01:55,920 --> 00:01:59,840
-dimensions
+00:02:27,760 --> 00:02:33,160
+radar satellites micro wave ovens
 
 63
-00:01:56,880 --> 00:02:01,600
-it&#39;s just pythagoras theorem so if we
+00:02:30,840 --> 00:02:35,800
+computers and wireless networks use
 
 64
-00:01:59,840 --> 00:02:02,159
-want to normalize the vector&#39;s length to
+00:02:33,160 --> 00:02:37,920
+frequencies in the same vicinity these
 
 65
-00:02:01,600 --> 00:02:03,839.9999999999854
-one
+00:02:35,800 --> 00:02:41,360
+waves have less energy than visible
 
 66
-00:02:02,159 --> 00:02:05,280
-we have to scale everything down by the
+00:02:37,920 --> 00:02:43,440
+light this level of radiation is called
 
 67
-00:02:03,840 --> 00:02:07,680
-length of the vector
+00:02:41,360 --> 00:02:45,159.0000000000291
+nonionizing that just means that these
 
 68
-00:02:05,280 --> 00:02:09,119
-i mean obviously because if we divide
+00:02:43,440 --> 00:02:47,319
+waves don&#39;t have enough energy to strip
 
 69
-00:02:07,680 --> 00:02:11,39.00000000001455
-the length of the vector by
+00:02:45,159 --> 00:02:49,399.9999999999709
+off electrons and cause DNA damage and
 
 70
-00:02:09,119 --> 00:02:12,319
-the length of the vector we obviously
+00:02:47,319 --> 00:02:51,359.9999999999709
+cancer but something happens when you
 
 71
-00:02:11,38.99999999998545 --> 00:02:14,559.9999999999709
-get one
+00:02:49,400 --> 00:02:53,480.0000000000291
+increase the frequency of these waves
 
 72
-00:02:12,319 --> 00:02:16,160
-so all that&#39;s left to do is to divide x
+00:02:51,360 --> 00:02:56,159.0000000000291
+beyond the frequency of visible light
 
 73
-00:02:14,560 --> 00:02:19,040
-y and z by the length
+00:02:53,480 --> 00:02:56,159
+Things become
 
 74
-00:02:16,160 --> 00:02:20,160
-or similarly multiply by one divided by
+00:02:56,400 --> 00:03:01,000
+dangerous evv light has energy just
 
 75
-00:02:19,040 --> 00:02:21,599
-the length
+00:02:59,040 --> 00:03:03,640
+above visual light and it damages our
 
 76
-00:02:20,160 --> 00:02:23,840
-you might already see where this is
+00:03:01,000 --> 00:03:06,040
+skin via the sun levels at these
 
 77
-00:02:21,599 --> 00:02:23,840
-going
+00:03:03,640 --> 00:03:09,599
+energies and above are called ionizing
 
 78
-00:02:25,280 --> 00:02:28,560
-calculating x squared plus y squared
+00:03:06,040 --> 00:03:11,798.9999999999709
+radiation x-rays cosmic rays and gamma
 
 79
-00:02:27,040 --> 00:02:32,000
-plus z squared is easy
+00:03:09,599 --> 00:03:15,238.9999999999709
+rays from radioactive material fall
 
 80
-00:02:28,560 --> 00:02:33,599
-and more importantly really fast in code
+00:03:11,799 --> 00:03:18,640.0000000000291
+under this category it damages DNA ruins
 
 81
-00:02:32,000 --> 00:02:36,400
-you would implement it as x times
+00:03:15,239 --> 00:03:20,920.0000000000291
+genes and increases the risk of cancer
 
 82
-00:02:33,599 --> 00:02:38,319
-x plus y times y plus z times z and all
+00:03:18,640 --> 00:03:23,238.9999999999709
+these are the waves to watch out for as
 
 83
-00:02:36,400 --> 00:02:41,440
-it is is just three multiplications
+00:03:20,920 --> 00:03:26,159
+aside it&#39;s always cool to think that
 
 84
-00:02:38,319 --> 00:02:42,958.9999999999709
-summed up additions and multiplications
+00:03:23,239 --> 00:03:28,159
+x-rays Bluetooth and visible light are
 
 85
-00:02:41,440 --> 00:02:45,840
-are common operations
+00:03:26,159 --> 00:03:30,599
+the same thing just with different
 
 86
-00:02:42,959 --> 00:02:47,280
-that have been designed to be very fast
+00:03:28,159 --> 00:03:32,920
+wavelengths but some Keen eyed among you
 
 87
-00:02:45,840 --> 00:02:49,280
-the square root on the other hand
+00:03:30,599 --> 00:03:35,560
+would look at this diagram and say wait
 
 88
-00:02:47,280 --> 00:02:51,360
-is a terribly slow operation and
+00:03:32,920 --> 00:03:37,439
+a minute if microwaves can cook my food
 
 89
-00:02:49,280 --> 00:02:53,200
-division is not much better
+00:03:35,560 --> 00:03:40,120
+and it has a similar wavelength as my
 
 90
-00:02:51,360 --> 00:02:54,800
-this is not good if we have several
+00:03:37,439 --> 00:03:42,000
+phone how is it that our brains aren&#39;t
 
 91
-00:02:53,200 --> 00:02:56,480
-thousands of surfaces
+00:03:40,120 --> 00:03:43,799
+getting cooked well amongst other
 
 92
-00:02:54,800 --> 00:02:58,080
-where each has a vector that needs to be
+00:03:42,000 --> 00:03:46,120
+factors it&#39;s mainly about the power
 
 93
-00:02:56,480 --> 00:03:00,480
-normalized
+00:03:43,799 --> 00:03:48,319.0000000000291
+level a microwave can blast out
 
 94
-00:02:58,080 --> 00:03:02,959
-but this also means that here we have an
+00:03:46,120 --> 00:03:52,079
+electromagnetic waves with a figurative
 
 95
-00:03:00,480 --> 00:03:04,560
-opportunity for speed improvements
+00:03:48,319 --> 00:03:55,119.9999999999709
+force of 1,200 W of power a phone on the
 
 96
-00:03:02,959 --> 00:03:06,720
-if we can find even just an
+00:03:52,079 --> 00:03:57,480.0000000000291
+other hand is in the range of M with
 
 97
-00:03:04,560 --> 00:03:07,840
-approximation of one divided by square
+00:03:55,120 --> 00:04:00,239
+that being said all of us use mobile
 
 98
-00:03:06,720 --> 00:03:10,159
-root of x
+00:03:57,480 --> 00:04:02,599
+phones so if there&#39;s any danger at all
 
 99
-00:03:07,840 --> 00:03:11,519
-as long as it&#39;s fast we can save
+00:04:00,239 --> 00:04:04,920.0000000000291
+we need to get to the bottom of this has
 
 100
-00:03:10,159 --> 00:03:13,679.9999999999709
-precious time
+00:04:02,599 --> 00:04:07,399.9999999999709
+there been any increases in cancer that
 
 101
-00:03:11,519 --> 00:03:14,640.0000000000291
-the fast inverse square root is such an
+00:04:04,920 --> 00:04:08,760
+coincides with the use of mobile phones
 
 102
-00:03:13,680 --> 00:03:16,720
-approximation
+00:04:07,400 --> 00:04:11,000
+what if there&#39;s some mysterious
 
 103
-00:03:14,640 --> 00:03:18,159
-with only an error of at most one
+00:04:08,760 --> 00:04:13,120
+radiation phenomena that affects humans
 
 104
-00:03:16,720 --> 00:03:21,440
-percent while being
+00:04:11,000 --> 00:04:15,239
+a phenomena that exists in the exact
 
 105
-00:03:18,159 --> 00:03:21,440
-three times as fast
+00:04:13,120 --> 00:04:16,798.9999999999709
+conditions of using a mobile phone is
 
 106
-00:03:22,319 --> 00:03:26,480
-looking at the code again we can see
+00:04:15,239 --> 00:04:19,639
+there some scientific evidence to
 
 107
-00:03:24,159 --> 00:03:28,879
-that the beginning is pretty harmless
+00:04:16,798.9999999999709 --> 00:04:22,400
+suggest that well surprisingly the
 
 108
-00:03:26,480 --> 00:03:29,518.9999999999709
-we are given a number called number as
+00:04:19,639 --> 00:04:24,440
+answer isn&#39;t a conclusive no let&#39;s take
 
 109
-00:03:28,879 --> 00:03:30,959
-input
+00:04:22,400 --> 00:04:26,799.9999999999418
+a look we&#39;ll get to the surprising
 
 110
-00:03:29,519 --> 00:03:33,040
-the number we&#39;re supposed to take the
+00:04:24,440 --> 00:04:29,000
+research on smartphone radiation soon
 
 111
-00:03:30,959 --> 00:03:35,280
-inverse square root of
+00:04:26,800 --> 00:04:30,919
+but first a quick word from our sponsor
 
 112
-00:03:33,040 --> 00:03:37,679.9999999999709
-first with the variable i we declare a
+00:04:29,000 --> 00:04:32,759
+brilliant if some of the scientific
 
 113
-00:03:35,280 --> 00:03:40,080
-32-bit number
+00:04:30,919 --> 00:04:34,960
+elements of this episode seem a bit
 
 114
-00:03:37,680 --> 00:03:40,720
-then we declare two 32-bit decimal
+00:04:32,759 --> 00:04:36,800
+complicated there&#39;s now a fun and easy
 
 115
-00:03:40,080 --> 00:03:44,560
-numbers
+00:04:34,960 --> 00:04:39,039
+way to learn more about them for
 
 116
-00:03:40,720 --> 00:03:45,200
-x2 and y and then we store 1.5 into the
+00:04:36,800 --> 00:04:40,840.0000000000582
+instance when I was doing videos on AI
 
 117
-00:03:44,560 --> 00:03:48,959
-variable
+00:04:39,039 --> 00:04:43,240
+brilliant&#39;s course on artificial neural
 
 118
-00:03:45,200 --> 00:03:50,959
-with the obvious name three halves
+00:04:40,840 --> 00:04:45,359.9999999999418
+networks was great for that brilliant
 
 119
-00:03:48,959 --> 00:03:52,480
-the next two lines simply copy half of
+00:04:43,240 --> 00:04:47,120
+has interactive stem courses in anything
 
 120
-00:03:50,959 --> 00:03:54,640.0000000000291
-the input into x2
+00:04:45,360 --> 00:04:49,120
+from maths to computer science and
 
 121
-00:03:52,480 --> 00:03:57,119.9999999999709
-and the whole input into y but it&#39;s
+00:04:47,120 --> 00:04:50,680
+general science whether you just want to
 
 122
-00:03:54,640 --> 00:04:01,839.9999999999709
-after that where the magic happens
+00:04:49,120 --> 00:04:52,680
+brush up on your learning or need a
 
 123
-00:03:57,120 --> 00:04:01,840
-take a moment to look at it again
+00:04:50,680 --> 00:04:55,600
+refresher for your career you can get
 
 124
-00:04:01,920 --> 00:04:05,280
-well the longer you look at it the less
+00:04:52,680 --> 00:04:57,840.0000000000582
+started free for 30 days and the first
 
 125
-00:04:04,000 --> 00:04:06,720
-it makes sense
+00:04:55,600 --> 00:05:00,199
+200 people to sign up get 20% off an
 
 126
-00:04:05,280 --> 00:04:08,560
-and the comments on the right are not
+00:04:57,840 --> 00:05:02,039
+annual plan just visit the URL
 
 127
-00:04:06,720 --> 00:04:10,239
-really helpful either
+00:05:00,199 --> 00:05:05,180
+brilliant.org
 
 128
-00:04:08,560 --> 00:04:12,159
-but they do hint that there are three
+00:05:02,039 --> 00:05:08,120
+coldfusion thank you okay let&#39;s
 
 129
-00:04:10,239 --> 00:04:14,400
-steps to this algorithm
+00:05:05,180 --> 00:05:11,400.0000000000582
+[Music]
 
 130
-00:04:12,159 --> 00:04:18,238.9999999999709
-puzzling together these three steps will
+00:05:08,120 --> 00:05:13,400
+continue so the bad news first a small
 
 131
-00:04:14,400 --> 00:04:19,840.0000000000291
-show us the brilliancy of this algorithm
+00:05:11,400 --> 00:05:14,799.9999999999418
+handful of Studies have shown that cell
 
 132
-00:04:18,238.9999999999709 --> 00:04:21,839.9999999999709
-but before we start with these three
+00:05:13,400 --> 00:05:17,440
+phones and brain tumors are
 
 133
-00:04:19,839.9999999999709 --> 00:04:22,880
-steps let&#39;s first take a look at binary
+00:05:14,800 --> 00:05:19,880
+statistically correlated for example a
 
 134
-00:04:21,839.9999999999709 --> 00:04:24,400
-numbers
+00:05:17,440 --> 00:05:21,639
+Swedish study reported statistically
 
 135
-00:04:22,880 --> 00:04:26,400
-we said that in the first line we
+00:05:19,880 --> 00:05:23,719.9999999999418
+significant trends of increasing brain
 
 136
-00:04:24,400 --> 00:04:28,239.9999999999418
-declare a 32-bit integer
+00:05:21,639 --> 00:05:26,199
+cancer risk for people who begun using
 
 137
-00:04:26,400 --> 00:04:31,359.9999999999418
-in a c programming language called a
+00:05:23,720 --> 00:05:28,000
+mobile phones before the age of 20 the
 
 138
-00:04:28,240 --> 00:04:33,600
-long that means we&#39;re given 32 bits
+00:05:26,199 --> 00:05:29,680
+risk was proportional to the number of
 
 139
-00:04:31,360 --> 00:04:36,80.00000000005821
-and we can represent the number with it
+00:05:28,000 --> 00:05:32,440
+years and the amount of cell phones
 
 140
-00:04:33,600 --> 00:04:39,280.0000000000582
-but i think you all know how to do that
+00:05:29,680 --> 00:05:34,600
+usage but before you panic most other
 
 141
-00:04:36,080 --> 00:04:42,639
-this is one two three four and so on
+00:05:32,440 --> 00:05:36,039
+studies indicate the opposite they state
 
 142
-00:04:39,280 --> 00:04:44,799.9999999999418
-up to around two billion but in the next
+00:05:34,600 --> 00:05:38,560
+that there&#39;s no link between mobile
 
 143
-00:04:42,639 --> 00:04:48,479
-line we declare two decimal numbers
+00:05:36,039 --> 00:05:40,880
+phone use and rates of cancer another
 
 144
-00:04:44,800 --> 00:04:48,960.0000000000582
-in c called a float again we&#39;re given 32
+00:05:38,560 --> 00:05:42,960
+study from Sweden showed no increase in
 
 145
-00:04:48,479 --> 00:04:50,560
-bits
+00:05:40,880 --> 00:05:46,280
+brain cancer among long-term cell phone
 
 146
-00:04:48,960 --> 00:04:52,159.9999999999418
-and we have to represent the decimal
+00:05:42,960 --> 00:05:47,880
+use between the ages of 20 and 69 an
 
 147
-00:04:50,560 --> 00:04:54,960
-number with it
+00:05:46,280 --> 00:05:49,679.9999999999418
+international study of children
 
 148
-00:04:52,160 --> 00:04:56,479.0000000000582
-how would you do that if you and i were
+00:05:47,880 --> 00:05:52,400
+diagnosed with brain cancer between the
 
 149
-00:04:54,960 --> 00:04:59,120
-designing decimal numbers
+00:05:49,680 --> 00:05:53,919
+ages of 7 and 19 found no relationship
 
 150
-00:04:56,479 --> 00:05:01,599.9999999999418
-this is probably one way we would do it
+00:05:52,400 --> 00:05:56,280
+between their Mobile use and an
 
 151
-00:04:59,120 --> 00:05:03,280.0000000000582
-just put a decimal point in the middle
+00:05:53,919 --> 00:05:57,880
+increased risk of brain cancer but for
 
 152
-00:05:01,600 --> 00:05:04,639
-in front of the decimal point we count
+00:05:56,280 --> 00:05:59,758.9999999999418
+more detail we should look into the
 
 153
-00:05:03,280 --> 00:05:08,479
-in the usual way
+00:05:57,880 --> 00:06:02,400
+largest control study ever done on the
 
 154
-00:05:04,639 --> 00:05:11,039
-1 2 3 4 and so on and after the decimal
+00:05:59,759 --> 00:06:04,240
+topic researchers from 13 countries
 
 155
-00:05:08,479 --> 00:05:13,120
-point there are no surprises either
+00:06:02,400 --> 00:06:07,960
+analyze questionnaires from participants
 
 156
-00:05:11,039 --> 00:05:14,960
-just remind yourself that this is binary
+00:06:04,240 --> 00:06:10,319
+in Europe Israel Canada Australia New
 
 157
-00:05:13,120 --> 00:05:17,360
-so instead of tenths hundredths
+00:06:07,960 --> 00:06:11,919
+Zealand and Japan the purpose was to
 
 158
-00:05:14,960 --> 00:05:19,758.9999999999418
-and thousands we have halves fourths
+00:06:10,319 --> 00:06:14,560
+determine the risk of head and neck
 
 159
-00:05:17,360 --> 00:05:20,560
-eights sixteens and any combination of
+00:06:11,919 --> 00:06:16,039
+tumors from mobile phone use the results
 
 160
-00:05:19,759 --> 00:05:22,160
-them
+00:06:14,560 --> 00:06:18,360
+have been analyzed by the National
 
 161
-00:05:20,560 --> 00:05:26,320
-like a half and a fourth give you
+00:06:16,039 --> 00:06:21,120
+Cancer Institute in the US and they&#39;ve
 
 162
-00:05:22,160 --> 00:05:28,960.0000000000582
-three-fourths also known as 0.75
+00:06:18,360 --> 00:06:23,479.0000000000582
+laid out their findings as follows most
 
 163
-00:05:26,320 --> 00:05:30,800
-but this idea is actually terrible we&#39;ve
+00:06:21,120 --> 00:06:25,479
+published analyses of the study show no
 
 164
-00:05:28,960 --> 00:05:32,080
-decimated the range of numbers we can
+00:06:23,479 --> 00:06:27,560
+overall increases in brain or other
 
 165
-00:05:30,800 --> 00:05:34,080
-represent
+00:06:25,479 --> 00:06:29,919
+central nervous system cancers related
 
 166
-00:05:32,080 --> 00:05:35,520
-before we could represent numbers to
+00:06:27,560 --> 00:06:32,039
+to higher amounts of mobile phone use
 
 167
-00:05:34,080 --> 00:05:38,960
-around 2 billion
+00:06:29,919 --> 00:06:34,799.9999999999418
+one analysis showed a statistically
 
 168
-00:05:35,520 --> 00:05:41,120
-now only to about 32 000.
+00:06:32,039 --> 00:06:36,719.9999999999418
+significant although small increase in
 
 169
-00:05:38,960 --> 00:05:42,960
-luckily people much smarter than us have
+00:06:34,800 --> 00:06:38,840.0000000000582
+the risk of brain tumors among study
 
 170
-00:05:41,120 --> 00:05:46,160
-found a better way to make use of those
+00:06:36,720 --> 00:06:40,759
+participants who spent the most total
 
 171
-00:05:42,960 --> 00:05:48,799.9999999999418
-32 bits they took inspiration from
+00:06:38,840 --> 00:06:42,919
+time on their phones although the
 
 172
-00:05:46,160 --> 00:05:50,560
-scientific notation
+00:06:40,759 --> 00:06:45,280.0000000000582
+researchers state that due to a variety
 
 173
-00:05:48,800 --> 00:05:52,320
-the same way we can systematically
+00:06:42,919 --> 00:06:47,479
+of reasons this finding is
 
 174
-00:05:50,560 --> 00:05:56,639
-represent numbers like 23
+00:06:45,280 --> 00:06:49,919
+inconclusive another analysis of the
 
 175
-00:05:52,320 --> 00:05:59,680
-000 as 2.3 times 10 to the 4 and .0034
+00:06:47,479 --> 00:06:52,039
+data of all 13 countries reported a
 
 176
-00:05:56,639 --> 00:06:01,759
-as 3.4 times 10 to the minus 3
+00:06:49,919 --> 00:06:53,599
+statistically significant association
 
 177
-00:05:59,680 --> 00:06:03,759
-we can also represent them in a binary
+00:06:52,039 --> 00:06:55,840
+between the distribution of interc
 
 178
-00:06:01,759 --> 00:06:07,840.0000000000582
-system where here for example
+00:06:53,599 --> 00:06:58,240
+cranial tumors within the brain and the
 
 179
-00:06:03,759 --> 00:06:10,479.0000000000582
-1 1 0 0 0 could for example be 1.1 times
+00:06:55,840 --> 00:07:00,119.99999999994179
+self-reported location of the phone
 
 180
-00:06:07,840 --> 00:06:12,400
-2 to the 4.
+00:06:58,240 --> 00:07:01,800
+however the authors of these studies
 
 181
-00:06:10,479 --> 00:06:14,000
-the standard they came up with takes the
+00:07:00,120 --> 00:07:04,000
+also say that these findings are
 
 182
-00:06:12,400 --> 00:06:16,960
-name ieee
+00:07:01,800 --> 00:07:06,800
+inconclusive and firm conclusions can&#39;t
 
 183
-00:06:14,000 --> 00:06:16,960
-754
+00:07:04,000 --> 00:07:08,960
+be drawn another study of five northern
 
 184
-00:06:17,360 --> 00:06:24,639
-ieee standard 754 defines the following
+00:07:06,800 --> 00:07:11,120
+European countries showed an increase of
 
 185
-00:06:21,199 --> 00:06:26,80.00000000005821
-we are as usual given 32 bits the first
+00:07:08,960 --> 00:07:13,318.9999999999418
+non-cancerous brain tumors in those who
 
 186
-00:06:24,639 --> 00:06:28,479
-bit is the sign bit
+00:07:11,120 --> 00:07:16,639
+have used a cell phone for 10 or more
 
 187
-00:06:26,080 --> 00:06:30,719.9999999999418
-if it is 0 the number is positive if it
+00:07:13,319 --> 00:07:19,199
+years so what on Earth is going on here
 
 188
-00:06:28,479 --> 00:06:32,719.9999999999418
-is 1 the number is negative
+00:07:16,639 --> 00:07:21,479
+why are the findings so inconsistent as
 
 189
-00:06:30,720 --> 00:06:34,160
-but the numbers quake 3 provides the
+00:07:19,199 --> 00:07:24,400.0000000000582
+it turns out studying the physiological
 
 190
-00:06:32,720 --> 00:06:36,639
-fast inverse square root
+00:07:21,479 --> 00:07:26,840
+effects of mobile radiation in humans is
 
 191
-00:06:34,160 --> 00:06:37,600
-are always positive i mean obviously
+00:07:24,400 --> 00:07:29,000
+hard there are so many ways that the
 
 192
-00:06:36,639 --> 00:06:39,520
-they&#39;re positive
+00:07:26,840 --> 00:07:30,000
+data could be muddied and skewed for
 
 193
-00:06:37,600 --> 00:06:41,360
-if we would have to calculate 1 divided
+00:07:29,000 --> 00:07:32,039
+example
 
 194
-00:06:39,520 --> 00:06:43,840
-by square root of -5
+00:07:30,000 --> 00:07:34,080
+participants could mistakenly say that
 
 195
-00:06:41,360 --> 00:06:45,199
-something definitely has gone wrong so
+00:07:32,039 --> 00:07:36,039
+they used their phone more or less than
 
 196
-00:06:43,840 --> 00:06:47,599.9999999999418
-for the rest of this video
+00:07:34,080 --> 00:07:37,800
+they actually did during a given time
 
 197
-00:06:45,199 --> 00:06:49,919.0000000000582
-we ignore the sign bit as it is always
+00:07:36,039 --> 00:07:40,000
+period it&#39;s just hard to accurately
 
 198
-00:06:47,600 --> 00:06:52,960.0000000000582
-0.
+00:07:37,800 --> 00:07:42,199
+recall aside from that this
 
 199
-00:06:49,919 --> 00:06:55,599
-then the next 8 bits define the exponent
+00:07:40,000 --> 00:07:44,120
+participation bias people who are
 
 200
-00:06:52,960 --> 00:06:58,159.9999999999418
-that means 2 to the 1 2 to the 2 2 to
+00:07:42,199 --> 00:07:45,800
+diagnosed with brain tumors are more
 
 201
-00:06:55,599 --> 00:07:00,159.9999999999418
-the 3 2 to the 4 and so on
+00:07:44,120 --> 00:07:48,159
+likely than healthy people to enroll in
 
 202
-00:06:58,160 --> 00:07:03,39.00000000005821
-with 8 bits we can represent numbers
+00:07:45,800 --> 00:07:50,080
+a research study some other factors that
 
 203
-00:07:00,160 --> 00:07:05,360
-between 0 and 255
+00:07:48,159 --> 00:07:52,120
+can account for inconsistencies can
 
 204
-00:07:03,039 --> 00:07:08,159.9999999999418
-but that&#39;s not exactly what we need we
+00:07:50,080 --> 00:07:54,400
+include the assumptions used to estimate
 
 205
-00:07:05,360 --> 00:07:09,759
-also want negative exponents
+00:07:52,120 --> 00:07:56,680
+doses failure to consider temperature
 
 206
-00:07:08,160 --> 00:07:13,199
-this is why everything is actually
+00:07:54,400 --> 00:07:59,840
+effects and investigators not being
 
 207
-00:07:09,759 --> 00:07:15,120
-shifted down by 127.
+00:07:56,680 --> 00:08:01,599
+blinded to exposure status so even
 
 208
-00:07:13,199 --> 00:07:18,319
-so instead of 2 to the 4 we actually
+00:07:59,840 --> 00:08:03,638.9999999999418
+though we don&#39;t have a definitive answer
 
 209
-00:07:15,120 --> 00:07:20,560
-have 2 to the 4 minus 127
+00:08:01,599 --> 00:08:05,360
+on the risks of mobile phone use the
 
 210
-00:07:18,319 --> 00:07:23,360
-if we actually want the exponent to be 4
+00:08:03,639 --> 00:08:08,039
+culmination of these studies point to
 
 211
-00:07:20,560 --> 00:07:27,199
-the bits need to be set to 131
+00:08:05,360 --> 00:08:12,400.0000000000582
+minimal effects if any and if it means
 
 212
-00:07:23,360 --> 00:07:31,199
-because 131 minus 127
+00:08:08,039 --> 00:08:14,360
+anything to you the FDA CDC and FCC all
 
 213
-00:07:27,199 --> 00:07:34,400.0000000000582
-is 4. the last 23 bits
+00:08:12,400 --> 00:08:16,120
+say that there&#39;s no scientific evidence
 
 214
-00:07:31,199 --> 00:07:35,120
-are the mantissa as usual in scientific
+00:08:14,360 --> 00:08:19,520.0000000000582
+that phones cause cancer and that
 
 215
-00:07:34,400 --> 00:07:37,679.9999999999418
-notation
+00:08:16,120 --> 00:08:21,800
+current regulations are safe quote based
 
 216
-00:07:35,120 --> 00:07:38,720
-we want to denote one digit followed by
+00:08:19,520 --> 00:08:23,719.9999999999418
+on our ongoing evaluation of the issue
 
 217
-00:07:37,680 --> 00:07:41,360
-the comma
+00:08:21,800 --> 00:08:26,159
+we have not found adverse health effects
 
 218
-00:07:38,720 --> 00:07:42,400.0000000000582
-followed by the decimal places but with
+00:08:23,720 --> 00:08:27,919.0000000000582
+in hum we believe the current safety
 
 219
-00:07:41,360 --> 00:07:45,120
-23 bits
+00:08:26,159 --> 00:08:29,759
+limits for cell phones are acceptable
 
 220
-00:07:42,400 --> 00:07:46,080
-we can represent numbers from 0 to but
+00:08:27,919 --> 00:08:32,880
+for protecting the public health end
 
 221
-00:07:45,120 --> 00:07:49,440
-not including
+00:08:29,759 --> 00:08:34,360
+quote in any case it&#39;s probably a good
 
 222
-00:07:46,080 --> 00:07:50,639
-2 to the 23. again that&#39;s not exactly
+00:08:32,880 --> 00:08:36,210.0000000000582
+thing that we don&#39;t put our phones up to
 
 223
-00:07:49,440 --> 00:07:52,319
-what we need
+00:08:34,360 --> 00:08:39,389
+our ears as much as we used
 
 224
-00:07:50,639 --> 00:07:54,639
-for scientific notation we need the
+00:08:36,210.0000000000582 --> 00:08:39,389
+[Music]
 
 225
-00:07:52,319 --> 00:07:57,280.0000000000582
-mantissa to go from 1 to 10
+00:08:42,039 --> 00:08:47,080
+to so in all of this there&#39;s one
 
 226
-00:07:54,639 --> 00:08:00,080
-or in binary scientific notation to go
+00:08:44,880 --> 00:08:48,959
+remaining question why did France ban
 
 227
-00:07:57,280 --> 00:08:01,520
-from one to two
+00:08:47,080 --> 00:08:50,920.0000000001164
+the iPhone 12 for emitting too much
 
 228
-00:08:00,080 --> 00:08:03,120
-so we could do something that we&#39;ve
+00:08:48,959 --> 00:08:52,640
+radiation there must have been some
 
 229
-00:08:01,520 --> 00:08:05,599
-already done before
+00:08:50,920 --> 00:08:54,959
+glitch that caused the phones to blast
 
 230
-00:08:03,120 --> 00:08:07,599
-put a comma after the first bit this
+00:08:52,640 --> 00:08:58,439.9999999998836
+out electromagnetic waves at microwave
 
 231
-00:08:05,599 --> 00:08:09,039
-automatically gives us numbers from one
+00:08:54,959 --> 00:09:00,279
+oven power levels right well not quite
 
 232
-00:08:07,599 --> 00:08:11,680
-to two
+00:08:58,440 --> 00:09:02,640.0000000001164
+remember how the highest safe radiation
 
 233
-00:08:09,039 --> 00:08:13,520
-but this naive approach is wasteful you
+00:09:00,279 --> 00:09:06,760
+limit for mobile phones was 4 wats per
 
 234
-00:08:11,680 --> 00:08:14,479
-see the people that designed standard
+00:09:02,640 --> 00:09:09,680
+kg the iPhone 12 managed to score 5.74 W
 
 235
-00:08:13,520 --> 00:08:16,560
-754
+00:09:06,760 --> 00:09:12,360
+per kgam as University of wenong
 
 236
-00:08:14,479 --> 00:08:21,039
-realized that in binary something
+00:09:09,680 --> 00:09:15,839
+Professor Rodney crof says a radiation
 
 237
-00:08:16,560 --> 00:08:21,039
-happens that happens in no other base
+00:09:12,360 --> 00:09:17,800.0000000001164
+reading of 5.74 wats per kgam is many
 
 238
-00:08:24,000 --> 00:08:27,360
-look at the first digit in scientific
+00:09:15,839 --> 00:09:20,200
+times below what would be required to
 
 239
-00:08:26,639 --> 00:08:30,080
-notation
+00:09:17,800 --> 00:09:21,959
+cause any harm it is important to note
 
 240
-00:08:27,360 --> 00:08:31,440
-the first digit is by definition always
+00:09:20,200 --> 00:09:23,920.0000000001164
+that this will not have any impact on
 
 241
-00:08:30,080 --> 00:08:33,760
-non-zero
+00:09:21,959 --> 00:09:27,399
+health to put the exposure level into
 
 242
-00:08:31,440 --> 00:08:35,360
-but in binary there is only one digit
+00:09:23,920 --> 00:09:29,439.9999999998836
+context 5.7 watts per kog would only
 
 243
-00:08:33,760 --> 00:08:38,319.9999999999418
-that is not zero
+00:09:27,399 --> 00:09:32,360
+cause a temperature rise in limbs of
 
 244
-00:08:35,360 --> 00:08:39,680.0000000000582
-one and if we know that the first digit
+00:09:29,440 --> 00:09:34,680.0000000001164
+less than 1° C and only in a very
 
 245
-00:08:38,320.0000000000582 --> 00:08:42,399
-will always be a one
+00:09:32,360 --> 00:09:36,480
+localized region this is far less than
 
 246
-00:08:39,679.9999999999418 --> 00:08:43,598.9999999999418
-there is no need to store it thus we can
+00:09:34,680 --> 00:09:39,599.9999999998836
+normal temperature variation during the
 
 247
-00:08:42,399 --> 00:08:45,680
-save one bit
+00:09:36,480 --> 00:09:41,519
+day end quote now he didn&#39;t State how
 
 248
-00:08:43,599.0000000000582 --> 00:08:48,000
-by moving the comma one digit to the
+00:09:39,600 --> 00:09:42,760
+long the exposure had to be but I assume
 
 249
-00:08:45,680 --> 00:08:49,920
-left and fixing an extra one in the
+00:09:41,519 --> 00:09:45,480
+it would have to be a little while to
 
 250
-00:08:48,000 --> 00:08:53,279
-number it represents
+00:09:42,760 --> 00:09:47,760
+reach a temperature change of 1° so in
 
 251
-00:08:49,920 --> 00:08:55,519
-now our mantissa is between one and two
+00:09:45,480 --> 00:09:49,640
+the end the Banning of the iPhone was a
 
 252
-00:08:53,279 --> 00:08:57,680
-even though 23 bits gave us numbers
+00:09:47,760 --> 00:09:52,120
+decision made on principle there was a
 
 253
-00:08:55,519 --> 00:08:59,519
-between 0 and 2 to the 23
+00:09:49,640 --> 00:09:54,880
+safe limit set and apple exceeded it and
 
 254
-00:08:57,680 --> 00:09:01,120
-we scaled them down to get numbers
+00:09:52,120 --> 00:09:56,560.0000000001164
+got banned as a result as it stands
 
 255
-00:08:59,519 --> 00:09:03,200
-between 0 and 1
+00:09:54,880 --> 00:09:58,120
+apple is planning to release a software
 
 256
-00:09:01,120 --> 00:09:04,399
-and then we added an extra 1 to get
+00:09:56,560 --> 00:10:00,560
+update to rectify the
 
 257
-00:09:03,200 --> 00:09:08,800.0000000001164
-numbers between 1
+00:09:58,120 --> 00:10:02,120
+issue and with that we&#39;re at the end of
 
 258
-00:09:04,399 --> 00:09:11,519
-and 2. and this already is the main part
+00:10:00,560 --> 00:10:04,199.99999999988358
+the episode I hope you learned something
 
 259
-00:09:08,800 --> 00:09:13,519
-of ieee standard 754
+00:10:02,120 --> 00:10:05,920
+new here and I&#39;m curious what are your
 
 260
-00:09:11,519 --> 00:09:14,560.0000000001164
-but just the so-called normalized
+00:10:04,200 --> 00:10:08,000
+thoughts are you satisfied with a
 
 261
-00:09:13,519 --> 00:09:16,320
-numbers
+00:10:05,920 --> 00:10:09,920
+consensus in the scientific Community
 
 262
-00:09:14,560 --> 00:09:18,479.9999999998836
-the informed viewer knows that the
+00:10:08,000 --> 00:10:11,519
+let me know in the comment section below
 
 263
-00:09:16,320 --> 00:09:19,279
-standard also includes denormalized
+00:10:09,920 --> 00:10:14,439.9999999998836
+if you want to see anything else on
 
 264
-00:09:18,480 --> 00:09:22,959.0000000001164
-numbers
+00:10:11,519 --> 00:10:17,560.0000000001164
+science technology or business feel free
 
 265
-00:09:19,279 --> 00:09:24,959
-not a number infinities and two zeros
+00:10:14,440 --> 00:10:19,519
+to subscribe to Cold Fusion it&#39;s free
 
 266
-00:09:22,959 --> 00:09:26,880
-but we won&#39;t go into those because in
+00:10:17,560 --> 00:10:21,239.99999999988358
+anyway that&#39;s it from me my name is
 
 267
-00:09:24,959 --> 00:09:29,439.9999999998836
-quake 3 it just happens that these are
+00:10:19,519 --> 00:10:23,160
+toogo and you&#39;ve been watching cold
 
 268
-00:09:26,880 --> 00:09:31,519
-never inputs into our algorithm
+00:10:21,240 --> 00:10:28,040
+fusion and I&#39;ll catch you again soon for
 
 269
-00:09:29,440 --> 00:09:32,800.0000000001164
-otherwise something definitely has gone
+00:10:23,160 --> 00:10:31,040
+the next episode cheers guys have a good
 
 270
-00:09:31,519 --> 00:09:34,880
-wrong anyway
+00:10:28,040 --> 00:10:31,040
+one
 
 271
-00:09:32,800 --> 00:09:36,79.99999999988358
-at no point should our game engine have
+00:10:34,240 --> 00:10:37,680.0000000001164
+here we go go
 
 272
-00:09:34,880 --> 00:09:39,360
-to normalize a vector
-
-273
-00:09:36,080 --> 00:09:40,800.0000000001164
-with infinite length for this algorithm
-
-274
-00:09:39,360 --> 00:09:42,320
-and for the rest of this video
-
-275
-00:09:40,800 --> 00:09:44,560
-it will be useful to think of the
-
-276
-00:09:42,320 --> 00:09:46,080
-mantissa and exponent as the binary
-
-277
-00:09:44,560 --> 00:09:48,239.99999999988358
-numbers they are
-
-278
-00:09:46,080 --> 00:09:50,560.0000000001164
-if we are given two numbers one being
-
-279
-00:09:48,240 --> 00:09:53,360
-the mantissa and 1 being the exponent
-
-280
-00:09:50,560 --> 00:09:55,279
-23 bits and 8 bits respectively we can
-
-281
-00:09:53,360 --> 00:09:58,320
-get a bit representation with
-
-282
-00:09:55,279 --> 00:09:59,519
-2 to the 23 times e plus m if you think
-
-283
-00:09:58,320 --> 00:10:02,480
-about it
-
-284
-00:09:59,519 --> 00:10:02,880
-because multiplying e by 2 to the 23
-
-285
-00:10:02,480 --> 00:10:06,79.00000000011642
-just
-
-286
-00:10:02,880 --> 00:10:08,320
-shifts e by 23 digits
-
-287
-00:10:06,079 --> 00:10:09,599.9999999998836
-so that&#39;s how one could write the bits
-
-288
-00:10:08,320 --> 00:10:12,800.0000000001164
-but we get the actual
-
-289
-00:10:09,600 --> 00:10:15,440
-number behind the bits with this formula
-
-290
-00:10:12,800 --> 00:10:18,479.9999999998836
-this should seem familiar to you here we
-
-291
-00:10:15,440 --> 00:10:19,200
-have the exponent with 127 subtracted
-
-292
-00:10:18,480 --> 00:10:21,279
-from it
-
-293
-00:10:19,200 --> 00:10:24,000
-and here we have the mantissa with the
-
-294
-00:10:21,279 --> 00:10:26,560
-extra one in front
-
-295
-00:10:24,000 --> 00:10:28,079
-but now something completely different
-
-296
-00:10:26,560 --> 00:10:30,160
-for no obvious reason at
-
-297
-00:10:28,079 --> 00:10:31,359.9999999998836
-all let&#39;s take the logarithm of that
-
-298
-00:10:30,160 --> 00:10:33,279
-expression
-
-299
-00:10:31,360 --> 00:10:36,000
-since we&#39;re doing computer science here
-
-300
-00:10:33,279 --> 00:10:38,800
-we take the logarithm base 2.
-
-301
-00:10:36,000 --> 00:10:39,839
-we simplify as much as we can take out
-
-302
-00:10:38,800 --> 00:10:42,800
-the exponent
-
-303
-00:10:39,839 --> 00:10:44,240
-but then we get stuck but not so the
-
-304
-00:10:42,800 --> 00:10:46,399
-creators of quake
-
-305
-00:10:44,240 --> 00:10:48,640
-developer gary tarouli knew a trick to
-
-306
-00:10:46,399 --> 00:10:51,200
-get rid of the logarithm
-
-307
-00:10:48,640 --> 00:10:52,880
-you see the trick is an approximation to
-
-308
-00:10:51,200 --> 00:10:56,79.00000000011642
-log of 1 plus x
-
-309
-00:10:52,880 --> 00:10:57,680
-for small values of x log of 1 plus x is
-
-310
-00:10:56,079 --> 00:11:00,160
-approximately equal to
-
-311
-00:10:57,680 --> 00:11:02,079
-x if you think about it this
-
-312
-00:11:00,160 --> 00:11:05,680
-approximation is actually correct
-
-313
-00:11:02,079 --> 00:11:08,880
-for x equals zero and x equals one
-
-314
-00:11:05,680 --> 00:11:11,439.9999999998836
-but we&#39;ll add an additional term mu this
-
-315
-00:11:08,880 --> 00:11:13,600
-correction term can be chosen freely
-
-316
-00:11:11,440 --> 00:11:15,600
-again with mu equal to zero this
-
-317
-00:11:13,600 --> 00:11:18,79.00000000011642
-approximation is correct at zero
-
-318
-00:11:15,600 --> 00:11:19,120
-and one but it turns out that setting mu
-
-319
-00:11:18,079 --> 00:11:21,519
-to this number
-
-320
-00:11:19,120 --> 00:11:24,800
-gives the smallest error on average for
-
-321
-00:11:21,519 --> 00:11:27,040
-numbers between zero and one
-
-322
-00:11:24,800 --> 00:11:28,160
-so going back to our formula we apply
-
-323
-00:11:27,040 --> 00:11:31,040
-our trick as
-
-324
-00:11:28,160 --> 00:11:32,240
-m divided by 2 to the 23 is indeed a
-
-325
-00:11:31,040 --> 00:11:36,000
-value between 0
-
-326
-00:11:32,240 --> 00:11:38,240
-and 1. we rearrange a little bit more
-
-327
-00:11:36,000 --> 00:11:40,240
-and we finally see why we did all those
-
-328
-00:11:38,240 --> 00:11:43,600
-calculations
-
-329
-00:11:40,240 --> 00:11:47,040
-m plus e times 2 to the 23 appears
-
-330
-00:11:43,600 --> 00:11:47,440
-that&#39;s our bit representation so let&#39;s
-
-331
-00:11:47,040 --> 00:11:50,079
-think
-
-332
-00:11:47,440 --> 00:11:51,760.0000000001164
-about what we just did we applied the
-
-333
-00:11:50,079 --> 00:11:54,000
-logarithm to our formula
-
-334
-00:11:51,760 --> 00:11:56,560
-and got the bit representation just
-
-335
-00:11:54,000 --> 00:11:58,720
-scaled and shifted by some constants
-
-336
-00:11:56,560 --> 00:12:01,518.9999999998836
-so in some sense the bit representation
-
-337
-00:11:58,720 --> 00:12:03,760
-of a number is its own logarithm
-
-338
-00:12:01,519 --> 00:12:05,839
-armed with this knowledge we can finally
-
-339
-00:12:03,760 --> 00:12:11,839
-start with the three steps of the fast
-
-340
-00:12:05,839 --> 00:12:11,839
-inverse square root
-
-341
-00:12:16,560 --> 00:12:20,079
-the first step is actually not
-
-342
-00:12:17,920 --> 00:12:22,399
-complicated it just looks complicated
-
-343
-00:12:20,079 --> 00:12:24,638.9999999998836
-because it&#39;s memory address trickery
-
-344
-00:12:22,399 --> 00:12:26,480
-so we stored our number into y and now
-
-345
-00:12:24,639 --> 00:12:27,519
-we want to do cool bit manipulation
-
-346
-00:12:26,480 --> 00:12:29,600
-tricks
-
-347
-00:12:27,519 --> 00:12:32,639
-floats unfortunately don&#39;t come with the
-
-348
-00:12:29,600 --> 00:12:33,920.0000000001164
-tools we need to do bit manipulation
-
-349
-00:12:32,639 --> 00:12:35,920
-the reason you cannot do bit
-
-350
-00:12:33,920 --> 00:12:38,399
-manipulation on floats is that they were
-
-351
-00:12:35,920 --> 00:12:42,399
-never designed to do so flows are
-
-352
-00:12:38,399 --> 00:12:44,320
-inherently tied to the ieee standard 754
-
-353
-00:12:42,399 --> 00:12:46,480
-longs on the other hand were designed to
-
-354
-00:12:44,320 --> 00:12:49,920.0000000001164
-do bit manipulation on them
-
-355
-00:12:46,480 --> 00:12:49,920.0000000001164
-for example here&#39;s one trick
-
-356
-00:12:51,279 --> 00:12:55,519
-bit shifting along to the left doubles
-
-357
-00:12:53,360 --> 00:12:55,519
-it
-
-358
-00:12:55,760 --> 00:12:59,200
-and bit shifting it to the right halves
-
-359
-00:12:57,680 --> 00:13:01,599.9999999998836
-it
-
-360
-00:12:59,200 --> 00:13:04,320
-and yes if your number is odd you do end
-
-361
-00:13:01,600 --> 00:13:04,320
-up rounding
-
-362
-00:13:05,279 --> 00:13:09,200
-but hey we&#39;re willing to accept such
-
-363
-00:13:07,040 --> 00:13:12,399
-inaccuracies as long as this means that
-
-364
-00:13:09,200 --> 00:13:14,160.00000000011642
-our algorithm is fast
-
-365
-00:13:12,399 --> 00:13:16,480
-c as pretty much all programming
-
-366
-00:13:14,160 --> 00:13:18,639
-languages do provides a way to convert
-
-367
-00:13:16,480 --> 00:13:20,79.00000000011642
-from a float to a long
-
-368
-00:13:18,639 --> 00:13:22,320
-this conversion does what most
-
-369
-00:13:20,079 --> 00:13:24,319.9999999998836
-programmers needed to do namely convert
-
-370
-00:13:22,320 --> 00:13:26,639
-from a decimal number to an ordinary
-
-371
-00:13:24,320 --> 00:13:29,519
-integer as best as it can do
-
-372
-00:13:26,639 --> 00:13:31,040
-so if we give it a float like 3.33 it
-
-373
-00:13:29,519 --> 00:13:33,920
-converts it to an integer
-
-374
-00:13:31,040 --> 00:13:35,599.9999999998836
-in this case 3 but this is not the
-
-375
-00:13:33,920 --> 00:13:37,279
-conversion we need here
-
-376
-00:13:35,600 --> 00:13:38,959.0000000001164
-first of all we don&#39;t care about the
-
-377
-00:13:37,279 --> 00:13:41,920
-resulting integer number
-
-378
-00:13:38,959 --> 00:13:42,638.9999999998836
-we want to somehow keep our float and
-
-379
-00:13:41,920 --> 00:13:44,560
-secondly
-
-380
-00:13:42,639 --> 00:13:45,839
-the bits that lie behind our number get
-
-381
-00:13:44,560 --> 00:13:47,518.9999999998836
-all messed up
-
-382
-00:13:45,839 --> 00:13:50,240
-we don&#39;t want this conversion to mess
-
-383
-00:13:47,519 --> 00:13:50,720
-with our bits the only thing we want to
-
-384
-00:13:50,240 --> 00:13:53,120
-do
-
-385
-00:13:50,720 --> 00:13:55,440
-is to put the bits one to one into a
-
-386
-00:13:53,120 --> 00:13:55,440
-long
-
-387
-00:13:56,800 --> 00:14:00,079
-the way you achieve this is to convert
-
-388
-00:13:58,800 --> 00:14:03,519
-the memory address
-
-389
-00:14:00,079 --> 00:14:05,920
-not the number first
-
-390
-00:14:03,519 --> 00:14:08,000
-we get the address of y this is the
-
-391
-00:14:05,920 --> 00:14:09,599.9999999998836
-address of a float
-
-392
-00:14:08,000 --> 00:14:13,199
-then you convert that address from a
-
-393
-00:14:09,600 --> 00:14:15,839
-floats address to a long&#39;s address
-
-394
-00:14:13,199 --> 00:14:17,439.9999999998836
-the address itself doesn&#39;t change but c
-
-395
-00:14:15,839 --> 00:14:19,920.0000000001164
-now thinks that the number living at
-
-396
-00:14:17,440 --> 00:14:22,79.00000000011642
-that address is now along
-
-397
-00:14:19,920 --> 00:14:23,439.9999999998836
-so then you read what&#39;s written at that
-
-398
-00:14:22,079 --> 00:14:25,279
-address because
-
-399
-00:14:23,440 --> 00:14:27,519
-c now thinks that this is an address of
-
-400
-00:14:25,279 --> 00:14:30,480
-a long it will read the number at that
-
-401
-00:14:27,519 --> 00:14:32,720
-address as if it were long
-
-402
-00:14:30,480 --> 00:14:34,800.0000000001164
-like this we tricked c by lifting the
-
-403
-00:14:32,720 --> 00:14:38,79.00000000011642
-conversion away from the number itself
-
-404
-00:14:34,800 --> 00:14:41,120
-to the address of that number and that&#39;s
-
-405
-00:14:38,079 --> 00:14:42,800
-how we get the bits of a number into i
-
-406
-00:14:41,120 --> 00:14:45,120
-i don&#39;t know what else to say that&#39;s
-
-407
-00:14:42,800 --> 00:14:47,599.9999999998836
-just how c works so let&#39;s just go to the
-
-408
-00:14:45,120 --> 00:14:47,600
-next step
-
-409
-00:14:51,680 --> 00:14:55,040
-the intuition behind the second step is
-
-410
-00:14:53,680 --> 00:14:57,199
-the following
-
-411
-00:14:55,040 --> 00:15:00,160
-remind yourself bit shifting a number to
-
-412
-00:14:57,199 --> 00:15:03,359.9999999998836
-the left doubles it
-
-413
-00:15:00,160 --> 00:15:04,719.9999999998836
-and shifting it to the right halves it
-
-414
-00:15:03,360 --> 00:15:07,440
-but what would happen if we did
-
-415
-00:15:04,720 --> 00:15:10,000
-something like this to an exponent
-
-416
-00:15:07,440 --> 00:15:11,839
-doubling an exponent squares the number
-
-417
-00:15:10,000 --> 00:15:13,120
-and halving the exponent gives us the
-
-418
-00:15:11,839 --> 00:15:15,760.0000000001164
-square root
-
-419
-00:15:13,120 --> 00:15:17,760
-but now also negating the exponent gives
-
-420
-00:15:15,760 --> 00:15:20,800
-us 1 divided by square root of x
-
-421
-00:15:17,760 --> 00:15:23,120
-that&#39;s exactly what we need so let&#39;s
-
-422
-00:15:20,800 --> 00:15:25,279
-remind ourselves what our goal is here
-
-423
-00:15:23,120 --> 00:15:27,120
-we have our numbers stored into y and
-
-424
-00:15:25,279 --> 00:15:28,720
-our goal was to calculate 1 divided by
-
-425
-00:15:27,120 --> 00:15:30,880
-square root of a y
-
-426
-00:15:28,720 --> 00:15:33,759
-as i&#39;ve already said calculating this
-
-427
-00:15:30,880 --> 00:15:35,920
-directly is too hard and too expensive
-
-428
-00:15:33,759 --> 00:15:39,040
-but we&#39;ve extracted the bits from y and
-
-429
-00:15:35,920 --> 00:15:40,880
-we&#39;ve seen with the ieee standard 754
-
-430
-00:15:39,040 --> 00:15:43,360
-that the bits of a number are in some
-
-431
-00:15:40,880 --> 00:15:46,480
-sense its own logarithm
-
-432
-00:15:43,360 --> 00:15:49,519
-that means in i we have stored log of y
-
-433
-00:15:46,480 --> 00:15:50,720
-up to some scaling and shifting i claim
-
-434
-00:15:49,519 --> 00:15:53,839
-that our problem becomes
-
-435
-00:15:50,720 --> 00:15:55,839
-way easier if we work with logs instead
-
-436
-00:15:53,839 --> 00:15:57,199.00000000011642
-of trying so hard to calculate 1 divided
-
-437
-00:15:55,839 --> 00:15:59,759
-by square root of y
-
-438
-00:15:57,199 --> 00:16:01,519
-we instead calculate log of 1 divided by
-
-439
-00:15:59,759 --> 00:16:03,920
-square root of y
-
-440
-00:16:01,519 --> 00:16:05,040
-we rewrite this to log of y to the power
-
-441
-00:16:03,920 --> 00:16:07,599.9999999998836
-of minus a half
-
-442
-00:16:05,040 --> 00:16:08,800
-so we can take out the exponent
-
-443
-00:16:07,600 --> 00:16:11,920.0000000001164
-calculating this
-
-444
-00:16:08,800 --> 00:16:13,359.9999999998836
-is stupidly easy you might think oh no
-
-445
-00:16:11,920 --> 00:16:14,639
-we have a division in there
-
-446
-00:16:13,360 --> 00:16:17,759
-didn&#39;t you say in the beginning that
-
-447
-00:16:14,639 --> 00:16:19,759
-divisions are slow well yes but remember
-
-448
-00:16:17,759 --> 00:16:22,000
-that we can do bit shifts now
-
-449
-00:16:19,759 --> 00:16:23,759
-instead of dividing by 2 we just bit
-
-450
-00:16:22,000 --> 00:16:26,560
-shift once to the right
-
-451
-00:16:23,759 --> 00:16:28,959.0000000001164
-this already explains why we do minus i
-
-452
-00:16:26,560 --> 00:16:32,638.9999999998836
-bit shifted the ones to the right
-
-453
-00:16:28,959 --> 00:16:33,680
-but why is this number 0x5f37590f here
-
-454
-00:16:32,639 --> 00:16:35,759
+00:10:38,760 --> 00:10:47,319.9999999998836
 again
 
-455
-00:16:33,680 --> 00:16:37,359.9999999998836
-well because our logarithm is actually
-
-456
-00:16:35,759 --> 00:16:39,360
-scaled and shifted
-
-457
-00:16:37,360 --> 00:16:41,040
-so let&#39;s calculate and understand where
-
-458
-00:16:39,360 --> 00:16:44,399
-it comes from
-
-459
-00:16:41,040 --> 00:16:47,040
-let gamma be our solution then we know
-
-460
-00:16:44,399 --> 00:16:48,639
-that log of gamma equals to log of y to
-
-461
-00:16:47,040 --> 00:16:50,719.9999999998836
-the power minus a half
-
-462
-00:16:48,639 --> 00:16:52,160
-which equals to minus a half times log
-
-463
-00:16:50,720 --> 00:16:54,320
-of y
-
-464
-00:16:52,160 --> 00:16:57,439.9999999998836
-now we replace the logarithm with the
-
-465
-00:16:54,320 --> 00:16:57,440
-bit representation
-
-466
-00:17:01,920 --> 00:17:06,480
-and then we just solve for the bits of
-
-467
-00:17:03,519 --> 00:17:09,199.00000000011642
-gamma i&#39;ll spare us the details but this
-
-468
-00:17:06,480 --> 00:17:10,959.0000000001164
-is the result
-
-469
-00:17:09,199.00000000011642 --> 00:17:12,799
-the magic number turns out to be the
-
-470
-00:17:10,959.0000000001164 --> 00:17:16,720
-remnants of the error term mu
-
-471
-00:17:12,799 --> 00:17:16,720
-the scaling factor and the shifting
-
-472
-00:17:16,880.0000000001164 --> 00:17:21,120.00000000011642
-now we have the bits of resolution and
-
-473
-00:17:19,439.0000000001164 --> 00:17:22,79.00000000023283
-we can just reverse the steps from the
-
-474
-00:17:21,119.99999999988358 --> 00:17:24,319
-evil bit hack
-
-475
-00:17:22,079 --> 00:17:25,760
-to get back the actual solution from
-
-476
-00:17:24,319 --> 00:17:28,639.9999999997672
-those bits
-
-477
-00:17:25,760 --> 00:17:30,480
-well actually not the exact solution
-
-478
-00:17:28,640 --> 00:17:34,640
-just an approximation
-
-479
-00:17:30,480 --> 00:17:34,640
-this is why we need the third step
-
-480
-00:17:41,440 --> 00:17:44,720
-after the previous step we have a pretty
-
-481
-00:17:43,280 --> 00:17:46,639.9999999997672
-decent approximation
-
-482
-00:17:44,720 --> 00:17:49,280
-but we did pick up some error terms here
-
-483
-00:17:46,640 --> 00:17:50,480
-and there but thanks to newton&#39;s method
-
-484
-00:17:49,280 --> 00:17:53,120
-we can make a really good
-
-485
-00:17:50,480 --> 00:17:54,799
-approximation out of a decent one
-
-486
-00:17:53,120 --> 00:17:56,959.9999999997672
-newton&#39;s method is a technique that
-
-487
-00:17:54,799 --> 00:17:59,200
-finds a root for a given function
-
-488
-00:17:56,960 --> 00:18:00,559
-meaning it finds an x for which f x
-
-489
-00:17:59,200 --> 00:18:02,799
-equals zero
-
-490
-00:18:00,559 --> 00:18:04,960
-it does so by taking an approximation
-
-491
-00:18:02,799 --> 00:18:06,879.9999999997672
-and returning a better approximation
-
-492
-00:18:04,960 --> 00:18:08,640
-and usually you repeat this process
-
-493
-00:18:06,880 --> 00:18:09,600.0000000002328
-until you&#39;re close enough to the actual
-
-494
-00:18:08,640 --> 00:18:11,679
-solution
-
-495
-00:18:09,600 --> 00:18:13,520
-but it turns out that here we are
-
-496
-00:18:11,679 --> 00:18:14,240
-already close enough to the actual
-
-497
-00:18:13,520 --> 00:18:16,720
-solution
-
-498
-00:18:14,240 --> 00:18:20,160
-that one iteration suffices to get an
-
-499
-00:18:16,720 --> 00:18:20,160
-error within one percent
-
-500
-00:18:21,679 --> 00:18:26,240
-the only things newton&#39;s method needs is
-
-501
-00:18:24,080 --> 00:18:28,399.99999999976717
-the function and its derivative
-
-502
-00:18:26,240 --> 00:18:29,760
-and what newton&#39;s method does is that it
-
-503
-00:18:28,400 --> 00:18:32,400
-takes an x value
-
-504
-00:18:29,760 --> 00:18:34,240
-and tries to guess by how much it is off
-
-505
-00:18:32,400 --> 00:18:37,280.00000000023283
-from being a root
-
-506
-00:18:34,240 --> 00:18:40,000
-it does so by calculating f of x and its
-
-507
-00:18:37,280 --> 00:18:40,000
-derivative
-
-508
-00:18:41,679 --> 00:18:45,120.00000000023283
-we can write f of x as y and the
-
-509
-00:18:44,000 --> 00:18:48,480
-derivative as
-
-510
-00:18:45,120 --> 00:18:48,479.99999999976717
-d y over dx
-
-511
-00:18:49,760 --> 00:18:52,879.9999999997672
-we have the ratio between y and the x
-
-512
-00:18:52,160 --> 00:18:56,000
-offset
-
-513
-00:18:52,880 --> 00:19:00,80.00000000023283
-and y itself so to get the x offset
-
-514
-00:18:56,000 --> 00:19:00,080
-we just divide y by the ratio
-
-515
-00:19:04,080 --> 00:19:08,840
-so then we simply subtract this offset
-
-516
-00:19:06,320 --> 00:19:12,000
-to get our new
-
-517
-00:19:08,840 --> 00:19:14,080
-x the informed viewer can now verify
-
-518
-00:19:12,000 --> 00:19:14,799
-that the last line is one such newton
-
-519
-00:19:14,080 --> 00:19:17,918.9999999997672
-iteration
-
-520
-00:19:14,799 --> 00:19:18,720
-applied to the function f of y equals 1
-
-521
-00:19:17,919 --> 00:19:22,559.0000000002328
-divided by y
-
-522
-00:19:18,720 --> 00:19:23,919
-squared minus x notice that y being a
-
-523
-00:19:22,559 --> 00:19:26,080
-root of this function is
-
-524
-00:19:23,919 --> 00:19:28,799.0000000002328
-equivalent to y being the inverse square
-
-525
-00:19:26,080 --> 00:19:28,799
-root of x
-
-526
-00:19:30,799 --> 00:19:33,918.9999999997672
-i really encourage you to verify this
-
-527
-00:19:32,799 --> 00:19:36,240
-last line of code
-
-528
-00:19:33,919 --> 00:19:38,80.00000000023283
-since it&#39;s really surprising that even
-
-529
-00:19:36,240 --> 00:19:40,080
-though both the function
-
-530
-00:19:38,080 --> 00:19:42,000
-and newton&#39;s method have a division in
-
-531
-00:19:40,080 --> 00:19:44,399.99999999976717
-them the code does not
-
-532
-00:19:42,000 --> 00:19:47,280
-which means that our algorithm is and
-
-533
-00:19:44,400 --> 00:19:47,280.00000000023283
-stays fast
-
-534
-00:19:47,440 --> 00:19:50,559
-now we finally understand the fast
-
-535
-00:19:49,280 --> 00:19:52,240
-inverse square root
-
-536
-00:19:50,559 --> 00:19:54,559
-it only took us the knowledge of the
-
-537
-00:19:52,240 --> 00:19:56,640
-ieee standard 754
-
-538
-00:19:54,559 --> 00:19:59,120
-a trick to outsmart the c programming
-
-539
-00:19:56,640 --> 00:20:07,520.0000000002328
-language magic bit operations
-
-540
-00:19:59,120 --> 00:20:09,600
-and the calculus behind newton&#39;s method
-
-541
-00:20:07,520 --> 00:20:09,600
-you
+273
+00:10:41,220 --> 00:10:47,320
+[Music]
+
+274
+00:10:47,560 --> 00:10:54,119.99999999988358
+I cold fusion it&#39;s new
+
+275
+00:10:51,120 --> 00:10:54,120
+thinking
 
