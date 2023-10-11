@@ -1,0 +1,376 @@
+1
+00:00:01,760 --> 00:00:08,480
+okay this should be working
+
+2
+00:00:04,880 --> 00:00:12,559.0000000000018
+uh hopefully it is okay cool
+
+3
+00:00:08,480 --> 00:00:14,480
+so today we are going to talk about
+
+4
+00:00:12,559 --> 00:00:16,400
+oh well hello i&#39;m the ranches and today
+
+5
+00:00:14,480 --> 00:00:19,199
+we&#39;re going to be talking about
+
+6
+00:00:16,400 --> 00:00:20,240
+pairwise disjoint on how to be able to
+
+7
+00:00:19,199 --> 00:00:23,519.0000000000036
+solve a problem
+
+8
+00:00:20,240 --> 00:00:25,839.9999999999964
+that asks you to rewrite an expression
+
+9
+00:00:23,519 --> 00:00:27,439
+or not expression uh grammar as para
+
+10
+00:00:25,840 --> 00:00:31,039
+pairwise disjoint
+
+11
+00:00:27,439 --> 00:00:32,960
+so say we have this grammar
+
+12
+00:00:31,039 --> 00:00:34,399
+here this is just one the rules and
+
+13
+00:00:32,960 --> 00:00:36,480.0000000000073
+grammar this is our target rule that we
+
+14
+00:00:34,399 --> 00:00:39,520
+need to pay attention to
+
+15
+00:00:36,480 --> 00:00:41,519.9999999999927
+seven uh q
+
+16
+00:00:39,520 --> 00:00:43,120.00000000000728
+i this is non-terminal by the way i just
+
+17
+00:00:41,520 --> 00:00:44,239.00000000000728
+didn&#39;t put the little things brackets
+
+18
+00:00:43,120 --> 00:00:47,680
+around it
+
+19
+00:00:44,239 --> 00:00:47,680
+uh 9 q
+
+20
+00:00:48,000 --> 00:00:51,680
+then 7q
+
+21
+00:00:52,960 --> 00:01:01,280
+q8 okay
+
+22
+00:00:56,399 --> 00:01:01,280
+yeah that&#39;ll work that&#39;ll work so
+
+23
+00:01:01,359 --> 00:01:04,640
+uh we could just zoom in and zoom out
+
+24
+00:01:03,280 --> 00:01:07,920
+just a tiny bit
+
+25
+00:01:04,640 --> 00:01:11,520
+so i could fit everything in
+
+26
+00:01:07,920 --> 00:01:14,640
+and then sorry let me come back and
+
+27
+00:01:11,520 --> 00:01:19,39.99999999998545
+do the pen and then
+
+28
+00:01:14,640 --> 00:01:19,040
+uh sorry about that
+
+29
+00:01:20,080 --> 00:01:26,320
+seven q seven nine seven
+
+30
+00:01:23,200 --> 00:01:28,880
+q seven
+
+31
+00:01:26,320 --> 00:01:29,520
+nine okay so this is what we&#39;ve got
+
+32
+00:01:28,880 --> 00:01:32,640
+right
+
+33
+00:01:29,520 --> 00:01:35,119
+so we have z is seven q
+
+34
+00:01:32,640 --> 00:01:36,560
+is seven then non-terminal q the nine
+
+35
+00:01:35,119 --> 00:01:39,360
+the non-terminal q
+
+36
+00:01:36,560 --> 00:01:40,159
+or seven the non-terminal q then eighth
+
+37
+00:01:39,360 --> 00:01:42,720
+and
+
+38
+00:01:40,159 --> 00:01:43,360
+or seven then non-terminal q then seven
+
+39
+00:01:42,720 --> 00:01:46,399
+the nine
+
+40
+00:01:43,360 --> 00:01:47,520
+right and the paralyzed joint test says
+
+41
+00:01:46,399 --> 00:01:51,920
+that for every
+
+42
+00:01:47,520 --> 00:01:55,840
+part of this for every or statement
+
+43
+00:01:51,920 --> 00:01:55,840
+so for every or statement which is this
+
+44
+00:01:56,079 --> 00:02:02,798.9999999999854
+the first value must be different
+
+45
+00:01:59,680 --> 00:02:04,320.00000000001455
+now as you can see this fails that test
+
+46
+00:02:02,799 --> 00:02:05,600.0000000000146
+because the first value
+
+47
+00:02:04,320 --> 00:02:07,919.9999999999854
+is not different actually the first
+
+48
+00:02:05,600 --> 00:02:09,359.99999999998545
+value is in fact the same on all of them
+
+49
+00:02:07,920 --> 00:02:11,200
+we have to find a way to change that and
+
+50
+00:02:09,360.00000000001455 --> 00:02:12,800
+the best way to do it here at least in
+
+51
+00:02:11,200 --> 00:02:15,519.9999999999709
+our situation
+
+52
+00:02:12,800 --> 00:02:15,920.0000000000291
+is to come down here and recognize that
+
+53
+00:02:15,520 --> 00:02:20,239
+this
+
+54
+00:02:15,920 --> 00:02:23,679.9999999999709
+repeats this pattern right here repeats
+
+55
+00:02:20,239 --> 00:02:25,360
+itself in each rule so then we could
+
+56
+00:02:23,680 --> 00:02:27,440
+create a rule for that right we could
+
+57
+00:02:25,360 --> 00:02:30,800
+say okay
+
+58
+00:02:27,440 --> 00:02:34,560
+uh we could say z is equal to
+
+59
+00:02:30,800 --> 00:02:38,319.0000000000291
+seven q right so we r rewrite z
+
+60
+00:02:34,560 --> 00:02:41,599
+as 7q then z prime
+
+61
+00:02:38,319 --> 00:02:44,958.9999999999709
+right and then we can define z prime
+
+62
+00:02:41,599 --> 00:02:48,79.9999999999709
+as 9 q
+
+63
+00:02:44,959 --> 00:02:51,760
+or 8
+
+64
+00:02:48,080 --> 00:02:53,760.0000000000291
+or seven nine
+
+65
+00:02:51,760 --> 00:02:55,920
+and now if you go back and look and
+
+66
+00:02:53,760 --> 00:02:59,359.9999999999709
+check to see whether the first
+
+67
+00:02:55,920 --> 00:03:02,399.9999999999709
+uh part the first each
+
+68
+00:02:59,360 --> 00:03:03,40.000000000029104
+section has the the first part of each
+
+69
+00:03:02,400 --> 00:03:06,480.0000000000291
+section
+
+70
+00:03:03,040 --> 00:03:10,000
+is the same value you see that
+
+71
+00:03:06,480 --> 00:03:14,79.9999999999709
+in this z rule the only value is seven
+
+72
+00:03:10,000 --> 00:03:18,080
+so it is it is unique right
+
+73
+00:03:14,080 --> 00:03:19,760.0000000000291
+here in each or part
+
+74
+00:03:18,080 --> 00:03:21,760.0000000000291
+we change we see that the first value
+
+75
+00:03:19,760 --> 00:03:24,79.9999999999709
+here is nine the first one is
+
+76
+00:03:21,760 --> 00:03:25,280
+eight and first one here is seven so
+
+77
+00:03:24,080 --> 00:03:27,120
+that&#39;s basically how you do it now if
+
+78
+00:03:25,280 --> 00:03:28,480
+you kind of if you want to
+
+79
+00:03:27,120 --> 00:03:31,440
+verify that you&#39;re what you&#39;re saying is
+
+80
+00:03:28,480 --> 00:03:33,920
+correct think about how you could
+
+81
+00:03:31,440 --> 00:03:35,680
+use these rules to create the original
+
+82
+00:03:33,920 --> 00:03:36,958.9999999999709
+rule right and the way you could do that
+
+83
+00:03:35,680 --> 00:03:39,120
+is that you could say okay well if i
+
+84
+00:03:36,959 --> 00:03:42,319.0000000000291
+want to create the original rule
+
+85
+00:03:39,120 --> 00:03:44,640.0000000000291
+i can substitute the z uh prime
+
+86
+00:03:42,319 --> 00:03:46,79.9999999999709
+for 9q right and i get this rule i
+
+87
+00:03:44,640 --> 00:03:49,599
+substitute that z prime
+
+88
+00:03:46,080 --> 00:03:51,920.0000000000291
+for eight q uh i substitute
+
+89
+00:03:49,599 --> 00:03:53,760
+z prime for eight i get this rule
+
+90
+00:03:51,920 --> 00:03:55,839.9999999999709
+substitute it for seven nine
+
+91
+00:03:53,760 --> 00:03:57,760
+i get this right here so this should all
+
+92
+00:03:55,840 --> 00:03:59,439
+kind of hopefully make a little more
+
+93
+00:03:57,760 --> 00:04:03,599
+sense to you guys
+
+94
+00:03:59,439 --> 00:04:03,599
+thanks for watching
+

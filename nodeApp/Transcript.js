@@ -1,4 +1,6 @@
 const xml2js = require('xml2js');
+const fs = require('fs');
+
 
 class Transcript {
     constructor(httpClient, videoId, url, language, languageCode, isGenerated, translationLanguages) {
@@ -85,10 +87,13 @@ class Transcript {
             throw new Error(`Failed to fetch transcript data: ${response.statusText}`);
         }
         const xmlContent = await response.text();
-
-        return this._convertXmlToSrt(xmlContent);  // Convert XML to SRT before returning
+    
+        const srtContent = await this._convertXmlToSrt(xmlContent);
+        this._saveSrtToFile(srtContent);
+    
+        return srtContent;  // Return SRT content
     }
-
+    
     _convertXmlToSrt(xmlContent) {
         return new Promise((resolve, reject) => {
             xml2js.parseString(xmlContent, (err, result) => {
@@ -125,6 +130,17 @@ class Transcript {
         return `${hh}:${mm}:${ss},${ms}`;
     }
 
+
+    _saveSrtToFile(srtContent) {
+        fs.writeFile('captions.srt', srtContent, (err) => {
+            if (err) {
+                console.error("Error writing to file:", err);
+            } else {
+                console.log("SRT saved to captions.srt");
+            }
+        });
+    }
+    
 
     toString() {
         return `${this.languageCode} ("${this.language}")${this.isTranslatable ? '[TRANSLATABLE]' : ''}`;
