@@ -8,6 +8,7 @@ import('node-fetch').then(module => {
 const app = express();
 const PORT = 3000;
 
+
 // Serve static files from 'public' directory
 app.use(express.static('public'));
 
@@ -15,7 +16,7 @@ app.use(express.static('public'));
 app.get('/captions', async (req, res) => {
     const videoId = req.query.videoId;
     const WATCH_URL = `https://www.youtube.com/watch?v=${videoId}`;
-    
+
     try {
         const response = await fetch(WATCH_URL);
         const html = await response.text();
@@ -48,7 +49,7 @@ app.get('/captions', async (req, res) => {
         console.error("Error fetching captions:", error);
         return res.status(500).send("Failed to fetch caption data.");
     }
-    
+
 });
 
 // Start the server

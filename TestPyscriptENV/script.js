@@ -8,6 +8,7 @@
  * 
  */
 
+
 /**
  * Displays the entered URL, fetches the .srt content associated with it, and the summary from a .txt file.
  */

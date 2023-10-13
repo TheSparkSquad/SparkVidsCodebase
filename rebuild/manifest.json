@@ -1,8 +1,14 @@
 {
-  "name": "SparkVidz",
+  "name": "Spark Vidz",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "http://localhost:5000/"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
   }
 }
