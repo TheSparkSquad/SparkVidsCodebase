@@ -1,7 +1,13 @@
 const Transcript = require('./Transcript.js');
-const Transcript = require('./Summary.js');
+const fs = require('fs');
+const GenerateSummary = require('./generateSummary.js');
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
+
+//const Transcript = require('./Summary.js');
 
 const express = require('express');
+
 
 let fetch;
 import('node-fetch').then(module => {
@@ -52,6 +58,37 @@ app.get('/captions', async (req, res) => {
         return res.status(500).send("Failed to fetch caption data.");
     }
 
+});
+
+
+app.get('/generateSummary', async (req, res) => {
+    try {
+        console.log('Starting summary generation...');
+        
+        // Start the timer with a label 'Summary Generation'
+        console.time('Summary Generation');
+
+        const generateSummary = new GenerateSummary(apiKey);
+        await generateSummary.generate('captions.txt', 'summary.txt');
+        
+        // End the timer and it will automatically log the time taken
+        console.timeEnd('Summary Generation');
+        
+        res.sendStatus(200);
+    } catch (error) {
+        console.error("Error during summary generation:", error);
+        res.status(500).send('Error generating summary.');
+    }
+});
+
+app.get('/getSummary', (req, res) => {
+    fs.readFile('summary.txt', 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).send('Error reading summary.');
+        } else {
+            res.send(data);
+        }
+    });
 });
 
 // Start the server

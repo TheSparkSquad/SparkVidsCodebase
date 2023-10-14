@@ -12,3 +12,6 @@ node_modules/
 
 #irgnore configuration and env variables
 config.ini
+
+#environmentals and api keys
+.env

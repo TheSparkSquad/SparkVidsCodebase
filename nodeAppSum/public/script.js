@@ -21,8 +21,25 @@ async function fetchCaptions() {
         // Update the <pre> tag's content with the fetched SRT data
         document.getElementById("output").textContent = srtData;
 
+
+        // After fetching captions, now generate the summary
+        const generateResponse = await fetch('/generateSummary');
+        if (!generateResponse.ok) {
+            throw new Error('Failed to generate summary.');
+        }
+
+        // After generating summary, retrieve it
+        const summaryResponse = await fetch('/getSummary');
+        if (!summaryResponse.ok) {
+            throw new Error('Failed to retrieve summary.');
+        }
+        const summaryData = await summaryResponse.text();
+
+        // Update the <pre> tag's content with the fetched summary
+        document.getElementById("summary").textContent = summaryData;
+
     } catch (error) {
-        console.error("Failed to fetch captions:", error);
-        alert("Error fetching captions. Please check the console for more details.");
+        console.error("Error:", error);
+        alert("Error occurred. Please check the console for more details.");
     }
 }

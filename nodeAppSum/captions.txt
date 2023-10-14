@@ -1,52 +1,181 @@
-This is MC tile.
-Over a year ago, I had just one tile to stand on.
-For every 1,000 XP I gain, I unlock a new tile.
-I can't use banks or trade with other players.
-I'm unlocking RuneScape one tile at a time.
-My ultimate goal? RuneScape's biggest challenge: The Inferno.
+In a moment I will ask you a puzzle and it&#39;s a 
+pretty hard puzzle actually. But before I do,  
 
-[Music]
+I want to lead with a spoiler, which is the fact 
+that the way we&#39;re going to solve this involves  
 
-Now, we are in the final stretch, preparing for RuneScape's toughest challenge.
-With the Rune pouch upgrade completed, I'm eyeing what might be the series' final upgrade.
-I've been dedicating time at Pest Control, spending hours last night to earn 200 points for Range XP.
-I'm inching closer to the final level for The Inferno.
-Only 750 KOA left to max out range.
-It's been a journey.
-Still, I have a hefty to-do list before The Inferno:
-99 range, 95 magic, and 94 hit points.
-These stats are essential.
-Achieving them will easily take up the next 50+ hours of game time.
-I've some fun plans to grab some last-minute Inferno upgrades.
-Whenever I've spare time, I'll be casting fire strikes, chipping away at the 95 magic goal.
+the use of complex numbers. And once you hear 
+it you will agree that that seems absurd given  
 
-It's time for perhaps the final upgrade of the series.
-There are so many possibilities.
-Maybe I don't even know what it is.
-But first, you look like you need some energy.
-A clean, no-crash energy unlike most energy drinks on the market.
-I'm here to introduce you to Gfuel, today's video sponsor.
-Gfuel is a zero-sugar, performance-based energy drink.
-But don't just trust my word.
-Here's my experience drinking Gfuel last week:
-Gamer Fuel, available in numerous flavors like Bahama Mama, Watermelon Limeade, and my favorite, Blue Ice.
-And, if you're a fan, there are special flavors releasing on October 9th.
-Today, you're in luck!
-I have a 30% discount just for you.
-Grab some Gfuel using code 'settled' or pick it up from Walmart or Target.
+that the puzzle is going to be purely a discrete 
+question. It only asks about whole numbers and  
 
-For today and maybe the week, I'm filling my empty ring slot.
-It feels wrong to face The Inferno without a ring.
-To address this, I'm visiting the Dagoth Kings.
-I'm aiming for the Sears ring, which offers a significant magic accuracy boost.
-The beginning of every Inferno wave involves me casting an ice barrage.
-A successful hit eases the wave significantly.
-But my current accuracy stands at 78% across 60 waves.
-The Sears ring, when imbued, provides 12 magic accuracy.
-That's almost like wearing another Mystic bottom.
-Now, off to Dagoth King Lir.
-My journey there is perilous, and I'm not well-prepared.
-After some near-death experiences, I face Prime.
-After 16 attempts, success! I've secured the Sears ring.
-But the journey doesn't end here.
-I need to imbue it at the nightmare zone for enhanced stats.
+their sums, there&#39;s not a whiff of the imaginary 
+or even continuity anywhere on the horizon.  
+
+It&#39;s certainly not the only time that complex 
+numbers are unreasonably useful for discrete  
+
+math to borrow a phrase. The more famous example 
+that I could bring up would be how the modern way  
+
+that mathematicians understand prime numbers, you 
+know questions about how they&#39;re distributed their  
+
+density at certain regions things like that, well 
+it involves studying specially designed functions  
+
+whose inputs and outputs are complex numbers. 
+Some of you may know that this is what the famous  
+
+Riemann hypothesis is all about. Basically there&#39;s 
+a specially designed function and, on the face of  
+
+it, it looks unrelated to the discrete world of 
+primes – it&#39;s smooth, it&#39;s complex valued. But  
+
+under the hood it encodes all of the information 
+that you could ever want about those discrete  
+
+prime numbers and, most importantly, certain 
+questions about primes are easier to answer  
+
+by analyzing this function than they would be 
+by directly analyzing the primes themselves.  
+
+Of course our puzzle, which I promise 
+I&#39;ll share in just a moment, is a lot  
+
+more innocent than the Riemann hypothesis; 
+it&#39;s a toy problem. But at the end of the  
+
+video I&#39;ll share how the techniques that we use 
+to solve it, the real reason that we&#39;re here,  
+
+are actually pretty similar in spirit to the 
+setup that leads to the riemann hypothesis  
+
+and the prime number theorem and that 
+whole circle of thoughts around it.
+
+Our puzzle for today comes from this book here 
+by Titu Andreescu and Zuming Feng. It&#39;s basically  
+
+a collection of problems used in training the 
+USA team for the international math olympiad.  
+
+And if we turn to chapter 2 advanced problems, 
+problem number 10 asks this seemingly innocent  
+
+question “find the number of subsets of the set 
+one up to two thousand, the sum of whose elements  
+
+is divisible by five”. Okay, so that might take 
+a little bit of a moment to parse. For example,  
+
+something like the set three one four, that would 
+be a subset, all of its elements are also elements  
+
+in the big set. And its sum, three plus one plus 
+four, is eight so that wouldn&#39;t be considered,  
+
+that&#39;s not in our count. Whereas something 
+like the set two three five, also a subset,  
+
+has a sum of ten that is divisible by five so it&#39;s 
+one that we want to count. The preview animation  
+
+that I had at the start is essentially a brute 
+force program trying to answer this question. It  
+
+will iterate through all of the different possible 
+subsets finding the sum of each one along the way  
+
+and it increments a counter each time that it 
+finds a multiple of five. And, you know what,  
+
+a nice warm-up question here would be to pause 
+and think about how many total subsets are there  
+
+overall, forget this multiple of five stuff. How 
+long will it take for this program to terminate?  
+
+Many of you may know the answer is 2 to the power 
+2,000. The basic idea there is that when you&#39;re  
+
+constructing a subset you have 2,000 different 
+binary choices you can make. Do you include an  
+
+element? or do not? and all of those choices are 
+independent of each other so the total number of  
+
+choices you have in constructing a subset is 2 
+times 2 times 2 times 2 on and on 2,000 times.  
+
+And, thinking about our program, that is a 
+monstrously huge number. So even if we gave  
+
+this brute-forcing approach all the time in the 
+universe, with all the physical resources the  
+
+universe could conceivably provide, it wouldn&#39;t 
+even come close, it wouldn&#39;t scratch the surface.  
+
+Obviously we have to be a lot cleverer than 
+that and if you were to just guess what the  
+
+answer should be make a rough approximation 
+you&#39;d probably guess you know it should be  
+
+around a fifth of all the total subsets. There&#39;s 
+probably a roughly even distribution of all these  
+
+sums mod five and yes that is true that&#39;s a decent 
+approximation but the heart of the question the  
+
+real challenge here is to get a precise answer. 
+This can&#39;t be the actual answer since it&#39;s not  
+
+an integer, but is the true answer a little 
+bit more or a little bit less or maybe it&#39;s  
+
+a lot more or a lot less. What tactics could 
+you possibly use to figure out that error?  
+
+To be clear, this lesson is definitely much 
+more about the journey than the destination.  
+
+Will you ever need to filter and count subsets in 
+this way? Almost certainly not, I wouldn&#39;t expect  
+
+so, but toy problem or not it is a legitimately 
+challenging question and navigating that challenge  
+
+develops skills that are relevant to other 
+sorts of challenging questions. For you and me,  
+
+there are at least two very surprising and very 
+beautiful twists and turns that the solution I&#39;d  
+
+like to share with you takes. I&#39;ve already tipped 
+my hand that complex numbers will make a surprise  
+
+appearance, but before we even get to that there 
+is another strange turn which is arguably even  
+
+weirder and even more unexpected. To set the 
+stage though, let&#39;s just get our bearings with  
+
+the puzzle and do what all good problem solvers 
+should do and start with a simpler example,  
+
+maybe just trying it with the set one two three 
+four five. IOf you were solving this problem  
+
+with pencil and paper, you know you&#39;re 
+one of these kids training for the IMO,  
+
+it&#39;s not a bad idea to simply list out all two to 
+the five subset, it&#39;s only 32, it&#39;s not that many.
+
+There
