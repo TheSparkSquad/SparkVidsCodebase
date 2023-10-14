@@ -3,9 +3,6 @@ const fs = require('fs');
 const GenerateSummary = require('./generateSummary.js');
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
-
-//const Transcript = require('./Summary.js');
-
 const express = require('express');
 
 
@@ -16,28 +13,43 @@ import('node-fetch').then(module => {
 const app = express();
 const PORT = 3000;
 
+// ===================================
+// SETUP
+// ===================================
 
-// Serve static files from 'public' directory
+// Serve static files from the 'public' directory
 app.use(express.static('public'));
+
+
+
+
+// ===================================
+// ROUTES
+// ===================================
 
 // Captions API route
 app.get('/captions', async (req, res) => {
+
+    // Extract videoId from the query parameters
     const videoId = req.query.videoId;
     const WATCH_URL = `https://www.youtube.com/watch?v=${videoId}`;
 
     try {
+        // Fetch the video's HTML content
         const response = await fetch(WATCH_URL);
         const html = await response.text();
 
+        // Extract captions data from HTML
         const splitHtml = html.split('"captions":');
         if (splitHtml.length <= 1) {
             return res.status(404).send("No captions found.");
         }
 
+        // Extract and parse JSON data for captions
         const jsonDataStr = splitHtml[1].split(',"videoDetails')[0].replace('\n', '');
         const captionsJson = JSON.parse(jsonDataStr);
         
-        // Initialize Transcript object with necessary data
+        // Create a Transcript instance and fetch captions data
         const transcript = new Transcript(
             fetch, 
             videoId, 
@@ -51,7 +63,7 @@ app.get('/captions', async (req, res) => {
         // Fetch the captions using the new method
         const transcriptData = await transcript.fetchCaptionsFromData(captionsJson);
         
-        // Return the fetched transcript data
+        // Return the fetched transcript data as a response
         return res.json(transcriptData);
     } catch (error) {
         console.error("Error fetching captions:", error);
@@ -61,17 +73,20 @@ app.get('/captions', async (req, res) => {
 });
 
 
+/**
+ * Endpoint to generate a summary from the fetched captions.
+ */
 app.get('/generateSummary', async (req, res) => {
     try {
         console.log('Starting summary generation...');
         
-        // Start the timer with a label 'Summary Generation'
+        // Measure time taken for summary generation
         console.time('Summary Generation');
 
         const generateSummary = new GenerateSummary(apiKey);
         await generateSummary.generate('captions.txt', 'summary.txt');
         
-        // End the timer and it will automatically log the time taken
+        // End time measurement and log result
         console.timeEnd('Summary Generation');
         
         res.sendStatus(200);
@@ -81,6 +96,9 @@ app.get('/generateSummary', async (req, res) => {
     }
 });
 
+/**
+ * Endpoint to retrieve the generated summary.
+ */
 app.get('/getSummary', (req, res) => {
     fs.readFile('summary.txt', 'utf8', (err, data) => {
         if (err) {
@@ -91,7 +109,9 @@ app.get('/getSummary', (req, res) => {
     });
 });
 
-// Start the server
+// ===================================
+// SERVER INITIALIZATION
+// ===================================
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
