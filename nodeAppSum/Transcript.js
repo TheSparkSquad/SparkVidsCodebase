@@ -1,8 +1,22 @@
 const xml2js = require('xml2js');
 const fs = require('fs');
 
-
+/**
+ * Transcript class to manage YouTube captions.
+ */
 class Transcript {
+
+    /**
+     * Constructor for the Transcript class.
+     * @param {Function} httpClient - Function to make HTTP requests.
+     * @param {string} videoId - ID of the YouTube video.
+     * @param {string} url - URL endpoint to fetch captions.
+     * @param {string} language - Language of the captions.
+     * @param {string} languageCode - Code for the language.
+     * @param {boolean} isGenerated - If the captions are auto-generated.
+     * @param {Array} translationLanguages - Available translation languages.
+     */
+
     constructor(httpClient, videoId, url, language, languageCode, isGenerated, translationLanguages) {
         this._httpClient = httpClient;
         this.videoId = videoId;
@@ -17,6 +31,12 @@ class Transcript {
             this._translationLanguagesDict[lang.languageCode] = lang.language;
         });
     }
+
+    /**
+     * Fetch the captions from YouTube.
+     * @param {boolean} preserveFormatting - To preserve the formatting of captions.
+     * @returns {Promise<object>} - Returns a promise resolving to captions data.
+     */
     async fetch(preserveFormatting = false) {
         // Make a fetch request
         const response = await this._httpClient(this._url, {
@@ -35,7 +55,13 @@ class Transcript {
         const captions = this._parseCaptionsFromHtml(rawText);
         return captions;
     }
-    
+
+    /**
+     * Parses captions from raw HTML.
+     * @param {string} html - Raw HTML string.
+     * @returns {object} - Parsed captions data.
+     * @private
+     */
     _parseCaptionsFromHtml(html) {
         const splittedHtml = html.split('"captions":');
     
@@ -62,12 +88,11 @@ class Transcript {
         return captionsJson;
     }
     
-
-
-
-
-
-    // New method to parse and fetch captions using the provided JSON data
+    /**
+     * Parse and fetch captions using provided JSON data.
+     * @param {object} data - Captions data in JSON format.
+     * @returns {Promise<string>} - Returns a promise resolving to SRT content.
+     */
     async fetchCaptionsFromData(data) {
         // Extract the baseUrl from the provided data
         if (data.playerCaptionsTracklistRenderer && data.playerCaptionsTracklistRenderer.captionTracks) {
@@ -80,7 +105,11 @@ class Transcript {
         }
     }
 
-
+    /**
+     * Fetch captions using a given URL.
+     * @param {string} baseUrl - URL endpoint to fetch captions.
+     * @returns {Promise<string>} - Returns a promise resolving to SRT content.
+     */
     async fetchCaptionsFromUrl(baseUrl) {
         const response = await this._httpClient(baseUrl);
         if (!response.ok) {
@@ -93,7 +122,13 @@ class Transcript {
     
         return srtContent;  // Return SRT content
     }
-    
+
+    /**
+     * Convert XML captions content to SRT format.
+     * @param {string} xmlContent - Captions in XML format.
+     * @returns {Promise<string>} - Returns a promise resolving to SRT content.
+     * @private
+     */    
     _convertXmlToSrt(xmlContent) {
         return new Promise((resolve, reject) => {
             xml2js.parseString(xmlContent, (err, result) => {
@@ -119,6 +154,13 @@ class Transcript {
         });
     }
 
+    
+    /**
+     * Format time from seconds to hh:mm:ss,ms format.
+     * @param {number} seconds - Time in seconds.
+     * @returns {string} - Time in hh:mm:ss,ms format.
+     * @private
+     */
     _formatTime(seconds) {
         const date = new Date(0);
         date.setSeconds(seconds);
@@ -130,7 +172,12 @@ class Transcript {
         return `${hh}:${mm}:${ss},${ms}`;
     }
 
-    // New method to save only the text content to a .txt file
+
+    /**
+     * Save plain text content to a .txt file.
+     * @param {string} textContent - Text content to save.
+     * @private
+     */
     _saveTextToFile(textContent) {
         fs.writeFile('captions.txt', textContent, (err) => {
             if (err) {
@@ -140,7 +187,12 @@ class Transcript {
             }
         });
     }
-    
+
+    /**
+     * Save SRT content to a .srt file and extract plain text to save in .txt.
+     * @param {string} srtContent - Captions in SRT format.
+     * @private
+     */
     _saveSrtToFile(srtContent) {
         // Save the SRT content as before
         fs.writeFile('captions.srt', srtContent, (err) => {
@@ -162,14 +214,27 @@ class Transcript {
         this._saveTextToFile(textContent);
     }
 
+    /**
+     * Convert object instance to string representation.
+     * @returns {string} - String representation of the instance.
+     */
     toString() {
         return `${this.languageCode} ("${this.language}")${this.isTranslatable ? '[TRANSLATABLE]' : ''}`;
     }
 
+    /**
+     * Check if the transcript is translatable.
+     * @returns {boolean} - True if translatable, else false.
+     */
     get isTranslatable() {
         return this.translationLanguages.length > 0;
     }
 
+    /**
+     * Translate the captions to a different language.
+     * @param {string} languageCode - Target language code.
+     * @returns {Transcript} - New Transcript instance in target language.
+     */
     translate(languageCode) {
         if (!this.isTranslatable) {
             throw new Error('Not Translatable');
