@@ -21,6 +21,9 @@ async function fetchCaptions() {
         // Update the <pre> tag's content with the fetched SRT data
         document.getElementById("output").textContent = srtData;
 
+        // Show the loading message
+        document.getElementById("loading").style.display = "flex"; 
+
 
         // After fetching captions, now generate the summary
         const generateResponse = await fetch('/generateSummary');
@@ -34,6 +37,10 @@ async function fetchCaptions() {
             throw new Error('Failed to retrieve summary.');
         }
         const summaryData = await summaryResponse.text();
+
+
+        // Hide the loading message
+        document.getElementById("loading").style.display = "none";
 
         // Update the <pre> tag's content with the fetched summary
         document.getElementById("summary").textContent = summaryData;

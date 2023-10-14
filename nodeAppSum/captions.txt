@@ -1,181 +1,303 @@
-In a moment I will ask you a puzzle and it&#39;s a 
-pretty hard puzzle actually. But before I do,  
+this is MC tile over a year ago now I
 
-I want to lead with a spoiler, which is the fact 
-that the way we&#39;re going to solve this involves  
+had one tile to stand on and every 1,000
 
-the use of complex numbers. And once you hear 
-it you will agree that that seems absurd given  
+XP I gain unlocks a new tile I can&#39;t use
 
-that the puzzle is going to be purely a discrete 
-question. It only asks about whole numbers and  
+Banks or trade other players and I&#39;m
 
-their sums, there&#39;s not a whiff of the imaginary 
-or even continuity anywhere on the horizon.  
+unlocking RuneScape one tile at a time
 
-It&#39;s certainly not the only time that complex 
-numbers are unreasonably useful for discrete  
+the goal runescape&#39;s biggest challenge
 
-math to borrow a phrase. The more famous example 
-that I could bring up would be how the modern way  
+The
 
-that mathematicians understand prime numbers, you 
-know questions about how they&#39;re distributed their  
+[Music]
 
-density at certain regions things like that, well 
-it involves studying specially designed functions  
+Inferno we are in the final stretch
 
-whose inputs and outputs are complex numbers. 
-Some of you may know that this is what the famous  
+preparing for runescape&#39;s hardest
 
-Riemann hypothesis is all about. Basically there&#39;s 
-a specially designed function and, on the face of  
+challenge and with the Rune pouch
 
-it, it looks unrelated to the discrete world of 
-primes – it&#39;s smooth, it&#39;s complex valued. But  
+upgrade done I have my eyes on what
 
-under the hood it encodes all of the information 
-that you could ever want about those discrete  
+could just be the final upgrade of the
 
-prime numbers and, most importantly, certain 
-questions about primes are easier to answer  
+series I have been putting in the
 
-by analyzing this function than they would be 
-by directly analyzing the primes themselves.  
+graveyard shift over at Pest Control I
 
-Of course our puzzle, which I promise 
-I&#39;ll share in just a moment, is a lot  
+spent a couple hours last night getting
 
-more innocent than the Riemann hypothesis; 
-it&#39;s a toy problem. But at the end of the  
+200 points to spend on Range XP get
 
-video I&#39;ll share how the techniques that we use 
-to solve it, the real reason that we&#39;re here,  
+myself closer and closer to this final
 
-are actually pretty similar in spirit to the 
-setup that leads to the riemann hypothesis  
+level for The Inferno
 
-and the prime number theorem and that 
-whole circle of thoughts around it.
+750 KOA from maxing out range it&#39;s been
 
-Our puzzle for today comes from this book here 
-by Titu Andreescu and Zuming Feng. It&#39;s basically  
+a long time coming there&#39;s still so much
 
-a collection of problems used in training the 
-USA team for the international math olympiad.  
+on the to-do list before The Inferno 99
 
-And if we turn to chapter 2 advanced problems, 
-problem number 10 asks this seemingly innocent  
+range 95 magic 94 hit points these are
 
-question “find the number of subsets of the set 
-one up to two thousand, the sum of whose elements  
+the three musthave stats I need before I
 
-is divisible by five”. Okay, so that might take 
-a little bit of a moment to parse. For example,  
+attempt anything and they&#39;re easily
 
-something like the set three one four, that would 
-be a subset, all of its elements are also elements  
+going to take up the next 50 plus hours
 
-in the big set. And its sum, three plus one plus 
-four, is eight so that wouldn&#39;t be considered,  
+of game time I have some fun plans for
 
-that&#39;s not in our count. Whereas something 
-like the set two three five, also a subset,  
+how to use these goals to potentially
 
-has a sum of ten that is divisible by five so it&#39;s 
-one that we want to count. The preview animation  
+get some last second Inferno upgrades
 
-that I had at the start is essentially a brute 
-force program trying to answer this question. It  
+and whenever I have some free time I&#39;ll
 
-will iterate through all of the different possible 
-subsets finding the sum of each one along the way  
+be casting some fire strikes like I did
 
-and it increments a counter each time that it 
-finds a multiple of five. And, you know what,  
+at the start of this week for a couple
 
-a nice warm-up question here would be to pause 
-and think about how many total subsets are there  
+hours just an inch away at that 95 magic
 
-overall, forget this multiple of five stuff. How 
-long will it take for this program to terminate?  
+goal it is time to get one of if not the
 
-Many of you may know the answer is 2 to the power 
-2,000. The basic idea there is that when you&#39;re  
+final upgrade of the series so many
 
-constructing a subset you have 2,000 different 
-binary choices you can make. Do you include an  
+things it could be honestly maybe I
 
-element? or do not? and all of those choices are 
-independent of each other so the total number of  
+don&#39;t even know what it is but first wo
 
-choices you have in constructing a subset is 2 
-times 2 times 2 times 2 on and on 2,000 times.  
+wo you&#39;re looking like you need some
 
-And, thinking about our program, that is a 
-monstrously huge number. So even if we gave  
+fuel some nice clean energy for your
 
-this brute-forcing approach all the time in the 
-universe, with all the physical resources the  
+body maybe that doesn&#39;t make you crash
 
-universe could conceivably provide, it wouldn&#39;t 
-even come close, it wouldn&#39;t scratch the surface.  
+or Jitter like some of the crappy energy
 
-Obviously we have to be a lot cleverer than 
-that and if you were to just guess what the  
+drinks out on the market you came to the
 
-answer should be make a rough approximation 
-you&#39;d probably guess you know it should be  
+right place I&#39;m your local gfuel dealer
 
-around a fifth of all the total subsets. There&#39;s 
-probably a roughly even distribution of all these  
+sponsored by gfuel the sponsor of
 
-sums mod five and yes that is true that&#39;s a decent 
-approximation but the heart of the question the  
+today&#39;s video G fuel gfuel is a
 
-real challenge here is to get a precise answer. 
-This can&#39;t be the actual answer since it&#39;s not  
+performance-based zero sugar energy
 
-an integer, but is the true answer a little 
-bit more or a little bit less or maybe it&#39;s  
+drink to fuel your grind but don&#39;t just
 
-a lot more or a lot less. What tactics could 
-you possibly use to figure out that error?  
+take my word for it this is what
 
-To be clear, this lesson is definitely much 
-more about the journey than the destination.  
+happened when I drink g-u last week
 
-Will you ever need to filter and count subsets in 
-this way? Almost certainly not, I wouldn&#39;t expect  
+gamer Fu
 
-so, but toy problem or not it is a legitimately 
-challenging question and navigating that challenge  
+baby g-u comes in so many different
 
-develops skills that are relevant to other 
-sorts of challenging questions. For you and me,  
+flavors maybe even a billion I don&#39;t
 
-there are at least two very surprising and very 
-beautiful twists and turns that the solution I&#39;d  
+know we have flavors like Bahama Mama
 
-like to share with you takes. I&#39;ve already tipped 
-my hand that complex numbers will make a surprise  
+watermelon limeade and one of my
 
-appearance, but before we even get to that there 
-is another strange turn which is arguably even  
+favorites blue ice I&#39;ve definitely drank
 
-weirder and even more unexpected. To set the 
-stage though, let&#39;s just get our bearings with  
+that one the most as you can see I&#39;m
 
-the puzzle and do what all good problem solvers 
-should do and start with a simpler example,  
+somewhat of a collector how can you not
 
-maybe just trying it with the set one two three 
-four five. IOf you were solving this problem  
+be it it tastes so good and your timing
 
-with pencil and paper, you know you&#39;re 
-one of these kids training for the IMO,  
+couldn&#39;t be better with all these
 
-it&#39;s not a bad idea to simply list out all two to 
-the five subset, it&#39;s only 32, it&#39;s not that many.
+spookified flavors coming out October
 
-There
+9th not to mention all the other stuff G
+
+feel was about to do it&#39;s your lucky day
+
+because I have an astounding 30%
+
+discount for you for a limited time only
+
+you could be sipping on some blue ice
+
+and go straight to clicking on some
+
+pixelated rocks right after use code
+
+settled click the link in the
+
+description or go grab some from Walmart
+
+or Target you will not regret it give it
+
+a shot the plan for today and maybe even
+
+the rest of this week is to fill my
+
+currently empty ring slot it just feels
+
+like a crime to go into The Inferno
+
+without any ring at all and to fill that
+
+ring slot we&#39;re paying a visit to The
+
+Good Old dagoth
+
+[Music]
+
+Kings this is my best option for a good
+
+ring and at 1 and 128 the rates aren&#39;t
+
+bad The Archers ring is good don&#39;t get
+
+me wrong but I have my eyes set on the
+
+Sears ring which might seem a little
+
+weird but I&#39;m happy with my ranged
+
+accuracy at this point something I think
+
+I&#39;ll struggle with on the other hand in
+
+The Inferno is Magic accuracy at the
+
+start of every Inferno wave I&#39;ll be
+
+sending out an ice barrage and hitting
+
+it successfully making makes a wave
+
+significantly easier and currently my
+
+accuracy is roughly 78% which across 60
+
+plus waves isn&#39;t great this Sears ring
+
+can solve that problem when imbued a
+
+Sears ring gives 12 magic accuracy
+
+almost as much as wearing another pair
+
+of Mystic bottoms it&#39;s that good so
+
+we&#39;re off to the dagoth king lir it&#39;s
+
+probably going to take over half my toss
+
+to get down there and honestly my setup
+
+really isn&#39;t great right now I&#39;m just
+
+weighing this probably going to have to
+
+come back with some Blood Spells cuz I
+
+have like no food on me right now I just
+
+kind of wanted to do a run instant like
+
+halfway through the dungeon right now
+
+and I&#39;ve taken so much damage I&#39;m on 48
+
+health I have two food on me oh my God
+
+we made it but at what cost I used all
+
+of my food getting down here I would
+
+have died had I had no food I don&#39;t know
+
+why I underestimated this so
+
+badly oh we are so back Supreme is busy
+
+with someone can I tag Prime from here I
+
+can what the heck that&#39;s actually such a
+
+long range all the kings are weak
+
+to a certain style and luckily Prime is
+
+weak to range so it&#39;s the only one I
+
+plan to kill works out perfectly for me
+
+all right we&#39;re done one prime kill one
+
+Sears ring here we go 865 coins pretty
+
+close not sure how long I&#39;m going to
+
+last here with three food but kills are
+
+insanely Fast Five sharks okay maybe the
+
+best drop I could have gotten apart from
+
+a Sears ring itself now I can stay here
+
+longer the respawn times are so long I
+
+need food to like last until the boss
+
+respawns it should be kill number 10 but
+
+as soon as I see anything I am out of
+
+here cuz this is getting a little yep
+
+that&#39;s a big number we&#39;re out we&#39;re out
+
+we&#39;re okay get out almost got kill
+
+number 10 though and now I know I can
+
+bring way more anti- poisons and more
+
+Blood Spells don&#39;t really need that much
+
+prayer as always got to break the
+
+Looting bag and get everything out of it
+
+I think I&#39;ve said it before but
+
+switching to ancients is the biggest
+
+Mobility Nerf in the game for me I&#39;ve
+
+unlocked almost every location in the
+
+game through a Teleport or a shortcut so
+
+not having those teleports or shortcuts
+
+basically blocks me off from most of the
+
+areas that I&#39;ve been in the game once I
+
+switched to ancients so it&#39;s a really
+
+bad Nerf for me and that&#39;s why I don&#39;t
+
+like being on ancients but for the Sears
+
+ring I will do it ancient Spellbook on
+
+oh what&#39;s that oh it&#39;s me you&#39;re dagoth
+
+Prime Champion oka
