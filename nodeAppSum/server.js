@@ -5,23 +5,18 @@ require('dotenv').config();
 const apiKey = process.env.API_KEY;
 const express = require('express');
 
-
 let fetch;
 import('node-fetch').then(module => {
     fetch = module.default;
 });
 const app = express();
 const PORT = 3000;
-
 // ===================================
 // SETUP
 // ===================================
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
-
-
-
 
 // ===================================
 // ROUTES
@@ -57,9 +52,8 @@ app.get('/captions', async (req, res) => {
             "English", 
             "en", 
             true, 
-            [] // For simplicity, not handling translation languages in this example
+            [] // For simplicity, not handling translation languages here
         );
-
         // Fetch the captions using the new method
         const transcriptData = await transcript.fetchCaptionsFromData(captionsJson);
         
@@ -69,7 +63,6 @@ app.get('/captions', async (req, res) => {
         console.error("Error fetching captions:", error);
         return res.status(500).send("Failed to fetch caption data.");
     }
-
 });
 
 
@@ -85,7 +78,7 @@ app.get('/generateSummary', async (req, res) => {
 
         const generateSummary = new GenerateSummary(apiKey);
         await generateSummary.generate('captions.txt', 'summary.txt');
-        
+        //await generateSummary.generate('captions.srt', 'summary.txt');
         // End time measurement and log result
         console.timeEnd('Summary Generation');
         

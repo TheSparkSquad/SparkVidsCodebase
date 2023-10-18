@@ -36,10 +36,19 @@ class OpenAiApi {
      * @returns {Promise<string>} - The summarized text.
      */
     async summarize(text) {
-        const prompt = `Summarize the following text taken from a video, be brief \n\n${text}`;
+        //const prompt = `Summarize the following text taken from a video, be brief \n\n${text}`;
+        //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
+        //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
+        const prompt = `Summarize the following text taken from a video and write it in table of contents format. Be brief \n\n${text}`;
         return this.chatCompletion(prompt);
     }
-}
 
+    /* Future features and implementations, 
+        summarize function that accepts a string to append to the prompt from arguments
+        ability to summarize srt content and timestamps
+        ability to construct table of contents 
+        ability for user to specify a keyword in video and return timestamp and content
+    */
+}
 // Exports the OpenAiApi class to be used in other modules.
 module.exports = OpenAiApi;

@@ -106,13 +106,14 @@ class GenerateSummary {
     }
 
     async generate(inputFile, outputFile) {
-        try {
-            await ensureContentSize(inputFile, 6000);
+        try {  
+            //wihtout optimizing srt input file, only about 8000 characters are possible.
+            await ensureContentSize(inputFile, 15000);
             const openApi = new OpenAiApi(this.apiKey);  
             const fileReader = new FileReader(inputFile);
             let content = await fileReader.readFile();
             content = processText(content);
-            console.log(content);
+            //console.log(content);
             const summary = await openApi.summarize(content);
             const fileWriter = new FileWriter(outputFile);
             await fileWriter.writeFile(summary);
