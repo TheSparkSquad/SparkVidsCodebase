@@ -1,1192 +1,684 @@
 1
-00:00:00,080 --> 00:00:04,520.0000000000009
-uh anti-Semitism as we know is a hatred
+00:00:00,030 --> 00:00:04,910
+in this segment we start a discussion of
 
 2
-00:00:02,800 --> 00:00:05,920
-uh and Prejudice and racism towards
+00:00:02,730 --> 00:00:07,289.9999999999991
+multiple continuous random variables
 
 3
-00:00:04,520 --> 00:00:08,599
-Jewish people and their faith and their
+00:00:04,910 --> 00:00:11,010
+here are some objects that were already
 
 4
-00:00:05,920 --> 00:00:10,800
-ethnicity uh anti-zionism is um a
+00:00:07,290 --> 00:00:14,280.0000000000018
+familiar with but exactly as in the
 
 5
-00:00:08,599 --> 00:00:12,440.0000000000018
-movement fighting against the occupation
+00:00:11,010 --> 00:00:17,130
+discrete case if we are dealing with two
 
 6
-00:00:10,800 --> 00:00:14,120.00000000000182
-this is a settler Colonial fascist
+00:00:14,280 --> 00:00:21,119
+random variables it is not enough to
 
 7
-00:00:12,440 --> 00:00:15,799
-regime that we&#39;re seeing attempting to
+00:00:17,130 --> 00:00:23,130
+know their individual PDFs we also need
 
 8
-00:00:14,120 --> 00:00:17,840
-wipe out an entire indigenous uh
+00:00:21,119 --> 00:00:24,960
+to model the relation between the two
 
 9
-00:00:15,799 --> 00:00:20,160
-civilian population and your perspective
+00:00:23,130 --> 00:00:28,198.99999999999636
+random variables and this is done
 
 10
-00:00:17,840 --> 00:00:21,720
-what is Zionism 75 years of brutal
+00:00:24,960 --> 00:00:32,969
+through a joint PDF which is the
 
 11
-00:00:20,160 --> 00:00:24,640
-occupation ethnic cleansing apartheid
+00:00:28,199 --> 00:00:35,880
+continuous analogue of the joint PMF we
 
 12
-00:00:21,720 --> 00:00:28,960
-and colonization of the Palestinian
+00:00:32,969 --> 00:00:39,930
+will use this notation to indicate joint
 
 13
-00:00:24,640 --> 00:00:31,279
-people and and the occupation and the
+00:00:35,880 --> 00:00:42,090
+PDFs where we use F to indicate that we
 
 14
-00:00:28,960 --> 00:00:33,800
-OCC
+00:00:39,930 --> 00:00:44,370
+are dealing with a density so what
 
 15
-00:00:31,279 --> 00:00:35,160
-Israel is a Zionist State and I think
+00:00:42,090 --> 00:00:48,030
+remains to be done is to actually define
 
 16
-00:00:33,800 --> 00:00:37,199.99999999999272
-that&#39;s what we really have to focus on
+00:00:44,370 --> 00:00:51,449
+this object and see how we use it let us
 
 17
-00:00:35,160 --> 00:00:39,239
-today yeah hello my name is sta um I&#39;m
+00:00:48,030 --> 00:00:53,940
+start by recalling that joint pmfs were
 
 18
-00:00:37,200 --> 00:00:40,879.0000000000073
-proud of the Palestinian youth movement
+00:00:51,449 --> 00:00:56,129
+defined in terms of the probability that
 
 19
-00:00:39,239 --> 00:00:42,599.9999999999927
-and we&#39;re here with the Palestinian and
+00:00:53,940 --> 00:00:59,579
+the pair of random variables x and y
 
 20
-00:00:40,879 --> 00:00:45,120
-Arab youth in the diaspora as well as
+00:00:56,129 --> 00:01:03,239
+takes certain specific values little X
 
 21
-00:00:42,600 --> 00:00:47,480.0000000000073
-our solidarity allies demanding the uh
+00:00:59,579 --> 00:01:05,610
+and little Y regarding joint PDFs we
 
 22
-00:00:45,120 --> 00:00:49,120
-The Siege and end on Gaza and for the
+00:01:03,239 --> 00:01:09,380
+start by saying that it has to be
 
 23
-00:00:47,480 --> 00:00:51,599.9999999999927
-blockade to be lifted where they have
+00:01:05,610 --> 00:01:11,549
+non-negative however a more precise
 
 24
-00:00:49,120 --> 00:00:53,000
-been under blockade for 16 years um
+00:01:09,380 --> 00:01:13,729
+interpretation in terms of probabilities
 
 25
-00:00:51,600 --> 00:00:55,399
-where they&#39;ve been denied the basic
+00:01:11,549 --> 00:01:16,799
+has to wait a little bit
 
 26
-00:00:53,000 --> 00:00:58,960
-human rights of just living a life along
+00:01:13,729 --> 00:01:20,400
+joint PDFs will be used to calculate
 
 27
-00:00:55,399 --> 00:01:00,760
-with having food water fuel electricity
+00:01:16,799 --> 00:01:23,009
+probabilities and this will be done in
 
 28
-00:00:58,960 --> 00:01:02,359
-and we&#39;re here also to talk about the 75
+00:01:20,400 --> 00:01:25,140
+analogy with the discrete setting in the
 
 29
-00:01:00,760 --> 00:01:04,759.9999999999927
-years of military occupation that
+00:01:23,009 --> 00:01:26,880
+discrete setting the probability that
 
 30
-00:01:02,359 --> 00:01:06,640
-Palestine has been under since 1948
+00:01:25,140 --> 00:01:30,479
+the pair of random variables falls
 
 31
-00:01:04,760.0000000000073 --> 00:01:08,159
-people need to see the Palestinians for
+00:01:26,880 --> 00:01:33,119
+inside a certain set is just the sum of
 
 32
-00:01:06,640 --> 00:01:09,680
-who they are part of a revolutionary
+00:01:30,479 --> 00:01:37,679.9999999999854
+the probabilities of all the possible
 
 33
-00:01:08,159 --> 00:01:11,640
-struggle for Liberation we understand
+00:01:33,119 --> 00:01:39,990
+pairs inside that particular set for the
 
 34
-00:01:09,680 --> 00:01:13,000
-Zionism to be a form of white supremacy
+00:01:37,680 --> 00:01:43,049
+continuous case we introduce an
 
 35
-00:01:11,640 --> 00:01:14,920
-and the people have a right to resist
+00:01:39,990 --> 00:01:45,899
+analogous formula we use the joint
 
 36
-00:01:13,000 --> 00:01:17,400
-their occupiers by any means necessary
+00:01:43,049 --> 00:01:48,659
+density instead of the joint PMF and
 
 37
-00:01:14,920 --> 00:01:19,200
-what do you think about Hamas uh I will
+00:01:45,899 --> 00:01:52,950
+instead of having a summation we now
 
 38
-00:01:17,400 --> 00:01:20,840
-not um that you&#39;re not asking the right
+00:01:48,659 --> 00:01:58,770.0000000000146
+integrate as in the discrete setting we
 
 39
-00:01:19,200 --> 00:01:23,000
-questions it&#39;s the wrong question I
+00:01:52,950 --> 00:02:02,729
+have one total unit of probability the
 
 40
-00:01:20,840 --> 00:01:24,960.0000000000146
-think that to we can&#39;t um we can&#39;t
+00:01:58,770 --> 00:02:05,390
+joint PDF tells us how this unit of
 
 41
-00:01:23,000 --> 00:01:26,439
-equate the colonizer with the colonized
+00:02:02,729 --> 00:02:08,848.9999999999854
+probability is spread over the entire
 
 42
-00:01:24,960 --> 00:01:28,320
-we can&#39;t equate the occupier with the
+00:02:05,390 --> 00:02:12,629
+continuous two-dimensional plane and we
 
 43
-00:01:26,439 --> 00:01:30,399.99999999998545
-occupied it implies that these are equal
+00:02:08,848.9999999999854 --> 00:02:13,339.9999999999709
+use it we use the joint PDF to calculate
 
 44
-00:01:28,320 --> 00:01:32,079
-parties and it&#39;s not equal
+00:02:12,629 --> 00:02:17,359.9999999999709
+the
 
 45
-00:01:30,400 --> 00:01:34,479
-so you feel like violence is a reaction
+00:02:13,340 --> 00:02:21,769
+ability of a certain set by finding the
 
 46
-00:01:32,079 --> 00:01:36,079
-to oppression yes but they also have the
+00:02:17,360 --> 00:02:25,190.0000000000291
+volume under the joint PDF that lies on
 
 47
-00:01:34,479 --> 00:01:38,240
-moral right to defend themselves against
+00:02:21,769 --> 00:02:28,340
+top of that set this is what this
 
 48
-00:01:36,079 --> 00:01:39,559.9999999999854
-their colonizers and their occupiers and
+00:02:25,190 --> 00:02:31,129
+integral really represents we integrate
 
 49
-00:01:38,240 --> 00:01:41,559.9999999999854
-this is something that we really need to
+00:02:28,340 --> 00:02:36,650
+over a particular 2-dimensional set and
 
 50
-00:01:39,560 --> 00:01:44,399
-focus on as media and instead of
+00:02:31,129 --> 00:02:39,470
+we take this value that we integrate and
 
 51
-00:01:41,560 --> 00:01:46,360
-painting Palestinians and dehumanizing
+00:02:36,650 --> 00:02:42,519
+we can think of this as the height of an
 
 52
-00:01:44,399 --> 00:01:48,320.00000000001455
-them and demonizing them and putting all
+00:02:39,470 --> 00:02:46,040
+object that&#39;s sitting on top of that set
 
 53
-00:01:46,360 --> 00:01:50,000
-these anti-arab and anti-muslim tropes
+00:02:42,519 --> 00:02:48,500
+now this relation here this calculation
 
 54
-00:01:48,320 --> 00:01:52,360
-against them which the West has been
+00:02:46,040 --> 00:02:52,459
+of probabilities is not something that
 
 55
-00:01:50,000 --> 00:01:54,040
-imposing to justify the ethnic cleansing
+00:02:48,500 --> 00:02:56,090
+we are supposed to prove this is rather
 
 56
-00:01:52,360 --> 00:01:55,960
-that Israel has already done and will
+00:02:52,459 --> 00:03:00,290
+the definition of what a joint PDF does
 
 57
-00:01:54,040 --> 00:01:57,320.00000000001455
-continue to do so this is something that
+00:02:56,090 --> 00:03:02,780
+a legitimate joint PDF is any function
 
 58
-00:01:55,960 --> 00:01:59,079
-we need to focus on and see the
+00:03:00,290 --> 00:03:07,879
+of two variables which is non-negative
 
 59
-00:01:57,320 --> 00:02:00,398.99999999998545
-Palestinians are there defending
+00:03:02,780 --> 00:03:10,420
+and which integrates to 1 and we will
 
 60
-00:01:59,079 --> 00:02:02,079
-themselves as part of revolutionary
+00:03:07,879 --> 00:03:14,989
+say that two random variables are
 
 61
-00:02:00,399 --> 00:02:04,799
-struggle for Liberation we need our
+00:03:10,420 --> 00:03:19,100
+jointly continuous if there is a
 
 62
-00:02:02,079 --> 00:02:09,318.99999999998545
-countries back that&#39;s
+00:03:14,989 --> 00:03:21,470
+legitimate joint PDF that can be used to
 
 63
-00:02:04,799 --> 00:02:10,920.0000000000146
-it free free Palestine uh from the land
+00:03:19,100 --> 00:03:25,130
+calculate the Associated probabilities
 
 64
-00:02:09,318.99999999998545 --> 00:02:12,879
-what is it from the land to the Sea
+00:03:21,470 --> 00:03:27,590
+through this particular formula so we
 
 65
-00:02:10,919.9999999999854 --> 00:02:14,518.9999999999709
-Palestine will be free from the river to
+00:03:25,130 --> 00:03:30,650
+have really an indirect definition
 
 66
-00:02:12,879 --> 00:02:17,239
-the sea from The River To The Sea that&#39;s
+00:03:27,590 --> 00:03:33,650
+instead of defining the joint PDF as a
 
 67
-00:02:14,519 --> 00:02:19,560
-right yeah from The River To The Sea
+00:03:30,650 --> 00:03:37,519
+probability we actually define it
 
 68
-00:02:17,239 --> 00:02:22,519
-Palestine will be free Rockets were
+00:03:33,650 --> 00:03:39,700.0000000000291
+indirectly by saying what it does how it
 
 69
-00:02:19,560 --> 00:02:24,760
-fired into Israel as gunmen infiltrated
+00:03:37,519 --> 00:03:45,169
+will be used to calculate probabilities
 
 70
-00:02:22,519 --> 00:02:28,239
-several border towns and bases they
+00:03:39,700 --> 00:03:48,888.9999999999709
+a picture will be helpful here here is a
 
 71
-00:02:24,760 --> 00:02:31,519
-swarmed into Israel by land sea and even
+00:03:45,169 --> 00:03:54,109
+plot of a possible joint PDF these are
 
 72
-00:02:28,239 --> 00:02:36,200.0000000000291
-on paragliders and then they went on a
+00:03:48,889 --> 00:03:58,849.0000000000291
+the X and y axes and the faction being
 
 73
-00:02:31,519 --> 00:02:36,200.0000000000291
-rampage slaughtering civilians in the
+00:03:54,109 --> 00:04:02,750
+plotted is the joint PDF of these two
 
 74
-00:02:36,480 --> 00:02:42,040
-street it was a it&#39;s a horrible
+00:03:58,849 --> 00:04:05,599
+random variables this joint PDF is
 
 75
-00:02:38,680 --> 00:02:44,319.0000000000291
-situation yeah and it was the worst day
+00:04:02,750 --> 00:04:07,760
+higher at some places and lower at
 
 76
-00:02:42,040 --> 00:02:47,799.9999999999709
-in Jewish history in terms of deaths
+00:04:05,599 --> 00:04:10,250
+others indicating that certain regions
 
 77
-00:02:44,319 --> 00:02:49,000
-since the Holocaust 1300 people died and
+00:04:07,760 --> 00:04:13,160
+of the XY plane are more likely than
 
 78
-00:02:47,800 --> 00:02:51,840
-what can you tell us about what&#39;s going
+00:04:10,250 --> 00:04:16,579
+others the joint PDF determines the
 
 79
-00:02:49,000 --> 00:02:53,800
-on well uh the rage goes all the way
+00:04:13,160 --> 00:04:21,219
+probability of a set B by integrating
 
 80
-00:02:51,840 --> 00:02:55,400
-back I mean basically what we have is we
+00:04:16,579 --> 00:04:24,729
+over that set B let&#39;s say it&#39;s this set
 
 81
-00:02:53,800 --> 00:02:57,200.0000000000291
-have two nationalist movements that are
+00:04:21,219 --> 00:04:27,030
+integrating the PDF over that set
 
 82
-00:02:55,400 --> 00:03:00,640.0000000000291
-buying for control over a piece of
+00:04:24,729 --> 00:04:31,260
+pictorially what this means
 
 83
-00:02:57,200 --> 00:03:02,760
-territory Hamas is in charge of the Gaza
+00:04:27,030 --> 00:04:35,820
+is that we look at the volume that sits
 
 84
-00:03:00,640 --> 00:03:05,238.9999999999709
-Strip which is in the south of Israel on
+00:04:31,260 --> 00:04:39,900
+on top of that set but below the PDF
 
 85
-00:03:02,760 --> 00:03:06,798.9999999999709
-the coast uh it was founded in 1987
+00:04:35,820 --> 00:04:42,090
+below the joint PDF and so we obtain
 
 86
-00:03:05,239 --> 00:03:09,319.0000000000291
-during the first Uprising against
+00:04:39,900 --> 00:04:45,299.9999999999418
+some three-dimensional objects of this
 
 87
-00:03:06,799 --> 00:03:09,319.0000000000291
-Israeli
+00:04:42,090 --> 00:04:49,770
+kind and this integral corresponds to
 
 88
-00:03:09,799 --> 00:03:14,680
-occupation Hamas won elections actually
+00:04:45,300 --> 00:04:52,710.0000000000582
+actually finding this volume here the
 
 89
-00:03:12,400 --> 00:03:18,640.0000000000291
-in 2006 and then took over the Gaza
+00:04:49,770 --> 00:04:57,020
+volume that sits on top of the set B but
 
 90
-00:03:14,680 --> 00:03:21,159.0000000000291
-Strip in 2017 hamas&#39;s Charter said that
+00:04:52,710 --> 00:04:57,020
+which is below the joint PDF
 
 91
-00:03:18,640 --> 00:03:23,760
-uh all of Palestine should be an Islamic
+00:04:57,260 --> 00:05:04,289.9999999999418
+let us now develop some additional
 
 92
-00:03:21,159 --> 00:03:27,120
-State on a core level it uh believes
+00:04:59,880 --> 00:05:09,390
+understanding of joint PDFs as we just
 
 93
-00:03:23,760 --> 00:03:29,359.9999999999709
-that Palestine is a gift of God it&#39;s a
+00:05:04,290 --> 00:05:14,970
+discussed for any given set B we can
 
 94
-00:03:27,120 --> 00:03:30,799
-religious endowment and that they really
+00:05:09,390 --> 00:05:18,599.9999999999418
+integrate the joint PDF over that set
 
 95
-00:03:29,360 --> 00:03:34,599.0000000000291
-can&#39;t surrender any part of that
+00:05:14,970 --> 00:05:21,750
+and this will give us the probability of
 
 96
-00:03:30,799 --> 00:03:37,439
-religious Endowment for Jews it was a
+00:05:18,600 --> 00:05:23,580.0000000000582
+that particular set of particular
 
 97
-00:03:34,599 --> 00:03:39,560
-place that um has been remembered in you
+00:05:21,750 --> 00:05:26,970
+interest is the case where we are
 
 98
-00:03:37,439 --> 00:03:41,799
-know Jewish prayer and Jewish history
+00:05:23,580 --> 00:05:29,729
+dealing with a set which is a rectangle
 
 99
-00:03:39,560 --> 00:03:44,159
-the Jews actually had a kingdom there uh
+00:05:26,970 --> 00:05:32,160
+in which case the situation is a little
 
 100
-00:03:41,799 --> 00:03:46,200.0000000000291
-under David and Solomon and uh were
+00:05:29,729 --> 00:05:34,770
+simpler so suppose that we have a
 
 101
-00:03:44,159 --> 00:03:48,120
-there until the Romans threw them out
+00:05:32,160 --> 00:05:38,400.0000000000582
+rectangle where the x-coordinate ranges
 
 102
-00:03:46,200 --> 00:03:50,359.9999999999709
-and so the idea was the restoration of
+00:05:34,770 --> 00:05:42,630
+from a to b and the y-coordinate ranges
 
 103
-00:03:48,120 --> 00:03:52,360
-the community back to its ancestral land
+00:05:38,400 --> 00:05:45,500
+from some c to some d then the double
 
 104
-00:03:50,360 --> 00:03:55,280
-and so therefore what we see is two
+00:05:42,630 --> 00:05:48,240
+integral over this particular rectangle
 
 105
-00:03:52,360 --> 00:03:57,319.0000000000291
-groups that are vying for control over a
+00:05:45,500 --> 00:05:51,240
+can be written in the form where we
 
 106
-00:03:55,280 --> 00:03:59,400
-single small area actually about the
+00:05:48,240 --> 00:05:54,660
+first integrate with respect one of the
 
 107
-00:03:57,319 --> 00:04:01,679.9999999999709
-size of New Jersey the thing about Gaza
+00:05:51,240 --> 00:05:57,390
+variables that ranges from A to B and
 
 108
-00:03:59,400 --> 00:04:04,879.0000000000291
-which you know your audience should know
+00:05:54,660 --> 00:06:01,430
+then we integrate over all possible
 
 109
-00:04:01,680 --> 00:04:07,40.000000000029104
-is that Gaza is a extraordinarily
+00:05:57,390 --> 00:06:04,200
+values of y as they range from C to D a
 
 110
-00:04:04,879 --> 00:04:11,000
-crowded one of the most crowded places
+00:06:01,430 --> 00:06:06,830
+particular interest is the special case
 
 111
-00:04:07,040 --> 00:04:13,040
-on Earth extraordinarily poor society in
+00:06:04,200 --> 00:06:11,130
+where we&#39;re dealing with a small
 
 112
-00:04:11,000 --> 00:04:16,160.0000000000291
-which you know about half the population
+00:06:06,830 --> 00:06:14,430
+rectangle such as this one a rectangle
 
 113
-00:04:13,040 --> 00:04:17,839.9999999999709
-is under the age of 18 so any Israeli
+00:06:11,130 --> 00:06:20,250
+with sizes equal to some Delta where
 
 114
-00:04:16,160.0000000000291 --> 00:04:19,639
-incursion into Gaza is going to be
+00:06:14,430 --> 00:06:22,979
+Delta is a small number in that case the
 
 115
-00:04:17,839.9999999999709 --> 00:04:21,599.9999999999709
-killing a lot of children if you&#39;re
+00:06:20,250 --> 00:06:27,090
+double integral which is the volume on
 
 116
-00:04:19,639 --> 00:04:24,320
-living in Gaza are you allowed to travel
+00:06:22,979 --> 00:06:32,070
+top of that rectangle is simpler to
 
 117
-00:04:21,600.0000000000291 --> 00:04:27,320.0000000000582
-freely throughout Israel no can you just
+00:06:27,090 --> 00:06:34,619.9999999999418
+evaluate it is equal to the value of the
 
 118
-00:04:24,320 --> 00:04:29,880
-go for like the weekend no no you can&#39;t
+00:06:32,070 --> 00:06:36,810
+function that we are integrating at some
 
 119
-00:04:27,320 --> 00:04:32,479
-go to the West Bank either you&#39;re you&#39;re
+00:06:34,620 --> 00:06:40,210
+point in the rectangle let&#39;s take that
 
 120
-00:04:29,880 --> 00:04:35,280
-pretty much isolated in Gaza wait so can
+00:06:36,810 --> 00:06:42,850
+corner times the area of the
 
 121
-00:04:32,479 --> 00:04:36,758.9999999999418
-you is there an airport no okay so in
+00:06:40,210 --> 00:06:46,060
+little rectangle which is equal to Delta
 
 122
-00:04:35,280 --> 00:04:38,559.9999999999418
-order to be able to cross from one to
+00:06:42,850 --> 00:06:48,460.0000000000582
+square so we have an interpretation of
 
 123
-00:04:36,759 --> 00:04:41,440
-another you have to go through
+00:06:46,060 --> 00:06:52,750
+the joint PDF in terms of probabilities
 
 124
-00:04:38,560 --> 00:04:43,320
-checkpoints and uh it&#39;s not a free
+00:06:48,460 --> 00:06:55,318.9999999999418
+of small rectangles joint PDFs are not
 
 125
-00:04:41,440 --> 00:04:46,719.9999999999418
-movement to Travelers one of my students
+00:06:52,750 --> 00:06:58,569
+probabilities but rather they are
 
 126
-00:04:43,320 --> 00:04:48,880
-for example was a Palestinian from Gaza
+00:06:55,319 --> 00:07:03,610
+probability densities they tell us the
 
 127
-00:04:46,720 --> 00:04:51,560
-and uh Palestinians have to be back in
+00:06:58,569 --> 00:07:06,069
+probability per unit area and one more
 
 128
-00:04:48,880 --> 00:04:55,800
-the territories at nightfall uh they
+00:07:03,610 --> 00:07:08,440
+important comment for the case of a
 
 129
-00:04:51,560 --> 00:04:58,240
-can&#39;t stay in Israel proper so uh he had
+00:07:06,069 --> 00:07:11,110
+single continuous random variable we
 
 130
-00:04:55,800 --> 00:05:00,080
-to actually camp out in the West Bank to
+00:07:08,440 --> 00:07:14,500
+know that any single point has zero
 
 131
-00:04:58,240 --> 00:05:01,360
-go to university in the West Bank in
+00:07:11,110 --> 00:07:16,810
+probability this is a game true for the
 
 132
-00:05:00,080 --> 00:05:02,840
-spite of the fact that his home was in
+00:07:14,500 --> 00:07:20,050
+case of two jointly continuous random
 
 133
-00:05:01,360 --> 00:05:04,960.0000000000582
-Gaza because he couldn&#39;t pass through
+00:07:16,810 --> 00:07:25,479
+variables but more is true if you take a
 
 134
-00:05:02,840 --> 00:05:07,000
-Israel in order to uh go from one to the
+00:07:20,050 --> 00:07:28,389
+set B that has zero area for example a
 
 135
-00:05:04,960 --> 00:05:11,280
-other and that curfew is imposed by
+00:07:25,479 --> 00:07:34,620
+certain curve suppose that this curve is
 
 136
-00:05:07,000 --> 00:05:13,280
-Israel by Israel why well that&#39;s a
+00:07:28,389 --> 00:07:38,380
+the entire set B then the volume under
 
 137
-00:05:11,280 --> 00:05:16,159.9999999999418
-question for the Israelis actually uh
+00:07:34,620 --> 00:07:42,810
+the joint PDF that&#39;s sitting on top of
 
 138
-00:05:13,280 --> 00:05:18,599.9999999999418
-the Israelis think that you know uh the
+00:07:38,380 --> 00:07:47,560
+that curve is going to be equal to zero
 
 139
-00:05:16,160 --> 00:05:22,160
-uh Palestinians are are
+00:07:42,810 --> 00:07:50,199
+so zero area sets have zero probability
 
 140
-00:05:18,600 --> 00:05:25,80.00000000005821
-dangerous um there was a second Uprising
+00:07:47,560 --> 00:07:52,419
+and this is one of the characteristic
 
 141
-00:05:22,160 --> 00:05:28,479.0000000000582
-that took place in 2000 against Israeli
+00:07:50,199 --> 00:07:55,840.0000000000582
+features of jointly continuous random
 
 142
-00:05:25,080 --> 00:05:30,639
-occupation uh and it was extraordinarily
+00:07:52,419 --> 00:07:59,349
+variables now let&#39;s think of a
 
 143
-00:05:28,479 --> 00:05:32,400
-bloody
+00:07:55,840 --> 00:08:03,820
+particular situation suppose that X is a
 
 144
-00:05:30,639 --> 00:05:34,280.0000000000582
-do you have family in Palestine yes I do
+00:07:59,349 --> 00:08:05,860
+continuous random variable and let Y be
 
 145
-00:05:32,400 --> 00:05:36,799.9999999999418
-how are they doing uh we lost 14
+00:08:03,820 --> 00:08:09,070
+another random variable which is
 
 146
-00:05:34,280 --> 00:05:38,359.9999999999418
-relatives in the bombardment and uh
+00:08:05,860 --> 00:08:11,560
+identically equal to X since X is a
 
 147
-00:05:36,800 --> 00:05:40,600
-currently I haven&#39;t heard from relatives
+00:08:09,070 --> 00:08:14,289
+continuous random variable Y is also a
 
 148
-00:05:38,360 --> 00:05:41,880
-in about 12 hours so sorry to hear that
+00:08:11,560 --> 00:08:17,050
+continuous random variable however in
 
 149
-00:05:40,600 --> 00:05:45,720
-thank you I appreciate it what&#39;s their
+00:08:14,289 --> 00:08:19,180
+this situation we are certain that the
 
 150
-00:05:41,880 --> 00:05:45,719.9999999999418
-life like out there uh there is no
+00:08:17,050 --> 00:08:23,110
+outcome of the experiment is going to
 
 151
-00:05:46,639 --> 00:05:54,319
-life deadly retribution is raining down
+00:08:19,180 --> 00:08:25,750
+fall on the line where x equals y all
 
 152
-00:05:50,360 --> 00:05:57,479.0000000000582
-on Gaza Israel says it&#39;s targeting Mass
+00:08:23,110 --> 00:08:30,880
+the probability lies on top of a line
 
 153
-00:05:54,319 --> 00:05:57,479.0000000000582
-with waves of air
+00:08:25,750 --> 00:08:33,669
+and a line has zero area so we have
 
 154
-00:05:58,479 --> 00:06:03,318.9999999999418
-strikes
+00:08:30,880 --> 00:08:36,309.9999999999418
+positive probability on a set of zero
 
 155
-00:06:01,039 --> 00:06:04,599.9999999999418
-uh there is no life this is why uh the
+00:08:33,669 --> 00:08:36,819.9999999999418
+area which contradicts what we discussed
 
 156
-00:06:03,319 --> 00:06:06,759
-the people of Palestine have a right to
+00:08:36,309.9999999999418 --> 00:08:39,728.9999999999418
+before
 
 157
-00:06:04,600 --> 00:06:08,440
-resist there is no life in Gaza um
+00:08:36,820.0000000000582 --> 00:08:42,940.0000000000582
+well this simply means that x and y are
 
 158
-00:06:06,759 --> 00:06:10,160
-Israel has made it their mission to make
+00:08:39,729.0000000000582 --> 00:08:45,130
+not jointly continuous each one of them
 
 159
-00:06:08,440 --> 00:06:13,000
-sure that there is no life for the gazin
+00:08:42,940.0000000000582 --> 00:08:48,880.0000000001164
+is continuous but together they&#39;re not
 
 160
-00:06:10,160 --> 00:06:15,560
-that are living in the Gaza Strip for 16
+00:08:45,130 --> 00:08:51,720
+jointly continuous essentially joint
 
 161
-00:06:13,000 --> 00:06:19,919
-years the Israeli government has
+00:08:48,880 --> 00:08:53,889
+continuity is something more than
 
 162
-00:06:15,560 --> 00:06:25,000
-suffocated Palestinians in Gaza under a
+00:08:51,720 --> 00:08:56,889
+requiring each random very
 
 163
-00:06:19,919 --> 00:06:29,840
-Draconian air sea and land military
+00:08:53,889 --> 00:08:59,920
+to be continued by itself for joint
 
 164
-00:06:25,000 --> 00:06:33,440
-blockade imprisoning and starving over 2
+00:08:56,889 --> 00:09:03,509
+continuity we want the probability to be
 
 165
-00:06:29,840 --> 00:06:35,799.9999999999418
-million people and denying them Medical
+00:08:59,920 --> 00:09:06,339
+really spread over two dimensions
 
 166
-00:06:33,440 --> 00:06:37,240
-Aid so I think when we&#39;re thinking when
+00:09:03,509 --> 00:09:09,249
+probability is not allowed to be
 
 167
-00:06:35,800 --> 00:06:38,400.0000000000582
-we&#39;re looking at a few days ago I think
+00:09:06,339 --> 00:09:10,869
+concentrated on a one-dimensional set on
 
 168
-00:06:37,240 --> 00:06:40,280.0000000000582
-it&#39;s really important to look at the
+00:09:09,249 --> 00:09:12,910
+the other hand in this example the
 
 169
-00:06:38,400 --> 00:06:42,000
-history of Palestine and contextualize
+00:09:10,869 --> 00:09:15,489
+probability is concentrated on a
 
 170
-00:06:40,280 --> 00:06:44,679.9999999999418
-what&#39;s happening a lot of people want to
+00:09:12,910 --> 00:09:18,660
+one-dimensional set and we do not have
 
 171
-00:06:42,000 --> 00:06:46,639
-believe that this is a random moment
-
-172
-00:06:44,680 --> 00:06:48,639
-that happened on October 7th but
-
-173
-00:06:46,639 --> 00:06:50,919
-realistically speaking this is not true
-
-174
-00:06:48,639 --> 00:06:52,680
-this is a a building upon a military
-
-175
-00:06:50,919 --> 00:06:55,039
-occupation that has been happening for
-
-176
-00:06:52,680 --> 00:06:56,960
-75 plus years and Gaza specifically for
-
-177
-00:06:55,039 --> 00:06:59,120
-16 years Gazza has been under blackid
-
-178
-00:06:56,960 --> 00:07:01,400
-for 16 years no one can leave they&#39;ve
-
-179
-00:06:59,120 --> 00:07:03,120
-been denied the basic human rights of
-
-180
-00:07:01,400 --> 00:07:06,120
-just living a life along with having
-
-181
-00:07:03,120 --> 00:07:07,759
-food water fuel electricity and that&#39;s
-
-182
-00:07:06,120 --> 00:07:10,919
-what we&#39;re focusing on here today like I
-
-183
-00:07:07,759 --> 00:07:13,280.0000000000582
-said 16 years of Siege 16 years of being
-
-184
-00:07:10,919 --> 00:07:15,039
-held hostage in an open air prison where
-
-185
-00:07:13,280 --> 00:07:16,758.9999999999418
-you have been denied everything where
-
-186
-00:07:15,039 --> 00:07:19,240
-your family has been killed where you
-
-187
-00:07:16,759 --> 00:07:21,680
-have to hold your dying child and bury
-
-188
-00:07:19,240 --> 00:07:23,879
-them while you have to survive like we
-
-189
-00:07:21,680 --> 00:07:26,120
-have to look at the history ofans and
-
-190
-00:07:23,879 --> 00:07:29,639
-people in Palestine you&#39;ve had a series
-
-191
-00:07:26,120 --> 00:07:32,240
-of Wars uh 1948 was the most important
-
-192
-00:07:29,639 --> 00:07:35,160
-for our benefit that was when the state
-
-193
-00:07:32,240 --> 00:07:39,879
-of Israel was declared Arab armies
-
-194
-00:07:35,160 --> 00:07:41,960.0000000000582
-invaded uh and about 720,000 uh 720,000
-
-195
-00:07:39,879 --> 00:07:45,80.00000000005821
-Palestinians were forced to
-
-196
-00:07:41,960 --> 00:07:47,520
-flee um in the wake of that uh basically
-
-197
-00:07:45,080 --> 00:07:49,520
-the Palestinians called 1948 the
-
-198
-00:07:47,520 --> 00:07:52,599
-Israelis call it the war of independence
-
-199
-00:07:49,520 --> 00:07:55,479
-Palestinians call it the the nakba the
-
-200
-00:07:52,599 --> 00:07:57,280
-disaster you know and ever since then
-
-201
-00:07:55,479 --> 00:07:59,280
-the issue of Palestine has been on and
-
-202
-00:07:57,280 --> 00:08:00,559.9999999999418
-off the international agenda the
-
-203
-00:07:59,280 --> 00:08:01,960
-politicians are calling for a second
-
-204
-00:08:00,560 --> 00:08:03,680
-necka if you don&#39;t know what necka is it
-
-205
-00:08:01,960 --> 00:08:05,680
-means catastrophe it&#39;s what happened in
-
-206
-00:08:03,680 --> 00:08:08,159
-1948 when almost a million people were
-
-207
-00:08:05,680 --> 00:08:10,120
-displaced practically overnight and uh
-
-208
-00:08:08,159 --> 00:08:11,599
-genocide and massacres of over 250
-
-209
-00:08:10,120 --> 00:08:13,039
-Palestinian Villages and we&#39;re seeing
-
-210
-00:08:11,599 --> 00:08:14,960
-politicians not just from the Israeli
-
-211
-00:08:13,039 --> 00:08:17,080
-side but also the Us and other European
-
-212
-00:08:14,960 --> 00:08:18,878.9999999999418
-politicians calling for the leveling of
-
-213
-00:08:17,080 --> 00:08:20,719.9999999999418
-Gaza calling for a complete annihilation
-
-214
-00:08:18,879 --> 00:08:22,720
-of the Palestinian people do you think
-
-215
-00:08:20,720 --> 00:08:25,280.0000000000582
-like do you think the majority of people
-
-216
-00:08:22,720 --> 00:08:26,720
-in Gaza are against Hamas I would say
-
-217
-00:08:25,280 --> 00:08:28,400
-that that&#39;s not important I think what&#39;s
-
-218
-00:08:26,720 --> 00:08:30,520.0000000000582
-important here is condemning the
-
-219
-00:08:28,400 --> 00:08:32,439.9999999999418
-violence and the cuz I&#39;m Jewish right
-
-220
-00:08:30,520 --> 00:08:33,559.9999999999418
-and I&#39;m Israeli so I&#39;m very interested
-
-221
-00:08:32,440.0000000000582 --> 00:08:35,279.0000000001164
-and I have friends that are Palestinian
-
-222
-00:08:33,559.9999999999418 --> 00:08:38,039
-but somewhere in West Bank only one or
-
-223
-00:08:35,279 --> 00:08:41,200.0000000000582
-two friends from Gaza but a big concern
-
-224
-00:08:38,039 --> 00:08:43,240
-for us I would say is that people have
-
-225
-00:08:41,200.0000000000582 --> 00:08:44,640.0000000001164
-no choice like if you wanted to speak
-
-226
-00:08:43,240 --> 00:08:46,000
-out against Kamas would it be
-
-227
-00:08:44,640 --> 00:08:47,560
-essentially safe for all your family
-
-228
-00:08:46,000 --> 00:08:49,480
-members still living
-
-229
-00:08:47,560 --> 00:08:50,959
-there I don&#39;t think you&#39;re asking the
-
-230
-00:08:49,480 --> 00:08:52,839
-right questions I&#39;m just saying it it&#39;s
-
-231
-00:08:50,959 --> 00:08:54,640
-a true question because not a lot of us
-
-232
-00:08:52,839 --> 00:08:56,160.00000000011642
-would have those rights in Gaza and
-
-233
-00:08:54,640 --> 00:08:57,439.9999999998836
-that&#39;s not because of Gaza it&#39;s not
-
-234
-00:08:56,160 --> 00:08:58,880
-because of the great Palestinian people
-
-235
-00:08:57,440 --> 00:08:59,720
-that make that place it&#39;s because of
-
-236
-00:08:58,880 --> 00:09:01,279
-hamama
-
-237
-00:08:59,720 --> 00:09:02,959.0000000001164
-Kamas is a terrorist organization that
-
-238
-00:09:01,279 --> 00:09:04,959
-runs that Palestinian people didn&#39;t do
-
-239
-00:09:02,959 --> 00:09:07,000
-it Kamas did and they&#39;ve radicalized
-
-240
-00:09:04,959 --> 00:09:08,839
-their whole spot and now the time has
-
-241
-00:09:07,000 --> 00:09:11,600
-come that there&#39;s a second holocaust,
-
-242
-00:09:08,839 --> 00:09:15,360
-1300 plus people were killed that would
-
-243
-00:09:11,600 --> 00:09:17,560.0000000001164
-be equal to over 35,000 Americans if
-
-244
-00:09:15,360 --> 00:09:20,399
-that was in America per capita could you
-
-245
-00:09:17,560 --> 00:09:23,000
-just say that is [ __ ] horrible where
-
-246
-00:09:20,399 --> 00:09:25,200
-was the international outcry when Israel
-
-247
-00:09:23,000 --> 00:09:27,399
-killed more than 200 Palestinians before
-
-248
-00:09:25,200 --> 00:09:29,600
-the recent events in 2023 do that I&#39;m
-
-249
-00:09:27,399 --> 00:09:32,800
-here to speak on behalf of my people so
-
-250
-00:09:29,600 --> 00:09:34,839
-that I mean if the caloa cartel sliced
-
-251
-00:09:32,800 --> 00:09:36,479.9999999998836
-up everyone in Texas and New Mexico what
-
-252
-00:09:34,839 --> 00:09:38,160.00000000011642
-do you think America would do based on
-
-253
-00:09:36,480 --> 00:09:40,640
-what you know America to be today plus
-
-254
-00:09:38,160 --> 00:09:43,800
-it&#39;s not just Jews Arabs Palestinian
-
-255
-00:09:40,640 --> 00:09:45,760
-Arabs people from Thailand Italy Germany
-
-256
-00:09:43,800 --> 00:09:46,959
-a whole Music Festival do you go to
-
-257
-00:09:45,760 --> 00:09:48,920
-music festivals you&#39;re watching this
-
-258
-00:09:46,959 --> 00:09:50,599.9999999998836
-channel do you go to music festivals
-
-259
-00:09:48,920 --> 00:09:52,160
-people from the music festival contacted
-
-260
-00:09:50,600 --> 00:09:53,519
-me and said share my story I was there
-
-261
-00:09:52,160 --> 00:09:54,560
-watching people get slaughtered the
-
-262
-00:09:53,519 --> 00:09:55,839
-people the same people that play at
-
-263
-00:09:54,560 --> 00:09:57,880
-Coachella the same people play at La
-
-264
-00:09:55,839 --> 00:10:00,160.00000000011642
-laaloa and this is a music festival so
-
-265
-00:09:57,880 --> 00:10:02,720
-to regurgitate set colonialist how many
-
-266
-00:10:00,160 --> 00:10:05,120
-Jews are white brown Jews black Jews
-
-267
-00:10:02,720 --> 00:10:07,320
-white Jews we&#39;re not white here we&#39;re
-
-268
-00:10:05,120 --> 00:10:09,600
-not white there too much of this world
-
-269
-00:10:07,320 --> 00:10:12,519
-being negative I&#39;m like bro for one
-
-270
-00:10:09,600 --> 00:10:14,880
-[ __ ] second could you Kim Hamas
-
-271
-00:10:12,519 --> 00:10:16,320
-terrorists they&#39;re like I don&#39;t got I
-
-272
-00:10:14,880 --> 00:10:18,120
-don&#39;t know what you wanna I&#39;m from
-
-273
-00:10:16,320 --> 00:10:20,560.0000000001164
-Argentina what&#39;s the favorite place of
-
-274
-00:10:18,120 --> 00:10:22,560.0000000001164
-vacation the Bahamas I&#39;ll turn them into
-
-275
-00:10:20,560 --> 00:10:24,560
-humus deals on a microphone cook up what
-
-276
-00:10:22,560 --> 00:10:26,439.9999999998836
-you looking they got Mia Khalifa Roger
-
-277
-00:10:24,560 --> 00:10:28,479.9999999998836
-Waters out of order they&#39;ll see you with
-
-278
-00:10:26,440 --> 00:10:30,600
-everything don&#39;t test the Jewish lawyers
-
-279
-00:10:28,480 --> 00:10:32,880
-I&#39;m talking like here we exposed back
-
-280
-00:10:30,600 --> 00:10:35,79.00000000011642
-from gush I&#39;m trying to have people live
-
-281
-00:10:32,880 --> 00:10:37,160
-safe not on bomb shelters at Tel Aviv
-
-282
-00:10:35,079 --> 00:10:39,359.9999999998836
-I&#39;m talking down to the place when y&#39;all
-
-283
-00:10:37,160 --> 00:10:41,600
-looking for huh deals on the microphone
-
-284
-00:10:39,360 --> 00:10:44,480
-avenging the death of every child in a
-
-285
-00:10:41,600 --> 00:10:46,79.00000000011642
-Kuts so prefer here I don&#39;t got to know
-
-286
-00:10:44,480 --> 00:10:48,200
-you what have thought it was cuz I don&#39;t
-
-287
-00:10:46,079 --> 00:10:50,399
-need protection from anybody or police
-
-288
-00:10:48,200 --> 00:10:52,279
-officers I&#39;m rapping for my people the
-
-289
-00:10:50,399 --> 00:10:54,120
-flow is my seat up and I don&#39;t need to
-
-290
-00:10:52,279 --> 00:10:56,160
-rap for other people not a good idea
-
-291
-00:10:54,120 --> 00:10:57,800
-when I&#39;m rocking in a zone I&#39;m not
-
-292
-00:10:56,160 --> 00:10:59,600
-saying it&#39;s racist but ironically we&#39;re
-
-293
-00:10:57,800 --> 00:11:01,800
-here in front of the Israeli see shabbat
-
-294
-00:10:59,600 --> 00:11:03,680.0000000001164
-shalom Channel 5 live worldwide
-
-295
-00:11:01,800 --> 00:11:06,439.9999999998836
-Hollywood and Vine [ __ ] the authority
-
-296
-00:11:03,680 --> 00:11:10,599.9999999998836
-Channel 5 News Channel 55 we don&#39;t [ __ ]
-
-297
-00:11:06,440 --> 00:11:13,600
-with custers and five is the best
-
-298
-00:11:10,600 --> 00:11:13,600
-number
+00:09:15,489 --> 00:09:18,660.0000000001164
+joint continuity
 

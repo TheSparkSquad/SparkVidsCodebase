@@ -1,595 +1,341 @@
-uh anti-Semitism as we know is a hatred
+in this segment we start a discussion of
 
-uh and Prejudice and racism towards
+multiple continuous random variables
 
-Jewish people and their faith and their
+here are some objects that were already
 
-ethnicity uh anti-zionism is um a
+familiar with but exactly as in the
 
-movement fighting against the occupation
+discrete case if we are dealing with two
 
-this is a settler Colonial fascist
+random variables it is not enough to
 
-regime that we&#39;re seeing attempting to
+know their individual PDFs we also need
 
-wipe out an entire indigenous uh
+to model the relation between the two
 
-civilian population and your perspective
+random variables and this is done
 
-what is Zionism 75 years of brutal
+through a joint PDF which is the
 
-occupation ethnic cleansing apartheid
+continuous analogue of the joint PMF we
 
-and colonization of the Palestinian
+will use this notation to indicate joint
 
-people and and the occupation and the
+PDFs where we use F to indicate that we
 
-OCC
+are dealing with a density so what
 
-Israel is a Zionist State and I think
+remains to be done is to actually define
 
-that&#39;s what we really have to focus on
+this object and see how we use it let us
 
-today yeah hello my name is sta um I&#39;m
+start by recalling that joint pmfs were
 
-proud of the Palestinian youth movement
+defined in terms of the probability that
 
-and we&#39;re here with the Palestinian and
+the pair of random variables x and y
 
-Arab youth in the diaspora as well as
+takes certain specific values little X
 
-our solidarity allies demanding the uh
+and little Y regarding joint PDFs we
 
-The Siege and end on Gaza and for the
+start by saying that it has to be
 
-blockade to be lifted where they have
+non-negative however a more precise
 
-been under blockade for 16 years um
+interpretation in terms of probabilities
 
-where they&#39;ve been denied the basic
+has to wait a little bit
 
-human rights of just living a life along
+joint PDFs will be used to calculate
 
-with having food water fuel electricity
+probabilities and this will be done in
 
-and we&#39;re here also to talk about the 75
+analogy with the discrete setting in the
 
-years of military occupation that
+discrete setting the probability that
 
-Palestine has been under since 1948
+the pair of random variables falls
 
-people need to see the Palestinians for
+inside a certain set is just the sum of
 
-who they are part of a revolutionary
+the probabilities of all the possible
 
-struggle for Liberation we understand
+pairs inside that particular set for the
 
-Zionism to be a form of white supremacy
+continuous case we introduce an
 
-and the people have a right to resist
+analogous formula we use the joint
 
-their occupiers by any means necessary
+density instead of the joint PMF and
 
-what do you think about Hamas uh I will
+instead of having a summation we now
 
-not um that you&#39;re not asking the right
+integrate as in the discrete setting we
 
-questions it&#39;s the wrong question I
+have one total unit of probability the
 
-think that to we can&#39;t um we can&#39;t
+joint PDF tells us how this unit of
 
-equate the colonizer with the colonized
+probability is spread over the entire
 
-we can&#39;t equate the occupier with the
+continuous two-dimensional plane and we
 
-occupied it implies that these are equal
+use it we use the joint PDF to calculate
 
-parties and it&#39;s not equal
+the
 
-so you feel like violence is a reaction
+ability of a certain set by finding the
 
-to oppression yes but they also have the
+volume under the joint PDF that lies on
 
-moral right to defend themselves against
+top of that set this is what this
 
-their colonizers and their occupiers and
+integral really represents we integrate
 
-this is something that we really need to
+over a particular 2-dimensional set and
 
-focus on as media and instead of
+we take this value that we integrate and
 
-painting Palestinians and dehumanizing
+we can think of this as the height of an
 
-them and demonizing them and putting all
+object that&#39;s sitting on top of that set
 
-these anti-arab and anti-muslim tropes
+now this relation here this calculation
 
-against them which the West has been
+of probabilities is not something that
 
-imposing to justify the ethnic cleansing
+we are supposed to prove this is rather
 
-that Israel has already done and will
+the definition of what a joint PDF does
 
-continue to do so this is something that
+a legitimate joint PDF is any function
 
-we need to focus on and see the
+of two variables which is non-negative
 
-Palestinians are there defending
+and which integrates to 1 and we will
 
-themselves as part of revolutionary
+say that two random variables are
 
-struggle for Liberation we need our
+jointly continuous if there is a
 
-countries back that&#39;s
+legitimate joint PDF that can be used to
 
-it free free Palestine uh from the land
+calculate the Associated probabilities
 
-what is it from the land to the Sea
+through this particular formula so we
 
-Palestine will be free from the river to
+have really an indirect definition
 
-the sea from The River To The Sea that&#39;s
+instead of defining the joint PDF as a
 
-right yeah from The River To The Sea
+probability we actually define it
 
-Palestine will be free Rockets were
+indirectly by saying what it does how it
 
-fired into Israel as gunmen infiltrated
+will be used to calculate probabilities
 
-several border towns and bases they
+a picture will be helpful here here is a
 
-swarmed into Israel by land sea and even
+plot of a possible joint PDF these are
 
-on paragliders and then they went on a
+the X and y axes and the faction being
 
-rampage slaughtering civilians in the
+plotted is the joint PDF of these two
 
-street it was a it&#39;s a horrible
+random variables this joint PDF is
 
-situation yeah and it was the worst day
+higher at some places and lower at
 
-in Jewish history in terms of deaths
+others indicating that certain regions
 
-since the Holocaust 1300 people died and
+of the XY plane are more likely than
 
-what can you tell us about what&#39;s going
+others the joint PDF determines the
 
-on well uh the rage goes all the way
+probability of a set B by integrating
 
-back I mean basically what we have is we
+over that set B let&#39;s say it&#39;s this set
 
-have two nationalist movements that are
+integrating the PDF over that set
 
-buying for control over a piece of
+pictorially what this means
 
-territory Hamas is in charge of the Gaza
+is that we look at the volume that sits
 
-Strip which is in the south of Israel on
+on top of that set but below the PDF
 
-the coast uh it was founded in 1987
+below the joint PDF and so we obtain
 
-during the first Uprising against
+some three-dimensional objects of this
 
-Israeli
+kind and this integral corresponds to
 
-occupation Hamas won elections actually
+actually finding this volume here the
 
-in 2006 and then took over the Gaza
+volume that sits on top of the set B but
 
-Strip in 2017 hamas&#39;s Charter said that
+which is below the joint PDF
 
-uh all of Palestine should be an Islamic
+let us now develop some additional
 
-State on a core level it uh believes
+understanding of joint PDFs as we just
 
-that Palestine is a gift of God it&#39;s a
+discussed for any given set B we can
 
-religious endowment and that they really
+integrate the joint PDF over that set
 
-can&#39;t surrender any part of that
+and this will give us the probability of
 
-religious Endowment for Jews it was a
+that particular set of particular
 
-place that um has been remembered in you
+interest is the case where we are
 
-know Jewish prayer and Jewish history
+dealing with a set which is a rectangle
 
-the Jews actually had a kingdom there uh
+in which case the situation is a little
 
-under David and Solomon and uh were
+simpler so suppose that we have a
 
-there until the Romans threw them out
+rectangle where the x-coordinate ranges
 
-and so the idea was the restoration of
+from a to b and the y-coordinate ranges
 
-the community back to its ancestral land
+from some c to some d then the double
 
-and so therefore what we see is two
+integral over this particular rectangle
 
-groups that are vying for control over a
+can be written in the form where we
 
-single small area actually about the
+first integrate with respect one of the
 
-size of New Jersey the thing about Gaza
+variables that ranges from A to B and
 
-which you know your audience should know
+then we integrate over all possible
 
-is that Gaza is a extraordinarily
+values of y as they range from C to D a
 
-crowded one of the most crowded places
+particular interest is the special case
 
-on Earth extraordinarily poor society in
+where we&#39;re dealing with a small
 
-which you know about half the population
+rectangle such as this one a rectangle
 
-is under the age of 18 so any Israeli
+with sizes equal to some Delta where
 
-incursion into Gaza is going to be
+Delta is a small number in that case the
 
-killing a lot of children if you&#39;re
+double integral which is the volume on
 
-living in Gaza are you allowed to travel
+top of that rectangle is simpler to
 
-freely throughout Israel no can you just
+evaluate it is equal to the value of the
 
-go for like the weekend no no you can&#39;t
+function that we are integrating at some
 
-go to the West Bank either you&#39;re you&#39;re
+point in the rectangle let&#39;s take that
 
-pretty much isolated in Gaza wait so can
+corner times the area of the
 
-you is there an airport no okay so in
+little rectangle which is equal to Delta
 
-order to be able to cross from one to
+square so we have an interpretation of
 
-another you have to go through
+the joint PDF in terms of probabilities
 
-checkpoints and uh it&#39;s not a free
+of small rectangles joint PDFs are not
 
-movement to Travelers one of my students
+probabilities but rather they are
 
-for example was a Palestinian from Gaza
+probability densities they tell us the
 
-and uh Palestinians have to be back in
+probability per unit area and one more
 
-the territories at nightfall uh they
+important comment for the case of a
 
-can&#39;t stay in Israel proper so uh he had
+single continuous random variable we
 
-to actually camp out in the West Bank to
+know that any single point has zero
 
-go to university in the West Bank in
+probability this is a game true for the
 
-spite of the fact that his home was in
+case of two jointly continuous random
 
-Gaza because he couldn&#39;t pass through
+variables but more is true if you take a
 
-Israel in order to uh go from one to the
+set B that has zero area for example a
 
-other and that curfew is imposed by
+certain curve suppose that this curve is
 
-Israel by Israel why well that&#39;s a
+the entire set B then the volume under
 
-question for the Israelis actually uh
+the joint PDF that&#39;s sitting on top of
 
-the Israelis think that you know uh the
+that curve is going to be equal to zero
 
-uh Palestinians are are
+so zero area sets have zero probability
 
-dangerous um there was a second Uprising
+and this is one of the characteristic
 
-that took place in 2000 against Israeli
+features of jointly continuous random
 
-occupation uh and it was extraordinarily
+variables now let&#39;s think of a
 
-bloody
+particular situation suppose that X is a
 
-do you have family in Palestine yes I do
+continuous random variable and let Y be
 
-how are they doing uh we lost 14
+another random variable which is
 
-relatives in the bombardment and uh
+identically equal to X since X is a
 
-currently I haven&#39;t heard from relatives
+continuous random variable Y is also a
 
-in about 12 hours so sorry to hear that
+continuous random variable however in
 
-thank you I appreciate it what&#39;s their
+this situation we are certain that the
 
-life like out there uh there is no
+outcome of the experiment is going to
 
-life deadly retribution is raining down
+fall on the line where x equals y all
 
-on Gaza Israel says it&#39;s targeting Mass
+the probability lies on top of a line
 
-with waves of air
+and a line has zero area so we have
 
-strikes
+positive probability on a set of zero
 
-uh there is no life this is why uh the
+area which contradicts what we discussed
 
-the people of Palestine have a right to
+before
 
-resist there is no life in Gaza um
+well this simply means that x and y are
 
-Israel has made it their mission to make
+not jointly continuous each one of them
 
-sure that there is no life for the gazin
+is continuous but together they&#39;re not
 
-that are living in the Gaza Strip for 16
+jointly continuous essentially joint
 
-years the Israeli government has
+continuity is something more than
 
-suffocated Palestinians in Gaza under a
+requiring each random very
 
-Draconian air sea and land military
+to be continued by itself for joint
 
-blockade imprisoning and starving over 2
+continuity we want the probability to be
 
-million people and denying them Medical
+really spread over two dimensions
 
-Aid so I think when we&#39;re thinking when
+probability is not allowed to be
 
-we&#39;re looking at a few days ago I think
+concentrated on a one-dimensional set on
 
-it&#39;s really important to look at the
+the other hand in this example the
 
-history of Palestine and contextualize
+probability is concentrated on a
 
-what&#39;s happening a lot of people want to
+one-dimensional set and we do not have
 
-believe that this is a random moment
-
-that happened on October 7th but
-
-realistically speaking this is not true
-
-this is a a building upon a military
-
-occupation that has been happening for
-
-75 plus years and Gaza specifically for
-
-16 years Gazza has been under blackid
-
-for 16 years no one can leave they&#39;ve
-
-been denied the basic human rights of
-
-just living a life along with having
-
-food water fuel electricity and that&#39;s
-
-what we&#39;re focusing on here today like I
-
-said 16 years of Siege 16 years of being
-
-held hostage in an open air prison where
-
-you have been denied everything where
-
-your family has been killed where you
-
-have to hold your dying child and bury
-
-them while you have to survive like we
-
-have to look at the history ofans and
-
-people in Palestine you&#39;ve had a series
-
-of Wars uh 1948 was the most important
-
-for our benefit that was when the state
-
-of Israel was declared Arab armies
-
-invaded uh and about 720,000 uh 720,000
-
-Palestinians were forced to
-
-flee um in the wake of that uh basically
-
-the Palestinians called 1948 the
-
-Israelis call it the war of independence
-
-Palestinians call it the the nakba the
-
-disaster you know and ever since then
-
-the issue of Palestine has been on and
-
-off the international agenda the
-
-politicians are calling for a second
-
-necka if you don&#39;t know what necka is it
-
-means catastrophe it&#39;s what happened in
-
-1948 when almost a million people were
-
-displaced practically overnight and uh
-
-genocide and massacres of over 250
-
-Palestinian Villages and we&#39;re seeing
-
-politicians not just from the Israeli
-
-side but also the Us and other European
-
-politicians calling for the leveling of
-
-Gaza calling for a complete annihilation
-
-of the Palestinian people do you think
-
-like do you think the majority of people
-
-in Gaza are against Hamas I would say
-
-that that&#39;s not important I think what&#39;s
-
-important here is condemning the
-
-violence and the cuz I&#39;m Jewish right
-
-and I&#39;m Israeli so I&#39;m very interested
-
-and I have friends that are Palestinian
-
-but somewhere in West Bank only one or
-
-two friends from Gaza but a big concern
-
-for us I would say is that people have
-
-no choice like if you wanted to speak
-
-out against Kamas would it be
-
-essentially safe for all your family
-
-members still living
-
-there I don&#39;t think you&#39;re asking the
-
-right questions I&#39;m just saying it it&#39;s
-
-a true question because not a lot of us
-
-would have those rights in Gaza and
-
-that&#39;s not because of Gaza it&#39;s not
-
-because of the great Palestinian people
-
-that make that place it&#39;s because of
-
-hamama
-
-Kamas is a terrorist organization that
-
-runs that Palestinian people didn&#39;t do
-
-it Kamas did and they&#39;ve radicalized
-
-their whole spot and now the time has
-
-come that there&#39;s a second holocaust,
-
-1300 plus people were killed that would
-
-be equal to over 35,000 Americans if
-
-that was in America per capita could you
-
-just say that is [ __ ] horrible where
-
-was the international outcry when Israel
-
-killed more than 200 Palestinians before
-
-the recent events in 2023 do that I&#39;m
-
-here to speak on behalf of my people so
-
-that I mean if the caloa cartel sliced
-
-up everyone in Texas and New Mexico what
-
-do you think America would do based on
-
-what you know America to be today plus
-
-it&#39;s not just Jews Arabs Palestinian
-
-Arabs people from Thailand Italy Germany
-
-a whole Music Festival do you go to
-
-music festivals you&#39;re watching this
-
-channel do you go to music festivals
-
-people from the music festival contacted
-
-me and said share my story I was there
-
-watching people get slaughtered the
-
-people the same people that play at
-
-Coachella the same people play at La
-
-laaloa and this is a music festival so
-
-to regurgitate set colonialist how many
-
-Jews are white brown Jews black Jews
-
-white Jews we&#39;re not white here we&#39;re
-
-not white there too much of this world
-
-being negative I&#39;m like bro for one
-
-[ __ ] second could you Kim Hamas
-
-terrorists they&#39;re like I don&#39;t got I
-
-don&#39;t know what you wanna I&#39;m from
-
-Argentina what&#39;s the favorite place of
-
-vacation the Bahamas I&#39;ll turn them into
-
-humus deals on a microphone cook up what
-
-you looking they got Mia Khalifa Roger
-
-Waters out of order they&#39;ll see you with
-
-everything don&#39;t test the Jewish lawyers
-
-I&#39;m talking like here we exposed back
-
-from gush I&#39;m trying to have people live
-
-safe not on bomb shelters at Tel Aviv
-
-I&#39;m talking down to the place when y&#39;all
-
-looking for huh deals on the microphone
-
-avenging the death of every child in a
-
-Kuts so prefer here I don&#39;t got to know
-
-you what have thought it was cuz I don&#39;t
-
-need protection from anybody or police
-
-officers I&#39;m rapping for my people the
-
-flow is my seat up and I don&#39;t need to
-
-rap for other people not a good idea
-
-when I&#39;m rocking in a zone I&#39;m not
-
-saying it&#39;s racist but ironically we&#39;re
-
-here in front of the Israeli see shabbat
-
-shalom Channel 5 live worldwide
-
-Hollywood and Vine [ __ ] the authority
-
-Channel 5 News Channel 55 we don&#39;t [ __ ]
-
-with custers and five is the best
-
-number
+joint continuity

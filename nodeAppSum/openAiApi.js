@@ -39,7 +39,7 @@ class OpenAiApi {
         //const prompt = `Summarize the following text taken from a video, be brief \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
-        const prompt = `Summarize the following text taken from a video and write it in table of contents format. Be brief \n\n${text}`;
+        const prompt = `Summarize the following text taken from a video and write it in table of contents format. \n\n${text}`;
         return this.chatCompletion(prompt);
     }
 
@@ -49,6 +49,8 @@ class OpenAiApi {
         ability to construct table of contents 
         ability for user to specify a keyword in video and return timestamp and content
     */
+
 }
+
 // Exports the OpenAiApi class to be used in other modules.
 module.exports = OpenAiApi;
