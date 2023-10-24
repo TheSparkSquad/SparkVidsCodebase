@@ -36,7 +36,9 @@ class OpenAiApi {
      * @returns {Promise<string>} - The summarized text.
      */
     async summarize(text) {
-        const prompt = `Summarize the following text taken from a video, be brief \n\n${text}`;
+//        const prompt = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
+        //const prompt = `Use the timestamps to correctly summarize the content into a table of contents for the video. \n\n${text}`;
+        const prompt = `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
         //const prompt = `Summarize the following input from a video output in table of contents format. Make sure to get the subject matter as the title of the numerical bullet point and then a brief description under it. This is a caption track from a youtube video so treat it accordingly. \n\n${text}`;

@@ -34,7 +34,7 @@ class GenerateSummary {
 
     async generate(content) {
         try {  
-            content = truncateContent(content, 5000); // Ensure the content size
+            content = truncateContent(content, 10000); // Ensure the content size
             const openApi = new OpenAiApi(this.apiKey);
             content = processText(content);
             const summary = await openApi.summarize(content);

@@ -39,7 +39,6 @@ async function fetchCaptions() {
 
         const summaryText = await generateResponse.text();
         document.getElementById("summary").textContent = summaryText;
-        
 
     } catch (error) {
         console.error("Error:", error);

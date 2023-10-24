@@ -139,13 +139,12 @@ class Transcript {
                 let srtOutput = '';
                 
                 texts.forEach((text, index) => {
-                    srtOutput += (index + 1) + '\n';
                     
                     const start = parseFloat(text.$.start);
                     const end = start + parseFloat(text.$.dur);
                     
-                    srtOutput += this._formatTime(start) + ' --> ' + this._formatTime(end) + '\n';
-                    srtOutput += text._ + '\n\n';
+                    srtOutput += this._formatTime(start) + '>' + this._formatTime(end) + ' ';
+                    srtOutput += text._ + '\n';
                 });
                 
                 resolve(srtOutput);
