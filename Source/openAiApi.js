@@ -45,6 +45,23 @@ class OpenAiApi {
         return this.chatCompletion(prompt);
     }
 
+// EXAMPLE OF THE OUTPUT I WANT
+//     Table of Contents:
+
+// Table of Contents:
+
+// 1. Introduction (00:00:00-00:00:18)
+//    - First date nerves and the idea of a PowerPoint presentation
+
+// 2. Antonio's Presentation (00:00:19-00:02:33)
+//    - Introduction and name slide
+//    - Duplicated slides and confusion
+//    - Antonio's best qualities and pictures
+
+// 3. Logan's Presentation (00:02:34-00:04:04)
+//    - Introduction and name slide
+//    - Twitch streamer and meme enthusiast
+
     /* Future features and implementations, 
         summarize function that accepts a string to append to the prompt from arguments
         ability to summarize srt content and timestamps

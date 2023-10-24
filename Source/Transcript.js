@@ -160,15 +160,16 @@ class Transcript {
      * @private
      */
     _formatTime(seconds) {
+        const roundedSeconds = Math.round(seconds); // Round to nearest whole second
         const date = new Date(0);
-        date.setSeconds(seconds);
+        date.setSeconds(roundedSeconds);
         const hh = date.getUTCHours().toString().padStart(2, '0');
         const mm = date.getUTCMinutes().toString().padStart(2, '0');
         const ss = date.getUTCSeconds().toString().padStart(2, '0');
-        const ms = (seconds * 1000 % 1000).toString().padStart(3, '0');
 
-        return `${hh}:${mm}:${ss},${ms}`;
+        return `${hh}:${mm}:${ss}`; // Milliseconds are set to '000' since we're rounding to whole seconds
     }
+
 
 
     /**
