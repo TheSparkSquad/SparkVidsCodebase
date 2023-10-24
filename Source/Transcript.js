@@ -116,11 +116,10 @@ class Transcript {
             throw new Error(`Failed to fetch transcript data: ${response.statusText}`);
         }
         const xmlContent = await response.text();
-    
+        
         const srtContent = await this._convertXmlToSrt(xmlContent);
-        this._saveSrtToFile(srtContent);
-    
-        return srtContent;  // Return SRT content
+        
+        return srtContent;  // Return SRT content directly
     }
 
     /**

@@ -1,5 +1,4 @@
 const Transcript = require('./Transcript.js');
-const fs = require('fs');
 const GenerateSummary = require('./generateSummary.js');
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
@@ -17,6 +16,7 @@ const PORT = 3000;
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
+app.use(express.json());  // <- This line is crucial for parsing the request body
 
 // ===================================
 // ROUTES
@@ -56,7 +56,7 @@ app.get('/captions', async (req, res) => {
         );
         // Fetch the captions using the new method
         const transcriptData = await transcript.fetchCaptionsFromData(captionsJson);
-        
+        //console.log(transcriptData)
         // Return the fetched transcript data as a response
         return res.json(transcriptData);
     } catch (error) {
@@ -69,37 +69,25 @@ app.get('/captions', async (req, res) => {
 /**
  * Endpoint to generate a summary from the fetched captions.
  */
-app.get('/generateSummary', async (req, res) => {
+app.post('/generateSummary', async (req, res) => {
     try {
         console.log('Starting summary generation...');
         
-        // Measure time taken for summary generation
         console.time('Summary Generation');
 
+        const captionsData = req.body.captions;
+
+        //const processedContent = processText(captionsData);
         const generateSummary = new GenerateSummary(apiKey);
-        await generateSummary.generate('captions.txt', 'summary.txt');
-        //await generateSummary.generate('captions.srt', 'summary.txt');
-        // End time measurement and log result
+        const summary = await generateSummary.generate(captionsData);
+        
         console.timeEnd('Summary Generation');
         
-        res.sendStatus(200);
+        res.send(summary);
     } catch (error) {
         console.error("Error during summary generation:", error);
         res.status(500).send('Error generating summary.');
     }
-});
-
-/**
- * Endpoint to retrieve the generated summary.
- */
-app.get('/getSummary', (req, res) => {
-    fs.readFile('summary.txt', 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).send('Error reading summary.');
-        } else {
-            res.send(data);
-        }
-    });
 });
 
 // ===================================

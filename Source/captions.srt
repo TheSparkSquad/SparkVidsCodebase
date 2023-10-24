@@ -1,684 +1,3312 @@
 1
-00:00:00,030 --> 00:00:04,910
-in this segment we start a discussion of
+00:00:00,120 --> 00:00:04,799
+okay imagine on a first date instead of
 
 2
-00:00:02,730 --> 00:00:07,289.9999999999991
-multiple continuous random variables
+00:00:02,280 --> 00:00:06,879
+you just nervous yapping yap yap yap
 
 3
-00:00:04,910 --> 00:00:11,010
-here are some objects that were already
+00:00:04,799 --> 00:00:09,000
+nervous yapping about yourself probably
 
 4
-00:00:07,290 --> 00:00:14,280.0000000000018
-familiar with but exactly as in the
+00:00:06,879 --> 00:00:11,759
+imagine instead of that you had the
 
 5
-00:00:11,010 --> 00:00:17,130
-discrete case if we are dealing with two
+00:00:09,000 --> 00:00:14,160
+option to present your best qualities on
 
 6
-00:00:14,280 --> 00:00:21,119
-random variables it is not enough to
+00:00:11,759 --> 00:00:15,759
+a PowerPoint presentation to the other
 
 7
-00:00:17,130 --> 00:00:23,130
-know their individual PDFs we also need
+00:00:14,160 --> 00:00:17,610
+party well that&#39;s what this video is
 
 8
-00:00:21,119 --> 00:00:24,960
-to model the relation between the two
+00:00:15,759 --> 00:00:18,720
+today let&#39;s get into
 
 9
-00:00:23,130 --> 00:00:28,198.99999999999636
-random variables and this is done
+00:00:17,610 --> 00:00:21,919.9999999999964
+[Applause]
 
 10
-00:00:24,960 --> 00:00:32,969
-through a joint PDF which is the
+00:00:18,720 --> 00:00:25,119
+[Music]
 
 11
-00:00:28,199 --> 00:00:35,880
-continuous analogue of the joint PMF we
+00:00:21,920 --> 00:00:26,720.0000000000036
+it hi I&#39;m Justine in a man I definitely
 
 12
-00:00:32,969 --> 00:00:39,930
-will use this notation to indicate joint
+00:00:25,119 --> 00:00:28,599
+looking for someone who has a little bit
 
 13
-00:00:35,880 --> 00:00:42,090
-PDFs where we use F to indicate that we
+00:00:26,720 --> 00:00:30,759
+of confidence and definitely very
 
 14
-00:00:39,930 --> 00:00:44,370
-are dealing with a density so what
+00:00:28,599 --> 00:00:32,320
+intelligent a PowerPoint is really going
 
 15
-00:00:42,090 --> 00:00:48,030
-remains to be done is to actually define
+00:00:30,759 --> 00:00:34,640
+to let me you should be looking for a
 
 16
-00:00:44,370 --> 00:00:51,449
-this object and see how we use it let us
+00:00:32,320 --> 00:00:36,680
+dude with good PowerPoint skills too I
 
 17
-00:00:48,030 --> 00:00:53,940
-start by recalling that joint pmfs were
+00:00:34,640 --> 00:00:38,840
+feel like that&#39;s pretty essential not
 
 18
-00:00:51,449 --> 00:00:56,129
-defined in terms of the probability that
+00:00:36,680 --> 00:00:40,640
+only for this but just for real life how
 
 19
-00:00:53,940 --> 00:00:59,579
-the pair of random variables x and y
+00:00:38,840 --> 00:00:42,280
+often do you have a bunch of real good
 
 20
-00:00:56,129 --> 00:01:03,239
-takes certain specific values little X
+00:00:40,640 --> 00:00:44,079
+info but you&#39;re like I need a I need a
 
 21
-00:00:59,579 --> 00:01:05,610
-and little Y regarding joint PDFs we
+00:00:42,280 --> 00:00:45,559
+fun way to present this that happens
 
 22
-00:01:03,239 --> 00:01:09,380
-start by saying that it has to be
+00:00:44,079 --> 00:00:47,280
+pretty often in life sometimes it&#39;s good
 
 23
-00:01:05,610 --> 00:01:11,549
-non-negative however a more precise
+00:00:45,559 --> 00:00:50,78.99999999999272
+to have a you know a partner that can
 
 24
-00:01:09,380 --> 00:01:13,729
-interpretation in terms of probabilities
+00:00:47,280 --> 00:00:51,920
+kind of show you the ropes see how these
 
 25
-00:01:11,549 --> 00:01:16,799
-has to wait a little bit
+00:00:50,079 --> 00:00:53,719
+guys think about themselves I hope to
 
 26
-00:01:13,729 --> 00:01:20,400
-joint PDFs will be used to calculate
+00:00:51,920 --> 00:00:55,480.0000000000073
+see some I&#39;m not the best at PowerPoint
 
 27
-00:01:16,799 --> 00:01:23,009
-probabilities and this will be done in
+00:00:53,719 --> 00:00:57,680
+you know which sucks cuz I got a lot of
 
 28
-00:01:20,400 --> 00:01:25,140
-analogy with the discrete setting in the
+00:00:55,480 --> 00:01:00,78.99999999999272
+[ __ ] proprietary info up here you
 
 29
-00:01:23,009 --> 00:01:26,880
-discrete setting the probability that
+00:00:57,680 --> 00:01:02,440
+know I&#39;d love to share it but they just
 
 30
-00:01:25,140 --> 00:01:30,479
-the pair of random variables falls
+00:01:00,079 --> 00:01:04,280
+no elegant way to do so sometimes what
 
 31
-00:01:26,880 --> 00:01:33,119
-inside a certain set is just the sum of
+00:01:02,440 --> 00:01:06,798.9999999999854
+am I going to do speak it no that
 
 32
-00:01:30,479 --> 00:01:37,679.9999999999854
-the probabilities of all the possible
+00:01:04,280 --> 00:01:10,759
+wouldn&#39;t do it justice you know who can
 
 33
-00:01:33,119 --> 00:01:39,990
-pairs inside that particular set for the
+00:01:06,799 --> 00:01:10,759
+have fun and make me
 
 34
-00:01:37,680 --> 00:01:43,049
-continuous case we introduce an
+00:01:12,159 --> 00:01:18,720
+laugh I think we&#39;re going to start with
 
 35
-00:01:39,990 --> 00:01:45,899
-analogous formula we use the joint
+00:01:15,960 --> 00:01:21,439
+Antonio all right let&#39;s go
 
 36
-00:01:43,049 --> 00:01:48,659
-density instead of the joint PMF and
+00:01:18,720 --> 00:01:25,320
+Antonio he&#39;s like how you doing my name
 
 37
-00:01:45,899 --> 00:01:52,950
-instead of having a summation we now
+00:01:21,439 --> 00:01:27,520
+is Antonio hi he&#39;s like first slide name
 
 38
-00:01:48,659 --> 00:01:58,770.0000000000146
-integrate as in the discrete setting we
+00:01:25,320 --> 00:01:30,199.99999999998545
+oh Antonio I covered that already sorry
 
 39
-00:01:52,950 --> 00:02:02,729
-have one total unit of probability the
+00:01:27,520 --> 00:01:32,479
+already covered that next slide oh I
 
 40
-00:01:58,770 --> 00:02:05,390
-joint PDF tells us how this unit of
+00:01:30,200 --> 00:01:35,680
+duplicated that by accident okay name
 
 41
-00:02:02,729 --> 00:02:08,848.9999999999854
-probability is spread over the entire
+00:01:32,479 --> 00:01:37,960
+Antonio okay next slide a [ __ ] how many
 
 42
-00:02:05,390 --> 00:02:12,629
-continuous two-dimensional plane and we
+00:01:35,680 --> 00:01:40,360.00000000001455
+times did I duplicate this [ __ ]
 
 43
-00:02:08,848.9999999999854 --> 00:02:13,339.9999999999709
-use it we use the joint PDF to calculate
+00:01:37,960 --> 00:01:42,439
+slide you got the name right you you&#39;re
 
 44
-00:02:12,629 --> 00:02:17,359.9999999999709
-the
+00:01:40,360 --> 00:01:43,880
+you&#39;re clear on that Antonio okay cool
 
 45
-00:02:13,340 --> 00:02:21,769
-ability of a certain set by finding the
+00:01:42,439 --> 00:01:45,960
+just making sure you got that so I put
 
 46
-00:02:17,360 --> 00:02:25,190.0000000000291
-volume under the joint PDF that lies on
+00:01:43,880 --> 00:01:47,158.99999999998545
+together a uh uh presentation for you
 
 47
-00:02:21,769 --> 00:02:28,340
-top of that set this is what this
+00:01:45,960 --> 00:01:48,439
+about why you should date me and as you
 
 48
-00:02:25,190 --> 00:02:31,129
-integral really represents we integrate
+00:01:47,159 --> 00:01:50,040
+can see it&#39;s it&#39;s really a simple
 
 49
-00:02:28,340 --> 00:02:36,650
-over a particular 2-dimensional set and
+00:01:48,439 --> 00:01:51,600
+decision oh I&#39;m down to earth and this
 
 50
-00:02:31,129 --> 00:02:39,470
-we take this value that we integrate and
+00:01:50,040 --> 00:01:53,680
+is a [ __ ] I&#39;m sorry for interrupting
 
 51
-00:02:36,650 --> 00:02:42,519
-we can think of this as the height of an
+00:01:51,600 --> 00:01:55,839.9999999999854
+so much but this is a hilarious concept
 
 52
-00:02:39,470 --> 00:02:46,040
-object that&#39;s sitting on top of that set
+00:01:53,680 --> 00:01:57,600.0000000000146
+truly it really is like what would you
 
 53
-00:02:42,519 --> 00:02:48,500
-now this relation here this calculation
+00:01:55,840 --> 00:02:00,159
+put on yours like there&#39;s a bunch of
 
 54
-00:02:46,040 --> 00:02:52,459
-of probabilities is not something that
+00:01:57,600 --> 00:02:01,719
+[ __ ] that&#39;s not true you just all these
 
 55
-00:02:48,500 --> 00:02:56,090
-we are supposed to prove this is rather
+00:02:00,159 --> 00:02:03,880.0000000000146
+qualities that you don&#39;t that you don&#39;t
 
 56
-00:02:52,459 --> 00:03:00,290
-the definition of what a joint PDF does
+00:02:01,719 --> 00:02:05,399
+have spontaneous and a creative uh
 
 57
-00:02:56,090 --> 00:03:02,780
-a legitimate joint PDF is any function
+00:02:03,880 --> 00:02:06,839.9999999999854
+former athlete so I&#39;m I&#39;m pretty
 
 58
-00:03:00,290 --> 00:03:07,879
-of two variables which is non-negative
+00:02:05,399 --> 00:02:09,639.9999999999854
+competitive so three pictures that
 
 59
-00:03:02,780 --> 00:03:10,420
-and which integrates to 1 and we will
+00:02:06,840 --> 00:02:11,640.0000000000291
+represent me um these are both music
 
 60
-00:03:07,879 --> 00:03:14,989
-say that two random variables are
+00:02:09,639.9999999999854 --> 00:02:13,040
+related this is actually from my last
 
 61
-00:03:10,420 --> 00:03:19,100
-jointly continuous if there is a
+00:02:11,640 --> 00:02:14,238.9999999999709
+show I did a show with Soulja Boy so
 
 62
-00:03:14,989 --> 00:03:21,470
-legitimate joint PDF that can be used to
+00:02:13,040 --> 00:02:15,679.9999999999709
+that was pretty cool I grew up listening
 
 63
-00:03:19,100 --> 00:03:25,130
-calculate the Associated probabilities
+00:02:14,239 --> 00:02:17,360
+to him uh this is from a music video I
 
 64
-00:03:21,470 --> 00:03:27,590
-through this particular formula so we
+00:02:15,680 --> 00:02:19,440
+Shot then this is from college were you
 
 65
-00:03:25,130 --> 00:03:30,650
-have really an indirect definition
+00:02:17,360 --> 00:02:21,480.0000000000291
+a quarterback no no I&#39;m way too short
 
 66
-00:03:27,590 --> 00:03:33,650
-instead of defining the joint PDF as a
+00:02:19,440 --> 00:02:23,120
+for that uh running back okay I&#39;ll play
 
 67
-00:03:30,650 --> 00:03:37,519
-probability we actually define it
+00:02:21,480 --> 00:02:24,760
+running back yeah what are you writing
 
 68
-00:03:33,650 --> 00:03:39,700.0000000000291
-indirectly by saying what it does how it
+00:02:23,120 --> 00:02:26,480.0000000000291
+down there what the [ __ ] was that
 
 69
-00:03:37,519 --> 00:03:45,169
-will be used to calculate probabilities
+00:02:24,760 --> 00:02:27,799.9999999999709
+running back okay I&#39;ll play running back
 
 70
-00:03:39,700 --> 00:03:48,888.9999999999709
-a picture will be helpful here here is a
+00:02:26,480 --> 00:02:30,959
+yeah what the [ __ ] are you writing down
 
 71
-00:03:45,169 --> 00:03:54,109
-plot of a possible joint PDF these are
+00:02:27,800 --> 00:02:33,440
+n too short for that okay um
 
 72
-00:03:48,889 --> 00:03:58,849.0000000000291
-the X and y axes and the faction being
+00:02:30,959 --> 00:02:33,440
+uh
 
 73
-00:03:54,109 --> 00:04:02,750
-plotted is the joint PDF of these two
+00:02:34,480 --> 00:02:41,040
+short short dumbass disgusting short man
 
 74
-00:03:58,849 --> 00:04:05,599
-random variables this joint PDF is
+00:02:38,720 --> 00:02:42,480
+cool got it thanks I&#39;d be so nervous
 
 75
-00:04:02,750 --> 00:04:07,760
-higher at some places and lower at
+00:02:41,040 --> 00:02:43,840
+like what wait what the [ __ ] you what
 
 76
-00:04:05,599 --> 00:04:10,250
-others indicating that certain regions
+00:02:42,480 --> 00:02:45,200
+did you just write down what was that no
 
 77
-00:04:07,760 --> 00:04:13,160
-of the XY plane are more likely than
+00:02:43,840 --> 00:02:46,440
+what was that sorry I wasn&#39;t the [ __ ]
 
 78
-00:04:10,250 --> 00:04:16,579
-others the joint PDF determines the
+00:02:45,200 --> 00:02:47,720
+quarterback okay it doesn&#39;t mean you got
 
 79
-00:04:13,160 --> 00:04:21,219
-probability of a set B by integrating
+00:02:46,440 --> 00:02:49,560
+to write in your little book did you
 
 80
-00:04:16,579 --> 00:04:24,729
-over that set B let&#39;s say it&#39;s this set
+00:02:47,720 --> 00:02:50,959
+write Antonio did you write that cuz I
 
 81
-00:04:21,219 --> 00:04:27,030
-integrating the PDF over that set
+00:02:49,560 --> 00:02:52,599
+said it [ __ ] five times did you write
 
 82
-00:04:24,729 --> 00:04:31,260
-pictorially what this means
+00:02:50,959 --> 00:02:55,680
+that in your little [ __ ] book huh
 
 83
-00:04:27,030 --> 00:04:35,820
-is that we look at the volume that sits
+00:02:52,599 --> 00:02:55,679.9999999999709
+yeah hi my name is
 
 84
-00:04:31,260 --> 00:04:39,900
-on top of that set but below the PDF
+00:02:56,840 --> 00:03:01,840
+Logan not a great start log sorry logs
 
 85
-00:04:35,820 --> 00:04:42,090
-below the joint PDF and so we obtain
+00:02:59,959 --> 00:03:05,440
+not a hot start dude did you also
 
 86
-00:04:39,900 --> 00:04:45,299.9999999999418
-some three-dimensional objects of this
+00:03:01,840 --> 00:03:08,319.0000000000291
+duplicate your name slide five times
 
 87
-00:04:42,090 --> 00:04:49,770
-kind and this integral corresponds to
+00:03:05,440 --> 00:03:10,680
+okay some technical nice this is a
 
 88
-00:04:45,300 --> 00:04:52,710.0000000000582
-actually finding this volume here the
+00:03:08,319 --> 00:03:12,399.9999999999709
+drawing that I drew I am a twitch
 
 89
-00:04:49,770 --> 00:04:57,020
-volume that sits on top of the set B but
+00:03:10,680 --> 00:03:14,400
+streamer and also I&#39;m in corporate
 
 90
-00:04:52,710 --> 00:04:57,020
-which is below the joint PDF
+00:03:12,400 --> 00:03:17,440
+marketing whatever that means lastly I
 
 91
-00:04:57,260 --> 00:05:04,289.9999999999418
-let us now develop some additional
+00:03:14,400 --> 00:03:20,959
+am a very big meme enjoyer so these are
 
 92
-00:04:59,880 --> 00:05:09,390
-understanding of joint PDFs as we just
+00:03:17,440 --> 00:03:22,640
+some memes that I no no I told a girl to
 
 93
-00:05:04,290 --> 00:05:14,970
-discussed for any given set B we can
+00:03:20,959 --> 00:03:24,280
+text me when she got home she must be
 
 94
-00:05:09,390 --> 00:05:18,599.9999999999418
-integrate the joint PDF over that set
+00:03:22,640 --> 00:03:27,359.9999999999709
+homeless it&#39;s kind of
 
 95
-00:05:14,970 --> 00:05:21,750
-and this will give us the probability of
+00:03:24,280 --> 00:03:29,920
+funny definitely don&#39;t say meme enjoyer
 
 96
-00:05:18,600 --> 00:05:23,580.0000000000582
-that particular set of particular
+00:03:27,360 --> 00:03:33,510.0000000000291
+though for sure don&#39;t say that currently
 
 97
-00:05:21,750 --> 00:05:26,970
-interest is the case where we are
+00:03:29,920 --> 00:03:37,958.9999999999709
+enjoy hope uh you also
 
 98
-00:05:23,580 --> 00:05:29,729
-dealing with a set which is a rectangle
+00:03:33,510 --> 00:03:41,480
+[Laughter]
 
 99
-00:05:26,970 --> 00:05:32,160
-in which case the situation is a little
+00:03:37,959 --> 00:03:43,200
+enjoy about me uh I am actually 51%
 
 100
-00:05:29,729 --> 00:05:34,770
-simpler so suppose that we have a
+00:03:41,480 --> 00:03:45,959
+confirmed Asian genetics uh with an
 
 101
-00:05:32,160 --> 00:05:38,400.0000000000582
-rectangle where the x-coordinate ranges
+00:03:43,200 --> 00:03:48,839.9999999999709
+average statistic of 47.9% oh [ __ ]
 
 102
-00:05:34,770 --> 00:05:42,630
-from a to b and the y-coordinate ranges
+00:03:45,959 --> 00:03:50,879
+that&#39;d be so funny ah [ __ ] he had the
 
 103
-00:05:38,400 --> 00:05:45,500
-from some c to some d then the double
+00:03:48,840 --> 00:03:52,480
+opportunity to do the funniest thing
 
 104
-00:05:42,630 --> 00:05:48,240
-integral over this particular rectangle
+00:03:50,879 --> 00:03:54,399.9999999999709
+about me what if it was just about me
 
 105
-00:05:45,500 --> 00:05:51,240
-can be written in the form where we
+00:03:52,480 --> 00:03:55,760
+and then it&#39;s just like stats about
 
 106
-00:05:48,240 --> 00:05:54,660
-first integrate with respect one of the
+00:03:54,400 --> 00:03:58,640.0000000000291
+humans like I thought he was going to be
 
 107
-00:05:51,240 --> 00:05:57,390
-variables that ranges from A to B and
+00:03:55,760 --> 00:04:00,480
+like I&#39;m 60% water as it turns out as
 
 108
-00:05:54,660 --> 00:06:01,430
-then we integrate over all possible
+00:03:58,640 --> 00:04:03,200
+probably most of you in here are fun
 
 109
-00:05:57,390 --> 00:06:04,200
-values of y as they range from C to D a
+00:04:00,480 --> 00:04:04,319
+fact about me my blood makes up about 8%
 
 110
-00:06:01,430 --> 00:06:06,830
-particular interest is the special case
+00:04:03,200 --> 00:04:07,238.9999999999709
+of my body
 
 111
-00:06:04,200 --> 00:06:11,130
-where we&#39;re dealing with a small
+00:04:04,319 --> 00:04:09,958.9999999999709
+weight Isn&#39;t that cool next if you laid
 
 112
-00:06:06,830 --> 00:06:14,430
-rectangle such as this one a rectangle
+00:04:07,239 --> 00:04:11,680
+my intestines out and to end they&#39;d be
 
 113
-00:06:11,130 --> 00:06:20,250
-with sizes equal to some Delta where
+00:04:09,959 --> 00:04:14,519
+about 4 miles
 
 114
-00:06:14,430 --> 00:06:22,979
-Delta is a small number in that case the
+00:04:11,680 --> 00:04:16,440
+long European genetics uh from my
 
 115
-00:06:20,250 --> 00:06:27,090
-double integral which is the volume on
+00:04:14,519 --> 00:04:18,560
+experience I have amass a total of 6t
 
 116
-00:06:22,979 --> 00:06:32,070
-top of that rectangle is simpler to
+00:04:16,440 --> 00:04:20,759
+and 1 in of height uh throughout my
 
 117
-00:06:27,090 --> 00:06:34,619.9999999999418
-evaluate it is equal to the value of the
+00:04:18,560 --> 00:04:24,280.0000000000582
+years of growth of course she of course
 
 118
-00:06:32,070 --> 00:06:36,810
-function that we are integrating at some
+00:04:20,759 --> 00:04:26,560
+you&#39;re writing that down of course wow
 
 119
-00:06:34,620 --> 00:06:40,210
-point in the rectangle let&#39;s take that
+00:04:24,280 --> 00:04:29,758.9999999999418
+circled I have a great relationship with
 
 120
-00:06:36,810 --> 00:06:42,850
-corner times the area of the
+00:04:26,560 --> 00:04:34,360
+management my mom I like to code I&#39;m
 
 121
-00:06:40,210 --> 00:06:46,060
-little rectangle which is equal to Delta
+00:04:29,759 --> 00:04:34,360
+proficient in many languages including
 
 122
-00:06:42,850 --> 00:06:48,460.0000000000582
-square so we have an interpretation of
+00:04:34,960 --> 00:04:40,960
+English and memes as I am an avid
 
 123
-00:06:46,060 --> 00:06:52,750
-the joint PDF in terms of probabilities
+00:04:38,280 --> 00:04:42,679.9999999999418
+consumer of them hi I&#39;m David and I&#39;m a
 
 124
-00:06:48,460 --> 00:06:55,318.9999999999418
-of small rectangles joint PDFs are not
+00:04:40,960 --> 00:04:44,680
+software developer for work but my real
 
 125
-00:06:52,750 --> 00:06:58,569
-probabilities but rather they are
+00:04:42,680 --> 00:04:47,400.0000000000582
+passion is playing tennis let&#39;s go David
 
 126
-00:06:55,319 --> 00:07:03,610
-probability densities they tell us the
+00:04:44,680 --> 00:04:48,720
+semi unprofessional okay okay I like
 
 127
-00:06:58,569 --> 00:07:06,069
-probability per unit area and one more
+00:04:47,400 --> 00:04:50,239.9999999999418
+these dudes trying to be funny in here
 
 128
-00:07:03,610 --> 00:07:08,440
-important comment for the case of a
+00:04:48,720 --> 00:04:52,639
+it&#39;s like how do I show her I&#39;m like an
 
 129
-00:07:06,069 --> 00:07:11,110
-single continuous random variable we
+00:04:50,240 --> 00:04:55,039
+alpha but still like be you know kind of
 
 130
-00:07:08,440 --> 00:07:14,500
-know that any single point has zero
+00:04:52,639 --> 00:04:56,919
+[ __ ] self-deprecating about it you
 
 131
-00:07:11,110 --> 00:07:16,810
-probability this is a game true for the
+00:04:55,039 --> 00:04:58,479
+know like I [ __ ] rock at tennis but
 
 132
-00:07:14,500 --> 00:07:20,050
-case of two jointly continuous random
+00:04:56,919 --> 00:05:00,039
+I&#39;m not that good you know I&#39;m semi
 
 133
-00:07:16,810 --> 00:07:25,479
-variables but more is true if you take a
+00:04:58,479 --> 00:05:02,120
+unprofessional I&#39;ll kick you your ass
 
 134
-00:07:20,050 --> 00:07:28,389
-set B that has zero area for example a
+00:05:00,039 --> 00:05:04,560
+though and most dude&#39;s asses especially
 
 135
-00:07:25,479 --> 00:07:34,620
-certain curve suppose that this curve is
+00:05:02,120 --> 00:05:06,120
+if they [ __ ] like you know try to
 
 136
-00:07:28,389 --> 00:07:38,380
-the entire set B then the volume under
+00:05:04,560 --> 00:05:07,840
+insult you or whatever like I&#39;ll come to
 
 137
-00:07:34,620 --> 00:07:42,810
-the joint PDF that&#39;s sitting on top of
+00:05:06,120 --> 00:05:09,919
+your defense but like and like a cool
 
 138
-00:07:38,380 --> 00:07:47,560
-that curve is going to be equal to zero
+00:05:07,840 --> 00:05:11,479
+way I play like pretty much every day
 
 139
-00:07:42,810 --> 00:07:50,199
-so zero area sets have zero probability
+00:05:09,919 --> 00:05:13,039
+and I do some coaching on the side as
 
 140
-00:07:47,560 --> 00:07:52,419
-and this is one of the characteristic
+00:05:11,479 --> 00:05:14,840
+well um and I also really like traveling
 
 141
-00:07:50,199 --> 00:07:55,840.0000000000582
-features of jointly continuous random
+00:05:13,039 --> 00:05:16,560
+so I travel a lot and I&#39;m always looking
 
 142
-00:07:52,419 --> 00:07:59,349
-variables now let&#39;s think of a
+00:05:14,840 --> 00:05:18,960
+for a new experiences and so a little
 
 143
-00:07:55,840 --> 00:08:03,820
-particular situation suppose that X is a
+00:05:16,560 --> 00:05:21,360
+about me I originally am from she&#39;s just
 
 144
-00:07:59,349 --> 00:08:05,860
-continuous random variable and let Y be
+00:05:18,960 --> 00:05:23,198.9999999999418
+writing shorta I grew up in Minnesota
 
 145
-00:08:03,820 --> 00:08:09,070
-another random variable which is
+00:05:21,360 --> 00:05:24,560
+and I lived there most of my life and I
 
 146
-00:08:05,860 --> 00:08:11,560
-identically equal to X since X is a
+00:05:23,199 --> 00:05:27,080
+also bring additional skills to the
 
 147
-00:08:09,070 --> 00:08:14,289
-continuous random variable Y is also a
+00:05:24,560 --> 00:05:28,639
+table I can do an oil change or rotate
 
 148
-00:08:11,560 --> 00:08:17,050
-continuous random variable however in
+00:05:27,080 --> 00:05:30,240
+your tires or recharge your AC in your
 
 149
-00:08:14,289 --> 00:08:19,180
-this situation we are certain that the
+00:05:28,639 --> 00:05:31,479
+car I like to hear that one and I
 
 150
-00:08:17,050 --> 00:08:23,110
-outcome of the experiment is going to
+00:05:30,240 --> 00:05:33,639
+learned all that on YouTube cuz I&#39;m good
 
 151
-00:08:19,180 --> 00:08:25,750
-fall on the line where x equals y all
+00:05:31,479 --> 00:05:35,159.9999999999418
+at following directions so here are a
 
 152
-00:08:23,110 --> 00:08:30,880
-the probability lies on top of a line
+00:05:33,639 --> 00:05:36,520
+few of my hobbies and interests I play a
 
 153
-00:08:25,750 --> 00:08:33,669
-and a line has zero area so we have
+00:05:35,160 --> 00:05:38,360
+lot of tennis and I&#39;m also like really
 
 154
-00:08:30,880 --> 00:08:36,309.9999999999418
-positive probability on a set of zero
+00:05:36,520 --> 00:05:39,880
+into the outdoors and you know music is
 
 155
-00:08:33,669 --> 00:08:36,819.9999999999418
-area which contradicts what we discussed
+00:05:38,360 --> 00:05:41,919.0000000000582
+a really important part of my life so I
 
 156
-00:08:36,309.9999999999418 --> 00:08:39,728.9999999999418
-before
+00:05:39,880 --> 00:05:44,080
+really like going to concerts or music
 
 157
-00:08:36,820.0000000000582 --> 00:08:42,940.0000000000582
-well this simply means that x and y are
+00:05:41,919 --> 00:05:45,400
+festivals and hopefully I could do some
 
 158
-00:08:39,729.0000000000582 --> 00:08:45,130
-not jointly continuous each one of them
+00:05:44,080 --> 00:05:48,639
+of those things with
 
 159
-00:08:42,940.0000000000582 --> 00:08:48,880.0000000001164
-is continuous but together they&#39;re not
+00:05:45,400 --> 00:05:51,039
+you that was that was wholesome as [ __ ]
 
 160
-00:08:45,130 --> 00:08:51,720
-jointly continuous essentially joint
+00:05:48,639 --> 00:05:53,440
+man I kept waiting for a little bit of
 
 161
-00:08:48,880 --> 00:08:53,889
-continuity is something more than
+00:05:51,039 --> 00:05:55,080
+meat for me to bite on to you know but
 
 162
-00:08:51,720 --> 00:08:56,889
-requiring each random very
+00:05:53,440 --> 00:05:57,520
+you got nothing I like music I like
 
 163
-00:08:53,889 --> 00:08:59,920
-to be continued by itself for joint
+00:05:55,080 --> 00:06:01,280
+concerts I&#39;m from Minnesota um I&#39;m good
 
 164
-00:08:56,889 --> 00:09:03,509
-continuity we want the probability to be
+00:05:57,520 --> 00:06:03,359.9999999999418
+at being I&#39;m good at taking orders um so
 
 165
-00:08:59,920 --> 00:09:06,339
-really spread over two dimensions
+00:06:01,280 --> 00:06:05,400
+boss me around if you want um like
 
 166
-00:09:03,509 --> 00:09:09,249
-probability is not allowed to be
+00:06:03,360 --> 00:06:08,319
+snowboarding and uh just really hope to
 
 167
-00:09:06,339 --> 00:09:10,869
-concentrated on a one-dimensional set on
+00:06:05,400 --> 00:06:10,479
+do those things with you so um I do like
 
 168
-00:09:09,249 --> 00:09:12,910
-the other hand in this example the
+00:06:08,319 --> 00:06:13,400.0000000000582
+the shirt color thank you just ain&#39;t
 
 169
-00:09:10,869 --> 00:09:15,489
-probability is concentrated on a
+00:06:10,479 --> 00:06:15,599
+going to cap that&#39;s real nice um so I
 
 170
-00:09:12,910 --> 00:09:18,660
-one-dimensional set and we do not have
+00:06:13,400 --> 00:06:17,479
+work in sales but my biggest passions
 
 171
-00:09:15,489 --> 00:09:18,660.0000000001164
-joint continuity
+00:06:15,599 --> 00:06:19,159.9999999999418
+are acting and music I do sometimes
+
+172
+00:06:17,479 --> 00:06:21,560
+impersonation sometimes so those are
+
+173
+00:06:19,160 --> 00:06:23,280.0000000000582
+really really fun um so you got to do
+
+174
+00:06:21,560 --> 00:06:24,759
+one you got you know what you&#39;re doing
+
+175
+00:06:23,280 --> 00:06:26,119.99999999994179
+when you say that you know what you&#39;re
+
+176
+00:06:24,759 --> 00:06:27,280.0000000000582
+doing throw one of your throw one of
+
+177
+00:06:26,120 --> 00:06:30,199
+your favorites at me we&#39;ll see if I can
+
+178
+00:06:27,280 --> 00:06:31,880
+do it um I love playing it that was an
+
+179
+00:06:30,199 --> 00:06:35,199
+invitation what are you doing that was
+
+180
+00:06:31,880 --> 00:06:36,199
+crowd interaction amazing I like this
+
+181
+00:06:35,199 --> 00:06:37,479
+guy although he should have been like
+
+182
+00:06:36,199 --> 00:06:38,840.0000000000582
+give me one who in the audience wants to
+
+183
+00:06:37,479 --> 00:06:40,318.9999999999418
+give me one you know instead he was like
+
+184
+00:06:38,840 --> 00:06:42,159.9999999999418
+he kind of assumed that she would do it
+
+185
+00:06:40,319 --> 00:06:43,520.0000000000582
+so maybe you know one day give me your
+
+186
+00:06:42,160 --> 00:06:45,759
+you know what someone you want me to do
+
+187
+00:06:43,520 --> 00:06:48,919
+impression of maybe maybe I got it
+
+188
+00:06:45,759 --> 00:06:53,240
+so okay next slide unless anyone has
+
+189
+00:06:48,919 --> 00:06:57,318.9999999999418
+anything to say no okay okay cool did I
+
+190
+00:06:53,240 --> 00:06:59,840.0000000000582
+hear Quinton Tarantino or no
+
+191
+00:06:57,319 --> 00:07:02,479.0000000000582
+right okay F cool next SL did I hear
+
+192
+00:06:59,840 --> 00:07:04,280
+Steve bshi somebody no okay next slide
+
+193
+00:07:02,479 --> 00:07:06,800
+let&#39;s go on next slide basketball I can
+
+194
+00:07:04,280 --> 00:07:07,878.9999999999418
+also cook a lot of food so mama had us
+
+195
+00:07:06,800 --> 00:07:09,680
+in the kitchen that&#39;s what happens when
+
+196
+00:07:07,879 --> 00:07:11,120
+you have a Caribbean mom so she always
+
+197
+00:07:09,680 --> 00:07:12,599
+made sure we were going to be able to
+
+198
+00:07:11,120 --> 00:07:14,440
+take care of those things how I would
+
+199
+00:07:12,599 --> 00:07:16,199
+describe myself I would say I&#39;m very
+
+200
+00:07:14,440 --> 00:07:18,680
+very easygoing I like to have a good
+
+201
+00:07:16,199 --> 00:07:20,759
+time I go with the flow of um [ __ ]
+
+202
+00:07:18,680 --> 00:07:23,120
+okay graphic designer damn all right
+
+203
+00:07:20,759 --> 00:07:25,639
+Johnny I this looks beautiful though
+
+204
+00:07:23,120 --> 00:07:27,199
+look at this people&#39;s personalities and
+
+205
+00:07:25,639 --> 00:07:28,720
+last but not not least looks like a
+
+206
+00:07:27,199 --> 00:07:31,039
+ransom note a little bit actually looks
+
+207
+00:07:28,720 --> 00:07:32,599.0000000000582
+a little threaten hey what it do
+
+208
+00:07:31,039 --> 00:07:36,360
+handsome you know what I&#39;m
+
+209
+00:07:32,599 --> 00:07:37,599
+saying all right hey everybody hi let&#39;s
+
+210
+00:07:36,360 --> 00:07:40,599
+all right
+
+211
+00:07:37,599 --> 00:07:42,800
+yakie let&#39;s go yakie I&#39;m rooting for you
+
+212
+00:07:40,599 --> 00:07:44,120
+dude I just like I like that he kind of
+
+213
+00:07:42,800 --> 00:07:45,720
+I don&#39;t know I feel like all the rest of
+
+214
+00:07:44,120 --> 00:07:46,800
+the guys kind of had like a sort of like
+
+215
+00:07:45,720 --> 00:07:48,520.0000000000582
+I don&#39;t know cool sort of like
+
+216
+00:07:46,800 --> 00:07:51,440
+alternative swag and then I feel like he
+
+217
+00:07:48,520 --> 00:07:51,440
+just came up like he
+
+218
+00:07:52,159 --> 00:07:57,039
+came like he came just straight from his
+
+219
+00:07:55,199 --> 00:07:59,080
+you know I don&#39;t know Finance job or
+
+220
+00:07:57,039 --> 00:08:01,199
+something like hi I&#39;m yakie cool I
+
+221
+00:07:59,080 --> 00:08:02,639
+actually did an Excel spreadsheet um
+
+222
+00:08:01,199 --> 00:08:05,280.0000000000582
+instead of a PowerPoint sorry I
+
+223
+00:08:02,639 --> 00:08:06,919
+misunderstood the the uh the the
+
+224
+00:08:05,280 --> 00:08:09,000
+instructions and I&#39;m just generally I&#39;m
+
+225
+00:08:06,919 --> 00:08:11,680
+just stronger with Excel you&#39;re probably
+
+226
+00:08:09,000 --> 00:08:13,759
+wondering who is he sure am ah and
+
+227
+00:08:11,680 --> 00:08:16,720
+there&#39;s a handsome boy my occupation I&#39;m
+
+228
+00:08:13,759 --> 00:08:19,520.0000000000582
+an actor comedian musician writer and
+
+229
+00:08:16,720 --> 00:08:21,80.00000000005821
+educator okay all right Miss sorry I
+
+230
+00:08:19,520 --> 00:08:22,840
+judge the book by its cover maybe it&#39;s
+
+231
+00:08:21,080 --> 00:08:24,840
+the sweater which is a cool sweater but
+
+232
+00:08:22,840 --> 00:08:26,840
+you know I don&#39;t know it&#39;s very sweatery
+
+233
+00:08:24,840 --> 00:08:29,520
+and I&#39;m frequently tired but good at
+
+234
+00:08:26,840 --> 00:08:31,080
+functioning as a tired person let&#39;s
+
+235
+00:08:29,520 --> 00:08:34,000
+start with the obvious things like most
+
+236
+00:08:31,080 --> 00:08:36,319.9999999999418
+people I like movies music books art and
+
+237
+00:08:34,000 --> 00:08:38,279
+good food I&#39;m really into comedy stuff
+
+238
+00:08:36,320.0000000000582 --> 00:08:39,919.0000000001164
+and I also like making music um and I
+
+239
+00:08:38,279 --> 00:08:42,439.9999999999418
+also like
+
+240
+00:08:39,919 --> 00:08:46,160
+cats bro are we the same
+
+241
+00:08:42,440.0000000000582 --> 00:08:49,400.0000000001164
+person oh my sparkling personality
+
+242
+00:08:46,160 --> 00:08:51,79.99999999988358
+here&#39;s some photos of me being sparkling
+
+243
+00:08:49,400 --> 00:08:53,640
+[Music]
+
+244
+00:08:51,080 --> 00:08:56,240
+wow who are you picking comment below
+
+245
+00:08:53,640 --> 00:08:58,920
+all right you know what [ __ ] it Joseph
+
+246
+00:08:56,240 --> 00:09:00,120
+comment so I put together some green
+
+247
+00:08:58,920 --> 00:09:01,680
+flag flag and red flags that I
+
+248
+00:09:00,120 --> 00:09:02,959.0000000001164
+personally look for okay I&#39;m looking for
+
+249
+00:09:01,680 --> 00:09:04,279
+someone that&#39;s reliable someone that has
+
+250
+00:09:02,959 --> 00:09:06,079
+a good relationship with their parents
+
+251
+00:09:04,279 --> 00:09:07,680
+and or siblings uh someone that&#39;s not
+
+252
+00:09:06,079 --> 00:09:09,439.9999999998836
+easily stressed someone who can kind of
+
+253
+00:09:07,680 --> 00:09:11,560
+keep it together red flags that I run
+
+254
+00:09:09,440 --> 00:09:13,600
+from uh someone that&#39;s always late it&#39;s
+
+255
+00:09:11,560 --> 00:09:17,279
+okay to be a little late I&#39;ll be on CPT
+
+256
+00:09:13,600 --> 00:09:19,79.00000000011642
+myself but not like not every every time
+
+257
+00:09:17,279 --> 00:09:21,079
+everywhere we go and then also if you
+
+258
+00:09:19,079 --> 00:09:22,239.99999999988358
+cheated in all of your relationships
+
+259
+00:09:21,079 --> 00:09:26,920
+kind of a red
+
+260
+00:09:22,240 --> 00:09:29,000
+flag in all of them 100% of them 85% I
+
+261
+00:09:26,920 --> 00:09:30,959
+I&#39;m cool with that you know I I can deal
+
+262
+00:09:29,000 --> 00:09:34,480
+with with that that&#39;s no problem I&#39;m I&#39;m
+
+263
+00:09:30,959 --> 00:09:36,079
+willing to be that 15% and then also no
+
+264
+00:09:34,480 --> 00:09:38,640
+relationship with parents what if she&#39;s
+
+265
+00:09:36,079 --> 00:09:40,399
+orphan dude everything that um I&#39;m a
+
+266
+00:09:38,640 --> 00:09:42,720
+pretty open person so I&#39;m looking for
+
+267
+00:09:40,399 --> 00:09:44,240
+someone who&#39;s not afraid to talk about
+
+268
+00:09:42,720 --> 00:09:46,240
+uh what they&#39;re feeling in that given
+
+269
+00:09:44,240 --> 00:09:47,800
+moment um and if they party more than
+
+270
+00:09:46,240 --> 00:09:48,959.0000000001164
+they work I think it&#39;s okay to party
+
+271
+00:09:47,800 --> 00:09:50,319.9999999998836
+hard but I think you should also work
+
+272
+00:09:48,959 --> 00:09:52,560
+hard as well and I think that&#39;s the end
+
+273
+00:09:50,320 --> 00:09:54,279
+of my
+
+274
+00:09:52,560 --> 00:09:56,439.9999999998836
+presentation this is a solid
+
+275
+00:09:54,279 --> 00:09:57,640
+presentation it was a solid presentation
+
+276
+00:09:56,440 --> 00:10:00,640.0000000001164
+you made you made a great case for
+
+277
+00:09:57,640 --> 00:10:03,240
+yourself and um I I&#39;d say you&#39;re in the
+
+278
+00:10:00,640 --> 00:10:05,640
+running also I created a graph to show
+
+279
+00:10:03,240 --> 00:10:08,560.0000000001164
+you uh what it would look like if you
+
+280
+00:10:05,640 --> 00:10:10,680
+spent time with me so as we can see fun
+
+281
+00:10:08,560 --> 00:10:14,599.9999999998836
+is directly correlated to time spent
+
+282
+00:10:10,680 --> 00:10:17,319.9999999998836
+with me down here less time more time
+
+283
+00:10:14,600 --> 00:10:19,360
+more fun I also added some visuals here
+
+284
+00:10:17,320 --> 00:10:21,600
+so you can enjoy and understand the
+
+285
+00:10:19,360 --> 00:10:24,920
+graphs a little bit better as we can see
+
+286
+00:10:21,600 --> 00:10:26,560.0000000001164
+emojis look at that emojis cuz I&#39;m a I&#39;m
+
+287
+00:10:24,920 --> 00:10:29,399
+not like the other guys all right I
+
+288
+00:10:26,560 --> 00:10:32,040
+don&#39;t just when I convey messages I like
+
+289
+00:10:29,399 --> 00:10:34,160
+to do with little pictures not just
+
+290
+00:10:32,040 --> 00:10:36,399
+boring words he went like the quirky
+
+291
+00:10:34,160 --> 00:10:38,360
+route you know which is working she&#39;s
+
+292
+00:10:36,399 --> 00:10:39,760
+laughing and I think that&#39;s probably
+
+293
+00:10:38,360 --> 00:10:41,639
+that&#39;s probably winning them some points
+
+294
+00:10:39,760 --> 00:10:43,560
+here laughter is definitely important
+
+295
+00:10:41,639 --> 00:10:45,519
+but it&#39;s some of this a little cheesy
+
+296
+00:10:43,560 --> 00:10:47,439.9999999998836
+and I added some emojis and then look
+
+297
+00:10:45,519 --> 00:10:50,120
+what the third layer is I added some
+
+298
+00:10:47,440 --> 00:10:51,560.0000000001164
+memes on top of that yeah you can pretty
+
+299
+00:10:50,120 --> 00:10:52,880
+much tell that a date with me is going
+
+300
+00:10:51,560 --> 00:10:54,160
+to be like the most fun thing in the
+
+301
+00:10:52,880 --> 00:10:57,760
+entire
+
+302
+00:10:54,160 --> 00:11:00,240
+world okay unless you don&#39;t want that
+
+303
+00:10:57,760 --> 00:11:02,160
+see you&#39;ll be crying non stop less time
+
+304
+00:11:00,240 --> 00:11:04,160
+always crying up there we have a heart
+
+305
+00:11:02,160 --> 00:11:05,519
+eyes a rocket ship and an infinity
+
+306
+00:11:04,160 --> 00:11:08,519
+symbol which means you&#39;ll have heart
+
+307
+00:11:05,519 --> 00:11:10,279
+eyes to infinity and beyond I like to
+
+308
+00:11:08,519 --> 00:11:13,360
+travel and then
+
+309
+00:11:10,279 --> 00:11:14,560
+like heart eyes to infinity and beyond
+
+310
+00:11:13,360 --> 00:11:16,880
+and then he clicks it again like an
+
+311
+00:11:14,560 --> 00:11:20,000
+eggplant and a squirt shows up and oops
+
+312
+00:11:16,880 --> 00:11:22,839
+oh [ __ ] um H man I put that in as a joke
+
+313
+00:11:20,000 --> 00:11:24,480
+I left that in though that&#39;s Fu uh a
+
+314
+00:11:22,839 --> 00:11:26,839
+picture over there is when I went to on
+
+315
+00:11:24,480 --> 00:11:28,480
+a solo trip to Korea um I like long
+
+316
+00:11:26,839 --> 00:11:29,880.0000000001164
+walks to the fridge I eat everything
+
+317
+00:11:28,480 --> 00:11:32,560.0000000001164
+I&#39;ve tried everything
+
+318
+00:11:29,880 --> 00:11:34,760
+once long walks to the fridge come on I
+
+319
+00:11:32,560 --> 00:11:38,119.99999999988358
+want to try everything once uh my mom
+
+320
+00:11:34,760 --> 00:11:42,760
+thinks I&#39;m at least a four out
+
+321
+00:11:38,120 --> 00:11:44,600
+10 uh it ain&#39;t much but it&#39;s honest work
+
+322
+00:11:42,760 --> 00:11:47,720
+one of the memes I enjoy green flag some
+
+323
+00:11:44,600 --> 00:11:47,720
+of the green and red flags that I
+
+324
+00:11:48,040 --> 00:11:53,040
+have or I can cook but I mainly cook
+
+325
+00:11:50,720 --> 00:11:55,40.000000000116415
+chicken I&#39;m a great listener but I also
+
+326
+00:11:53,040 --> 00:11:56,800
+she&#39;s cheesing look at that she is
+
+327
+00:11:55,040 --> 00:11:58,719.9999999998836
+cheesing she&#39;s loving him she&#39;s writing
+
+328
+00:11:56,800 --> 00:12:00,760
+down what is she writing little hearts
+
+329
+00:11:58,720 --> 00:12:02,480
+or around his name play too many video
+
+330
+00:12:00,760 --> 00:12:03,560
+games I&#39;m independent but I can&#39;t watch
+
+331
+00:12:02,480 --> 00:12:05,959.0000000001164
+any scary
+
+332
+00:12:03,560 --> 00:12:08,239.99999999988358
+movies I&#39;ve amassed a total amount of
+
+333
+00:12:05,959 --> 00:12:10,479.9999999998836
+2,000 to 2,000 hours in rocket League
+
+334
+00:12:08,240 --> 00:12:12,480
+pretty cool if I say so myself I can act
+
+335
+00:12:10,480 --> 00:12:14,600
+maybe leave that one off maybe leave
+
+336
+00:12:12,480 --> 00:12:17,279
+that one off bro predict any number
+
+337
+00:12:14,600 --> 00:12:20,440
+you&#39;re guessing between 1 and
+
+338
+00:12:17,279 --> 00:12:22,079
+20 is it
+
+339
+00:12:20,440 --> 00:12:24,360
+17
+
+340
+00:12:22,079 --> 00:12:26,479.9999999998836
+16 so
+
+341
+00:12:24,360 --> 00:12:30,880
+close anyways that&#39;s the end of my slide
+
+342
+00:12:26,480 --> 00:12:30,880
+thank you guys so much hope you enjoyed
+
+343
+00:12:32,720 --> 00:12:37,920.0000000001164
+personally not my favorite but who knows
+
+344
+00:12:36,040 --> 00:12:39,360
+she seemed to be enjoying it so I feel
+
+345
+00:12:37,920 --> 00:12:41,680
+like you&#39;re pretty you&#39;re pretty high up
+
+346
+00:12:39,360 --> 00:12:43,560.0000000001164
+there right now photo of uh me and two
+
+347
+00:12:41,680 --> 00:12:47,120
+my best friends just the
+
+348
+00:12:43,560 --> 00:12:48,880
+whome the most non-threatening guy ever
+
+349
+00:12:47,120 --> 00:12:50,760
+a picture of me and my best friends and
+
+350
+00:12:48,880 --> 00:12:52,519
+just hanging out and this is actually us
+
+351
+00:12:50,760 --> 00:12:53,600
+uh we were exploring a Cave System
+
+352
+00:12:52,519 --> 00:12:56,000
+actually right underneath one of the
+
+353
+00:12:53,600 --> 00:12:59,880
+dorms of my college
+
+354
+00:12:56,000 --> 00:13:01,440
+who holy [ __ ] and he&#39;s adventurous and
+
+355
+00:12:59,880 --> 00:13:03,199
+so green flags I look for in a partner
+
+356
+00:13:01,440 --> 00:13:05,800.0000000001164
+you know I really like uh girls that are
+
+357
+00:13:03,199 --> 00:13:07,560
+practical ambitious good sense of humor
+
+358
+00:13:05,800 --> 00:13:08,719.9999999998836
+is really important um adventurous like
+
+359
+00:13:07,560 --> 00:13:10,079
+willing to try new things I really look
+
+360
+00:13:08,720 --> 00:13:11,519
+for Good Chemistry so like if we can
+
+361
+00:13:10,079 --> 00:13:12,519
+talk and we just talk for hours and we
+
+362
+00:13:11,519 --> 00:13:15,000
+just never run out of things to talk
+
+363
+00:13:12,519 --> 00:13:17,720
+about um and also nice teeth because a
+
+364
+00:13:15,000 --> 00:13:19,120
+good smile I think really gets me and
+
+365
+00:13:17,720 --> 00:13:24,320
+you know red flags for me is like not
+
+366
+00:13:19,120 --> 00:13:24,320
+being what that always throws me off the
+
+367
+00:13:25,920 --> 00:13:30,760
+editing that editing is like the last
+
+368
+00:13:28,839 --> 00:13:32,320
+dude&#39;s presentation you know what I mean
+
+369
+00:13:30,760 --> 00:13:34,160
+being uncaring and that could be to me
+
+370
+00:13:32,320 --> 00:13:35,880
+or to others or being a picky eater cuz
+
+371
+00:13:34,160 --> 00:13:37,240
+I I really like trying new foods and so
+
+372
+00:13:35,880 --> 00:13:39,240
+here&#39;s what I bring to the table so I&#39;m
+
+373
+00:13:37,240 --> 00:13:41,120
+a hopeless romantic emphasis on hopeless
+
+374
+00:13:39,240 --> 00:13:42,839
+I&#39;m a good listener I&#39;ll always validate
+
+375
+00:13:41,120 --> 00:13:44,360
+your feelings and my arms are
+
+376
+00:13:42,839 --> 00:13:46,320
+disproportionately long so I give really
+
+377
+00:13:44,360 --> 00:13:47,600
+good hugs I just want to be you know one
+
+378
+00:13:46,320 --> 00:13:51,890.0000000001164
+of the couples that other people look at
+
+379
+00:13:47,600 --> 00:13:53,639
+and go that could be us David that&#39;s so
+
+380
+00:13:51,890 --> 00:13:56,439.9999999998836
+[Applause]
+
+381
+00:13:53,639 --> 00:13:58,720
+cute this is the nicest guy in the
+
+382
+00:13:56,440 --> 00:14:01,79.00000000011642
+entire world I think it might be I don&#39;t
+
+383
+00:13:58,720 --> 00:14:03,199.00000000011642
+I think this guy has a bad bone in his
+
+384
+00:14:01,079 --> 00:14:06,120
+body look at that all the dudes are like
+
+385
+00:14:03,199 --> 00:14:07,920
+I&#39;d [ __ ] date this guy wow let me
+
+386
+00:14:06,120 --> 00:14:10,160
+know if she doesn&#39;t work out
+
+387
+00:14:07,920 --> 00:14:12,759
+dude for me I&#39;ve only been in four
+
+388
+00:14:10,160 --> 00:14:14,600
+relationships but I would say for me
+
+389
+00:14:12,759 --> 00:14:16,160
+every single person that I have dated
+
+390
+00:14:14,600 --> 00:14:18,40.000000000116415
+they brought something to the table that
+
+391
+00:14:16,160 --> 00:14:20,040
+makes me who I am these are the flags we
+
+392
+00:14:18,040 --> 00:14:22,360
+going to talk about so green flags for
+
+393
+00:14:20,040 --> 00:14:24,040
+me I love when people are honest even if
+
+394
+00:14:22,360 --> 00:14:26,600
+it even if it hurts right like we should
+
+395
+00:14:24,040 --> 00:14:29,079
+tell the truth passionate loves sports
+
+396
+00:14:26,600 --> 00:14:31,920.0000000001164
+is creative has a good taste in movies
+
+397
+00:14:29,079 --> 00:14:33,839
+and music um you know down to earth and
+
+398
+00:14:31,920 --> 00:14:35,639
+is really competitive and then I would
+
+399
+00:14:33,839 --> 00:14:38,79.00000000011642
+say red flags for me are if you&#39;re just
+
+400
+00:14:35,639 --> 00:14:40,600
+super self-absorbed you don&#39;t have any
+
+401
+00:14:38,079 --> 00:14:42,079
+drive like you&#39;re not going for anything
+
+402
+00:14:40,600 --> 00:14:44,720
+um don&#39;t like to work out that green
+
+403
+00:14:42,079 --> 00:14:47,439.9999999998836
+flags my green flags are if they&#39;re
+
+404
+00:14:44,720 --> 00:14:50,120
+perfect and then my red flags are if
+
+405
+00:14:47,440 --> 00:14:52,360
+they&#39;re a murderer can&#39;t be a serial
+
+406
+00:14:50,120 --> 00:14:53,959.0000000001164
+killer no thank you I don&#39;t want any
+
+407
+00:14:52,360 --> 00:14:56,639
+part of that that&#39;s a red flag in my
+
+408
+00:14:53,959 --> 00:14:58,758.9999999998836
+book green flags Perfection if they&#39;re
+
+409
+00:14:56,639 --> 00:15:00,839
+perfect then I&#39;m down I love to work out
+
+410
+00:14:58,759 --> 00:15:02,600
+out um someone that&#39;s just very
+
+411
+00:15:00,839 --> 00:15:03,959.0000000001164
+judgmental that&#39;s not open to like
+
+412
+00:15:02,600 --> 00:15:06,40.000000000116415
+hearing people&#39;s stories and having
+
+413
+00:15:03,959 --> 00:15:07,599.9999999998836
+empathy and then someone that&#39;s just
+
+414
+00:15:06,040 --> 00:15:09,079
+like rude to people that&#39;s just not
+
+415
+00:15:07,600 --> 00:15:10,399
+really a Vibe for me just bringing
+
+416
+00:15:09,079 --> 00:15:12,319.9999999998836
+things who is looking for someone that
+
+417
+00:15:10,399 --> 00:15:13,839
+is rude to people who is looking for
+
+418
+00:15:12,320 --> 00:15:15,680.0000000001164
+that do people look for that I don&#39;t
+
+419
+00:15:13,839 --> 00:15:18,240
+think so oh my God I love when people
+
+420
+00:15:15,680 --> 00:15:20,800
+treat waiters like [ __ ] I love that
+
+421
+00:15:18,240 --> 00:15:23,000
+service people [ __ ] scum right I love
+
+422
+00:15:20,800 --> 00:15:25,800
+when people recognize that and treat
+
+423
+00:15:23,000 --> 00:15:28,360
+them as such so hot bringing things to a
+
+424
+00:15:25,800 --> 00:15:30,719.9999999998836
+wrap up why I think I&#39;m your guy is
+
+425
+00:15:28,360 --> 00:15:33,160
+because number one I&#39;m fun I&#39;m
+
+426
+00:15:30,720 --> 00:15:35,720
+intelligent I&#39;m a natural born leader
+
+427
+00:15:33,160 --> 00:15:38,040
+I&#39;m energetic sweet when I want to be
+
+428
+00:15:35,720 --> 00:15:39,319.0000000001164
+spicy when I have to be and encouraging
+
+429
+00:15:38,040 --> 00:15:40,839
+sweet when I want to be spicy when I
+
+430
+00:15:39,319 --> 00:15:43,479.9999999998836
+have to be that&#39;s a bar you know what
+
+431
+00:15:40,839 --> 00:15:43,480
+that spells
+
+432
+00:15:43,680 --> 00:15:48,120
+finesse sick so in case you saw that you
+
+433
+00:15:46,440 --> 00:15:52,399
+know what I&#39;m saying so here&#39;s the deal
+
+434
+00:15:48,120 --> 00:15:57,480
+with me without me with me without with
+
+435
+00:15:52,399 --> 00:15:57,480
+me without me with me without me
+
+436
+00:15:57,600 --> 00:16:00,720
+wow so this is the reasons why you
+
+437
+00:15:59,399 --> 00:16:02,800
+should pick me this song is actually
+
+438
+00:16:00,720 --> 00:16:04,399
+coming out so we can if you end up
+
+439
+00:16:02,800 --> 00:16:06,120
+coming on a date with me or whatever we
+
+440
+00:16:04,399 --> 00:16:07,920
+can listen to this together is this your
+
+441
+00:16:06,120 --> 00:16:10,199
+song
+
+442
+00:16:07,920 --> 00:16:14,839
+Yes wait
+
+443
+00:16:10,199 --> 00:16:18,599.9999999998836
+no no you you&#39;re killing it dude you
+
+444
+00:16:14,839 --> 00:16:20,560.0000000001164
+were killing it a man what a horrible
+
+445
+00:16:18,600 --> 00:16:23,199.00000000011642
+pitch so if you went on a dat we could
+
+446
+00:16:20,560 --> 00:16:26,199
+potentially listen to this song My
+
+447
+00:16:23,199 --> 00:16:27,880
+unreleased song together I could sit
+
+448
+00:16:26,199 --> 00:16:29,479.9999999998836
+there and watch you listen to it and
+
+449
+00:16:27,880 --> 00:16:31,040
+just like kind of read your face and you
+
+450
+00:16:29,480 --> 00:16:35,120
+have to like pretend like it&#39;s good
+
+451
+00:16:31,040 --> 00:16:38,719.9999999998836
+thoughts thank you very much appreciate
+
+452
+00:16:35,120 --> 00:16:42,079
+[Applause]
+
+453
+00:16:38,720 --> 00:16:44,79.00000000011642
+you that just shouldn&#39;t be like you just
+
+454
+00:16:42,079 --> 00:16:46,000
+like if there&#39;s not like social proof
+
+455
+00:16:44,079 --> 00:16:47,719.9999999998836
+that your music is good I mean I you
+
+456
+00:16:46,000 --> 00:16:49,279
+know I should be one to [ __ ] talk but
+
+457
+00:16:47,720 --> 00:16:50,600
+I make one [ __ ] thing and I&#39;m like
+
+458
+00:16:49,279 --> 00:16:51,920
+put it on on Soundcloud right away but
+
+459
+00:16:50,600 --> 00:16:53,519
+if there&#39;s no like social proof that
+
+460
+00:16:51,920 --> 00:16:55,399
+people really really enjoy your music
+
+461
+00:16:53,519 --> 00:16:57,560.0000000001164
+then this is like a fifth date thing you
+
+462
+00:16:55,399 --> 00:16:58,600
+know where you&#39;re like hey I just work
+
+463
+00:16:57,560 --> 00:16:59,880
+I&#39;ve been working on something could I
+
+464
+00:16:58,600 --> 00:17:01,800.0000000001164
+show you and just get your opinion it&#39;s
+
+465
+00:16:59,880 --> 00:17:03,399
+not like a and you might be the lucky
+
+466
+00:17:01,800 --> 00:17:06,678.9999999998836
+lady that gets to listen to this
+
+467
+00:17:03,399 --> 00:17:08,839
+unreleased song by me with me if you
+
+468
+00:17:06,679.0000000001164 --> 00:17:10,880.0000000001164
+play your cards right empathetic I&#39;m
+
+469
+00:17:08,839 --> 00:17:12,918.9999999998836
+patient and I&#39;m considerate I&#39;m a good
+
+470
+00:17:10,880.0000000001164 --> 00:17:15,360.0000000001164
+planner but I&#39;m also adaptable
+
+471
+00:17:12,919.0000000001164 --> 00:17:16,959.0000000001164
+spontaneous and go with the flow and I&#39;m
+
+472
+00:17:15,359.9999999998836 --> 00:17:18,799
+not the jealous type I&#39;m pretty secure
+
+473
+00:17:16,959.0000000001164 --> 00:17:21,319
+so that&#39;s I think a good selling point
+
+474
+00:17:18,799 --> 00:17:24,559
+we love a secure man we love
+
+475
+00:17:21,319 --> 00:17:27,639.9999999998836
+that uh I&#39;m also organized responsible
+
+476
+00:17:24,559 --> 00:17:29,039
+but I&#39;m also fun and sociable um and I
+
+477
+00:17:27,640.0000000001164 --> 00:17:31,160
+prioritize Mak
+
+478
+00:17:29,039 --> 00:17:34,200
+connections some of this I just lifted
+
+479
+00:17:31,160 --> 00:17:34,200
+from my nectar love
+
+480
+00:17:34,559 --> 00:17:39,678.9999999997672
+print the [ __ ] is that what the [ __ ] is
+
+481
+00:17:37,400 --> 00:17:42,799
+nectar love print I&#39;m emotionally
+
+482
+00:17:39,679 --> 00:17:44,919
+intelligent and fairly self-aware and uh
+
+483
+00:17:42,799 --> 00:17:47,760
+My Love Languages include physical touch
+
+484
+00:17:44,919 --> 00:17:49,760
+and quality time and also sometimes acts
+
+485
+00:17:47,760 --> 00:17:52,799
+of service depending on the relationship
+
+486
+00:17:49,760 --> 00:17:54,960
+Dynamic okay here&#39;s just some fun bonus
+
+487
+00:17:52,799 --> 00:17:56,480
+info uh here&#39;s me hanging out with
+
+488
+00:17:54,960 --> 00:17:59,280
+friends just being very normal and
+
+489
+00:17:56,480 --> 00:18:01,600
+fitting in um I&#39;m a bit of that guy
+
+490
+00:17:59,280 --> 00:18:02,960
+knows hanging out with friends he&#39;s like
+
+491
+00:18:01,600 --> 00:18:04,520
+did you not see the first picture of my
+
+492
+00:18:02,960 --> 00:18:06,799
+[ __ ] slideshow that was me hanging
+
+493
+00:18:04,520 --> 00:18:09,120
+out with my best friends by the way
+
+494
+00:18:06,799 --> 00:18:11,520
+exploring a Cave System underneath our
+
+495
+00:18:09,120 --> 00:18:14,840
+dorm a nerd and I&#39;m a big proponent of
+
+496
+00:18:11,520 --> 00:18:16,559
+therapy so I like therapy I feel like
+
+497
+00:18:14,840 --> 00:18:19,559
+it&#39;s good to be working on
+
+498
+00:18:16,559 --> 00:18:21,320
+ourselves uh I&#39;m Jewish uh and I live
+
+499
+00:18:19,559 --> 00:18:24,360
+alone I have no roommates which I feel
+
+500
+00:18:21,320 --> 00:18:26,840
+like is another huge selling point it is
+
+501
+00:18:24,360 --> 00:18:28,879.9999999997672
+thank you and then I&#39;ll just end boy I
+
+502
+00:18:26,840 --> 00:18:31,240
+really was paraphrasing my next
+
+503
+00:18:28,880 --> 00:18:33,159
+here so here&#39;s just a big block of text
+
+504
+00:18:31,240 --> 00:18:34,679
+and on a very flattering photo of myself
+
+505
+00:18:33,159 --> 00:18:39,340.00000000023283
+as a
+
+506
+00:18:34,679 --> 00:18:42,120.00000000023283
+baby so there we go that&#39;s
+
+507
+00:18:39,340 --> 00:18:45,080
+[Applause]
+
+508
+00:18:42,120 --> 00:18:46,600
+it not the strongest I would say I don&#39;t
+
+509
+00:18:45,080 --> 00:18:48,000
+think he made the strongest impression
+
+510
+00:18:46,600 --> 00:18:49,678.9999999997672
+he seems like a nice guy but just not
+
+511
+00:18:48,000 --> 00:18:51,480
+this you know I don&#39;t know questions
+
+512
+00:18:49,679 --> 00:18:53,760
+about some things you said have you ever
+
+513
+00:18:51,480 --> 00:18:56,120.00000000023283
+cheated in a relation do you want the
+
+514
+00:18:53,760 --> 00:18:59,200
+truth or you want a li I want the truth
+
+515
+00:18:56,120 --> 00:19:02,678.9999999997672
+you can&#39;t handle the truth
+
+516
+00:18:59,200 --> 00:19:04,400
+stop doing that uh I do not I&#39;ve cheated
+
+517
+00:19:02,679 --> 00:19:07,000
+in the past when I was younger and more
+
+518
+00:19:04,400 --> 00:19:09,200
+immature uh I think you can like grow
+
+519
+00:19:07,000 --> 00:19:12,080
+and mature as a person so I feel like
+
+520
+00:19:09,200 --> 00:19:14,760
+I&#39;ve done that I appreciate that Honesty
+
+521
+00:19:12,080 --> 00:19:18,080
+you said you can cook I can but I&#39;m
+
+522
+00:19:14,760 --> 00:19:20,120
+pescatarian so I don&#39;t eat any chicken
+
+523
+00:19:18,080 --> 00:19:22,120
+okay so then I&#39;m thinking we can have
+
+524
+00:19:20,120 --> 00:19:25,439.99999999976717
+some class did I say chicken a [ __ ] I&#39;m
+
+525
+00:19:22,120 --> 00:19:25,439.99999999976717
+meant chicken of the Seas
+
+526
+00:19:26,120 --> 00:19:31,600
+tuna uh quinoa oven baked salmon uh
+
+527
+00:19:29,880 --> 00:19:34,000
+maybe some either you know normal
+
+528
+00:19:31,600 --> 00:19:36,799
+vegetables as broccoli asparagus or
+
+529
+00:19:34,000 --> 00:19:39,720
+baked kale with some lemon zest on top
+
+530
+00:19:36,799 --> 00:19:41,559
+okay I&#39;ll take it you mentioned music
+
+531
+00:19:39,720 --> 00:19:44,799
+and I was interested what kind of music
+
+532
+00:19:41,559 --> 00:19:46,080
+you&#39;re into so I what&#39;s he going to say
+
+533
+00:19:44,799 --> 00:19:47,120
+what the [ __ ] is he going to say he&#39;s
+
+534
+00:19:46,080 --> 00:19:49,158.99999999976717
+going to say everything he&#39;s going to
+
+535
+00:19:47,120 --> 00:19:50,879.9999999997672
+say I like all music I&#39;m not genre
+
+536
+00:19:49,159 --> 00:19:52,640
+dependent or he&#39;s going to say like soft
+
+537
+00:19:50,880 --> 00:19:55,280.00000000023283
+Electronica listen to a lot of like
+
+538
+00:19:52,640 --> 00:19:58,600.0000000002328
+Indie Indie yeah that makes sense that
+
+539
+00:19:55,280 --> 00:20:00,678.9999999997672
+was my third guess um and so um I really
+
+540
+00:19:58,600 --> 00:20:03,399.99999999976717
+like glass animals um before they were
+
+541
+00:20:00,679 --> 00:20:05,919
+big really something that you said was
+
+542
+00:20:03,400 --> 00:20:07,600.0000000002328
+that you had your four relationships and
+
+543
+00:20:05,919 --> 00:20:09,880
+I want to know what you think they would
+
+544
+00:20:07,600 --> 00:20:11,840
+say about you I think that they would
+
+545
+00:20:09,880 --> 00:20:13,760.0000000002328
+definitely say that I&#39;m very attentive
+
+546
+00:20:11,840 --> 00:20:15,240
+that I&#39;m somebody that is always seeking
+
+547
+00:20:13,760 --> 00:20:16,720
+and striving to be better in
+
+548
+00:20:15,240 --> 00:20:18,000
+relationship to both of us as that&#39;s a
+
+549
+00:20:16,720 --> 00:20:19,679
+funny answer first of all I didn&#39;t even
+
+550
+00:20:18,000 --> 00:20:21,720
+think of that answer that&#39;s like that&#39;s
+
+551
+00:20:19,679 --> 00:20:24,240
+so like I think that they would say that
+
+552
+00:20:21,720 --> 00:20:27,200
+I I work I just work too damn hard you
+
+553
+00:20:24,240 --> 00:20:29,640
+know make too much money I think they
+
+554
+00:20:27,200 --> 00:20:31,120.00000000023283
+would they got frustrated just how much
+
+555
+00:20:29,640 --> 00:20:33,80.00000000023283
+how much attention I was paying to them
+
+556
+00:20:31,120 --> 00:20:35,959.9999999997672
+how much love I was showing them and how
+
+557
+00:20:33,080 --> 00:20:38,120
+much money I made and how much I cooked
+
+558
+00:20:35,960 --> 00:20:39,679
+for them I just that&#39;s what they said
+
+559
+00:20:38,120 --> 00:20:42,239.99999999976717
+you know what I actually wrote this song
+
+560
+00:20:39,679 --> 00:20:44,159
+about exactly that and let me play that
+
+561
+00:20:42,240 --> 00:20:47,159
+for you this one&#39;s unreleased as well
+
+562
+00:20:44,159 --> 00:20:49,280.00000000023283
+okay I like that do you do like standup
+
+563
+00:20:47,159 --> 00:20:52,520.0000000002328
+comedy improv like what do you into all
+
+564
+00:20:49,280 --> 00:20:55,240
+the above I&#39;ve done both for a number of
+
+565
+00:20:52,520 --> 00:20:57,080
+years yeah sick his presentation was
+
+566
+00:20:55,240 --> 00:20:59,760
+very like stand deppy wasn&#39;t it I&#39;m
+
+567
+00:20:57,080 --> 00:21:02,199.99999999976717
+actually Jewish um like everything had
+
+568
+00:20:59,760 --> 00:21:04,158.99999999976717
+that like sort of like Cadence and like
+
+569
+00:21:02,200 --> 00:21:07,120.00000000023283
+intonation is that the word I&#39;m caring
+
+570
+00:21:04,159 --> 00:21:10,39.00000000023283
+but uh I&#39;m also attentive so much thank
+
+571
+00:21:07,120 --> 00:21:12,439.99999999976717
+you you guys made this very hard uh I
+
+572
+00:21:10,039 --> 00:21:16,039
+wasn&#39;t expecting it to be so hard and
+
+573
+00:21:12,440 --> 00:21:18,039
+all right favorite right now um you know
+
+574
+00:21:16,039 --> 00:21:20,320
+I was liking Joseph&#39;s presentation but
+
+575
+00:21:18,039 --> 00:21:21,440
+the music thing just that that uh I
+
+576
+00:21:20,320 --> 00:21:23,320
+don&#39;t know that took him down a couple
+
+577
+00:21:21,440 --> 00:21:24,840.0000000002328
+pigs in my in my eyes I don&#39;t know why
+
+578
+00:21:23,320 --> 00:21:26,360
+you know so now I&#39;m kind of thinking
+
+579
+00:21:24,840 --> 00:21:28,240
+nice guy although Nice Guy&#39;s always
+
+580
+00:21:26,360 --> 00:21:30,320
+finished last so he&#39;s not going to win
+
+581
+00:21:28,240 --> 00:21:32,720
+we know that I&#39;m I&#39;m surprised by a lot
+
+582
+00:21:30,320 --> 00:21:34,158.99999999976717
+of these things but I think the person
+
+583
+00:21:32,720 --> 00:21:36,640
+that I&#39;m going to eliminate I&#39;m
+
+584
+00:21:34,159 --> 00:21:39,279
+eliminating them
+
+585
+00:21:36,640 --> 00:21:41,640
+because they said something that is
+
+586
+00:21:39,279 --> 00:21:44,720
+actually one of my red
+
+587
+00:21:41,640 --> 00:21:47,559.0000000002328
+flags and so unfortunately although I
+
+588
+00:21:44,720 --> 00:21:48,919
+love the honesty I&#39;m going to have to
+
+589
+00:21:47,559 --> 00:21:52,080
+eliminate
+
+590
+00:21:48,919 --> 00:21:53,600.0000000002328
+Antonio oh I mean we knew he was done
+
+591
+00:21:52,080 --> 00:21:55,760
+from the moment he said he&#39;s too short
+
+592
+00:21:53,600 --> 00:21:57,600
+to be a quarterback we knew he was done
+
+593
+00:21:55,760 --> 00:22:01,080
+that was it that was it he dug his own
+
+594
+00:21:57,600 --> 00:22:03,240
+grave there there God I&#39;m so sorry not
+
+595
+00:22:01,080 --> 00:22:03,240
+the
+
+596
+00:22:04,159 --> 00:22:09,200
+chair I don&#39;t necessarily think once a
+
+597
+00:22:07,440 --> 00:22:10,919
+cheater always a cheater but I don&#39;t
+
+598
+00:22:09,200 --> 00:22:13,760
+even want to put myself in that type of
+
+599
+00:22:10,919 --> 00:22:17,240
+position so it was just an immediate X
+
+600
+00:22:13,760 --> 00:22:19,200
+for me hi again I&#39;m Logan uh and this is
+
+601
+00:22:17,240 --> 00:22:20,919
+my idea of the perfect date oh we got
+
+602
+00:22:19,200 --> 00:22:23,679
+more presentation I thought they were
+
+603
+00:22:20,919 --> 00:22:25,760
+done okay first date ideas okay so short
+
+604
+00:22:23,679 --> 00:22:27,679
+and sweet I really like he&#39;s like okay
+
+605
+00:22:25,760 --> 00:22:29,799
+First Date Presentation here uh okay
+
+606
+00:22:27,679 --> 00:22:32,80.00000000023283
+first slide I think that would be great
+
+607
+00:22:29,799 --> 00:22:36,600
+just eggplant squirt Emoji oh [ __ ] why
+
+608
+00:22:32,080 --> 00:22:39,000
+do I [ __ ] sorry I ah sorry mini golf
+
+609
+00:22:36,600 --> 00:22:41,158.99999999976717
+I think this would be the absolute
+
+610
+00:22:39,000 --> 00:22:43,600
+perfect date it&#39;s really relaxed and
+
+611
+00:22:41,159 --> 00:22:45,000
+stressfree it&#39;s also a lot of time to
+
+612
+00:22:43,600 --> 00:22:46,840
+talk so it&#39;s a great time where I can
+
+613
+00:22:45,000 --> 00:22:48,159
+get to know you we can talk about things
+
+614
+00:22:46,840 --> 00:22:50,678.9999999997672
+that we are interested in you know get
+
+615
+00:22:48,159 --> 00:22:53,240
+to know each other while we&#39;re putting
+
+616
+00:22:50,679 --> 00:22:55,760
+through the green I can&#39;t name a single
+
+617
+00:22:53,240 --> 00:22:57,600
+mini golf place in La do they exist here
+
+618
+00:22:55,760 --> 00:22:59,720
+I don&#39;t know I don&#39;t think so I think
+
+619
+00:22:57,600 --> 00:23:01,120
+Mini golf dates just happen in movies I
+
+620
+00:22:59,720 --> 00:23:02,840
+don&#39;t think people actually do that do
+
+621
+00:23:01,120 --> 00:23:04,840
+they let me know am I just like in the
+
+622
+00:23:02,840 --> 00:23:06,720
+little La bubble or something added a
+
+623
+00:23:04,840 --> 00:23:09,720
+fun little animation of what it would
+
+624
+00:23:06,720 --> 00:23:11,880
+look like if we play mini
+
+625
+00:23:09,720 --> 00:23:15,520
+golf it was a little frowny face cuz you
+
+626
+00:23:11,880 --> 00:23:17,799.0000000002328
+missed do I like mini golf oh
+
+627
+00:23:15,520 --> 00:23:19,320
+no this is a preview of what it looked
+
+628
+00:23:17,799 --> 00:23:21,279
+like to have dinner with oh my God
+
+629
+00:23:19,320 --> 00:23:22,799
+sweetheart look at this look at this
+
+630
+00:23:21,279 --> 00:23:25,400
+[ __ ] meal too do you think you made
+
+631
+00:23:22,799 --> 00:23:27,720
+all this probably and you said you&#39;re
+
+632
+00:23:25,400 --> 00:23:31,000
+pescatarian mhm uh do you like sushi I
+
+633
+00:23:27,720 --> 00:23:33,799
+love love that&#39;s great cuz I am obsessed
+
+634
+00:23:31,000 --> 00:23:36,000
+and I really like trying new things so I
+
+635
+00:23:33,799 --> 00:23:37,879.9999999997672
+was thinking that we could and I found a
+
+636
+00:23:36,000 --> 00:23:39,200
+some interesting Sushi making classes in
+
+637
+00:23:37,880 --> 00:23:40,440
+downtown and I was thinking we could go
+
+638
+00:23:39,200 --> 00:23:42,760
+to a class together and we could learn
+
+639
+00:23:40,440 --> 00:23:44,520
+to make sushi just get to learn to make
+
+640
+00:23:42,760 --> 00:23:46,360
+succulent sushi rice you really had to
+
+641
+00:23:44,520 --> 00:23:47,918.9999999997672
+put succulent in there dude you couldn&#39;t
+
+642
+00:23:46,360 --> 00:23:50,039
+have thought of any other word but
+
+643
+00:23:47,919 --> 00:23:51,880
+succulent in your presentation just get
+
+644
+00:23:50,039 --> 00:23:53,480
+to feel each other out a little bit also
+
+645
+00:23:51,880 --> 00:23:55,760.0000000002328
+dinner&#39;s built in so we can eat we can
+
+646
+00:23:53,480 --> 00:23:57,880
+eat what we made afterwards amazing um
+
+647
+00:23:55,760 --> 00:24:00,480
+after that we could take a drive out to
+
+648
+00:23:57,880 --> 00:24:02,919
+to Santa Monica Pier at night and we
+
+649
+00:24:00,480 --> 00:24:05,240
+could you know watch the sunset over the
+
+650
+00:24:02,919 --> 00:24:06,960
+beach I don&#39;t know about that you got
+
+651
+00:24:05,240 --> 00:24:09,000
+all of LA to do stuff and you&#39;re going
+
+652
+00:24:06,960 --> 00:24:10,720
+to pick the most the number one most
+
+653
+00:24:09,000 --> 00:24:12,120
+touristy thing in LA to do I don&#39;t know
+
+654
+00:24:10,720 --> 00:24:13,240
+about that I think the waves are
+
+655
+00:24:12,120 --> 00:24:14,479.99999999976717
+actually better when you&#39;re watching
+
+656
+00:24:13,240 --> 00:24:16,320
+them at night cuz it really feels like
+
+657
+00:24:14,480 --> 00:24:17,919
+you&#39;re in a movie and if there&#39;s one
+
+658
+00:24:16,320 --> 00:24:19,520
+thing that I try to do is I try to live
+
+659
+00:24:17,919 --> 00:24:23,80.00000000023283
+my life like I&#39;m in a future
+
+660
+00:24:19,520 --> 00:24:23,080
+film holy
+
+661
+00:24:23,400 --> 00:24:28,919
+[ __ ] wait what the [ __ ] did he just drop
+
+662
+00:24:26,120 --> 00:24:31,760
+my life as a movie at the end of oh my
+
+663
+00:24:28,919 --> 00:24:34,159
+god dude that was so out of character
+
+664
+00:24:31,760 --> 00:24:35,960
+for that that was so out of character
+
+665
+00:24:34,159 --> 00:24:37,440
+for him and if there&#39;s one thing that I
+
+666
+00:24:35,960 --> 00:24:38,679
+try to do is I try to live my life like
+
+667
+00:24:37,440 --> 00:24:41,520
+I&#39;m in a future
+
+668
+00:24:38,679 --> 00:24:43,440
+film D my friends and I always say that
+
+669
+00:24:41,520 --> 00:24:44,840
+[ __ ] Ah that&#39;s so funny people always
+
+670
+00:24:43,440 --> 00:24:46,440
+say my life a movie last night was a
+
+671
+00:24:44,840 --> 00:24:48,240
+movie so like I feel like it&#39;s funny to
+
+672
+00:24:46,440 --> 00:24:50,200
+try and find like different forms of
+
+673
+00:24:48,240 --> 00:24:52,880
+that you know I mean this isn&#39;t [ __ ]
+
+674
+00:24:50,200 --> 00:24:54,159
+new if it&#39;s one thing I try to do is try
+
+675
+00:24:52,880 --> 00:24:56,399
+to live my life like I&#39;m in a feature
+
+676
+00:24:54,159 --> 00:24:58,440
+film that&#39;s some sauce right there dude
+
+677
+00:24:56,399 --> 00:25:00,639.9999999997672
+and if it&#39;s one thing I try to do
+
+678
+00:24:58,440 --> 00:25:06,000
+is I try to live like I&#39;m in a clation
+
+679
+00:25:00,640 --> 00:25:07,320.00000000023283
+movie so so here we have um a kitchen so
+
+680
+00:25:06,000 --> 00:25:09,480
+what I did with this whole picture is is
+
+681
+00:25:07,320 --> 00:25:11,799
+like a kind of variety of different
+
+682
+00:25:09,480 --> 00:25:14,000
+experiences right so you can do an at
+
+683
+00:25:11,799 --> 00:25:15,960
+home type of a date situation I love to
+
+684
+00:25:14,000 --> 00:25:18,159
+cook and you said you&#39;re a prescatarian
+
+685
+00:25:15,960 --> 00:25:20,480
+so one of my favorite dishes to make is
+
+686
+00:25:18,159 --> 00:25:22,520.0000000002328
+like a salmon pasta dish but in my head
+
+687
+00:25:20,480 --> 00:25:24,799
+I&#39;m thinking wait a minute we could do
+
+688
+00:25:22,520 --> 00:25:26,279
+this together so it&#39; be a process where
+
+689
+00:25:24,799 --> 00:25:28,639.9999999997672
+we&#39;re working together almost a little
+
+690
+00:25:26,279 --> 00:25:30,600
+competition but a whole lot a character
+
+691
+00:25:28,640 --> 00:25:31,720
+and then we get to try the the outcome I
+
+692
+00:25:30,600 --> 00:25:33,799
+know it&#39;s delicious but you know you&#39;re
+
+693
+00:25:31,720 --> 00:25:35,799
+going to have to find out um I&#39;m a
+
+694
+00:25:33,799 --> 00:25:37,799
+really really big fan of going to comedy
+
+695
+00:25:35,799 --> 00:25:39,639.9999999997672
+shows like comedy shows are really
+
+696
+00:25:37,799 --> 00:25:41,320
+really great because you know we can
+
+697
+00:25:39,640 --> 00:25:43,840.0000000002328
+both sit there I love the guy&#39;s
+
+698
+00:25:41,320 --> 00:25:45,879.9999999997672
+reactions they&#39;re like H [ __ ] [ __ ] I
+
+699
+00:25:43,840 --> 00:25:48,199.99999999976717
+should have said that [ __ ] we can laugh
+
+700
+00:25:45,880 --> 00:25:49,840.0000000002328
+um and then and then finally as the
+
+701
+00:25:48,200 --> 00:25:52,039
+final Act you&#39;re going to watch me
+
+702
+00:25:49,840 --> 00:25:53,799
+perform my brand new unreleased song
+
+703
+00:25:52,039 --> 00:25:55,960
+after something is over just go and and
+
+704
+00:25:53,799 --> 00:25:58,639.9999999997672
+sit down somewhere really really nice or
+
+705
+00:25:55,960 --> 00:26:01,200
+go for a walk head to the beach over
+
+706
+00:25:58,640 --> 00:26:04,720
+here all right I would like to go on
+
+707
+00:26:01,200 --> 00:26:07,279
+David&#39;s date so if you if you could take
+
+708
+00:26:04,720 --> 00:26:09,039
+me that would be great um but in Li of
+
+709
+00:26:07,279 --> 00:26:11,960
+that here&#39;s another option this is
+
+710
+00:26:09,039 --> 00:26:14,679
+called this could be for you wow uh and
+
+711
+00:26:11,960 --> 00:26:17,880
+I went with a weird theme which is uh
+
+712
+00:26:14,679 --> 00:26:20,960
+stuff stuff based around Vermont Avenue
+
+713
+00:26:17,880 --> 00:26:23,39.00000000023283
+um I don&#39;t know why but I thought uh and
+
+714
+00:26:20,960 --> 00:26:25,919
+you know remember nothing set in stone
+
+715
+00:26:23,039 --> 00:26:28,879.9999999997672
+here thank you uh location one Griffith
+
+716
+00:26:25,919 --> 00:26:31,520.0000000002328
+Park Vermont entrance keepy it on theme
+
+717
+00:26:28,880 --> 00:26:33,320.00000000023283
+activity a little hike and then walk
+
+718
+00:26:31,520 --> 00:26:35,559
+around the observatory and admire the
+
+719
+00:26:33,320 --> 00:26:38,320
+view possibly at Sunset if I time it
+
+720
+00:26:35,559 --> 00:26:42,158.99999999976717
+right H look at that breathtaking so
+
+721
+00:26:38,320 --> 00:26:44,480
+here&#39;s some options a uh right down the
+
+722
+00:26:42,159 --> 00:26:46,320.00000000023283
+street is lots of cool artsy bookstores
+
+723
+00:26:44,480 --> 00:26:48,240
+and music shops and other like vintage
+
+724
+00:26:46,320 --> 00:26:51,120
+stores um or if you go a little further
+
+725
+00:26:48,240 --> 00:26:53,080
+down the street there&#39;s a family arcade
+
+726
+00:26:51,120 --> 00:26:55,520
+which is I think fun and a little
+
+727
+00:26:53,080 --> 00:26:58,000
+different oh yeah arcade now we&#39;re
+
+728
+00:26:55,520 --> 00:26:59,918.9999999997672
+talking little dve Busters ideal date
+
+729
+00:26:58,000 --> 00:27:01,399
+that&#39;s perfect or somebody already said
+
+730
+00:26:59,919 --> 00:27:03,399
+this but if you go even further down
+
+731
+00:27:01,399 --> 00:27:06,559
+Vermont Avenue oh my gosh there&#39;s
+
+732
+00:27:03,399 --> 00:27:07,959.9999999997672
+bowling uh and then finally because at
+
+733
+00:27:06,559 --> 00:27:10,600
+this point I&#39;m sure we&#39;ve worked up a
+
+734
+00:27:07,960 --> 00:27:12,720
+big appetite we should have dinner and
+
+735
+00:27:10,600 --> 00:27:15,639.9999999997672
+there&#39;s so many good neighborhoods right
+
+736
+00:27:12,720 --> 00:27:18,520
+there that have delicious food and this
+
+737
+00:27:15,640 --> 00:27:21,200
+is pictures of food I also like sushi
+
+738
+00:27:18,520 --> 00:27:23,440
+and tacos and burgers and ramen and all
+
+739
+00:27:21,200 --> 00:27:25,640
+kinds of stuff and we&#39;ll be we&#39;ll be so
+
+740
+00:27:23,440 --> 00:27:27,80.00000000023283
+hungry at that point so that&#39;s it I
+
+741
+00:27:25,640 --> 00:27:29,200
+really loved all of these pitches they
+
+742
+00:27:27,080 --> 00:27:30,879.9999999997672
+were all great and those were great but
+
+743
+00:27:29,200 --> 00:27:33,000
+I mean I feel like I feel like they were
+
+744
+00:27:30,880 --> 00:27:35,159
+just trying to describe like an ideal
+
+745
+00:27:33,000 --> 00:27:37,679
+date we can make food together or we
+
+746
+00:27:35,159 --> 00:27:38,880
+take Sushi classes you know I wish one
+
+747
+00:27:37,679 --> 00:27:40,840.0000000002328
+dude was like you know we&#39;re going to
+
+748
+00:27:38,880 --> 00:27:43,000
+[ __ ] get hammered probably yeah
+
+749
+00:27:40,840 --> 00:27:45,279
+probably take you to a rave just
+
+750
+00:27:43,000 --> 00:27:48,960
+something to that&#39;s like just doesn&#39;t
+
+751
+00:27:45,279 --> 00:27:51,559
+fit at all in this Warehouse Rave had an
+
+752
+00:27:48,960 --> 00:27:53,200
+element about it that I would like
+
+753
+00:27:51,559 --> 00:27:55,678.9999999997672
+whether that&#39;s like having some time to
+
+754
+00:27:53,200 --> 00:27:59,000
+talk with one another or the actual
+
+755
+00:27:55,679 --> 00:28:02,240
+activity that we&#39;re doing I think I&#39;m
+
+756
+00:27:59,000 --> 00:28:05,399
+going to have to eliminate this person
+
+757
+00:28:02,240 --> 00:28:08,919
+because like I said I just don&#39;t know
+
+758
+00:28:05,399 --> 00:28:11,000
+about she&#39;s getting rid of uh white boy
+
+759
+00:28:08,919 --> 00:28:14,799.0000000002328
+sweating on a first date if it&#39;s really
+
+760
+00:28:11,000 --> 00:28:17,360
+hot and doing a big hike so I&#39;m so sorry
+
+761
+00:28:14,799 --> 00:28:20,279
+but I&#39;m going to have to eliminate Yaky
+
+762
+00:28:17,360 --> 00:28:22,399
+that&#39;s okay thank you later Yaky nice
+
+763
+00:28:20,279 --> 00:28:24,240
+work dude nice work you did the best you
+
+764
+00:28:22,399 --> 00:28:26,439.99999999976717
+could he did a great job he did a great
+
+765
+00:28:24,240 --> 00:28:28,600
+job he&#39;s a Charming guy
+
+766
+00:28:26,440 --> 00:28:31,320.00000000023283
+you I don&#39;t know if we should have
+
+767
+00:28:28,600 --> 00:28:32,799
+clapped for that I think that a girl
+
+768
+00:28:31,320 --> 00:28:34,480
+that would be really good for him she&#39;s
+
+769
+00:28:32,799 --> 00:28:36,200
+going to be a little bit quirkier than I
+
+770
+00:28:34,480 --> 00:28:39,000
+am you know I want him to have the best
+
+771
+00:28:36,200 --> 00:28:40,960
+and I just don&#39;t think for him it&#39;s me
+
+772
+00:28:39,000 --> 00:28:42,919
+okay so when I first got here I was
+
+773
+00:28:40,960 --> 00:28:44,519
+really nervous and when you guys were
+
+774
+00:28:42,919 --> 00:28:46,279
+doing your presentations and opening up
+
+775
+00:28:44,519 --> 00:28:48,039
+to me who&#39;s she going to pick you think
+
+776
+00:28:46,279 --> 00:28:50,080
+it&#39;s going to be the meme guy it&#39;s not
+
+777
+00:28:48,039 --> 00:28:51,840
+going to be the nice guy because nice
+
+778
+00:28:50,080 --> 00:28:53,439.99999999976717
+guys come last even though his life is
+
+779
+00:28:51,840 --> 00:28:56,000
+literally a feature film even though
+
+780
+00:28:53,440 --> 00:28:59,159
+every day in his life is like the
+
+781
+00:28:56,000 --> 00:29:01,279
+premiere of a Hollywood movie yeah my
+
+782
+00:28:59,159 --> 00:29:03,679
+life is kind of a Marvel movie um I
+
+783
+00:29:01,279 --> 00:29:06,039
+think it might be Joseph made me feel
+
+784
+00:29:03,679 --> 00:29:09,600.0000000002328
+really open and really receptive and one
+
+785
+00:29:06,039 --> 00:29:12,200
+of you guys I feel like I just loved
+
+786
+00:29:09,600 --> 00:29:15,279
+their energy and their Vibe and their
+
+787
+00:29:12,200 --> 00:29:18,320
+authenticity and I want to pick this
+
+788
+00:29:15,279 --> 00:29:22,039
+person because I feel like I have a lot
+
+789
+00:29:18,320 --> 00:29:23,399
+of things in common with them and I
+
+790
+00:29:22,039 --> 00:29:25,720
+don&#39;t know I think that they&#39;re really
+
+791
+00:29:23,399 --> 00:29:29,320
+great and they&#39;re cute and they seem fun
+
+792
+00:29:25,720 --> 00:29:29,320
+so I&#39;m going to pick
+
+793
+00:29:34,000 --> 00:29:39,320
+David uh
+
+794
+00:29:36,919 --> 00:29:41,480
+what what all right maybe his [ __ ]
+
+795
+00:29:39,320 --> 00:29:42,600
+life is a movie damn that&#39;s a movie
+
+796
+00:29:41,480 --> 00:29:44,039
+thing that just happened that would
+
+797
+00:29:42,600 --> 00:29:47,000
+happen in a [ __ ] movie and it just
+
+798
+00:29:44,039 --> 00:29:50,279
+happened so maybe my my boy&#39;s life is a
+
+799
+00:29:47,000 --> 00:29:53,120
+freaking indie film perhaps uh or in
+
+800
+00:29:50,279 --> 00:29:56,200
+this case a romcom
+
+801
+00:29:53,120 --> 00:29:59,279
+damn thank you thank you they just start
+
+802
+00:29:56,200 --> 00:30:01,720
+making out it&#39;s like whoa this dude&#39;s
+
+803
+00:29:59,279 --> 00:30:04,080
+life is a [ __ ]
+
+804
+00:30:01,720 --> 00:30:06,159
+movie oh
+
+805
+00:30:04,080 --> 00:30:08,678.9999999997672
+yeah don&#39;t forget your
+
+806
+00:30:06,159 --> 00:30:11,320.00000000023283
+chairs I&#39;m really excited for hopefully
+
+807
+00:30:08,679 --> 00:30:12,840.0000000002328
+our Sushi date that comes to fruition I
+
+808
+00:30:11,320 --> 00:30:14,360
+really like the how you have things in
+
+809
+00:30:12,840 --> 00:30:16,360
+common with me I I didn&#39;t really list
+
+810
+00:30:14,360 --> 00:30:19,080
+that many uh things I like how you have
+
+811
+00:30:16,360 --> 00:30:22,639.9999999997672
+things in common with me
+
+812
+00:30:19,080 --> 00:30:23,799
+Riz RZ about me so I&#39;m really glad that
+
+813
+00:30:22,640 --> 00:30:25,679
+some of those things we already have in
+
+814
+00:30:23,799 --> 00:30:27,639.9999999997672
+common well I think like the fact that
+
+815
+00:30:25,679 --> 00:30:29,159
+you&#39;re hopeless romantic I I think that
+
+816
+00:30:27,640 --> 00:30:31,519
+that really speaks to me like I like
+
+817
+00:30:29,159 --> 00:30:34,480
+someone who&#39;s going to be like soft and
+
+818
+00:30:31,519 --> 00:30:35,919
+like affectionate and kind and sweet she
+
+819
+00:30:34,480 --> 00:30:38,039
+just calls you soft he&#39;s like all right
+
+820
+00:30:35,919 --> 00:30:39,840.0000000002328
+should we go suck down some succul and
+
+821
+00:30:38,039 --> 00:30:41,879.9999999997672
+Sushi or what&#39;s up oh that was fun that
+
+822
+00:30:39,840 --> 00:30:43,799
+was a great [ __ ] video I had a blast
+
+823
+00:30:41,880 --> 00:30:45,559.0000000002328
+hope you enjoyed that uh click like if
+
+824
+00:30:43,799 --> 00:30:50,000
+you did and uh thank you so much I&#39;ll
+
+825
+00:30:45,559 --> 00:30:50,000
+see you next time bye we up too
+
+826
+00:30:54,240 --> 00:30:59,240
+late it&#39;s like we&#39;ll never stop it
+
+827
+00:31:00,000 --> 00:31:08,039
+said you bring a friend I said okay got
+
+828
+00:31:05,039 --> 00:31:08,039
+it
 

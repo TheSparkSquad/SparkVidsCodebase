@@ -25,25 +25,21 @@ async function fetchCaptions() {
         document.getElementById("loading").style.display = "flex"; 
 
 
-        // After fetching captions, now generate the summary
-        const generateResponse = await fetch('/generateSummary');
-        if (!generateResponse.ok) {
-            throw new Error('Failed to generate summary.');
-        }
-
-        // After generating summary, retrieve it
-        const summaryResponse = await fetch('/getSummary');
-        if (!summaryResponse.ok) {
-            throw new Error('Failed to retrieve summary.');
-        }
-        const summaryData = await summaryResponse.text();
-
-
+        const generateResponse = await fetch('/generateSummary', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ captions: srtData })
+        });
+        
         // Hide the loading message
         document.getElementById("loading").style.display = "none";
+        
 
-        // Update the <pre> tag's content with the fetched summary
-        document.getElementById("summary").textContent = summaryData;
+        const summaryText = await generateResponse.text();
+        document.getElementById("summary").textContent = summaryText;
+        
 
     } catch (error) {
         console.error("Error:", error);
