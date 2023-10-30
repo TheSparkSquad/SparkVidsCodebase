@@ -116,11 +116,10 @@ class Transcript {
             throw new Error(`Failed to fetch transcript data: ${response.statusText}`);
         }
         const xmlContent = await response.text();
-    
+        
         const srtContent = await this._convertXmlToSrt(xmlContent);
-        this._saveSrtToFile(srtContent);
-    
-        return srtContent;  // Return SRT content
+        
+        return srtContent;  // Return SRT content directly
     }
 
     /**
@@ -140,13 +139,12 @@ class Transcript {
                 let srtOutput = '';
                 
                 texts.forEach((text, index) => {
-                    srtOutput += (index + 1) + '\n';
                     
                     const start = parseFloat(text.$.start);
                     const end = start + parseFloat(text.$.dur);
                     
-                    srtOutput += this._formatTime(start) + ' --> ' + this._formatTime(end) + '\n';
-                    srtOutput += text._ + '\n\n';
+                    srtOutput += this._formatTime(start) + '>' + this._formatTime(end) + ' ';
+                    srtOutput += text._ + '\n';
                 });
                 
                 resolve(srtOutput);
@@ -162,15 +160,16 @@ class Transcript {
      * @private
      */
     _formatTime(seconds) {
+        const roundedSeconds = Math.round(seconds); // Round to nearest whole second
         const date = new Date(0);
-        date.setSeconds(seconds);
+        date.setSeconds(roundedSeconds);
         const hh = date.getUTCHours().toString().padStart(2, '0');
         const mm = date.getUTCMinutes().toString().padStart(2, '0');
         const ss = date.getUTCSeconds().toString().padStart(2, '0');
-        const ms = (seconds * 1000 % 1000).toString().padStart(3, '0');
 
-        return `${hh}:${mm}:${ss},${ms}`;
+        return `${hh}:${mm}:${ss}`; // Milliseconds are set to '000' since we're rounding to whole seconds
     }
+
 
 
     /**
