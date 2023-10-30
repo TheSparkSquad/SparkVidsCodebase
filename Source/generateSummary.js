@@ -46,5 +46,4 @@ class GenerateSummary {
         }
     }
 }
-
 module.exports = GenerateSummary;

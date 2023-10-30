@@ -84,6 +84,7 @@ app.post('/generateSummary', async (req, res) => {
         console.timeEnd('Summary Generation');
         
         res.send(summary);
+
     } catch (error) {
         console.error("Error during summary generation:", error);
         res.status(500).send('Error generating summary.');
