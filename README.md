@@ -13,20 +13,21 @@ This project is designed to fetch and extract captions from a YouTube video and 
 ## Setup
 
 1. Clone the repository:
-```bash
+```bash```
+
 git clone [your-repository-url]
 
-2. Install dependencies:
+3. Install dependencies:
 npm install
 
-3. Setup your environment variables:
+4. Setup your environment variables:
 Create a .env file in the root directory of your project and add the following:
 API_KEY=your_openai_api_key_here
 
-4. Start the server:
+5. Start the server:
 node server.js
 
-5. Once the server starts, you should see the message:
+6. Once the server starts, you should see the message:
 Server is running on http://localhost:3000
 
 
