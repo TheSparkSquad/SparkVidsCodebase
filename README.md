@@ -13,10 +13,10 @@ This project is designed to fetch and extract captions from a YouTube video and 
 ## Setup
 
 1. Clone the repository:
-```bash```
+```bash
 
 git clone [your-repository-url]
-
+```
 3. Install dependencies:
 npm install
 
