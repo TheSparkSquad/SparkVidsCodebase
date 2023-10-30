@@ -8,7 +8,7 @@ This project is designed to fetch and extract captions from a YouTube video and 
 - `server.js`: Main server setup and API routes.
 - `Transcript.js`: Responsible for parsing and extraction of YouTube captions through scraping.
 - `OpenAiApi.js`: Manages interactions with the OpenAI API and sets prompts.
-- `generateSummary.js`: (Not explicitly provided in the code but inferred) This module likely facilitates the generation of summaries using OpenAI's API.
+- `generateSummary.js`: This module likely facilitates the generation of summaries using OpenAI's API.
 
 ## Setup
 
