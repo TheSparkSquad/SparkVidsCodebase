@@ -2,3 +2,37 @@
     width: 48em !important;  /* Using !important to ensure this style overrides Bootstrap's default */
     max-width: 100%;  /* To ensure it doesn't exceed the screen width */
 }
+h1 {
+    color: #0f83ff;  /* Bootstrap primary color (blue) */
+}
+h3 {
+    color: black;  /* Updated this to black */
+}
+h4 {
+    color: black;
+}
+p, pre {
+    color: #343a40;  /* Bootstrap dark color (almost black) */
+}
+.btn-primary {
+    background-color: #007BFF;  /* Bootstrap primary color (blue) */
+    border: none;
+}
+.spinner-border {
+    color: #007BFF;  /* Bootstrap primary color (blue) */
+}
+
+/* Hover effect for buttons - make slightly darker */
+button:hover {
+    filter: brightness(95%);
+}
+
+/* Hover effect for text boxes - make slightly darker */
+input[type="text"]:hover {
+    filter: brightness(95%);
+}
+
+/* If you have other buttons or text boxes with specific classes or IDs, you can target them here */
+/* .specific-button-class:hover { */
+/*     filter: brightness(90%); */
+/* } */
