@@ -31,8 +31,22 @@ class GenerateSummary {
     constructor(apiKey) {
         this.apiKey = apiKey;
     }
-
+    
     async generate(content) {
+        try {  
+            //content = processText(content);
+            content = truncateContent(content, 10000); // Ensure the content size
+            const openApi = new OpenAiApi(this.apiKey);
+            content = processText(content);
+            const summary = await openApi.summarize(content);
+            return summary;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    }
+    
+    async search(content) {
         try {  
             //content = processText(content);
             content = truncateContent(content, 10000); // Ensure the content size

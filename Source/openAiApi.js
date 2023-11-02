@@ -41,6 +41,12 @@ class OpenAiApi {
         const prompt = `Please try to capture the essence of the transcript from an educational video I have provided. Then give me numbered list of the topics with the timestamps included. I want the topic discussed not the content itself in the bullet points. \n\n${text}`
         //const prompt =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
+
+
+        //const prompt = `Can you return me all of the instances the word 'keyword' comes up from the video? Please use the timestamps provided and only count major occurences. Output your findings in as a numerical list.  \n\nHere's the video transcript: ${text}`;
+
+
+        
         //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
         //const prompt = `Summarize the following input from a video output in table of contents format. Make sure to get the subject matter as the title of the numerical bullet point and then a brief description under it. This is a caption track from a youtube video so treat it accordingly. \n\n${text}`;
         return this.chatCompletion(prompt);

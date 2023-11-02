@@ -91,6 +91,32 @@ app.post('/generateSummary', async (req, res) => {
     }
 });
 
+
+/**
+ * Endpoint to generate a summary from the fetched captions.
+ */
+app.post('/generateSearch', async (req, res) => {
+    try {
+        console.log('Starting Search generation...');
+        
+        console.time('Search Generation');
+
+        const captionsData = req.body.captions;
+
+        //const processedContent = processText(captionsData);
+        const generateSummary = new GenerateSummary(apiKey);
+        const summary = await generateSummary.generate(captionsData);
+        
+        console.timeEnd('Summary Generation');
+        
+        res.send(summary);
+
+    } catch (error) {
+        console.error("Error during summary generation:", error);
+        res.status(500).send('Error generating summary.');
+    }
+});
+
 // ===================================
 // SERVER INITIALIZATION
 // ===================================
