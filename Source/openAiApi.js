@@ -36,15 +36,11 @@ class OpenAiApi {
      * @returns {Promise<string>} - The summarized text.
      */
     async summarize(text) {
-//        const prompt = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
+        // const prompt = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
         //const prompt = `Use the timestamps to correctly summarize the content into a table of contents for the video. \n\n${text}`;
         const prompt = `Please try to capture the essence of the transcript from an educational video I have provided. Then give me numbered list of the topics with the timestamps included. I want the topic discussed not the content itself in the bullet points. \n\n${text}`
         //const prompt =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
-
-
-        //const prompt = `Can you return me all of the instances the word 'keyword' comes up from the video? Please use the timestamps provided and only count major occurences. Output your findings in as a numerical list.  \n\nHere's the video transcript: ${text}`;
-
 
         
         //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
@@ -52,7 +48,17 @@ class OpenAiApi {
         return this.chatCompletion(prompt);
     }
 
-// EXAMPLE OF THE OUTPUT I WANT
+    async search(text, keyword) {        
+        const prompt = `Can you return me all of the instances the word '${keyword}' comes up from the video? Please use the timestamps provided and only count major occurences. Output your findings in as a numerical list.  \n\nHere's the video transcript: ${text}`;
+
+        return this.chatCompletion(prompt);
+    }
+
+
+
+
+
+    // EXAMPLE OF THE OUTPUT I WANT
 //     Table of Contents:
 
 // Table of Contents:

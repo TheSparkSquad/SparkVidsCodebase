@@ -53,8 +53,8 @@ class GenerateSummary {
             content = truncateContent(content, 10000); // Ensure the content size
             const openApi = new OpenAiApi(this.apiKey);
             content = processText(content);
-            const summary = await openApi.summarize(content);
-            return summary;
+            const searchResult = await openApi.search(content, keyword);
+            return searchResult;
         } catch (error) {
             console.error('Error:', error);
             throw error;

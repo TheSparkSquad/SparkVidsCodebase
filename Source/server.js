@@ -92,20 +92,17 @@ app.post('/generateSummary', async (req, res) => {
 });
 
 
-/**
- * Endpoint to generate a summary from the fetched captions.
- */
 app.post('/generateSearch', async (req, res) => {
     try {
         console.log('Starting Search generation...');
-        
+        console.log("does this even HAPPEN?!?!?!?!")
         console.time('Search Generation');
 
         const captionsData = req.body.captions;
-
-        //This will be changed. Just testing rn...
-        keyword = 'radio'
-        //const processedContent = processText(captionsData);
+        const keyword = req.body.keyword;
+        
+        console.log(captionsData)
+        console.log(keyword)
         const generateSummary = new GenerateSummary(apiKey);
         const searchResult = await generateSummary.search(captionsData, keyword);
         
@@ -114,10 +111,11 @@ app.post('/generateSearch', async (req, res) => {
         res.send(searchResult);
 
     } catch (error) {
-        console.error("Error during summary generation:", error);
-        res.status(500).send('Error generating summary.');
+        console.error("Error during search generation:", error);
+        res.status(500).send('Error generating search result.');
     }
 });
+
 
 // ===================================
 // SERVER INITIALIZATION

@@ -45,6 +45,23 @@
                 </div>
             </div>
             <pre id="summary" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
+
+
+
+            <h3>Search of Your Video</h3>
+            <p>Specify a keyword to search for:</p>
+            <input type="text" id="searchId" placeholder="Enter YouTube Search Here" class="form-control mb-3">
+            <button onclick="fetchSearch()" class="btn btn-primary mb-3">Search Captions</button>
+
+
+            <div id="loadingSearch" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
+                <div>
+                    <div class="spinner-border" role="status"></div>
+                    <p class="mt-2">Searching for your content...</p>
+                </div>
+            </div>
+            <pre id="search" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
+
         </div>
     </div>
 
