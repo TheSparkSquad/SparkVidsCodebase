@@ -45,8 +45,9 @@ class GenerateSummary {
             throw error;
         }
     }
-    
-    async search(content) {
+
+    //Needs content and keyword
+    async search(content, keyword) {
         try {  
             //content = processText(content);
             content = truncateContent(content, 10000); // Ensure the content size

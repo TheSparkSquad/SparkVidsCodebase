@@ -103,13 +103,15 @@ app.post('/generateSearch', async (req, res) => {
 
         const captionsData = req.body.captions;
 
+        //This will be changed. Just testing rn...
+        keyword = 'radio'
         //const processedContent = processText(captionsData);
         const generateSummary = new GenerateSummary(apiKey);
-        const summary = await generateSummary.generate(captionsData);
+        const searchResult = await generateSummary.search(captionsData, keyword);
         
-        console.timeEnd('Summary Generation');
+        console.timeEnd('Search Generation');
         
-        res.send(summary);
+        res.send(searchResult);
 
     } catch (error) {
         console.error("Error during summary generation:", error);
