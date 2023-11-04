@@ -3,11 +3,12 @@ function extractVideoId(url) {
     const match = url.match(regex);
     return match && match[1] ? match[1] : null;
 }
+
+
 async function fetchCaptions() {
     document.getElementById("summary").textContent = "";
     document.getElementById("search").textContent = "";
     let input = document.getElementById("videoId").value;
-    let keyword = document.getElementById("searchId").value;
 
     if (!input) {
         alert("Please enter a YouTube Video ID or URL.");
@@ -34,20 +35,29 @@ async function fetchCaptions() {
         // Update the <pre> tag's content with the fetched SRT data
         document.getElementById("output").textContent = srtData;
 
-        if(keyword) {
-            // If a keyword is provided, search within the captions
-            fetchSearch(srtData, keyword);
-        } else {
-            // Otherwise, generate a summary
-            fetchSummary(srtData);
-        }
-
     } catch (error) {
         console.error("Error:", error);
         alert("Error occurred. Please check the console for more details.");
     }
 }
-async function fetchSummary(captions) {
+
+
+async function fetchSummary() {
+    let captions = document.getElementById("output").textContent;
+    let input = document.getElementById("videoId").value;
+
+    if (!input) {
+        alert("Please enter a YouTube Video ID or URL.");
+        return;
+    }
+
+    const videoId = input.includes('youtube.com') || input.includes('youtu.be') ? extractVideoId(input) : input;
+    
+    if (!videoId) {
+        alert("Invalid YouTube Video ID or URL.");
+        return;
+    }
+
     try {
         // Show the loading message
         document.getElementById("loading").style.display = "flex";
@@ -57,7 +67,7 @@ async function fetchSummary(captions) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ captions: captions })
+            body: JSON.stringify({ captions: captions, videoId: videoId }) // Pass the videoId along with captions
         });
 
         // Hide the loading message
@@ -71,6 +81,7 @@ async function fetchSummary(captions) {
         alert("Error occurred. Please check the console for more details.");
     }
 }
+
 
 
 async function searchCaptions() {

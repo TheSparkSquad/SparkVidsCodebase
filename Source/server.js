@@ -72,17 +72,44 @@ app.get('/captions', async (req, res) => {
 app.post('/generateSummary', async (req, res) => {
     try {
         console.log('Starting summary generation...');
-        
         console.time('Summary Generation');
 
-        const captionsData = req.body.captions;
+        let captionsData = req.body.captions;
+        const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
 
-        //const processedContent = processText(captionsData);
+        // If no captions are provided, fetch them first
+        if (!captionsData && videoId) {
+            // Note: Directly using the logic from '/captions' endpoint. 
+            // In a real-world application, you might want to refactor this to avoid duplication.
+            const WATCH_URL = `https://www.youtube.com/watch?v=${videoId}`;
+            const response = await fetch(WATCH_URL);
+            const html = await response.text();
+            const splitHtml = html.split('"captions":');
+            if (splitHtml.length > 1) {
+                const jsonDataStr = splitHtml[1].split(',"videoDetails')[0].replace('\n', '');
+                const captionsJson = JSON.parse(jsonDataStr);
+                const transcript = new Transcript(
+                    fetch, 
+                    videoId, 
+                    WATCH_URL, 
+                    "English", 
+                    "en", 
+                    true, 
+                    []
+                );
+                captionsData = await transcript.fetchCaptionsFromData(captionsJson);
+            }
+        }
+
+        // If, after trying, there are still no captions, return an error
+        if (!captionsData) {
+            return res.status(400).send('No captions found or provided.');
+        }
+
         const generateSummary = new GenerateSummary(apiKey);
         const summary = await generateSummary.generate(captionsData);
         
         console.timeEnd('Summary Generation');
-        
         res.send(summary);
 
     } catch (error) {
@@ -92,17 +119,15 @@ app.post('/generateSummary', async (req, res) => {
 });
 
 
+
 app.post('/generateSearch', async (req, res) => {
     try {
         console.log('Starting Search generation...');
-        console.log("does this even HAPPEN?!?!?!?!")
         console.time('Search Generation');
 
         const captionsData = req.body.captions;
         const keyword = req.body.keyword;
-        
-        console.log(captionsData)
-        console.log(keyword)
+
         const generateSummary = new GenerateSummary(apiKey);
         const searchResult = await generateSummary.search(captionsData, keyword);
         
@@ -114,6 +139,15 @@ app.post('/generateSearch', async (req, res) => {
         console.error("Error during search generation:", error);
         res.status(500).send('Error generating search result.');
     }
+});
+
+// Routes for new pages
+app.get('/llama2-model', (req, res) => {
+    res.sendFile(__dirname + '/public/llama2-model.html');
+});
+
+app.get('/punctuation-model', (req, res) => {
+    res.sendFile(__dirname + '/public/punctuation-model.html');
 });
 
 
