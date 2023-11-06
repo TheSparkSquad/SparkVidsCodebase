@@ -12,6 +12,8 @@ node_modules/
 
 #irgnore configuration and env variables
 config.ini
+package-lock.json
+package-lock 2.json
 
 #environmentals and api keys
 .env
