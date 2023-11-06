@@ -10,7 +10,9 @@ This project is designed to fetch and extract captions from a YouTube video and 
 - `OpenAiApi.js`: Manages interactions with the OpenAI API and sets prompts.
 - `generateSummary.js`: This module likely facilitates the generation of summaries using OpenAI's API.
 
-## Setup
+
+
+## Setup to run Node App from Local
 
 1. Clone the repository:
 
@@ -37,6 +39,12 @@ node server.js
 ```
 6. Once the server starts, you should see the message:
 Server is running on http://localhost:3000
+
+
+
+## Setup to run Node App by Hosting a Server
+
+
 
 
 ## API Routes
