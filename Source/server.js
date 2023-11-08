@@ -28,6 +28,7 @@ app.get('/captions', async (req, res) => {
     // Extract videoId from the query parameters
     const videoId = req.query.videoId;
     const WATCH_URL = `https://www.youtube.com/watch?v=${videoId}`;
+    const captionType = req.query.captionType || 'SRT'; // Default to 'SRT' if not provided
 
     try {
         // Fetch the video's HTML content
@@ -55,7 +56,7 @@ app.get('/captions', async (req, res) => {
             [] // For simplicity, not handling translation languages here
         );
         // Fetch the captions using the new method
-        const transcriptData = await transcript.fetchCaptionsFromData(captionsJson, 'SRT');
+        const transcriptData = await transcript.fetchCaptionsFromData(captionsJson, captionType);
         //console.log(transcriptData)
         // Return the fetched transcript data as a response
         return res.json(transcriptData);
@@ -76,6 +77,7 @@ app.post('/generateSummary', async (req, res) => {
 
         let captionsData = req.body.captions;
         const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
+        //let endpoint = req.body.endpoint;
 
         // If no captions are provided, fetch them first
         if (!captionsData && videoId) {

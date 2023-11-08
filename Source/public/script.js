@@ -4,11 +4,16 @@ function extractVideoId(url) {
     return match && match[1] ? match[1] : null;
 }
 
+function getSelectedCaptionType() {
+    return document.querySelector('input[name="captionType"]:checked').value;
+}
 
 async function fetchCaptions() {
     document.getElementById("summary").textContent = "";
     document.getElementById("search").textContent = "";
     let input = document.getElementById("videoId").value;
+    const captionType = getSelectedCaptionType(); // Get the selected caption type
+
 
     if (!input) {
         alert("Please enter a YouTube Video ID or URL.");
@@ -23,7 +28,7 @@ async function fetchCaptions() {
     }
 
     try {
-        const response = await fetch(`/captions?videoId=${videoId}`);
+        const response = await fetch(`/captions?videoId=${videoId}&captionType=${captionType}`);
 
         if (!response.ok) {
             throw new Error(`Failed with status: ${response.statusText}`);
