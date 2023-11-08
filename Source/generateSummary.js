@@ -35,7 +35,7 @@ class GenerateSummary {
     async generate(content) {
         try {  
             //content = processText(content);
-            content = truncateContent(content, 10000); // Ensure the content size
+            content = truncateContent(content, 40000); // Ensure the content size
             const openApi = new OpenAiApi(this.apiKey);
             content = processText(content);
             const summary = await openApi.summarize(content);
@@ -50,7 +50,7 @@ class GenerateSummary {
     async search(content, keyword) {
         try {  
             //content = processText(content);
-            content = truncateContent(content, 10000); // Ensure the content size
+            content = truncateContent(content, 40000); // Ensure the content size
             const openApi = new OpenAiApi(this.apiKey);
             content = processText(content);
             const searchResult = await openApi.search(content, keyword);

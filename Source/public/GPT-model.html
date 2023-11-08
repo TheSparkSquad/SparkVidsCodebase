@@ -8,47 +8,42 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
 
 <body class="container mt-5 bg-light">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Basic Summary</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/GPT-model">GPT Model</a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/llama2-model">Llama2 Model</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Basic Summary</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/GPT-model">GPT Model</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/llama2-model">Llama2 Model</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <br>
     <div class="row justify-content-center">
         <div class="col-md-10">
-    
             <div class="card text-center mb-4">
                 <div class="card-body">
                     <h1 class="font-weight-bold">YouTube Captions Fetcher and Summarizer</h1>
                 </div>
             </div>
-            
         </div>
     </div>
-
     <header class="text-center mb-4">
         <h2 class="font-weight-bold text-black border-top border-bottom border-primary pb-2">
-            Utilizing Hugging Face's Deep Multilingual Punctuation model to puntuate caption data.
+            Utilizing Chat GPT's LLM API
         </h2>
     </header>
     
@@ -58,13 +53,13 @@
             <p class="text-muted">Example: https://www.youtube.com/watch?v=MTyrHB2FWSA</p>
             <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
             <button onclick="fetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
-            <button onclick="fetchSummary()" class="btn btn-secondary mb-3">Generate Summary</button>
             
             <h3>SRT Output from Video</h3>
             <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
             <pre id="output" class="border p-3" style="white-space: pre-wrap; height: 220px; overflow-y: auto;"></pre>
 
             <h3>Summary of Your Video</h3>
+            <button onclick="fetchSummary()" class="btn btn-secondary mb-3">Generate Summary</button>
             <p>Your video summary is being generated using advanced algorithms to ensure accuracy and relevance. This process can take anywhere from 10 to 40 seconds, depending on the content's length and complexity. We appreciate your patience and assure you that the insights provided will be worth the wait!</p>
             <div id="loading" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>

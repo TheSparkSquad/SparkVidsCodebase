@@ -36,3 +36,7 @@ input[type="text"]:hover {
 /* .specific-button-class:hover { */
 /*     filter: brightness(90%); */
 /* } */
+
+.hidden {
+    display: none !important;
+}
