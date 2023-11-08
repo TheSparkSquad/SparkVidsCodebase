@@ -158,6 +158,10 @@ app.get('/picture-model', (req, res) => {
     res.sendFile(__dirname + '/public/picture-model.html');
 });
 
+app.get('/bart-model', (req, res) => {
+    res.sendFile(__dirname + '/public/bart-model.html');
+});
+
 
 // ===================================
 // SERVER INITIALIZATION
