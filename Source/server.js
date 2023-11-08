@@ -153,6 +153,12 @@ app.get('/punctuation-model', (req, res) => {
 app.get('/GPT-model', (req, res) => {
     res.sendFile(__dirname + '/public/GPT-model.html');
 });
+
+app.get('/picture-model', (req, res) => {
+    res.sendFile(__dirname + '/public/picture-model.html');
+});
+
+
 // ===================================
 // SERVER INITIALIZATION
 // ===================================

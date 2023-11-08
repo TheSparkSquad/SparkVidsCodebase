@@ -23,8 +23,8 @@
             font-size: 1.25rem; /* Larger input and button for better interaction */
         }
         .btn-primary {
-            padding: 10px 20px; /* Bigger buttons for easy clicking */
-            font-size: 1.25rem;
+            padding: 10px 25px; /* Bigger buttons for easy clicking */
+            font-size: 1.50rem;
         }
         .card {
             margin-top: 20px;
@@ -60,6 +60,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/picture-model">Picture Model</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -75,13 +78,13 @@
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h4>Paste the YouTube video link below:</h4>
+            <h3>Paste the YouTube video link below:</h4>
             
             <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
             
-            <small id="videoHelp" class="form-text text-muted">
+            <p id="videoHelp" class="form-text text-muted">
                 Just copy and paste the URL from your YouTube video here. For example, <code>https://www.youtube.com/watch?v=MTyrHB2FWSA</code>
-            </small>
+            </p>
             <br>
             <div class="hidden">
                 <button onclick="fetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
@@ -94,7 +97,7 @@
 
             <h3>Your Video Summary</h3>
             <button onclick="fetchSummary()" class="btn btn-primary btn-lg mb-3">Create Summary</button>
-            <p>Our tool will analyze the video content and provide you with a concise summary. Hang tight, this could take a little bit.</p>
+            <p class="form-text text-muted">Our tool will analyze the video content and provide you with a concise summary. Hang tight, this could take a little bit.</p>
             <div id="loading" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>
                     <div class="spinner-border" role="status"></div>
