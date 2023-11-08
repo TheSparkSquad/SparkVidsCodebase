@@ -149,10 +149,10 @@ app.get('/llama2-model', (req, res) => {
 app.get('/punctuation-model', (req, res) => {
     res.sendFile(__dirname + '/public/punctuation-model.html');
 });
-app.get('/simple', (req, res) => {
-    res.sendFile(__dirname + '/public/punctuation-model.html');
-});
 
+app.get('/GPT-model', (req, res) => {
+    res.sendFile(__dirname + '/public/GPT-model.html');
+});
 // ===================================
 // SERVER INITIALIZATION
 // ===================================

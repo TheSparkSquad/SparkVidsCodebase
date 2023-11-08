@@ -23,7 +23,9 @@ class OpenAiApi {
     async chatCompletion(inputString) {
         const chatResponse = await this.openai.chat.completions.create({
             messages: [{ role: 'user', content: inputString }],
-            model: 'gpt-4-1106-preview',
+            // model: 'gpt-4-1106-preview',
+            // model: 'gpt-3.5-turbo-1106',
+            model: 'gpt-3.5-turbo-16k',
         });
 
         return chatResponse.choices[0].message.content;

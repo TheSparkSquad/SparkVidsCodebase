@@ -8,18 +8,45 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <style>
+        body {
+            font-size: larger; /* Increase font size for better readability */
+        }
+        .input-group-lg>.form-control, .input-group-lg>.input-group-append>.btn {
+            height: calc(2.875rem + 2px);
+            font-size: 1.25rem; /* Larger input and button for better interaction */
+        }
+        .btn-primary {
+            padding: 10px 20px; /* Bigger buttons for easy clicking */
+            font-size: 1.25rem;
+        }
+        .card {
+            margin-top: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adding shadow for better focus */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .hidden {
+            display: none; /* This will hide elements with 'hidden' class */
+        }
+    </style>
 </head>
 
 <body class="container mt-5 bg-light">
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">GPT Model</a>
+        <a class="navbar-brand" href="/">Basic Summary</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/GPT-model">GPT Model</a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/llama2-model">Llama2 Model</a>
                 </li>
@@ -30,32 +57,34 @@
         </div>
     </nav>
     <br>
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-    
-            <div class="card text-center mb-4">
-                <div class="card-body">
-                    <h1 class="font-weight-bold">YouTube Captions Fetcher and Summarizer</h1>
-                </div>
-            </div>
-            
-        </div>
+        
+    <div class="text-center mb-4">
+        <h1 class="font-weight-bold">Create a Summary for Any YouTube Video</h1>
+        <p>Get the gist of any video in seconds!</p>
     </div>
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h4>Copy & Paste a Link to a YouTube Video Here:</h4>
-            <p class="text-muted">Example: https://www.youtube.com/watch?v=MTyrHB2FWSA</p>
-            <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
-            <button onclick="fetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
-            <button onclick="fetchSummary()" class="btn btn-secondary mb-3">Generate Summary</button>
+            <h4>Paste the YouTube video link below:</h4>
             
-            <h3>SRT Output from Video</h3>
-            <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
-            <pre id="output" class="border p-3" style="white-space: pre-wrap; height: 220px; overflow-y: auto;"></pre>
+            <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
+            
+            <small id="videoHelp" class="form-text text-muted">
+                Just copy and paste the URL from your YouTube video here. For example, <code>https://www.youtube.com/watch?v=MTyrHB2FWSA</code>
+            </small>
+            <br>
+            <div class="hidden">
+                <button onclick="fetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
+                
+                <h3>SRT Output from Video</h3>
+                <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
+                <pre id="output" class="border p-3" style="white-space: pre-wrap; height: 220px; overflow-y: auto;"></pre>
+            </div>
 
-            <h3>Summary of Your Video</h3>
-            <p>Your video summary is being generated using advanced algorithms to ensure accuracy and relevance. This process can take anywhere from 10 to 40 seconds, depending on the content's length and complexity. We appreciate your patience and assure you that the insights provided will be worth the wait!</p>
+
+            <h3>Your Video Summary</h3>
+            <button onclick="fetchSummary()" class="btn btn-primary btn-lg mb-3">Create Summary</button>
+            <p>Our tool will analyze the video content and provide you with a concise summary. Hang tight, this could take a little bit.</p>
             <div id="loading" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>
                     <div class="spinner-border" role="status"></div>
@@ -65,20 +94,6 @@
             <pre id="summary" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
 
 
-
-            <h3>Search of Your Video</h3>
-            <p>Specify a keyword to search for:</p>
-            <input type="text" id="searchId" placeholder="Enter YouTube Search Here" class="form-control mb-3">
-            <button onclick="searchCaptions()" class="btn btn-primary mb-3">Search Captions</button>
-            
-
-            <div id="loadingSearch" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
-                <div>
-                    <div class="spinner-border" role="status"></div>
-                    <p class="mt-2">Searching for your content...</p>
-                </div>
-            </div>
-            <pre id="search" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
 
         </div>
     </div>
