@@ -55,7 +55,7 @@ app.get('/captions', async (req, res) => {
             [] // For simplicity, not handling translation languages here
         );
         // Fetch the captions using the new method
-        const transcriptData = await transcript.fetchCaptionsFromData(captionsJson);
+        const transcriptData = await transcript.fetchCaptionsFromData(captionsJson, 'SRT');
         //console.log(transcriptData)
         // Return the fetched transcript data as a response
         return res.json(transcriptData);
@@ -97,7 +97,7 @@ app.post('/generateSummary', async (req, res) => {
                     true, 
                     []
                 );
-                captionsData = await transcript.fetchCaptionsFromData(captionsJson);
+                captionsData = await transcript.fetchCaptionsFromData(captionsJson, 'SRT');
             }
         }
 

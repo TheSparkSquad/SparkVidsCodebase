@@ -93,33 +93,66 @@ class Transcript {
      * @param {object} data - Captions data in JSON format.
      * @returns {Promise<string>} - Returns a promise resolving to SRT content.
      */
-    async fetchCaptionsFromData(data) {
+    async fetchCaptionsFromData(data, format = 'SRT') {
         // Extract the baseUrl from the provided data
         if (data.playerCaptionsTracklistRenderer && data.playerCaptionsTracklistRenderer.captionTracks) {
             const baseUrl = data.playerCaptionsTracklistRenderer.captionTracks[0].baseUrl;
 
             // Fetch the captions using the extracted baseUrl
-            return await this.fetchCaptionsFromUrl(baseUrl);
+            return await this.fetchCaptionsFromUrl(baseUrl, format);
         } else {
             throw new Error("Invalid data structure.");
         }
     }
-
     /**
-     * Fetch captions using a given URL.
+     * Fetch captions using a given URL and convert to specified format.
      * @param {string} baseUrl - URL endpoint to fetch captions.
-     * @returns {Promise<string>} - Returns a promise resolving to SRT content.
+     * @param {string} format - Format to convert captions into, either 'SRT' or 'TXT'.
+     * @returns {Promise<string>} - Returns a promise resolving to the content in specified format.
      */
-    async fetchCaptionsFromUrl(baseUrl) {
+    async fetchCaptionsFromUrl(baseUrl, format) { // default format is SRT if not specified
         const response = await this._httpClient(baseUrl);
         if (!response.ok) {
             throw new Error(`Failed to fetch transcript data: ${response.statusText}`);
         }
         const xmlContent = await response.text();
         
-        const srtContent = await this._convertXmlToSrt(xmlContent);
+        let content;
+        if (format.toUpperCase() === 'SRT') {
+            content = await this._convertXmlToSrt(xmlContent);
+        } else if (format.toUpperCase() === 'TXT') {
+            content = await this._convertXmlToTxt(xmlContent);
+        } else {
+            throw new Error('Invalid format specified. Allowed formats are SRT or TXT.');
+        }
         
-        return srtContent;  // Return SRT content directly
+        return this.processText(content); // Return content in the specified format
+    }
+
+    async processText(text) {
+
+        function decodeHTMLEntities(text) {
+            const entities = {
+                '&#39;': "'",
+                '&quot;': '"',
+                '&lt;': '<',
+                '&gt;': '>',
+                '&amp;': '&',
+                '&apos;': "'",
+                // Add more entities here as needed
+            };
+            return text.replace(/&[^;]+;/g, match => entities[match] || match);
+        }
+
+        if (typeof text !== 'string') {
+            console.error('Expected string but received:', typeof text, text);
+        }
+        const lines = text.split('\n');
+        const processedLines = lines.map(line => {
+            line = decodeHTMLEntities(line);
+            return line.trim().replace(/\s+/g, ' ');
+        });
+        return processedLines.join('\n');
     }
 
     /**
@@ -151,7 +184,26 @@ class Transcript {
             });
         });
     }
-
+    
+    _convertXmlToTxt(xmlContent) {
+        return new Promise((resolve, reject) => {
+            xml2js.parseString(xmlContent, (err, result) => {
+                if (err) {
+                    return reject(err);
+                }
+    
+                if (!result.transcript || !result.transcript.text) {
+                    return reject(new Error('Invalid XML format'));
+                }
+    
+                const texts = result.transcript.text;
+                let txtOutput = texts.map(text => text._).join('\n');
+    
+                resolve(txtOutput);
+            });
+        });
+    }
+    
     
     /**
      * Format time from seconds to hh:mm:ss,ms format.
@@ -168,49 +220,6 @@ class Transcript {
         const ss = date.getUTCSeconds().toString().padStart(2, '0');
 
         return `${hh}:${mm}:${ss}`; // Milliseconds are set to '000' since we're rounding to whole seconds
-    }
-
-
-
-    /**
-     * Save plain text content to a .txt file.
-     * @param {string} textContent - Text content to save.
-     * @private
-     */
-    _saveTextToFile(textContent) {
-        fs.writeFile('captions.txt', textContent, (err) => {
-            if (err) {
-                console.error("Error writing to text file:", err);
-            } else {
-                console.log("Text saved to captions.txt");
-            }
-        });
-    }
-
-    /**
-     * Save SRT content to a .srt file and extract plain text to save in .txt.
-     * @param {string} srtContent - Captions in SRT format.
-     * @private
-     */
-    _saveSrtToFile(srtContent) {
-        // Save the SRT content as before
-        fs.writeFile('captions.srt', srtContent, (err) => {
-            if (err) {
-                console.error("Error writing to file:", err);
-            } else {
-                console.log("SRT saved to captions.srt");
-            }
-        });
-
-        // Extract text content from the SRT content
-        const textContent = srtContent
-            .split('\n')
-            .filter(line => !(/^\d+$/.test(line) || line.includes('-->')))
-            .join('\n')
-            .trim();
-
-        // Save the extracted text content to a .txt file
-        this._saveTextToFile(textContent);
     }
 
     /**
