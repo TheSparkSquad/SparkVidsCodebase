@@ -1,6 +1,5 @@
 const Transcript = require('./Transcript.js'); // Ensure the path is correct
 
-
 class YouTubeService {
     constructor(fetch) {
       this.fetch = fetch;

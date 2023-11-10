@@ -55,6 +55,8 @@ import('node-fetch').then(module => {
     });
 
 
+
+
     // ===================================
     // ROUTES
     // ===================================
@@ -161,31 +163,39 @@ import('node-fetch').then(module => {
     // Routes for new pages
     app.get('/llama2-model', (req, res) => {
         res.render('llama2-model', {
-            active: 'llama2-model'
+            active: 'llama2-model',
+            cardNote: "Utilizing Llama 2's LLM API"
         });
     });
 
     app.get('/punctuation-model', (req, res) => {
         res.render('punctuation-model', {
-            active: 'punctuation-model'
+            active: 'punctuation-model',
+            cardNote: "Utilizing Hugging Face's Deep Multilingual Punctuation model to puntuate caption data."
+
         });
     });
 
     app.get('/GPT-model', (req, res) => {
         res.render('GPT-model', {
-            active: 'GPT-model'
+            active: 'GPT-model',
+            cardNote: "Utilizing Chat GPT's LLM API"
+
         });
     });
     
     app.get('/picture-model', (req, res) => {
         res.render('picture-model', {
-            active: 'picture-model'
+            active: 'picture-model',
+            cardNote: "Utilizing Dalle 3 API to Generate Picture Summaries for Videos!"
+
         });
     });
 
     app.get('/bart-model', (req, res) => {
         res.render('bart-model', {
-            active: 'bart-model'
+            active: 'bart-model',
+            cardNote: "Utilizing CNN Large Bart to Generate Short Summaries"
         });
     });
 
