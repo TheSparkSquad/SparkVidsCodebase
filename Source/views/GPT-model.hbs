@@ -1,60 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Basic Summary</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/GPT-model">GPT Model</a>
+                </li>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Captions Fetcher</title>
-    <!-- Add Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-</head>
-
-<body class="container mt-5 bg-light">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Basic Summary</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/GPT-model">GPT Model</a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/llama2-model">Llama2 Model</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bart-model">Bart Model</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/picture-model">Picture Model</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="/llama2-model">Llama2 Model</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bart-model">Bart Model</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/picture-model">Picture Model</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <br>
+
     <div class="row justify-content-center">
         <div class="col-md-10">
-    
             <div class="card text-center mb-4">
                 <div class="card-body">
                     <h1 class="font-weight-bold">YouTube Captions Fetcher and Summarizer</h1>
                 </div>
             </div>
-            
         </div>
     </div>
 
+
     <header class="text-center mb-4">
         <h2 class="font-weight-bold text-black border-top border-bottom border-primary pb-2">
-            Utilizing Hugging Face's Deep Multilingual Punctuation model to puntuate caption data.
+            Utilizing Chat GPT's LLM API
         </h2>
     </header>
     
@@ -116,13 +101,3 @@
 
         </div>
     </div>
-
-    <!-- Add Bootstrap JavaScript Components (Optional) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script src="script.js"></script>
-</body>
-
-</html>

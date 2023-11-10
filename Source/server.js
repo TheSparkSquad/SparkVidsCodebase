@@ -4,10 +4,11 @@ const YouTubeService = require('./youtube.service.js');
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
 const express = require('express');
+const { engine } = require('express-handlebars');
 
 // Initialize express app
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 let youtubeService;
 
 
@@ -23,6 +24,16 @@ import('node-fetch').then(module => {
 
     // Serve static files from the 'public' directory
     app.use(express.static('public'));
+    app.engine('.hbs', engine({
+        defaultLayout: 'main', // Ensure you have a main layout file defined or remove this line if not
+        layoutsDir: 'views/layouts', // Ensure you have this directory structure if you use layouts
+        partialsDir: 'views/partials', // Only required if you have partials
+        extname: '.hbs', // Set the file extension to .hbs
+    }));
+    
+    app.set('view engine', '.hbs'); // Updated to use .hbs extension
+    app.set('views', './views');
+
     app.use(express.json());  // <- This line is crucial for parsing the request body
 
     // ===================================
@@ -95,7 +106,6 @@ import('node-fetch').then(module => {
     });
 
 
-
     app.post('/generateSearch', async (req, res) => {
         try {
             console.log('Starting Search generation...');
@@ -131,31 +141,35 @@ import('node-fetch').then(module => {
         }
     });
 
+    app.get('/', (req, res) => {
+        res.render('index', { title: 'Home Page' }); // Pass the title for the home page
+    });
+    
     // Routes for new pages
     app.get('/llama2-model', (req, res) => {
-        res.sendFile(__dirname + '/public/llama2-model.html');
+
+        res.render('llama2-model'); // Render the Handlebars template for GPT Model
+
     });
 
     app.get('/punctuation-model', (req, res) => {
-        res.sendFile(__dirname + '/public/punctuation-model.html');
+        res.render('punctuation-model'); // Render the Handlebars template for GPT Model
+
     });
 
     app.get('/GPT-model', (req, res) => {
-        res.sendFile(__dirname + '/public/GPT-model.html');
+        res.render('GPT-model'); // Render the Handlebars template for GPT Model
     });
-
+    
     app.get('/picture-model', (req, res) => {
-        res.sendFile(__dirname + '/public/picture-model.html');
+        res.render('picture-model'); // Render the Handlebars template for GPT Model
     });
 
     app.get('/bart-model', (req, res) => {
-        res.sendFile(__dirname + '/public/bart-model.html');
+        res.render('bart-model'); // Render the Handlebars template for GPT Model
     });
-
-
 
 
 }).catch(err => {
     console.error("Failed to load 'node-fetch' module", err);
 });
-
