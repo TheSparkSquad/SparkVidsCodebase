@@ -101,12 +101,23 @@ import('node-fetch').then(module => {
             console.log('Starting Search generation...');
             console.time('Search Generation');
 
-            const captionsData = req.body.captions;
+            let captionsData = req.body.captions;
             const keyword = req.body.keyword;
             const captionType = req.body.captionType || 'SRT'; // Add this line to get captionType from request
+            const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
 
-            captionsData = await transcript.fetchCaptionsFromData(captionsJson, captionType); // Modify this line
-
+            // If no captions are provided, fetch them first
+            if (!captionsData && videoId) {
+                try {
+                        //Utilize Youtube.Service for caption extraction
+                        captionsData = await youtubeService.fetchCaptions(videoId, captionType);
+    
+                    } catch (error) {
+                        console.error("Error fetching captions:", error.message);
+                        return res.status(500).send(error.message);
+                    }
+                }
+    
             const generateSummary = new GenerateSummary(apiKey);
             const searchResult = await generateSummary.search(captionsData, keyword);
             

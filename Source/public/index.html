@@ -94,7 +94,7 @@
             </p>
             <br>
             <div class="hidden">
-                <button onclick="fetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
+                <button id="fetchCaptionsButton" class="btn btn-primary mb-3">Fetch Captions</button>
                 
                 <h3>SRT Output from Video</h3>
                 <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
@@ -103,9 +103,9 @@
 
 
             <h3>Your Video Summary</h3>
-            <button onclick="fetchSummary()" class="btn btn-primary btn-lg mb-3">Create Summary</button>
+            <button id="fetchSummaryButton" class="btn btn-primary btn-lg mb-3">Create Summary</button>
             <p class="form-text text-muted">Our tool will analyze the video content and provide you with a concise summary. Hang tight, this could take a little bit.</p>
-            <div id="loading" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
+            <div id="loadingSummary" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>
                     <div class="spinner-border" role="status"></div>
                     <p class="mt-2">Summarizing your content...</p>
@@ -121,6 +121,8 @@
 
         </div>
     </div>
+    <br>
+    <br>
 
     <!-- Add Bootstrap JavaScript Components (Optional) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

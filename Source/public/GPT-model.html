@@ -79,19 +79,19 @@
               </div>
 
 
-            <button onclick="onFetchCaptions()" class="btn btn-primary mb-3">Fetch Captions</button>
+              <button id="fetchCaptionsButton" class="btn btn-primary mb-3">Fetch Captions</button>
             
             <h3>SRT Output from Video</h3>
             <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
             <pre id="output" class="border p-3" style="white-space: pre-wrap; height: 220px; overflow-y: auto;"></pre>
 
             <h3>Summary of Your Video</h3>
-            <button onclick="fetchSummary()" class="btn btn-secondary mb-3">Generate Summary</button>
+            <button id="fetchSummaryButton" class="btn btn-primary btn-lg mb-3">Create Summary</button>
             <p>Your video summary is being generated using advanced algorithms to ensure accuracy and relevance. This process can take anywhere from 10 to 40 seconds, depending on the content's length and complexity. We appreciate your patience and assure you that the insights provided will be worth the wait!</p>
-            <div id="loading" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
+            <div id="loadingSummary" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>
                     <div class="spinner-border" role="status"></div>
-                    <p class="mt-2">Summarizing your content...</p>
+                    <p class="mt-2">Generating Summary...</p>
                 </div>
             </div>
             <pre id="summary" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
@@ -101,13 +101,13 @@
             <h3>Search of Your Video</h3>
             <p>Specify a keyword to search for:</p>
             <input type="text" id="searchId" placeholder="Enter YouTube Search Here" class="form-control mb-3">
-            <button onclick="searchCaptions()" class="btn btn-primary mb-3">Search Captions</button>
+            <button id="searchCaptionsButton" class="btn btn-primary btn-lg mb-3">Search Captions</button>
             
 
             <div id="loadingSearch" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>
                     <div class="spinner-border" role="status"></div>
-                    <p class="mt-2">Searching for your content...</p>
+                    <p class="mt-2">Searching Video...</p>
                 </div>
             </div>
             <pre id="search" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
