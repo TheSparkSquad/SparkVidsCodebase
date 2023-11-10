@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         body {
-            font-size: larger; /* Increase font size for better readability */
+            /* font-size: larger; */
+            font-size: x-large;
+
         }
         /* Custom styles for a larger container */
         @media (min-width: 1400px) {
@@ -85,8 +87,10 @@
             
             <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
             
+
+            
             <p id="videoHelp" class="form-text text-muted">
-                Just copy and paste the URL from your YouTube video here. For example, <code>https://www.youtube.com/watch?v=MTyrHB2FWSA</code>
+                Just copy and paste the URL from your YouTube video here. For example, <p><code>https://www.youtube.com/watch?v=MTyrHB2FWSA</code></p>
             </p>
             <br>
             <div class="hidden">
@@ -109,7 +113,11 @@
             </div>
             <pre id="summary" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
 
-
+            <p class="hidden">Choose Caption Type:</p>
+            <div class="hidden form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="captionType"  value="SRT" checked>
+              <label class="form-check-label">Timestamp</label>
+            </div>
 
         </div>
     </div>

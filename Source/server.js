@@ -77,8 +77,9 @@ app.post('/generateSummary', async (req, res) => {
 
         let captionsData = req.body.captions;
         const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
+        const captionType = req.body.captionType || 'SRT'; // Default to SRT if nothign provided
         //let endpoint = req.body.endpoint;
-
+        // console.log(captionsData)
         // If no captions are provided, fetch them first
         if (!captionsData && videoId) {
             // Note: Directly using the logic from '/captions' endpoint. 
@@ -99,7 +100,7 @@ app.post('/generateSummary', async (req, res) => {
                     true, 
                     []
                 );
-                captionsData = await transcript.fetchCaptionsFromData(captionsJson, 'SRT');
+                captionsData = await transcript.fetchCaptionsFromData(captionsJson, captionType);
             }
         }
 
@@ -129,6 +130,9 @@ app.post('/generateSearch', async (req, res) => {
 
         const captionsData = req.body.captions;
         const keyword = req.body.keyword;
+        const captionType = req.body.captionType || 'SRT'; // Add this line to get captionType from request
+
+        captionsData = await transcript.fetchCaptionsFromData(captionsJson, captionType); // Modify this line
 
         const generateSummary = new GenerateSummary(apiKey);
         const searchResult = await generateSummary.search(captionsData, keyword);

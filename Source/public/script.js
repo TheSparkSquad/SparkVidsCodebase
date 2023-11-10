@@ -14,7 +14,6 @@ async function fetchCaptions() {
     let input = document.getElementById("videoId").value;
     const captionType = getSelectedCaptionType(); // Get the selected caption type
 
-
     if (!input) {
         alert("Please enter a YouTube Video ID or URL.");
         return;
@@ -46,10 +45,10 @@ async function fetchCaptions() {
     }
 }
 
-
 async function fetchSummary() {
     let captions = document.getElementById("output").textContent;
     let input = document.getElementById("videoId").value;
+    const captionType = getSelectedCaptionType(); // Get the selected caption type
 
     if (!input) {
         alert("Please enter a YouTube Video ID or URL.");
@@ -72,7 +71,7 @@ async function fetchSummary() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ captions: captions, videoId: videoId }) // Pass the videoId along with captions
+            body: JSON.stringify({ captions: captions, videoId: videoId, captionType: captionType })
         });
 
         // Hide the loading message
@@ -87,12 +86,11 @@ async function fetchSummary() {
     }
 }
 
-
-
 async function searchCaptions() {
     document.getElementById("search").textContent = "";
     const input = document.getElementById("videoId").value;
     const keyword = document.getElementById("searchId").value;
+    const captionType = getSelectedCaptionType(); 
 
     if (!input) {
         alert("Please enter a YouTube Video ID or URL.");
@@ -125,7 +123,7 @@ async function searchCaptions() {
         document.getElementById("output").textContent = srtData;
 
         // Call the fetchSearch function with the fetched captions
-        fetchSearch(srtData, keyword);
+        fetchSearch(srtData, keyword, captionType); // Modify this line to pass captionType
     } catch (error) {
         console.error("Error:", error);
         alert("Error occurred. Please check the console for more details.");
