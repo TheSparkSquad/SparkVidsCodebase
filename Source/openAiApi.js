@@ -44,7 +44,6 @@ class OpenAiApi {
         //const prompt =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
         //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
         const prompt = `I have a transcript from an educational video. I need you to process the following text and provide me with a numbered list, acting as a table of contents. Each entry should have a timestamp and capture the main topic being discussed, not the detailed content. Structure it as follows:
-        If there are no timestamps provided, omit any timestamp related data.
         1. Topic Name (timestamp)
            - Brief description or sub-topic
         2. Second Topic
