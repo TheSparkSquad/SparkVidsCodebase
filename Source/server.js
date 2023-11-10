@@ -29,6 +29,17 @@ import('node-fetch').then(module => {
         layoutsDir: 'views/layouts', // Ensure you have this directory structure if you use layouts
         partialsDir: 'views/partials', // Only required if you have partials
         extname: '.hbs', // Set the file extension to .hbs
+
+        extname: '.hbs',
+        helpers: {
+            if_eq: function (a, b, opts) {
+                if (a === b) {
+                    return opts.fn(this);
+                } else {
+                    return opts.inverse(this);
+                }
+            }
+        }
     }));
     
     app.set('view engine', '.hbs'); // Updated to use .hbs extension
@@ -92,7 +103,7 @@ import('node-fetch').then(module => {
             if (!captionsData) {
                 return res.status(400).send('No captions found or provided.');
             }
-
+            console.log(captionsData)
             const generateSummary = new GenerateSummary(apiKey);
             const summary = await generateSummary.generate(captionsData);
             
@@ -142,31 +153,40 @@ import('node-fetch').then(module => {
     });
 
     app.get('/', (req, res) => {
-        res.render('index', { title: 'Home Page' }); // Pass the title for the home page
+        res.render('index', {
+            active: 'index'
+        });
     });
     
     // Routes for new pages
     app.get('/llama2-model', (req, res) => {
-
-        res.render('llama2-model'); // Render the Handlebars template for GPT Model
-
+        res.render('llama2-model', {
+            active: 'llama2-model'
+        });
     });
 
     app.get('/punctuation-model', (req, res) => {
-        res.render('punctuation-model'); // Render the Handlebars template for GPT Model
-
+        res.render('punctuation-model', {
+            active: 'punctuation-model'
+        });
     });
 
     app.get('/GPT-model', (req, res) => {
-        res.render('GPT-model'); // Render the Handlebars template for GPT Model
+        res.render('GPT-model', {
+            active: 'GPT-model'
+        });
     });
     
     app.get('/picture-model', (req, res) => {
-        res.render('picture-model'); // Render the Handlebars template for GPT Model
+        res.render('picture-model', {
+            active: 'picture-model'
+        });
     });
 
     app.get('/bart-model', (req, res) => {
-        res.render('bart-model'); // Render the Handlebars template for GPT Model
+        res.render('bart-model', {
+            active: 'bart-model'
+        });
     });
 
 
