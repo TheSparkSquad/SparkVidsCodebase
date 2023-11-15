@@ -82,7 +82,8 @@ import('node-fetch').then(module => {
             console.time('Summary Generation');
 
             const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
-            const captionType = req.body.captionType || 'SRT'; // Default to SRT if nothign provided
+            const captionType = req.body.captionType || 'SRT'; // Default to SRT if nothing provided
+            const summaryType = req.body.summaryType || 'TXT'; // Default to TXT if nothing provided
 
             let captionsData = req.body.captions;
 
@@ -105,7 +106,8 @@ import('node-fetch').then(module => {
             }
             console.log(captionsData)
             const generateSummary = new GenerateSummary(apiKey);
-            const summary = await generateSummary.generate(captionsData);
+            const summary = await generateSummary.generate(captionsData, summaryType);
+            //const summary = await generateSummary.generate(captionsData);
             
             console.timeEnd('Summary Generation');
             res.send(summary);

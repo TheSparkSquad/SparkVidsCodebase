@@ -31,14 +31,18 @@ class GenerateSummary {
     constructor(apiKey) {
         this.apiKey = apiKey;
     }
-    
-    async generate(content) {
+    /**
+     * @param {string} summaryType - Format to convert captions into, either 'SRT' or 'TXT'. 
+     * */
+    async generate(content, summaryType) {
+    //async generate(content) {
         try {  
             //content = processText(content);
             content = truncateContent(content, 40000); // Ensure the content size
             const openApi = new OpenAiApi(this.apiKey);
             content = processText(content);
-            const summary = await openApi.summarize(content);
+            const summary = await openApi.summarize(content, summaryType);
+            //const summary = await openApi.summarize(content);
             return summary;
         } catch (error) {
             console.error('Error:', error);

@@ -1,4 +1,10 @@
 const { default: OpenAI } = require('openai');
+// const radioTxt = document.getElementById("radioTxt");
+// const radioEmoji = document.getElementById("radioEmoji");
+// const radioUser = document.getElementById("radioUser");
+ const readline = require('readline');
+
+
 
 /**
  * OpenAiApi class encapsulates interactions with the OpenAI API.
@@ -35,26 +41,56 @@ class OpenAiApi {
      * Summarizes a given text using the OpenAI chat API.
      * 
      * @param {string} text - The text that needs to be summarized.
+     * @param {string} summaryType - Format to convert captions into, either 'SRT' or 'TXT'.
      * @returns {Promise<string>} - The summarized text.
      */
-    async summarize(text) {
-        // const prompt = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
-        //const prompt = `Use the timestamps to correctly summarize the content into a table of contents for the video. \n\n${text}`;
-        //const prompt = `Please try to capture the essence of the transcript from an educational video I have provided. Then give me numbered list of the topics with the timestamps included. I want the topic discussed not the content itself in the bullet points. \n\n${text}`
-        //const prompt =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
-        //const prompt = `Summarize the following text taken from a video, \n\n${text}`;
-        /*const prompt = `I have a transcript from an educational video. I need you to process the following text and provide me with a numbered list, acting as a table of contents. Each entry should have a timestamp and capture the main topic being discussed, not the detailed content. Structure it as follows:
-        1. Topic Name (timestamp)
-           - Brief description or sub-topic
-        2. Second Topic
-        Here's the transcript:
-        ${text}`;*/
-        const prompt = `Summarize the following text taken from a video as emojis, \n\n${text}`;
+    async summarize(text, summaryType) {
+    //async summarize(text) {
+        // const radioTxt = document.getElementById("radioTxt");
+        // const radioEmoji = document.getElementById("radioEmoji");
+        // const radioUser = document.getElementById("radioUser");
+        //const promptAI = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
+        //const promptAI = `Use the timestamps to correctly summarize the content into a table of contents for the video. \n\n${text}`;
+        //const promptAI = `Please try to capture the essence of the transcript from an educational video I have provided. Then give me numbered list of the topics with the timestamps included. I want the topic discussed not the content itself in the bullet points. \n\n${text}`
+        //const promptAI =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
+        //const promptAI = `Summarize the following text taken from a video, \n\n${text}`;
+        //const promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
+        //const promptAI = `Summarize the following text taken from a video as bulleted list that incorporates emojis, \n\n${text}`;
+        var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;    
+            //if (radioTxt.checked) {
+            if (summaryType == 'TXT') {
+            var promptAI = `I have a transcript from an educational video. I need you to process the following text and provide me with a numbered list, acting as a table of contents. Each entry should have a timestamp and capture the main topic being discussed, not the detailed content. Structure it as follows:
+            1. Topic Name (timestamp)
+            - Brief description or sub-topic
+            2. Second Topic
+            Here's the transcript:
+            ${text}`;
+        //} else if (radioEmoji.checked) {
+        } else if (summaryType == 'EMOJI') {
+            //var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
+            var promptAI = `Summarize the following text taken from a video as bulleted list that incorporates emojis, \n\n${text}`;
+        //} else if (radioUser.checked) {
+        } else if (summaryType == 'USER') {
+            const rl = readline.createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+            rl.question('Please enter a custom promp: ', (userInput) => {
+                var promptAI = ('User input:', userInput);
+                rl.close();
+            });
+            //var promptAI = prompt('Please enter a specific prompt:', `Summarize the following text taken from a video as emojis, \n\n${text}`);
+        }else {
+            //print(summaryType)
+            throw new Error('Invalid format specified. Allowed formats are TXT, EMOJI or USER.');
+        }
+
+       
 
         
         //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
         //const prompt = `Summarize the following input from a video output in table of contents format. Make sure to get the subject matter as the title of the numerical bullet point and then a brief description under it. This is a caption track from a youtube video so treat it accordingly. \n\n${text}`;
-        return this.chatCompletion(prompt);
+        return this.chatCompletion(promptAI);
     }
 
     async search(text, keyword) {        
