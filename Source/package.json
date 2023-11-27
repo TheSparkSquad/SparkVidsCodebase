@@ -17,6 +17,7 @@
     "jquery": "^3.7.1",
     "node-fetch": "^3.3.2",
     "node-summarizer": "^1.0.7",
+    "nodejs": "^0.0.0",
     "openai": "^4.12.1",
     "popper": "^1.0.1",
     "readline-sync": "^1.4.10",

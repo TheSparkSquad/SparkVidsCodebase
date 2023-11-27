@@ -34,7 +34,7 @@
                 </div>
 
 
-              </div>
+            </div>
 
 
               <button id="fetchCaptionsButton" class="btn btn-primary mb-3">Fetch Captions</button>
@@ -45,6 +45,23 @@
 
             <h3>Summary of Your Video</h3>
             <button id="fetchSummaryButton" class="btn btn-primary btn-lg mb-3">Create Summary</button>
+
+                <div class="mb-3">
+                    <p>Choose Summary Type:</p>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="radioTxt" type="radio" name="summaryType"  value="TXT" checked>
+                    <label class="form-check-label">Text</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="radioEmoji" type="radio" name="summaryType" value="EMOJI">
+                    <label class="form-check-label">Emoji</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="radioUser" type="radio" name="summaryType" value="USER">
+                    <label class="form-check-label">User</label>
+                    </div>
+                </div>
+
             <p>Your video summary is being generated using advanced algorithms to ensure accuracy and relevance. This process can take anywhere from 10 to 40 seconds, depending on the content's length and complexity. We appreciate your patience and assure you that the insights provided will be worth the wait!</p>
             <div id="loadingSummary" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
                 <div>

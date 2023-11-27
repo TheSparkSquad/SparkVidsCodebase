@@ -44,8 +44,8 @@ Server is running on http://localhost:3000
 
 ## Setup to run Node App by Hosting a Server
 
-
-
+# Using AWS Lightsail
+https://hrboka.medium.com/setting-up-a-node-website-on-apache-with-aws-lightsail-8dfac2c4467d
 
 ## API Routes
 

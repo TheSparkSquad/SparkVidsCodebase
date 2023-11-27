@@ -22,6 +22,11 @@ function getSelectedCaptionType() {
     return captionTypeElement ? captionTypeElement.value : 'SRT'; // Provide a default value if none is selected
 
 }
+function getSelectedSummaryType() {
+    const summaryTypeElement = document.querySelector('input[name="summaryType"]:checked');
+    return summaryTypeElement ? summaryTypeElement.value : 'TXT'; // Provide a default value if none is selected
+
+}
 
 
 
@@ -52,11 +57,11 @@ class YouTubeAPI {
     }
     
 
-    async generateSummary(captions, videoId, captionType) {
+    async generateSummary(captions, videoId, captionType, summaryType) {
         return this.fetchFromServer('/generateSummary', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ captions, videoId, captionType })
+            body: JSON.stringify({ captions, videoId, captionType, summaryType })
         });
     }
 
@@ -130,9 +135,10 @@ async function onFetchSummary() {
 
     showLoading("loadingSummary");
     try {
+        const summaryType = getSelectedSummaryType();
         const captionType = getSelectedCaptionType();
         const captions = document.getElementById("output").textContent;
-        const summary = await api.generateSummary(captions, videoId, captionType);
+        const summary = await api.generateSummary(captions, videoId, captionType, summaryType);
         document.getElementById("summary").textContent = summary;
     } catch (error) {
         // Error handling is done inside generateSummary()
