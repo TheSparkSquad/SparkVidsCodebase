@@ -75,8 +75,10 @@ class YouTubeAPI {
 }
 
 // Instantiate the API class
-const api = new YouTubeAPI('http://18.237.75.195:3000');
+// const api = new YouTubeAPI('http://18.237.75.195:3000');
 // const api = new YouTubeAPI('http://localhost:3000');
+const baseUrl = window.location.origin; // This will dynamically get the base URL
+const api = new YouTubeAPI(baseUrl);
 
 document.addEventListener('DOMContentLoaded', (event) => {
     // Ensure the DOM is fully loaded before binding events
