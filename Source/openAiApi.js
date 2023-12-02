@@ -29,9 +29,9 @@ class OpenAiApi {
     async chatCompletion(inputString) {
         const chatResponse = await this.openai.chat.completions.create({
             messages: [{ role: 'user', content: inputString }],
-            model: 'gpt-4-1106-preview',
+            // model: 'gpt-4-1106-preview',
             // model: 'gpt-3.5-turbo-1106',
-            // model: 'gpt-3.5-turbo-16k',
+            model: 'gpt-3.5-turbo-16k',
         });
 
         return chatResponse.choices[0].message.content;
@@ -60,17 +60,17 @@ class OpenAiApi {
             //if (radioTxt.checked) {
             if (summaryType == 'TXT') {
             var promptAI = `I have a transcript from an educational video. I need you to process the following text and provide me with a numbered list, acting as a table of contents. Each entry should have a timestamp and capture the main topic being discussed, not the detailed content. Structure it as follows:
-            1. Topic Name (timestamp)
+            1. Topic Name (timestamp / only use timestamps if they have been provided in the transcript)
             - Brief description or sub-topic
             2. Second Topic
-            Here's the transcript:
+             Here's the transcript:
             ${text}`;
         //} else if (radioEmoji.checked) {
         } else if (summaryType == 'EMOJI') {
             //var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
             var promptAI = `Summarize the following text taken from a video as bulleted list that incorporates emojis, \n\n${text}`;
         //} else if (radioUser.checked) {
-        } else if (summaryType == 'USER') {
+        }else if (summaryType == 'USER') {
             const rl = readline.createInterface({
                 input: process.stdin,
                 output: process.stdout
@@ -80,7 +80,11 @@ class OpenAiApi {
                 rl.close();
             });
             //var promptAI = prompt('Please enter a specific prompt:', `Summarize the following text taken from a video as emojis, \n\n${text}`);
-        }else {
+        } else if (summaryType == 'SIMPLE') {
+            //var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
+            var promptAI = `Summarize the following text taken from a video as numbered table of contents, be brief \n\n${text}`;
+        
+        } else {
             //print(summaryType)
             throw new Error('Invalid format specified. Allowed formats are TXT, EMOJI or USER.');
         }

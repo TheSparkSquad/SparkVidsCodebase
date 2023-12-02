@@ -184,7 +184,7 @@ class Transcript {
             });
         });
     }
-    
+
     _convertXmlToTxt(xmlContent) {
         return new Promise((resolve, reject) => {
             xml2js.parseString(xmlContent, (err, result) => {

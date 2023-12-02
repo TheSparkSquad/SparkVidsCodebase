@@ -88,7 +88,7 @@ import('node-fetch').then(module => {
             const summaryType = req.body.summaryType || 'TXT'; // Default to TXT if nothing provided
 
             let captionsData = req.body.captions;
-
+            console.log(summaryType)
 
             // If no captions are provided, fetch them first
             if (!captionsData && videoId) {
@@ -106,7 +106,7 @@ import('node-fetch').then(module => {
             if (!captionsData) {
                 return res.status(400).send('No captions found or provided.');
             }
-            console.log(captionsData)
+            // console.log(captionsData)
             const generateSummary = new GenerateSummary(apiKey);
             const summary = await generateSummary.generate(captionsData, summaryType);
             //const summary = await generateSummary.generate(captionsData);
