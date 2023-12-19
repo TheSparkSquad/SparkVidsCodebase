@@ -1,6 +1,7 @@
 const Transcript = require('./Transcript.js');
 const { processText, truncateContent } = require('./textpreprocessing.service');
-const OpenAiApi = require('./openAiApi'); //  OpenAiApi class
+const OpenAiApi = require('./openAiApi'); //  Import OpenAiApi class
+const BartApi = require('./bartApi'); // Import BartApi class
 const YouTubeService = require('./youtube.service.js');
 require('dotenv').config();
 const session = require('express-session');
@@ -68,6 +69,8 @@ import('node-fetch').then(module => {
             case 'openai':
                 return new OpenAiApi(openaiApiKey);
             // ... (other cases) ...
+            case 'huggingface-bart':
+                return new BartApi(huggingApiKey);            
             default:
                 throw new Error('Unknown API endpoint');
         }
@@ -113,7 +116,7 @@ import('node-fetch').then(module => {
 
             let captionsData = await youtubeService.fetchCaptions(videoId, captionType);
             captionsData = processText(captionsData);
-            captionsData = truncateContent(captionsData, 8000);
+            captionsData = truncateContent(captionsData, 2000);
             const apiName = req.session.apiName;
             console.log(`apiName: ${apiName}`)
             const apiEndpoint = getApiEndpoint(apiName);
@@ -204,6 +207,7 @@ import('node-fetch').then(module => {
     });
 
     app.get('/bart-model', (req, res) => {
+        req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
         res.render('bart-model', {
             active: 'bart-model',
             cardNote: "Utilizing CNN Large Bart to Generate Short Summaries"
