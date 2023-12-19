@@ -4,7 +4,6 @@ class YouTubeService {
     constructor(fetch) {
       this.fetch = fetch;
     }
-  
     async getVideoHtml(videoId) {
       const WATCH_URL = `https://www.youtube.com/watch?v=${videoId}`;
       const response = await this.fetch(WATCH_URL);
