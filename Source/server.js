@@ -2,6 +2,8 @@ const Transcript = require('./Transcript.js');
 const { processText, truncateContent } = require('./textpreprocessing.service');
 const OpenAiApi = require('./openAiApi'); //  Import OpenAiApi class
 const BartApi = require('./bartApi'); // Import BartApi class
+const PegasusApi = require('./pegasusApi'); // Import PegasusApi class
+
 const YouTubeService = require('./youtube.service.js');
 require('dotenv').config();
 const session = require('express-session');
@@ -68,9 +70,10 @@ import('node-fetch').then(module => {
         switch (apiName) {
             case 'openai':
                 return new OpenAiApi(openaiApiKey);
-            // ... (other cases) ...
             case 'huggingface-bart':
-                return new BartApi(huggingApiKey);            
+                return new BartApi(huggingApiKey);
+            case 'huggingface-pegasus':
+                return new PegasusApi(huggingApiKey);          
             default:
                 throw new Error('Unknown API endpoint');
         }
@@ -113,11 +116,12 @@ import('node-fetch').then(module => {
             console.time('Summary Generation');
 
             const { videoId, captionType = 'SRT', summaryType = 'TXT' } = req.body;
+            const apiName = req.session.apiName;
+            const truncationLength = req.session.truncationLength;
 
             let captionsData = await youtubeService.fetchCaptions(videoId, captionType);
             captionsData = processText(captionsData);
-            captionsData = truncateContent(captionsData, 2000);
-            const apiName = req.session.apiName;
+            captionsData = truncateContent(captionsData, truncationLength);
             console.log(`apiName: ${apiName}`)
             const apiEndpoint = getApiEndpoint(apiName);
             const summary = await apiEndpoint.generateSummary(captionsData, summaryType);
@@ -177,6 +181,8 @@ import('node-fetch').then(module => {
      */
     app.get('/', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 30000
+
         res.render('index', {
             active: 'index'
         });
@@ -190,16 +196,19 @@ import('node-fetch').then(module => {
         });
     });
 
-    app.get('/punctuation-model', (req, res) => {
-        res.render('punctuation-model', {
-            active: 'punctuation-model',
-            cardNote: "Utilizing Hugging Face's Deep Multilingual Punctuation model to puntuate caption data."
+    app.get('/pegasus-model', (req, res) => {
+        req.session.apiName = 'huggingface-pegasus'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2500
+        res.render('pegasus-model', {
+            active: 'pegasus-model',
+            cardNote: "Utilizing Hugging Face's pegasus model to summarize."
 
         });
     });
 
     app.get('/GPT-model', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2000
         res.render('GPT-model', {
             active: 'GPT-model',
             cardNote: "Utilizing Chat GPT's LLM API"
@@ -208,6 +217,8 @@ import('node-fetch').then(module => {
 
     app.get('/bart-model', (req, res) => {
         req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2500
+
         res.render('bart-model', {
             active: 'bart-model',
             cardNote: "Utilizing CNN Large Bart to Generate Short Summaries"

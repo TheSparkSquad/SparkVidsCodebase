@@ -34,7 +34,12 @@ class OpenAiApi extends ApiEndpoint {
         console.log(`Making chat completion API call`);
         const chatResponse = await this.openai.chat.completions.create({
             messages: [{ role: 'user', content: inputString }],
-            model: 'gpt-3.5-turbo-16k',
+            // model: 'gpt-3.5-turbo-16k'
+            model: 'gpt-3.5-turbo-1106' // super slow btw but 16k context
+            // model: 'gpt-4-32k'
+            // model: 'gpt-4-1106-preview' // fast but expensive
+
+
         });
 
         return chatResponse.choices[0].message.content;
