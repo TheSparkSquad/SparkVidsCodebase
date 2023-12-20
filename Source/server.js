@@ -201,7 +201,7 @@ import('node-fetch').then(module => {
         req.session.truncationLength = 2500
         res.render('pegasus-model', {
             active: 'pegasus-model',
-            cardNote: "Utilizing Hugging Face's pegasus model to summarize."
+            cardNote: "PEGASUS: A State-of-the-Art Model for Abstractive Text Summarization - by Google"
 
         });
     });

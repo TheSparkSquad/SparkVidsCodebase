@@ -17,8 +17,8 @@
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h4>Copy & Paste a Link to a YouTube Video Here:</h4>
-            <p class="text-muted">Example: https://www.youtube.com/watch?v=MTyrHB2FWSA</p>
+            {{> youtubeLinkCopy}}
+
             <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
 
 
@@ -26,14 +26,9 @@
 
                 <p>Choose Caption Type:</p>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="captionType"  value="SRT" checked>
-                  <label class="form-check-label">Timestamp</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="captionType" value="TXT">
+                  <input class="form-check-input" type="radio" name="captionType" value="TXT" checked>
                   <label class="form-check-label">Text</label>
                 </div>
-
 
               </div>
 
