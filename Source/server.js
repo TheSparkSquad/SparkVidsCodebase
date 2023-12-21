@@ -206,22 +206,29 @@ import('node-fetch').then(module => {
         });
     });
 
-    app.get('/GPT-model', (req, res) => {
+    app.get('/GPT3-model', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
-        req.session.truncationLength = 2000
-        res.render('GPT-model', {
-            active: 'GPT-model',
-            cardNote: "Utilizing Chat GPT's LLM API"
+        req.session.truncationLength = 30000
+        res.render('GPT3-model', {
+            active: 'GPT3-model',
+            cardNote: "GPT3: Utilizing Open Ai's Generative Pretrained Transformer API"
         });
     });
-
+    app.get('/GPT4-model', (req, res) => {
+        req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 40000
+        res.render('GPT4-model', {
+            active: 'GPT4-model',
+            cardNote: "GPT4: Utilizing Open Ai's Generative Pretrained Transformer API"
+        });
+    });
     app.get('/bart-model', (req, res) => {
         req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
         req.session.truncationLength = 2500
 
         res.render('bart-model', {
             active: 'bart-model',
-            cardNote: "Utilizing CNN Large Bart to Generate Short Summaries"
+            cardNote: "BART: Utilizing CNN Large Bart to Generate Short Summaries"
         });
     });
 
