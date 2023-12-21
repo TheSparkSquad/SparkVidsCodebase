@@ -8,10 +8,9 @@ class OpenAiApi extends ApiEndpoint {
         this.openai = new OpenAI({ apiKey });
     }
 
-    async generateSummary(captionsData, summaryType) {
-        // Build the prompt based on summaryType
+    async generateSummary(captionsData, summaryType, modelVersion = null) {
         const prompt = this.buildPromptForSummarization(captionsData, summaryType);
-        return this.chatCompletion(prompt);
+        return this.chatCompletion(prompt, modelVersion);
     }
 
     async generateSearch(text, keyword) {
@@ -30,20 +29,17 @@ class OpenAiApi extends ApiEndpoint {
         ${text}`;
     }
 
-    async chatCompletion(inputString) {
+
+    async chatCompletion(inputString, modelVersion = 'gpt-3.5-turbo-1106') {
         console.log(`Making chat completion API call`);
         const chatResponse = await this.openai.chat.completions.create({
             messages: [{ role: 'user', content: inputString }],
-            // model: 'gpt-3.5-turbo-16k'
-            model: 'gpt-3.5-turbo-1106' // super slow btw but 16k context
-            // model: 'gpt-4-32k'
-            // model: 'gpt-4-1106-preview' // fast but expensive
-
-
+            model: modelVersion // Use the provided model version
         });
-
+    
         return chatResponse.choices[0].message.content;
     }
+
 
     buildPromptForSummarization(text, summaryType) {
         switch(summaryType) {

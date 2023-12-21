@@ -118,19 +118,30 @@ import('node-fetch').then(module => {
             const { videoId, captionType = 'SRT', summaryType = 'TXT' } = req.body;
             const apiName = req.session.apiName;
             const truncationLength = req.session.truncationLength;
+            let modelVersion = null; // Initialize with default value
+            if (req.session.modelVersion) {
+                modelVersion = req.session.modelVersion;
+            }
 
             let captionsData = await youtubeService.fetchCaptions(videoId, captionType);
             captionsData = processText(captionsData);
             captionsData = truncateContent(captionsData, truncationLength);
             console.log(`apiName: ${apiName}`)
             const apiEndpoint = getApiEndpoint(apiName);
-            const summary = await apiEndpoint.generateSummary(captionsData, summaryType);
+
+            let summary;
+            if (!modelVersion) {
+                summary = await apiEndpoint.generateSummary(captionsData, summaryType);
+            } else {
+                summary = await apiEndpoint.generateSummary(captionsData, summaryType, modelVersion);
+            }
+
             console.timeEnd('Summary Generation');
 
             res.send(summary);
         } catch (error) {
             console.error("Error during summary generation:", error);
-            res.status(500).send('Error generating summary.');
+            res.status(500).send({ summary: `Error occurred generating summary. Error message: ${error.message}` });
         }
     });
 
@@ -198,7 +209,7 @@ import('node-fetch').then(module => {
 
     app.get('/pegasus-model', (req, res) => {
         req.session.apiName = 'huggingface-pegasus'; // Set 'openai' as the apiName in the session
-        req.session.truncationLength = 2500
+        req.session.truncationLength = 4500
         res.render('pegasus-model', {
             active: 'pegasus-model',
             cardNote: "PEGASUS: A State-of-the-Art Model for Abstractive Text Summarization - by Google"
@@ -208,7 +219,8 @@ import('node-fetch').then(module => {
 
     app.get('/GPT3-model', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
-        req.session.truncationLength = 30000
+        req.session.truncationLength = 30000;
+        req.session.modelVersion = 'gpt-3.5-turbo-1106';
         res.render('GPT3-model', {
             active: 'GPT3-model',
             cardNote: "GPT3: Utilizing Open Ai's Generative Pretrained Transformer API"
@@ -216,7 +228,9 @@ import('node-fetch').then(module => {
     });
     app.get('/GPT4-model', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
-        req.session.truncationLength = 40000
+        req.session.truncationLength = 40000;
+        req.session.modelVersion = 'gpt-4-1106-preview';
+
         res.render('GPT4-model', {
             active: 'GPT4-model',
             cardNote: "GPT4: Utilizing Open Ai's Generative Pretrained Transformer API"
