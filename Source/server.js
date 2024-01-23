@@ -252,16 +252,19 @@ import('node-fetch').then(module => {
 
         res.render('myModel', {
             // active: 'bart-model',
+            active: 'my-model-from-scratch',
             cardNote: "SEQ 2 SEQ Model with detailed implementation documentation. Trained on Amazon Fine Food Reviews Dataset."
         });
     });
 
     app.get('/welcome-to-my-model', (req, res) => {
         res.render('welcome-to-my-model', {
+            active: 'my-model-from-scratch'
         });
     });
     app.get('/my-model-notebook', (req, res) => {
         res.render('my-model-notebook', {
+            active: 'my-model-from-scratch'
         });
     });
     

@@ -31,14 +31,73 @@
         .hidden {
             display: none; /* This will hide elements with 'hidden' class */
         }
+        .custom-large-button {
+            width: 100%; /* Makes the button stretch to the full width of its container */
+            max-width: 675px; /* You can adjust this value to set a maximum width */
+        }
+        .header-divider {
+            border-top: 2px solid #eee; /* Lighter and thinner divider */
+            width: 50%; /* Shorter width for a subtler effect */
+            margin: 10px auto; /* Centers the divider and adds some space around it */
+            margin-top: 1.5rem!important;
+            margin-bottom: 1.5rem!important;            
+        }
     </style>
 </head>
 
 
     {{> navbar }}
  
+
+
+
     <br>
-        
+    <hr class="my-4">
+
+    <!-- Header for the first section -->
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="text-center">Deep Learning Model Development: A Comprehensive Guide</h2>
+            <hr class="header-divider"> <!-- Custom Divider -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a href="/my-model-notebook" class="btn btn-primary btn-lg custom-large-button" role="button">Educational Guide: How i Built a Sequence to Sequence Model</a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col text-center">
+            <a href="/my-model" class="btn btn-info btn-lg custom-large-button" role="button">Interactive Demo: Test My Deep Learning Model</a>
+        </div>
+    </div>
+    <br>
+    <hr class="my-4">
+
+    <!-- Header for the second section -->
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="text-center">Full Stack Development: Integrating AI for Summarization</h2>
+            <hr class="header-divider"> <!-- Custom Divider -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a href="https://docs.google.com/document/d/1-9_eyUXrwRTe40F2z9lkrXL3Kh3yCVL9zUkRAjXRB3Y/edit?usp=sharing" class="btn btn-primary btn-lg custom-large-button" role="button" target="_blank">Explore How I Developed This AI-Integrated Web App</a>
+        </div>
+    </div>
+    <br>
+    <hr class="my-4">
+
+
+
+
+
+
+
+
+
     <div class="card text-center mb-4">
         <div class="card-body">
             <h1 class="font-weight-bold">Create a Summary for Any YouTube Video</h1>
