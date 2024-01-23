@@ -3,7 +3,6 @@
 
 
 
-
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14655,14 +14654,26 @@ If you look at the direct output from Keras <code>model.summary(print_fn=print)<
 <p><br><img src="img/modeloutput.png" alt="alt text" width="950"/></p>
 <p>total params: 15,000,000</p>
 <h2 id="Output-Shape-Explained">Output Shape Explained<a class="anchor-link" href="#Output-Shape-Explained">&#182;</a></h2><h3 id="1.-Looking-at-the-embedding-layer">1. Looking at the embedding layer<a class="anchor-link" href="#1.-Looking-at-the-embedding-layer">&#182;</a></h3><ul>
-<li><strong>None</strong>: This dimension is reserved for batch size, as we have not set our batch size hyperparameter yet.</li>
-<li><strong>50</strong>: The second dimension of input in the embedding layer represents the Time dimension, specifying the max input length. This model processes inputs of our specified max input length. For example, during pretraining, all descriptions are truncated to 50 and shorter descriptions are padded to match 50.</li>
-<li><strong>100</strong>: Represents the 100th dimensional GloVe embedding. This is the 'Channel' dimension, where each word in the input is processed as a 100 dimensional vector, aiming to represent the semantic meaning of the words and grouping similar words closer together to aid the model's generalization.</li>
+<li><strong>None</strong>: This dimension is reserved for batch size, as we have not set our batch size hyperparameter yet. Batch size represents the number of 'examples' our model will process in each input iteration to the model. Say I specify batch size 50, that means we will process 50 randomly selected 'examples' from our training dataset.</li>
+<li><strong>50</strong>: The second dimension of input in the embedding layer represents the Time dimension, specifying the max input length. This model processes inputs of our specified max input length. For example, during pretraining, all descriptions are truncated to 50 and shorter descriptions are padded to match 50. This time dimension represents our sequence length or to use the same terms from the earlier explanation, this is the length of our 'examples' in our training dataset as they are process through our model as sequences. </li>
+<li><strong>100</strong>: Represents the 100th dimensional GloVe embedding. This is the 'Channel' dimension, where each word in the input is processed as a 100 dimensional vector, aiming to represent the semantic meaning of the words and grouping similar words closer together to aid the model's generalization. If you were able to see the 100 dimensional landscape, similar words would be grouped closer together. Helping our model generalize. 
+<strong>Summary</strong>: That's not too hard! it's just a way of representing our batchsize of examples with embeddings. It's a lot of information, but once you break it down to batch, time, channel it starts to make more sense.</li>
 </ul>
 <h3 id="2.-Looking-at-the-first-LSTM-layer">2. Looking at the first LSTM layer<a class="anchor-link" href="#2.-Looking-at-the-first-LSTM-layer">&#182;</a></h3><ul>
 <li><strong>None</strong>: Represents batch size.</li>
-<li><strong>50</strong>: Indicates that the LSTM unit can process time sequences of length 50.</li>
-<li><strong>200</strong>: Represents the size of the hidden state and cell state vectors withi</li>
+<li><strong>50</strong>: Indicates that the LSTM unit can process time sequences of length 50. Examples of length 50. </li>
+<li><strong>200</strong>: Represents the size of the hidden state and cell state vectors within LSTM unit. The LSTM is a complicated mechanism, and will be further explained later on. As data moves through these cells, gates built into the LSTM decide how much and what type of data will propagate through the inter-cell connections. </li>
+</ul>
+<h3 id="3.-One-LSTM-unit-to-another">3. One LSTM unit to another<a class="anchor-link" href="#3.-One-LSTM-unit-to-another">&#182;</a></h3><ul>
+<li>There are three encoder LSTM units stacked ontop of eachother and they process the data similarly, they are found to perform better for our application with anywhere from 3-4 encoder layers of lstm units, so that's why we chose that number.</li>
+<li><strong>None</strong>: Batch</li>
+<li><strong>50</strong>: Time</li>
+<li><strong>200</strong>: Again, represents hidden state and cell state vectors within the LSTM unit.</li>
+</ul>
+<h3 id="4.-Attention-Layer">4. Attention Layer<a class="anchor-link" href="#4.-Attention-Layer">&#182;</a></h3><ul>
+<li>Will be explained in greater detail later on in this document. 
+### 5. Decoder Layer</li>
+<li>Similar to Encoder Layers. </li>
 </ul>
 <h2 id="Visualizing-the-Flow-of-Dimensons-of-Data-through-our-Layers:">Visualizing the Flow of Dimensons of Data through our Layers:<a class="anchor-link" href="#Visualizing-the-Flow-of-Dimensons-of-Data-through-our-Layers:">&#182;</a></h2><p>Figure: This image was generated by OpenAIs Dalle3</p>
 <p><br><img src="img/btc.png" alt="alt text" width="600"/></p>
@@ -14884,8 +14895,7 @@ The Diagram depicts a simple instance of i/o for our Encoder / Decoder architect
 <li>Sigmoid and Tanh Functions </li>
 </ul>
 <h2 id="Implementation-Details">Implementation Details<a class="anchor-link" href="#Implementation-Details">&#182;</a></h2><p>The implementation details are based on methodologies and technologies currently prevalent in the field of Machine Learning and Natural Language Processing. Tools and libraries such as TensorFlow, Keras, NumPy, Pandas, and MLflow are integral to this project.</p>
-<h1 id="Acknowledgments">Acknowledgments<a class="anchor-link" href="#Acknowledgments">&#182;</a></h1><p>Special thanks to the authors and contributors of the papers and resources that have guided the development of this project. Their groundbreaking work in the field of AI and NLP has been instrumental in advancing our understanding and capabilities within these domains.
-</p>
+<h1 id="Acknowledgments">Acknowledgments<a class="anchor-link" href="#Acknowledgments">&#182;</a></h1><p>Special thanks to the authors and contributors of the papers and resources that have guided the development of this project. Their groundbreaking work in the field of AI and NLP has been instrumental in advancing our understanding and capabilities within these domains.</p>
 
 </div>
 </div>
@@ -17334,6 +17344,8 @@ Predicted summary:  great pasta
 
 </div>
 </body>
+
+
 
 
 
