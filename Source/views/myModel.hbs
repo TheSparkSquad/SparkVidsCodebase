@@ -1,0 +1,78 @@
+    {{> navbar }}
+
+    <br>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <h1 class="font-weight-bold">YouTube Captions Fetcher and Summarizer</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+
+
+
+{{!-- <!-- Text to be copied -->
+<div id="textToCopy">This is the text to be copied.</div>
+
+<!-- Copy button with Font Awesome icon -->
+<button onclick="copyTextToClipboard()">
+    <i class="fa-solid fa-copy"></i> Copy Text
+</button> --}}
+
+    {{> card }}
+    
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+
+            {{> youtubeLinkCopy}}
+
+
+            <input type="text" id="videoId" placeholder="Enter YouTube Link Here" class="form-control mb-3">
+
+
+            <div class="mb-3">
+
+                <p>Choose Caption Type:</p>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="captionType" value="TXT" checked>
+                  <label class="form-check-label">Text</label>
+                </div>
+
+
+              </div>
+
+
+              <button id="fetchCaptionsButton" class="btn btn-primary mb-3">Fetch Captions</button>
+            
+            <h3>SRT Output from Video</h3>
+            <p>SubRip (SRT) is a simple caption track that pairs text with timestamps, ensuring each line appears at the right moment in the video.</p>
+            <pre id="output" class="border p-3" style="white-space: pre-wrap; height: 220px; overflow-y: auto;"></pre>
+
+            <h3>Summary of Your Video</h3>
+            <button id="fetchSummaryButton" class="btn btn-primary btn-lg mb-3">Create Summary</button>
+            <p>Your video summary is being generated using advanced algorithms to ensure accuracy and relevance. This process can take anywhere from 10 to 40 seconds, depending on the content's length and complexity. We appreciate your patience and assure you that the insights provided will be worth the wait!</p>
+            <div id="loadingSummary" class="text-center my-3 justify-content-center align-items-center" style="display: none;">
+                <div>
+                    <div class="spinner-border" role="status"></div>
+                    <p class="mt-2">Generating Summary...</p>
+                </div>
+            </div>
+            <pre id="summary" class="border p-3" style="white-space: pre-wrap; height: 300px; overflow-y: auto;"></pre>
+
+
+        </div>
+    </div>
+    {{> footer }}

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/513a60a200364b6ea8bace9a31b7fe32/artifacts
+end_time: 1704058097940
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 513a60a200364b6ea8bace9a31b7fe32
+run_name: classy-cub-173
+run_uuid: 513a60a200364b6ea8bace9a31b7fe32
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704058095883
+status: 3
+tags: []
+user_id: maxmahlke

@@ -245,7 +245,25 @@ import('node-fetch').then(module => {
             cardNote: "BART: Utilizing CNN Large Bart to Generate Short Summaries"
         });
     });
+    app.get('/my-model', (req, res) => {
+        req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2500
 
+        res.render('myModel', {
+            // active: 'bart-model',
+            cardNote: "SEQ 2 SEQ Model with detailed implementation documentation. Trained on Amazon Fine Food Reviews Dataset."
+        });
+    });
+
+    app.get('/welcome-to-my-model', (req, res) => {
+        res.render('welcome-to-my-model', {
+        });
+    });
+    app.get('/my-model-notebook', (req, res) => {
+        res.render('my-model-notebook', {
+        });
+    });
+    
 
 }).catch(err => {
     console.error("Failed to load 'node-fetch' module", err);

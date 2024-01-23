@@ -1,0 +1,42 @@
+{{> navbar }}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+    .content {
+        flex: 1;
+    }
+    .custom-large-button {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+</style>
+
+<hr class="my-4">
+<p></p>
+<div class="flex-container">
+    <div class="content">
+        <div class="row">
+            <div class="col text-center">
+                <a href="/my-model-notebook" class="btn btn-primary btn-lg custom-large-button" role="button">How I Built My Own Sequence to Sequence Model</a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <a href="/my-model" class="btn btn-info btn-lg custom-large-button" role="button">Run Inference on My Model</a>
+            </div>
+        </div>
+
+        <p></p>
+        <hr class="my-4">
+    </div>
+
+    {{> footer }}
+</div>

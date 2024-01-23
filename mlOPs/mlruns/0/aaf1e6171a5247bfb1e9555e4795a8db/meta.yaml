@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/aaf1e6171a5247bfb1e9555e4795a8db/artifacts
+end_time: 1704058117076
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aaf1e6171a5247bfb1e9555e4795a8db
+run_name: hilarious-cod-921
+run_uuid: aaf1e6171a5247bfb1e9555e4795a8db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704058115526
+status: 3
+tags: []
+user_id: maxmahlke
