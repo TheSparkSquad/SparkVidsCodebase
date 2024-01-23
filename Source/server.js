@@ -193,6 +193,7 @@ import('node-fetch').then(module => {
     app.get('/', (req, res) => {
         req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
         req.session.truncationLength = 30000
+        req.session.modelVersion = 'gpt-3.5-turbo-1106';
 
         res.render('index', {
             active: 'index'
