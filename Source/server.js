@@ -1,10 +1,16 @@
 const Transcript = require('./Transcript.js');
-const GenerateSummary = require('./generateSummary.js');
+const { processText, truncateContent } = require('./textpreprocessing.service');
+const OpenAiApi = require('./openAiApi'); //  Import OpenAiApi class
+const BartApi = require('./bartApi'); // Import BartApi class
+const PegasusApi = require('./pegasusApi'); // Import PegasusApi class
+
 const YouTubeService = require('./youtube.service.js');
 require('dotenv').config();
-const apiKey = process.env.API_KEY;
+const session = require('express-session');
 const express = require('express');
 const { engine } = require('express-handlebars');
+const openaiApiKey = process.env.OPENAI_API_KEY;
+const huggingApiKey = process.env.HUGGINGFACE_API_TOKEN
 
 // Initialize express app
 const app = express();
@@ -21,7 +27,12 @@ import('node-fetch').then(module => {
     // ===================================
     // SETUP
     // ===================================
-
+    app.use(session({
+        secret: 'your secret key', // Secret key for signing the session ID cookie
+        resave: false, // Don't save session if unmodified
+        saveUninitialized: true, // Save uninitialized session
+        cookie: { secure: false } // Set to true if using HTTPS, else false
+    }));
     // Serve static files from the 'public' directory
     app.use(express.static('public'));
     app.engine('.hbs', engine({
@@ -54,14 +65,30 @@ import('node-fetch').then(module => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
 
-
+    // Factory for API endpoints
+    function getApiEndpoint(apiName) {
+        switch (apiName) {
+            case 'openai':
+                return new OpenAiApi(openaiApiKey);
+            case 'huggingface-bart':
+                return new BartApi(huggingApiKey);
+            case 'huggingface-pegasus':
+                return new PegasusApi(huggingApiKey);          
+            default:
+                throw new Error('Unknown API endpoint');
+        }
+    }
 
 
     // ===================================
     // ROUTES
     // ===================================
 
-    // Captions API route
+    /**
+     * GET /captions
+     * Fetches captions for a given YouTube video.
+     * Expects 'videoId' and optional 'captionType' (default 'SRT') in query parameters.
+     */
     app.get('/captions', async (req, res) => {
         const videoId = req.query.videoId;
         const captionType = req.query.captionType || 'SRT'; // Default to 'SRT' if not provided
@@ -75,88 +102,98 @@ import('node-fetch').then(module => {
         }
     });
 
+
     /**
-     * Endpoint to generate a summary from the fetched captions.
+     * POST /generateSummary
+     * Generates a summary for the provided YouTube video captions.
+     * Expects 'videoId', 'captionType' (optional, default 'SRT'), 'apiName', and 'summaryType' (optional, default 'TXT') in request body.
      */
     app.post('/generateSummary', async (req, res) => {
         try {
+            console.log(req.session); // Check what's in the session
+
             console.log('Starting summary generation...');
             console.time('Summary Generation');
 
-            const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
-            const captionType = req.body.captionType || 'SRT'; // Default to SRT if nothing provided
-            const summaryType = req.body.summaryType || 'TXT'; // Default to TXT if nothing provided
+            const { videoId, captionType = 'SRT', summaryType = 'TXT' } = req.body;
+            const apiName = req.session.apiName;
+            const truncationLength = req.session.truncationLength;
+            let modelVersion = null; // Initialize with default value
+            if (req.session.modelVersion) {
+                modelVersion = req.session.modelVersion;
+            }
 
+            let captionsData = await youtubeService.fetchCaptions(videoId, captionType);
+            captionsData = processText(captionsData);
+            captionsData = truncateContent(captionsData, truncationLength);
+            console.log(`apiName: ${apiName}`)
+            const apiEndpoint = getApiEndpoint(apiName);
+
+            let summary;
+            if (!modelVersion) {
+                summary = await apiEndpoint.generateSummary(captionsData, summaryType);
+            } else {
+                summary = await apiEndpoint.generateSummary(captionsData, summaryType, modelVersion);
+            }
+
+            console.timeEnd('Summary Generation');
+
+            res.send(summary);
+        } catch (error) {
+            console.error("Error during summary generation:", error);
+            res.status(500).send({ summary: `Error occurred generating summary. Error message: ${error.message}` });
+        }
+    });
+
+
+
+    /**
+     * POST /generateSearch
+     * Performs a keyword search within the captions of a YouTube video.
+     * Expects 'videoId', 'captionType' (optional, default 'SRT'), 'apiName', 'keyword', and optionally 'captionsData' in request body.
+     */
+    app.post('/generateSearch', async (req, res) => {
+        try {
+            console.log('Starting Search generation...');
+    
             let captionsData = req.body.captions;
-            console.log(summaryType)
+            const keyword = req.body.keyword;
+            const captionType = req.body.captionType || 'SRT';
+            const videoId = req.body.videoId;
+            const apiName = req.session.apiName; // Add this to get the API name from request
 
             // If no captions are provided, fetch them first
             if (!captionsData && videoId) {
-            try {
-                    //Utilize Youtube.Service for caption extraction
+                try {
                     captionsData = await youtubeService.fetchCaptions(videoId, captionType);
-
                 } catch (error) {
                     console.error("Error fetching captions:", error.message);
                     return res.status(500).send(error.message);
                 }
             }
-
-            // If, after trying, there are still no captions, return an error
-            if (!captionsData) {
-                return res.status(400).send('No captions found or provided.');
-            }
-            // console.log(captionsData)
-            const generateSummary = new GenerateSummary(apiKey);
-            const summary = await generateSummary.generate(captionsData, summaryType);
-            //const summary = await generateSummary.generate(captionsData);
-            
-            console.timeEnd('Summary Generation');
-            res.send(summary);
-
-        } catch (error) {
-            console.error("Error during summary generation:", error);
-            res.status(500).send('Error generating summary.');
-        }
-    });
-
-
-    app.post('/generateSearch', async (req, res) => {
-        try {
-            console.log('Starting Search generation...');
-            console.time('Search Generation');
-
-            let captionsData = req.body.captions;
-            const keyword = req.body.keyword;
-            const captionType = req.body.captionType || 'SRT'; // Add this line to get captionType from request
-            const videoId = req.body.videoId; // Assuming the videoId will be sent in the request
-
-            // If no captions are provided, fetch them first
-            if (!captionsData && videoId) {
-                try {
-                        //Utilize Youtube.Service for caption extraction
-                        captionsData = await youtubeService.fetchCaptions(videoId, captionType);
     
-                    } catch (error) {
-                        console.error("Error fetching captions:", error.message);
-                        return res.status(500).send(error.message);
-                    }
-                }
-    
-            const generateSummary = new GenerateSummary(apiKey);
-            const searchResult = await generateSummary.search(captionsData, keyword);
+            // Get the appropriate API endpoint
+            const apiEndpoint = getApiEndpoint(apiName);
             
-            console.timeEnd('Search Generation');
+            // Use the API endpoint to generate the search result
+            const searchResult = await apiEndpoint.generateSearch(captionsData, keyword);
             
             res.send(searchResult);
-
+    
         } catch (error) {
             console.error("Error during search generation:", error);
             res.status(500).send('Error generating search result.');
         }
     });
-
+    
+    /**
+     * GET /
+     * Serves the index page of the application.
+     */
     app.get('/', (req, res) => {
+        req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 30000
+
         res.render('index', {
             active: 'index'
         });
@@ -170,37 +207,63 @@ import('node-fetch').then(module => {
         });
     });
 
-    app.get('/punctuation-model', (req, res) => {
-        res.render('punctuation-model', {
-            active: 'punctuation-model',
-            cardNote: "Utilizing Hugging Face's Deep Multilingual Punctuation model to puntuate caption data."
+    app.get('/pegasus-model', (req, res) => {
+        req.session.apiName = 'huggingface-pegasus'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 4500
+        res.render('pegasus-model', {
+            active: 'pegasus-model',
+            cardNote: "PEGASUS: A State-of-the-Art Model for Abstractive Text Summarization - by Google"
 
         });
     });
 
-    app.get('/GPT-model', (req, res) => {
-        res.render('GPT-model', {
-            active: 'GPT-model',
-            cardNote: "Utilizing Chat GPT's LLM API"
+    app.get('/GPT3-model', (req, res) => {
+        req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 30000;
+        req.session.modelVersion = 'gpt-3.5-turbo-1106';
+        res.render('GPT3-model', {
+            active: 'GPT3-model',
+            cardNote: "GPT3: Utilizing Open Ai's Generative Pretrained Transformer API"
+        });
+    });
+    app.get('/GPT4-model', (req, res) => {
+        req.session.apiName = 'openai'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 40000;
+        req.session.modelVersion = 'gpt-4-1106-preview';
 
+        res.render('GPT4-model', {
+            active: 'GPT4-model',
+            cardNote: "GPT4: Utilizing Open Ai's Generative Pretrained Transformer API"
+        });
+    });
+    app.get('/bart-model', (req, res) => {
+        req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2500
+
+        res.render('bart-model', {
+            active: 'bart-model',
+            cardNote: "BART: Utilizing CNN Large Bart to Generate Short Summaries"
+        });
+    });
+    app.get('/my-model', (req, res) => {
+        req.session.apiName = 'huggingface-bart'; // Set 'openai' as the apiName in the session
+        req.session.truncationLength = 2500
+
+        res.render('myModel', {
+            // active: 'bart-model',
+            cardNote: "SEQ 2 SEQ Model with detailed implementation documentation. Trained on Amazon Fine Food Reviews Dataset."
+        });
+    });
+
+    app.get('/welcome-to-my-model', (req, res) => {
+        res.render('welcome-to-my-model', {
+        });
+    });
+    app.get('/my-model-notebook', (req, res) => {
+        res.render('my-model-notebook', {
         });
     });
     
-    app.get('/picture-model', (req, res) => {
-        res.render('picture-model', {
-            active: 'picture-model',
-            cardNote: "Utilizing Dalle 3 API to Generate Picture Summaries for Videos!"
-
-        });
-    });
-
-    app.get('/bart-model', (req, res) => {
-        res.render('bart-model', {
-            active: 'bart-model',
-            cardNote: "Utilizing CNN Large Bart to Generate Short Summaries"
-        });
-    });
-
 
 }).catch(err => {
     console.error("Failed to load 'node-fetch' module", err);

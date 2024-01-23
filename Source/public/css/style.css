@@ -1,6 +1,6 @@
 .container {
-    width: 58em !important;  /* Using !important to ensure this style overrides Bootstrap's default */
-    max-width: 100%;  /* To ensure it doesn't exceed the screen width */
+    width: 100% !important;  /* Using !important to ensure this style overrides Bootstrap's default */
+    /* max-width: 100%;  To ensure it doesn't exceed the screen width */
 }
 h1 {
     color: #0f83ff;  /* Bootstrap primary color (blue) */
@@ -39,4 +39,37 @@ input[type="text"]:hover {
 
 .hidden {
     display: none !important;
+}
+
+
+body.container {
+    /* padding: 0 !important; */
+    padding-top: 120px;
+}
+
+.navbar {
+    padding: 20px 0;
+    font-size: 1.075rem;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+}
+.copy-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+#textToCopy {
+    margin-right: 5px; /* Adds a small space between the URL and the button */
+}
+.copy-icon {
+    font-size: 12px; /* Adjust the size as needed */
+}
+.full-width-footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }

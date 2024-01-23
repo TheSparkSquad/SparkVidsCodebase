@@ -1,149 +1,73 @@
 const { default: OpenAI } = require('openai');
-// const radioTxt = document.getElementById("radioTxt");
-// const radioEmoji = document.getElementById("radioEmoji");
-// const radioUser = document.getElementById("radioUser");
- const readline = require('readline');
+const ApiEndpoint = require('./apiEndpoint');
+const readline = require('readline');
 
-
-
-/**
- * OpenAiApi class encapsulates interactions with the OpenAI API.
- */
-class OpenAiApi {
-    /**
-     * Constructor for the OpenAiApi class.
-     * Initializes the OpenAI API client.
-     * 
-     * @param {string} apiKey - API key for the OpenAI API.
-     */
+class OpenAiApi extends ApiEndpoint {
     constructor(apiKey) {
+        super();
         this.openai = new OpenAI({ apiKey });
     }
 
-    /**
-     * Fetches completions from the OpenAI chat API.
-     * 
-     * @param {string} inputString - The string input for which the completion is sought.
-     * @returns {string} - Completed message content.
-     */
-    async chatCompletion(inputString) {
-        const chatResponse = await this.openai.chat.completions.create({
-            messages: [{ role: 'user', content: inputString }],
-            // model: 'gpt-4-1106-preview',
-            // model: 'gpt-3.5-turbo-1106',
-            model: 'gpt-3.5-turbo-16k',
-        });
-
-        return chatResponse.choices[0].message.content;
+    async generateSummary(captionsData, summaryType, modelVersion = null) {
+        const prompt = this.buildPromptForSummarization(captionsData, summaryType);
+        return this.chatCompletion(prompt, modelVersion);
     }
 
-    /**
-     * Summarizes a given text using the OpenAI chat API.
-     * 
-     * @param {string} text - The text that needs to be summarized.
-     * @param {string} summaryType - Format to convert captions into, either 'SRT' or 'TXT'.
-     * @returns {Promise<string>} - The summarized text.
-     */
-    async summarize(text, summaryType) {
-    //async summarize(text) {
-        // const radioTxt = document.getElementById("radioTxt");
-        // const radioEmoji = document.getElementById("radioEmoji");
-        // const radioUser = document.getElementById("radioUser");
-        //const promptAI = `Use the timestamps to correctly summarize the content into chronological subjects in a way that flows nicely. Keep the timestamps in the output and format nicely. Be brief. \n${text}`;
-        //const promptAI = `Use the timestamps to correctly summarize the content into a table of contents for the video. \n\n${text}`;
-        //const promptAI = `Please try to capture the essence of the transcript from an educational video I have provided. Then give me numbered list of the topics with the timestamps included. I want the topic discussed not the content itself in the bullet points. \n\n${text}`
-        //const promptAI =  `Use the timestamps to correctly summarize the content into a table of contents for the video.  \n\n${text}`;
-        //const promptAI = `Summarize the following text taken from a video, \n\n${text}`;
-        //const promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
-        //const promptAI = `Summarize the following text taken from a video as bulleted list that incorporates emojis, \n\n${text}`;
-        var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;    
-            //if (radioTxt.checked) {
-            if (summaryType == 'TXT') {
-            var promptAI = `I have a transcript from an educational video. I need you to process the following text and provide me with a numbered list, acting as a table of contents. Each entry should have a timestamp and capture the main topic being discussed, not the detailed content. Structure it as follows:
-            1. Topic Name (timestamp / only use timestamps if they have been provided in the transcript)
-            - Brief description or sub-topic
-            2. Second Topic
-             Here's the transcript:
-            ${text}`;
-        //} else if (radioEmoji.checked) {
-        } else if (summaryType == 'EMOJI') {
-            //var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
-            var promptAI = `Summarize the following text taken from a video as bulleted list that incorporates emojis, \n\n${text}`;
-        //} else if (radioUser.checked) {
-        }else if (summaryType == 'USER') {
-            const rl = readline.createInterface({
-                input: process.stdin,
-                output: process.stdout
-            });
-            rl.question('Please enter a custom promp: ', (userInput) => {
-                var promptAI = ('User input:', userInput);
-                rl.close();
-            });
-            //var promptAI = prompt('Please enter a specific prompt:', `Summarize the following text taken from a video as emojis, \n\n${text}`);
-        } else if (summaryType == 'SIMPLE') {
-            //var promptAI = `Summarize the following text taken from a video as emojis, \n\n${text}`;
-            var promptAI = `Summarize the following text taken from a video as numbered table of contents, be brief \n\n${text}`;
-        
-        } else {
-            //print(summaryType)
-            throw new Error('Invalid format specified. Allowed formats are TXT, EMOJI or USER.');
+    async generateSearch(text, keyword) {
+        if (!text || !keyword) {
+            throw new Error('Text and keyword must be provided for search.');
         }
 
-       
-
-        
-        //const prompt = `Summarize the following text taken from a video and write it in table of contents format. Include the timestamps in bullet points. \n\n${text}`;
-        //const prompt = `Summarize the following input from a video output in table of contents format. Make sure to get the subject matter as the title of the numerical bullet point and then a brief description under it. This is a caption track from a youtube video so treat it accordingly. \n\n${text}`;
-        return this.chatCompletion(promptAI);
-    }
-
-    async search(text, keyword) {        
-        // const prompt = `From the provided video transcript, I'd like you to find all major instances where the word '${keyword}' appears. Use the timestamps to give context. Present your findings as a numbered list. Here's the transcript:
-        // ${text}`;
-        const prompt = `From the following transcript, identify every major instance where the word '${keyword}' is used. Provide the exact sentence or line with its timestamp. For instance, if the keyword was "apple" and it appeared in the line "I love apple pies at 00:05:00", make absolutely sure that if you output something that it actually has the word specified in it.
-        Each numbered output should contain the word light in it, and a couple words before and after the word light comes up.
-
-        you should return:
-        Example:
-        Number of occurances: 1
-
-        1. 00:05:00 - I love apple pies.
-        
-        Based on this, find the instances of '${keyword}':
-        ${text}`;
-
+        console.log(`Making search API call with keyword: ${keyword}`);
+        const prompt = this.constructSearchPrompt(text, keyword);
         return this.chatCompletion(prompt);
     }
 
+    constructSearchPrompt(text, keyword) {
+        return `From the following transcript, identify every major instance where the word '${keyword}' is used. Provide the exact sentence or line with its timestamp. For instance, if the keyword was "apple" and it appeared in the line "I love apple pies at 00:05:00", make sure to include the line with the timestamp.
+        Based on this, find the instances of '${keyword}':
+        ${text}`;
+    }
 
 
+    async chatCompletion(inputString, modelVersion = 'gpt-3.5-turbo-1106') {
+        console.log(`Making chat completion API call`);
+        const chatResponse = await this.openai.chat.completions.create({
+            messages: [{ role: 'user', content: inputString }],
+            model: modelVersion // Use the provided model version
+        });
+    
+        return chatResponse.choices[0].message.content;
+    }
 
 
-    // EXAMPLE OF THE OUTPUT I WANT
-//     Table of Contents:
+    buildPromptForSummarization(text, summaryType) {
+        switch(summaryType) {
+            case 'TXT':
+                return `Summarize the following text taken from a video as a numbered list:\n\n${text}`;
+            case 'EMOJI':
+                return `Summarize the following text taken from a video as bulleted list that incorporates emojis:\n\n${text}`;
+            case 'USER':
+                return this.getUserInput();
+            case 'SIMPLE':
+                return `Summarize the following text taken from a video as numbered table of contents:\n\n${text}`;
+            default:
+                throw new Error('Invalid format specified. Allowed formats are TXT, EMOJI, USER, or SIMPLE.');
+        }
+    }
 
-// Table of Contents:
-
-// 1. Introduction (00:00:00-00:00:18)
-//    - First date nerves and the idea of a PowerPoint presentation
-
-// 2. Antonio's Presentation (00:00:19-00:02:33)
-//    - Introduction and name slide
-//    - Duplicated slides and confusion
-//    - Antonio's best qualities and pictures
-
-// 3. Logan's Presentation (00:02:34-00:04:04)
-//    - Introduction and name slide
-//    - Twitch streamer and meme enthusiast
-
-    /* Future features and implementations, 
-        summarize function that accepts a string to append to the prompt from arguments
-        ability to summarize srt content and timestamps
-        ability to construct table of contents 
-        ability for user to specify a keyword in video and return timestamp and content
-    */
-
+    async getUserInput() {
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        return new Promise(resolve => {
+            rl.question('Please enter a custom prompt: ', (userInput) => {
+                rl.close();
+                resolve(userInput);
+            });
+        });
+    }
 }
 
-// Exports the OpenAiApi class to be used in other modules.
 module.exports = OpenAiApi;

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/de90b86d36f141b3938b431d47ebc8f0/artifacts
+end_time: 1704060157897
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de90b86d36f141b3938b431d47ebc8f0
+run_name: bustling-wren-873
+run_uuid: de90b86d36f141b3938b431d47ebc8f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704060155393
+status: 3
+tags: []
+user_id: maxmahlke

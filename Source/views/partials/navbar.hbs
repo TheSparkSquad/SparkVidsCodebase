@@ -1,25 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">Basic Summary</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item {{#if_eq active 'GPT-model'}}active{{/if_eq}}">
-                <a class="nav-link" href="/GPT-model">GPT Model</a>
-            </li>
-            <li class="nav-item {{#if_eq active 'llama2-model'}}active{{/if_eq}}">
-                <a class="nav-link" href="/llama2-model">Llama2 Model</a>
-            </li>
-            <li class="nav-item {{#if_eq active 'bart-model'}}active{{/if_eq}}">
-                <a class="nav-link" href="/bart-model">Bart Model</a>
-            </li>
-            <li class="nav-item {{#if_eq active 'picture-model'}}active{{/if_eq}}">
-                <a class="nav-link" href="/picture-model">Picture Model</a>
-            </li>
-            <li class="nav-item {{#if_eq active 'punctuation-model'}}active{{/if_eq}}">
-                <a class="nav-link" href="/punctuation-model">Punctuation Model</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    
+    <div class="container">
+        <a class="navbar-brand" href="/">Basic Summary</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item {{#if_eq active 'welcome-to-my-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/welcome-to-my-model">My Model from Scratch</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'GPT3-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/GPT3-model">GPT3 Model</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'GPT4-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/GPT4-model">GPT4 Model</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'bart-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/bart-model">Bart Model</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'pegasus-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/pegasus-model">Pegasus Model</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'picture-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/picture-model">Picture Model</a>
+                </li>
+                <li class="nav-item {{#if_eq active 'llama2-model'}}active{{/if_eq}}">
+                    <a class="nav-link" href="/llama2-model">Llama2 Model</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </nav>
