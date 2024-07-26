@@ -5,6 +5,7 @@
 **Link to ML Model I Trained from Scratch:**  
 [http://18.237.75.195:3000/my-model-notebook](http://18.237.75.195:3000/my-model-notebook)
 
+**Note:** This site is currently not using HTTPS (secure connection).
 
 ## Directory Structure
 
