@@ -1,6 +1,10 @@
 # YouTube Captions Summarizer
+**Link to Site:**  
+[http://18.237.75.195:3000/](http://18.237.75.195:3000/)
 
-This project is designed to fetch and extract captions from a YouTube video and then generate a concise summary of those captions. It uses YouTube scraping for fetching captions and the OpenAI API to generate the summary.
+**Link to ML Model I Trained from Scratch:**  
+[http://18.237.75.195:3000/my-model-notebook](http://18.237.75.195:3000/my-model-notebook)
+
 
 ## Directory Structure
 
